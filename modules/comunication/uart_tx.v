@@ -7,7 +7,7 @@ module uart_tx (
     output reg busy
 );
 
-    parameter BAUD_DIV = 434; // para 115200 baud com 50 MHz clock
+    parameter BAUD_DIV = 115200; // para 115200 baud com 50 MHz clock
 
     reg [9:0] shift_reg;
     reg [15:0] baud_cnt;
