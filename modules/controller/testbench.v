@@ -1,0 +1,59 @@
+`timescale 1ns / 1ps
+
+module tb_controller_reader();
+
+    reg clk = 0;
+    reg reset = 0;
+
+    reg data_up, data_down, data_left, data_right;
+    reg data_pin_ab, data_pin_start_c;
+    wire select_out; // Select output, not used in this testbench
+    wire [7:0] leds; // LEDs output
+
+    controller_reader uut (
+        .clk(clk),
+        .reset(reset),
+        .select_out(select_out),
+        .data_up(data_up),
+        .data_down(data_down),
+        .data_left(data_left),
+        .data_right(data_right),
+        .data_pin_ab(data_pin_ab),
+        .data_pin_start_c(data_pin_start_c),
+        .leds(leds)
+    );
+
+    // Clock generation
+    always #1 clk = ~clk;  // 100MHz clock
+
+    initial begin
+        // Inicializa os sinais
+        select_out = 1'b0;
+        leds = 8'b0;
+        data_up = 1; data_down = 1;
+        data_left = 1; data_right = 1;
+        data_pin_ab = 1; data_pin_start_c = 1;
+
+        reset = 1;  // Ativa o reset
+        #5 reset = 0;  // Desativa o reset
+
+        // Simula botão pressionado (nível baixo)
+        #10 data_up = 0;
+        #10 data_down = 0;
+        #10 data_left = 0;
+        #10 data_right = 0;
+        #10 data_pin_ab = 0;
+        #10 data_pin_start_c = 0;
+
+        // Volta ao estado normal
+        #10 data_up = 1;
+        #10 data_down = 1;
+        #10 data_left = 1;
+        #10 data_right = 1;
+        #10 data_pin_ab = 1;
+        #10 data_pin_start_c = 1;
+
+        #1000 $finish;
+    end
+
+endmodule

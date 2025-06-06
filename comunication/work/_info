@@ -1,0 +1,103 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+d/home/fontana
+vuart_tb
+Z0 !s110 1748640392
+!i10b 1
+!s100 cOAZN:_Zc1d0z00]ZDO;M2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I>PZ:meOb0V2>h00eZ^;z]3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/fontana/dev/ufba/lab-1/sudoku/comunication
+w1748638940
+8/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tb.v
+F/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tb.v
+!i122 0
+L0 3 19
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1748640392.000000
+!s107 /home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tb.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tb.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vuart_test_top
+R0
+!i10b 1
+!s100 IHNRFJJz:mg1MelR_ndKF1
+R1
+I2a7b4M;SD2iR<GMGn>2]n3
+R2
+R3
+w1748640186
+8/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_test_top.v
+F/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_test_top.v
+!i122 1
+L0 1 33
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_test_top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_test_top.v|
+!i113 1
+R6
+R7
+vuart_tx
+R0
+!i10b 1
+!s100 Ja=9YjMPIdCIo3Y;Z5hFL3
+R1
+IX5GMM^[_1<I2DmN?izEkI1
+R2
+R3
+w1748638932
+8/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tx.v
+F/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tx.v
+!i122 2
+L0 1 49
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tx.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tx.v|
+!i113 1
+R6
+R7
+vuart_tx32
+R0
+!i10b 1
+!s100 4daFNTbS42njYkAEJFS7Y1
+R1
+IS9jMIBzjD>LSVC8H5TK>d2
+R2
+R3
+w1748639353
+8/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tx32.v
+F/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tx32.v
+!i122 3
+L0 1 54
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tx32.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/comunication/uart_tx32.v|
+!i113 1
+R6
+R7
