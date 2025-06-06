@@ -28,14 +28,12 @@ module tb_controller_reader();
 
     initial begin
         // Inicializa os sinais
-        select_out = 1'b0;
-        leds = 8'b0;
         data_up = 1; data_down = 1;
         data_left = 1; data_right = 1;
         data_pin_ab = 1; data_pin_start_c = 1;
 
-        reset = 1;  // Ativa o reset
-        #5 reset = 0;  // Desativa o reset
+        reset = 0;  // Ativa o reset
+        #5 reset = 1;  // Desativa o reset
 
         // Simula botão pressionado (nível baixo)
         #10 data_up = 0;
