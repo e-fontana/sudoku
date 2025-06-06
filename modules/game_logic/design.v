@@ -29,7 +29,7 @@ parameter [2:0]
    CARREGANDO             		 = 3'b010,
    CORRENDO_MAPA          		 = 3'b011,
    PERCORRER_NUMEROS        	 = 3'b100,
-   VITORIA 						 = 3'b101;
+   VITORIA 						 = 3'b101,
    BAHIA						 = 3'b110;
 
 
@@ -122,7 +122,7 @@ always @(posedge clk or posedge reset) begin
                if (a_button) begin
                   cell_value[cursor_x][cursor_y] <= temp_number;
                     current_state <= CORRENDO_MAPA;
-                   // temp_number <= selected_number;  // Carrega número atual
+                    temp_number <= selected_number;  // Carrega número atual
                 end
               
                 
@@ -150,6 +150,33 @@ always @(posedge clk or posedge reset) begin
 end
 
 
-
+// always @(*) begin
+//     // Reset de todas as saídas
+//     title_display = 1'b0;
+//     difficulty_display = 1'b0;
+//     running_display = 1'b0;
+//     easy_selected = 1'b0;
+//     hard_selected = 1'b0;
+    
+//     case (current_state)
+//         Q0_INICIAR_JOGO: begin
+//             title_display = 1'b1;
+//         end
+        
+//         Q1_SELECIONAR_DIFICULDADE: begin
+//             difficulty_display = 1'b1;
+//             easy_selected = (difficulty_option == 2'b01);
+//             hard_selected = (difficulty_option == 2'b10);
+//         end
+        
+//         CARREGANDO: begin
+//             // Display de carregamento pode ser adicionado aqui
+//         end
+        
+//         CORRENDO_MAPA: begin
+//             running_display = 1'b1;
+//         end
+//     endcase
+// end
 
 endmodule

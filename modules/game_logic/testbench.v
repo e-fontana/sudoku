@@ -131,6 +131,20 @@ initial begin
     left_button = 0;
     #10;
     $display("Posição após LEFT: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
+  
+   // Move para baixo
+    down_button = 1;
+    #10;
+    down_button = 0;
+    #10;
+  $display("Posição após DOWN: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
+
+   // Move para direita
+    right_button = 1;
+    #10;
+    right_button = 0;
+    #10;
+  $display("Posição após RIGHT: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
     
  
    
@@ -144,7 +158,7 @@ initial begin
   #10;
 
    
-  repeat(3) begin
+  repeat(4) begin
     up_button = 1;
     #10;
     up_button = 0;
@@ -174,10 +188,9 @@ initial begin
   
   a_button = 0;
      #10;
-    up_button = 1;
-    #10;
    
-  repeat(4) begin
+   
+  repeat(11) begin
     up_button = 1;
     #10;
     up_button = 0;
