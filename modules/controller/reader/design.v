@@ -18,15 +18,17 @@ module controller_reader (
     reg btn_up, btn_down, btn_left, btn_right; // Direction
     reg btn_a, btn_b, btn_c, btn_start; // Buttons
 
+    wire next_select_out = ~select_out;
+
     always @(posedge clk or negedge reset) begin
         if (!reset) begin
             select_out <= 1'b1;
             leds <= 8'b0;
             {btn_start, btn_c, btn_b, btn_a, btn_right, btn_left, btn_down, btn_up} <= 8'b0;
         end else begin
-            select_out <= ~select_out;
+            select_out <= next_select_out;
 
-            if (select_out) begin
+            if (next_select_out) begin
                 btn_b <= ~data_pin_ab;
                 btn_c <= ~data_pin_start_c;
             end else begin
@@ -38,8 +40,11 @@ module controller_reader (
             btn_down  <= ~data_down;
             btn_left  <= ~data_left;
             btn_right <= ~data_right;
-            leds <= {btn_start, btn_c, btn_b, btn_a, btn_right, btn_left, btn_down, btn_up};
         end
+    end
+
+    always @(*) begin
+        leds = {btn_start, btn_c, btn_b, btn_a, btn_right, btn_left, btn_down, btn_up};
     end
 
 endmodule
