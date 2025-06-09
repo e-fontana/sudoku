@@ -8,73 +8,73 @@ z2
 !i10e 25
 !i10f 100
 cModel Technology
-d/home/fontana
+Z0 d/home/fontana/dev/ufba/lab-1/sudoku/modelsim
 vcontroller_reader
-Z0 !s110 1749168009
+Z1 !s110 1749254588
 !i10b 1
-!s100 UgBK[Q5?Y@BzzO65ndi5T0
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I7fN<zV9IK2?<=DoAPW^BW3
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 d/home/fontana/dev/ufba/lab-1/sudoku/modelsim
-w1749166660
+!s100 M9d9T>JQ:bzIb5LKJ2`Yl2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I:gCO4OLbQi19c:Y=g5H083
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1749253665
 8/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v
 F/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v
-!i122 19
-L0 2 44
+!i122 3
+L0 2 49
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1749168009.000000
+Z5 !s108 1749254588.000000
 !s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v|
 !i113 1
 Z6 o-work work
 Z7 tCvgOpt 0
-vcontroller_top
-R0
-!i10b 1
-!s100 2WZ8W2SFVFNaBf5do3fLX1
-R1
-I]3_Zo35Ec_Ue:Wa_29JTS3
-R2
-R3
-w1749165858
-8/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v
-F/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v
-!i122 18
-L0 1 25
-R4
-r1
-!s85 0
-31
-R5
-!s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v|
-!s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v|
-!i113 1
-R6
-R7
 vtb_controller_reader
-!s110 1749167897
-!i10b 1
-!s100 j4zl2dL0zc;VK]X]g@YQF2
 R1
-Ib1H<0D^fbTIlQ5TE`3eQH2
+!i10b 1
+!s100 56nej93NDPfmQ15]RNV9X1
 R2
+ITEEJok8UK_zA@lS>gW3[C1
 R3
-w1749167883
+R0
+w1749254569
 8/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v
 F/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v
-!i122 16
+!i122 4
 L0 3 55
 R4
 r1
 !s85 0
 31
-!s108 1749167897.000000
+R5
 !s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v|
+!i113 1
+R6
+R7
+vtop
+R1
+!i10b 1
+!s100 TJJR?3be^R078dnYJXi`W1
+R2
+IGLI1F:S?i4gC>=>bUWLFR3
+R3
+R0
+w1749254586
+8/home/fontana/dev/ufba/lab-1/sudoku/design.v
+F/home/fontana/dev/ufba/lab-1/sudoku/design.v
+!i122 2
+L0 1 54
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/fontana/dev/ufba/lab-1/sudoku/design.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/design.v|
 !i113 1
 R6
 R7

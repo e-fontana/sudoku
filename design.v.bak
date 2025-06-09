@@ -1,0 +1,57 @@
+module top(
+    CLOCK_50,
+    reset,
+
+    // Controller signals
+    GPIO,
+    led1,
+    led2,
+    led3,
+    led4,
+    led5,
+    led6,
+    led7,
+    led8,
+    led9,
+
+    // UART signals
+    tx,
+    busy
+);
+    input CLOCK_50, reset;
+    output led1, led2, led3, led4, led5, led6, led7, led8;
+
+    output led9 = 1;
+
+    reg [7:0] LEDG;
+    inout [35:0] GPIO;
+
+    reg [7:0] GPIO_DATA = 0;
+
+    // UART signals
+    output tx, busy;
+    reg [7:0] data = 0;
+    reg start = 0;
+    reg uart_busy = 0;
+
+    // controller_top controller (
+    //     .CLOCK_50(CLOCK_50),
+    //     .reset(reset),
+    //     .LEDG(LEDG),
+    //     .GPIO(GPIO)
+    // );
+
+    uart_tx8 uart (
+        .clk(CLOCK_50),
+        .rst(reset),
+        .data(data),
+        .start(start),
+        .tx(tx),
+        .busy(busy)
+    );
+	 
+	 always @(led1 or led2 or led3 or led4 or led5 or led6 or led7 or led8) begin
+      LEDG = {led1, led2, led3, led4, led5, led6, led7, led8};
+	 end
+
+endmodule

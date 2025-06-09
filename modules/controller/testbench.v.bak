@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module tb_controller_reader;
+module tb_controller_reader();
 
     reg clk = 0;
     reg reset = 0;
