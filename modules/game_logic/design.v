@@ -1,3 +1,4 @@
+`timescale 1ns/1ps 
 module sudoku_fsm (
     input wire clk,
     input wire reset,
@@ -8,13 +9,15 @@ module sudoku_fsm (
     input wire down_button,
     input wire left_button,
     input wire right_button,
+    input wire test_cell_count,
+    input wire test_lose,
     
     output reg [2:0] current_state,
-    output reg title_display,
-    output reg difficulty_display,
-    output reg running_display,
-    output reg easy_selected,
-    output reg hard_selected,
+    output reg title_display,  // deep
+   output reg difficulty_display,  // deep
+   output reg running_display,  // deep
+    output reg easy_selected,    // deep?
+    output reg hard_selected,   // deep?
     output reg [3:0] cursor_x, 
   output reg [3:0] cursor_y,
   output reg [3:0] cell_value [0:8][0:8],
@@ -30,7 +33,7 @@ parameter [2:0]
    CORRENDO_MAPA          		 = 3'b011,
    PERCORRER_NUMEROS        	 = 3'b100,
    VITORIA 						 = 3'b101,
-   BAHIA						 = 3'b110;
+   DERROTA						 = 3'b110;
 
 
   reg [6:0] filled_cells; 
@@ -109,6 +112,8 @@ always @(posedge clk or posedge reset) begin
           
           
            PERCORRER_NUMEROS: begin
+             
+           
                
                 if (up_button) begin
                     if (temp_number < 9) temp_number <= temp_number + 1;
@@ -118,12 +123,40 @@ always @(posedge clk or posedge reset) begin
                     if (temp_number > 0) temp_number <= temp_number - 1;
                     else temp_number <= 4'd9;  
                 end
+              
+             
+               
+                if(test_lose) begin   ///Todas as vidas perdidas ou tempo acabou 
+                   current_state <= DERROTA;
+                 end
+                 
+      
                 
                if (a_button) begin
-                  cell_value[cursor_x][cursor_y] <= temp_number;
-                    current_state <= CORRENDO_MAPA;
-                    temp_number <= selected_number;  // Carrega número atual
+                 cell_value[cursor_x][cursor_y] <= temp_number;
+                    //*** Verificar no mapa corrrigido se o numero está certo ou não para aplicar penalidade e mandar para derrota se for o caso
+                 
+                if(test_lose) begin   ///Todas as vidas perdidas ou tempo acabou 
+                   current_state <= DERROTA;
+                 end
+                 
+                 
+                   if (test_cell_count) begin
+                      current_state <= VITORIA;  // Vai para vitória se só faltava essa célula
+                   end
+               else begin
+                   current_state <= CORRENDO_MAPA;  // Volta ao mapa se ainda há células vazias
+                   temp_number <= selected_number;               
+                  end 
+                 
+              
+       
+                 
+                 
                 end
+             
+             
+             
               
                 
                 // Cancelamento com B
@@ -133,6 +166,20 @@ always @(posedge clk or posedge reset) begin
             end
           
             VITORIA: begin
+                
+               
+              
+              if (start_button) begin
+                    current_state <= Q1_SELECIONAR_DIFICULDADE;
+                end
+              
+              
+                
+                
+
+            end
+          
+           DERROTA: begin
                 
                
               

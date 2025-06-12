@@ -12,6 +12,8 @@ reg up_button;
 reg down_button;
 reg left_button;
 reg right_button;
+reg test_cell_count;
+reg test_lose;
 
 // Saídas
 wire [2:0] current_state;
@@ -49,7 +51,9 @@ sudoku_fsm uut (
     .easy_selected(easy_selected),
     .hard_selected(hard_selected),
     .cursor_x(cursor_x),
-    .cursor_y(cursor_y)
+  .cursor_y(cursor_y),
+  .test_cell_count(test_cell_count),
+  .test_lose(test_lose)
 );
   
 
@@ -68,8 +72,9 @@ initial begin
     state_names[3'b010] = "CARREGANDO";
     state_names[3'b011] = "CORRENDO_MAPA";
     state_names[3'b100] = "PERCORRER_NUMEROS";
-  state_names[3'b101] = "VITORIA";
-    // ... outros estados
+    state_names[3'b101] = "VITORIA";
+    state_names[3'b110] = "DERROTA";
+    
 end
 
 // Monitoramento de estados
@@ -96,6 +101,8 @@ initial begin
     down_button = 0;
     left_button = 0;
     right_button = 0;
+    test_cell_count=0;
+    test_lose=0;
     
     // Teste 1: Reset e estado inicial
   $display("Teste 1", uut.cursor_x, uut.cursor_y);
@@ -216,7 +223,7 @@ initial begin
     
 //    // Teste botão Escolhendo numero 2
   
-   $display("Teste botão Escolhendo numero 2");
+  $display("Teste 5-2 : Escolhendo segundo numero");
   a_button = 1; // muda pra escolhendo numeros
     #10;
   
@@ -306,6 +313,78 @@ initial begin
    down_button = 0;
    #10;
   
+  
+  
+  $display("Teste 6 finalizando o jogo pelo cell count (vitória)");
+  
+  //Entrando em percorrendo numeros
+  
+  a_button = 1;
+   #10;
+  a_button=0;
+   #10;
+  
+  test_cell_count = 1;
+  #30;
+  
+    a_button = 1;
+   #10;
+  a_button=0;
+   test_cell_count=0;
+   #10;
+  
+  
+  $display("Teste 7: Passadno de vitória para selecionar dificuldade");
+  
+  
+   start_button = 1;
+    #10;
+    start_button = 0;
+    #10;
+  
+    
+  $display("Teste 8:  Testando forçar derrota");
+  
+  a_button = 1;  //  => percorrendo mapa
+    #10;
+    a_button = 0;
+    #10;
+    
+  test_lose = 1; 
+      #10;
+  
+  a_button = 1; // => percorrendo numero
+    #10;
+    a_button = 0;
+    #20;
+  
+   
+// //   //
+// //     #20;
+  
+   
+  a_button = 1;
+    #10;
+    a_button = 0;
+  
+     #10;
+  
+     test_lose = 0;
+  
+  
+    
+   start_button = 1;
+    #10;
+    start_button = 0;
+    #10;
+  
+  
+  
+  
+  
+  
+  
+  
 //  $display("Posição após combo: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
   
   
@@ -368,7 +447,7 @@ initial begin
         if (prev_state == 3'b100 && current_state == 3'b011) begin
             $display("\n[Evento] Saída do modo de seleção de número");
             $display("  Posição atual: (%0d,%0d)", uut.cursor_x, uut.cursor_y);
-            $display("  Valor confirmado: %0d", uut.cell_value[uut.cursor_x]			[uut.cursor_y]);
+          $display("  Valor escolhido: %0d", uut.cell_value[uut.cursor_x]			[uut.cursor_y]);
           
                   print_grid();
       //  $display("Cursor at (%0d,%0d)", uut.cursor_x, uut.cursor_y);
