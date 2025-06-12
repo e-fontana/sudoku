@@ -27,6 +27,9 @@ wire [3:0] cursor_y;
    
 // reg [3:0] last_cursor_x, last_cursor_y;
 // reg [3:0] last_cell_value;
+  
+  
+  reg [2:0] prev_state;
 
 // Instância do módulo testado
 sudoku_fsm uut (
@@ -48,6 +51,8 @@ sudoku_fsm uut (
     .cursor_x(cursor_x),
     .cursor_y(cursor_y)
 );
+  
+
 
 // Geração de clock (100 MHz)
 initial begin
@@ -93,17 +98,20 @@ initial begin
     right_button = 0;
     
     // Teste 1: Reset e estado inicial
+  $display("Teste 1", uut.cursor_x, uut.cursor_y);
     #20;
     reset = 0;
     #10;
     
     // Teste 2: Transição para Q1
+  $display("Teste 2: Transição para Q1");
     start_button = 1;
     #10;
     start_button = 0;
     #10;
     
-    // Teste 3: Seleciona difícil e confirma
+//     // Teste 3: Seleciona difícil e confirma
+   $display("Teste 3: Seleciona difícil e confirma");
     down_button = 1;
     #10;
     down_button = 0;
@@ -113,10 +121,17 @@ initial begin
     a_button = 0;
     #100; // Espera carregamento
   
+  // => passando para PERCORRENDO MAPA
+  
+    if (current_state !== 3'b011) begin
+            $display("ERRO: Não foi para estado CORRENDO_MAPA");
+     end 
+  
    
     
-    // Teste 4: Navegação no mapa
-    $display("Posição inicial do cursor: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
+//     // Teste 4: Navegação no mapa
+  $display("Teste 4: Navegação no mapa");
+  $display("Posição inicial do cursor: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
     
     // Move para cima
     up_button = 1;
@@ -149,13 +164,20 @@ initial begin
  
    
   
+
   
-  // Teste botão Escolhendo numeros
+//   // Teste botão Escolhendo numeros
+    $display("Teste 5: Escolhendo número");
   a_button = 1; // muda pra escolhendo numeros
     #10;
   
   a_button = 0;
   #10;
+  
+  if (current_state !== 3'b100) begin
+            $display("ERRO: Não foi para estado CORRENDO_MAPA");
+     end 
+  
 
    
   repeat(4) begin
@@ -164,25 +186,37 @@ initial begin
     up_button = 0;
     #10;
    end
-  #10;
+  
   a_button = 1; //sai de escolhendo numeros e confirma numero
   #10;
    a_button = 0;
    #10;
   
-  $display("Posição após Confirmar primeiro numero: (%0d, %0d)", 
-        uut.cursor_x, uut.cursor_y, 
-        uut.cell_value[uut.cursor_x][uut.cursor_y]);
+  if (current_state !== 3'b011) begin
+    $display("ERRO: Não foi para estado CORRENDO_MAPA após escolher número");
+   end 
+  
+  
+//   $display("Posição após Confirmar primeiro numero: (%0d, %0d)", 
+//         uut.cursor_x, uut.cursor_y, 
+//         uut.cell_value[uut.cursor_x][uut.cursor_y]);
+  
+//   $display("Posição: (%0d, %0d) | Valor escolhido: %0d", 
+//         uut.cursor_x, uut.cursor_y, 
+//         uut.cell_value[uut.cursor_x][uut.cursor_y]);
   
    // Move para esquerda
+  $display("Move LEFT");
     left_button = 1;
     #10;
     left_button = 0;
     #10;
-    $display("Posição após LEFT: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
+   // $display("Posição após LEFT: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
   
     
-   // Teste botão Escolhendo numero 2
+//    // Teste botão Escolhendo numero 2
+  
+   $display("Teste botão Escolhendo numero 2");
   a_button = 1; // muda pra escolhendo numeros
     #10;
   
@@ -204,18 +238,24 @@ initial begin
   
 
   
-  $display("Cell (%0d,%0d) = %0d", 
-        uut.cursor_x, uut.cursor_y, 
-        uut.cell_value[uut.cursor_x][uut.cursor_y]);
+//   $display("Cell (%0d,%0d) = %0d", 
+//         uut.cursor_x, uut.cursor_y, 
+//         uut.cell_value[uut.cursor_x][uut.cursor_y]);
   
    // Move para cima
-  up_button = 1;
+  
+  repeat(2)begin
+    up_button = 1;
+      #10;
+     up_button = 0;
     #10;
-   up_button = 0;
-  #10;
-  $display("Posição após Cima: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
-    left_button = 0;
-    #10;
+  
+  end
+  
+  
+//   $display("Posição após Cima: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
+//     left_button = 0;
+//     #10;
   
     
    
@@ -238,20 +278,20 @@ initial begin
    b_button = 0;
       #10;
   
-  $display("Posição após apertar B: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
+  $display("Posição após  Move para cima, right, down, down");
   
-     // Move para cima, left down, down
+//      // Move para cima, left down, down
   up_button = 1;
     #10;
   up_button = 0;
   $display("Posição após up: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
 
    #10;
-    left_button = 1;
+    right_button = 1;
     #10;
   $display("Posição após left: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
   
-    left_button = 0;
+    right_button = 0;
   #10;
   down_button = 1;
   $display("Posição após down: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
@@ -266,53 +306,77 @@ initial begin
    down_button = 0;
    #10;
   
- $display("Posição após combo: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
+//  $display("Posição após combo: (%0d, %0d)", uut.cursor_x, uut.cursor_y);
   
   
   
   
-  // -------------------------------------------------
-   //Testes passando para vitoria 
+//   // -------------------------------------------------
+//    //Testes passando para vitoria 
   
-  b_button = 1;
-  #10
-  b_button =0;
-   #20
-   start_button = 1;
-  #10
-  start_button =0;
+//   b_button = 1;
+//   #10
+//   b_button =0;
+//    #20
+//    start_button = 1;
+//   #10
+//   start_button =0;
   		
   
-  //
+//   //
   
   
   
   
   $display("Todos os testes passaram com sucesso!");
     $finish;
-end
+ end
   
   
-    always @(uut.current_state) begin
-    $display("[%0t] Estado mudou para: %0d", $time, uut.current_state);
-	end
+//    always @(uut.current_state) begin
+//     $display("[%0t] Estado mudou para: %0d", $time, uut.current_state);
+// 	end
+  
+  
+  
+  // Bloco para verificar a posiçãodo cursosr após cada mudança (avaliando necessidade de ter isso)
+  
+//   always @(uut.cursor_x or uut.cursor_y) begin
+//     if (uut.current_state == 3'b011) begin 
+//         $display("[%0t] Cursor agora em (%0d,%0d) = %0d",
+//                $time,
+//                uut.cursor_x, uut.cursor_y,
+//                uut.cell_value[uut.cursor_x][uut.cursor_y]);
+//     end
+//   end
+  
+  
   
   always @(uut.cursor_x or uut.cursor_y) begin
-    if (uut.current_state == 3'b011) begin 
-        $display("[%0t] Cursor agora em (%0d,%0d) = %0d",
-               $time,
-               uut.cursor_x, uut.cursor_y,
-               uut.cell_value[uut.cursor_x][uut.cursor_y]);
-    end
-  end
-  
-  always @(uut.cursor_x or uut.cursor_y) begin
+    #10;
     if (uut.current_state == 3'b011) begin //
-        print_grid();
+       // print_grid();
         $display("Cursor at (%0d,%0d)", uut.cursor_x, uut.cursor_y);
     end
-end
-task print_grid;
+    #10;
+  end
+  
+    
+  always @(posedge clk) begin
+        prev_state <= current_state;
+        
+        if (prev_state == 3'b100 && current_state == 3'b011) begin
+            $display("\n[Evento] Saída do modo de seleção de número");
+            $display("  Posição atual: (%0d,%0d)", uut.cursor_x, uut.cursor_y);
+            $display("  Valor confirmado: %0d", uut.cell_value[uut.cursor_x]			[uut.cursor_y]);
+          
+                  print_grid();
+      //  $display("Cursor at (%0d,%0d)", uut.cursor_x, uut.cursor_y);
+            
+            
+        end
+    end
+ task print_grid;
     $display("\nCurrent Sudoku Grid:");
     $display("    0 1 2   3 4 5   6 7 8");
     $display("  +-------+-------+-------+");
@@ -328,6 +392,6 @@ task print_grid;
         end
     end
     $display("  +-------+-------+-------+");
-endtask
+ endtask
 
 endmodule
