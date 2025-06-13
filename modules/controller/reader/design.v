@@ -1,79 +1,119 @@
-/**
- * @module controller_emulator_fixed
- * @brief Emula um controle de 3/6 botões (sem X,Y,Z) com a lógica de estados corrigida.
- */
-module controller_reader (
+module controller_reader(
     input clk,
-    input p7,     // DB9_PIN7 (SEL)
-    output [5:0] leds, // {DB9_PIN1, DB9_PIN2, DB9_PIN3, DB9_PIN4, DB9_PIN6, DB9_PIN9}
-    input up,     // Up button (1 when not pressed, 0 when pressed)
-    input dw,     // Down button
-    input lf,     // Left button
-    input rg,     // Right button
-    input a,      // A button
-    input b,      // B button
-    input c,      // C button
-    input st      // Start button
+    input reset,
+    input PIN_UP_Z,      
+    input PIN_DOWN_Y,      
+    input PIN_LEFT_X,      
+    input PIN_RIGHT_MODE,      
+    input PIN_A_B,       
+    input PIN_START_C,
+    output reg select,      
+    output wire [11:0] LEDR
 );
+    localparam STATE_IDLE   = 4'd0;
+    localparam STATE_ZERO   = 4'd1;
+    localparam STATE_ONE    = 4'd2;
+    localparam STATE_TWO    = 4'd3;
+    localparam STATE_THREE  = 4'd4;
+    localparam STATE_FOUR   = 4'd5;
+    localparam STATE_FIVE   = 4'd6;
+    localparam STATE_SIX    = 4'd7;
+    localparam STATE_SEVEN  = 4'd8;
 
-    // --- Parâmetros e Estados ---
-    parameter TIMEOUT = 14'd8000;
-    
-    // MUDANÇA 1: Usar `localparam` para dar nomes aos estados torna o código muito mais fácil de ler.
-    localparam STATE_AS   = 2'b00; // Estado para ler A e Start
-    localparam STATE_BC   = 2'b01; // Estado para ler B e C
-    localparam STATE_HI_Z_1 = 2'b10; // Estado para a 3ª leitura (normalmente X,Y,Z, mas aqui sem resposta)
-    localparam STATE_HI_Z_2 = 2'b11; // Estado para a 4ª leitura (sem resposta)
+    reg up, down, left, right, a, b, c, output_x, y, output_z, start, mode = 1'b0;
 
-    // --- Registradores ---
-    reg [13:0] clk_counter = TIMEOUT;
-    reg [1:0]  hi_count    = STATE_AS; // Renomear para 'state' seria ideal, mas mantendo o original.
-    reg [5:0]  p           = 6'b111111;
-    assign     leds        = p;
+    reg flag = 1'b1;
+    reg [3:0] state = STATE_IDLE;
+    reg [11:0] counter = 0;
 
-    // MUDANÇA 2: Simplificação do detector de borda. Só precisamos de um registrador de atraso.
-    reg last_p7 = 1'b0;
+    assign LEDR = {up, down, left, right, a, b, c, output_x, y, output_z, start, mode};
 
-    // --- Lógica da Máquina de Estados ---
-    always @(posedge clk) begin
-        // Atualiza o valor anterior de p7 a cada ciclo
-        last_p7 <= p7;
-
-        // MUDANÇA 3: Detector de borda de subida (L->H) simples e confiável.
-        // Isso dispara quando 'p7' está em 1 AGORA e estava em 0 no ciclo anterior.
-        if (p7 && !last_p7) begin
-            hi_count <= hi_count + 1; // Incrementa o estado
-            clk_counter <= TIMEOUT;   // Reseta o contador de timeout
-        end else begin
-            // Se não houver borda de subida, o timeout continua contando
-            if (clk_counter == 0) begin
-                clk_counter <= TIMEOUT;
-                hi_count <= STATE_AS; // Se o console parar de perguntar, volta ao estado inicial
-            end else begin
-                clk_counter <= clk_counter - 1;
-            end
+    always @(posedge clk or negedge reset) begin
+        if (!reset) begin
+            select <= 1'b1;
+            counter <= 12'd0;
+            state <= STATE_IDLE;
         end
-    end
+        else begin
+            case (state)
+                STATE_IDLE: begin
+                    counter <= 12'd0;
+                    select <= 1'b1;
 
-    // --- Lógica de Saída ---
-    always @(*) begin
-        // MUDANÇA 4: Bloco 'case' corrigido, sem itens duplicados e com lógica clara.
-        case (hi_count)
-            // 1ª Leitura (select=HIGH): Responde com Cima, Baixo, A, Start.
-            STATE_AS:   p = {up, dw, 1'b1, 1'b1, a, st};
-            
-            // 2ª Leitura (select=LOW): Responde com Cima, Baixo, Esquerda, Direita, B, C.
-            STATE_BC:   p = {up, dw, lf, rg, b, c};
-            
-            // 3ª e 4ª Leituras: Para um controle de 6 botões, isso seria para X,Y,Z,Mode.
-            // Como não os temos, a resposta correta é "nenhum botão pressionado" (tudo em 1).
-            // Isso garante compatibilidade com jogos de 6 botões sem causar "botões fantasma".
-            STATE_HI_Z_1,
-            STATE_HI_Z_2: p = 6'b111111;
-            
-            // O estado default é uma boa prática de segurança.
-            default: p = 6'b111111;
-        endcase
-    end
+                    if (flag) state <= STATE_ZERO;
+                    
+                end
+                STATE_ZERO: begin
+                    select <= 1'b1;
+                    counter <= counter + 12'd1;
+                    if (counter == 12'd1000) state <= STATE_ONE;
+                    
+                end
+                STATE_ONE: begin
+                    select <= 1'b0;
+                    counter <= counter + 12'd1;
+                    a <= ~PIN_A_B;
+                    start <= ~PIN_START_C;
+                    if (counter == 12'd2000) state <= STATE_TWO;
+                    
+                end
+                STATE_TWO: begin
+                    select <= 1'b1;
+                    counter <= counter + 12'd1;
+                    
+                    up <= ~PIN_UP_Z;
+                    down <= ~PIN_DOWN_Y;
+                    left <= ~PIN_LEFT_X;
+                    right <= ~PIN_RIGHT_MODE;
+                    
+                    if (counter == 12'd3000) state <= STATE_THREE;
+                    
+                end
+                STATE_THREE: begin
+                    select <= 1'b0;
+                    counter <= counter + 12'd1;
+                    
+                    if (counter == 12'd4000) state <= STATE_FOUR;
+                end
+                STATE_FOUR: begin
+                    select <= 1'b1;
+                    counter <= counter + 12'd1;
 
+                    b <= ~PIN_A_B;
+                    c <= ~PIN_START_C;
+
+                    if (counter == 12'd5000) state <= STATE_FIVE;
+                end
+                STATE_FIVE: begin
+                    select <= 1'b0;
+                    counter <= counter + 12'd1;
+                    
+                    if (counter == 12'd6000) state <= STATE_SIX;
+                end
+                STATE_SIX: begin
+                    select <= 1'b1;
+                    counter <= counter + 12'd1;
+
+                    output_x <= ~PIN_LEFT_X;
+                    y <= ~PIN_DOWN_Y;
+                    output_z <= ~PIN_UP_Z;
+                    mode <= ~PIN_RIGHT_MODE;
+
+                    if (counter == 12'd7000) state <= STATE_SEVEN;
+                end
+                STATE_SEVEN: begin
+                    select <= 1'b0;
+                    counter <= counter + 12'd1;
+
+                    if (counter == 12'd8000) state <= STATE_IDLE;
+                end
+                default: begin
+                    state <= STATE_IDLE;
+                    select <= 1'b1;
+                    counter <= 12'd0;
+                end
+            endcase    
+        end
+        
+    end
 endmodule

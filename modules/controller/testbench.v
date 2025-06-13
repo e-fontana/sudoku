@@ -1,57 +1,75 @@
 `timescale 1ns / 1ps
 
-module tb_controller_reader;
+module controller_reader_tb;
 
+    // Sinais de entrada
     reg clk = 0;
-    reg reset = 0;
+    reg reset;
+    reg PIN_UP_Z;
+    reg PIN_DOWN_Y;
+    reg PIN_LEFT_X;
+    reg PIN_RIGHT_MODE;
+    reg PIN_A_B;
+    reg PIN_START_C;
 
-    reg data_up, data_down, data_left, data_right;
-    reg data_pin_ab, data_pin_start_c;
-    wire select_out; // Select output, not used in this testbench
-    wire [7:0] leds; // LEDs output
+    // Sinais de saída
+    wire select;
+    wire [11:0] LEDR;
 
+    // Instância do módulo sendo testado
     controller_reader uut (
         .clk(clk),
         .reset(reset),
-        .select_out(select_out),
-        .data_up(data_up),
-        .data_down(data_down),
-        .data_left(data_left),
-        .data_right(data_right),
-        .data_pin_ab(data_pin_ab),
-        .data_pin_start_c(data_pin_start_c),
-        .leds(leds)
+        .PIN_UP_Z(PIN_UP_Z),
+        .PIN_DOWN_Y(PIN_DOWN_Y),
+        .PIN_LEFT_X(PIN_LEFT_X),
+        .PIN_RIGHT_MODE(PIN_RIGHT_MODE),
+        .PIN_A_B(PIN_A_B),
+        .PIN_START_C(PIN_START_C),
+        .select(select),
+        .LEDR(LEDR)
     );
 
-    // Clock generation
-    always #1 clk = ~clk;  // 100MHz clock
+    // Geração do clock (20ns período => 50MHz)
+    always #10 clk = ~clk;
 
     initial begin
-        // Inicializa os sinais
-        data_up = 1; data_down = 1;
-        data_left = 1; data_right = 1;
-        data_pin_ab = 1; data_pin_start_c = 1;
+        $display("Iniciando simulação...");
+        $monitor("Tempo: %dns | LEDR: %b | select: %b", $time, LEDR, select);
 
-        reset = 0;  // Ativa o reset
-        #5 reset = 1;  // Desativa o reset
+        // Inicialização
+        clk = 0;
+        reset = 0;
 
-        // Simula botão pressionado (nível baixo)
-        #10 data_up = 0;
-        #10 data_down = 0;
-        #10 data_left = 0;
-        #10 data_right = 0;
-        #10 data_pin_ab = 0;
-        #10 data_pin_start_c = 0;
+        // Todos os botões em estado não pressionado (ativo baixo)
+        PIN_UP_Z = 1;
+        PIN_DOWN_Y = 1;
+        PIN_LEFT_X = 1;
+        PIN_RIGHT_MODE = 1;
+        PIN_A_B = 1;
+        PIN_START_C = 1;
 
-        // Volta ao estado normal
-        #10 data_up = 1;
-        #10 data_down = 1;
-        #10 data_left = 1;
-        #10 data_right = 1;
-        #10 data_pin_ab = 1;
-        #10 data_pin_start_c = 1;
+        // Libera o reset após alguns ciclos
+        #25 reset = 1;
 
-        #1000 $finish;
+        // Aguarda alguns ciclos para o DUT iniciar
+        #1000;
+
+        // Simulação de sequência de botões pressionados
+        // Pressiona e solta cada botão com tempo suficiente entre os ciclos
+
+        PIN_UP_Z = 0;     #200;  PIN_UP_Z = 1;       // UP
+        PIN_DOWN_Y = 0;   #200;  PIN_DOWN_Y = 1;     // DOWN
+        PIN_LEFT_X = 0;   #200;  PIN_LEFT_X = 1;     // LEFT
+        PIN_RIGHT_MODE = 0; #200; PIN_RIGHT_MODE = 1; // MODE
+        PIN_A_B = 0;      #200;  PIN_A_B = 1;        // A/B
+        PIN_START_C = 0;  #200;  PIN_START_C = 1;    // START/C
+
+        // Aguarda o tempo suficiente para passar por todos os estados (~8000 ciclos)
+        #100000;
+
+        $display("Finalizando simulação...");
+        $stop;
     end
 
 endmodule

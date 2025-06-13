@@ -9,20 +9,66 @@ z2
 !i10f 100
 cModel Technology
 d/home/fontana
+vcontroller_reader
+Z0 !s110 1749689721
+!i10b 1
+!s100 6aD`ehE=:GkP=SJAMJ<0f3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I8?HzIiff1cN9=XBZ[D>N23
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/fontana/dev/ufba/lab-1/sudoku/modelsim
+w1749689707
+8/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v
+F/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v
+!i122 131
+L0 1 118
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1749689721.000000
+!s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vcontroller_reader_tb
+R0
+!i10b 1
+!s100 SneMcg3YC^<ZlDWEK273P0
+R1
+IPR2<=Uc06]kjoXImd8YjR1
+R2
+R3
+w1749689468
+8/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v
+F/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v
+!i122 130
+L0 3 73
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v|
+!i113 1
+R6
+R7
 vuart_tb
 !s110 1749241851
 !i10b 1
 !s100 cOAZN:_Zc1d0z00]ZDO;M2
-Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+R1
 I?z<Kb]C[m2ASZID^OohRa0
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 d/home/fontana/dev/ufba/lab-1/sudoku/modelsim
+R2
+R3
 w1748638940
 8/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tb.v
 F/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tb.v
 !i122 21
 L0 3 19
-Z3 OV;L;2020.1;71
+R4
 r1
 !s85 0
 31
@@ -30,45 +76,45 @@ r1
 !s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tb.v|
 !s90 -reportprogress|300|-work|communicator|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tb.v|
 !i113 1
-Z4 o-work communicator
-Z5 tCvgOpt 0
+Z8 o-work communicator
+R7
 vuart_test_top
-Z6 !s110 1749249547
+Z9 !s110 1749249547
 !i10b 1
 !s100 l6NMC<2^GEDj>h5j_0S`52
-R0
-IE^an=2N41imDEfTK2VR9m0
 R1
+IE^an=2N41imDEfTK2VR9m0
 R2
+R3
 w1749249092
-Z7 8/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v
-Z8 F/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v
+Z10 8/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v
+Z11 F/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v
 !i122 86
 L0 3 41
-R3
+R4
 r1
 !s85 0
 31
-Z9 !s108 1749249547.000000
-Z10 !s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v|
+Z12 !s108 1749249547.000000
+Z13 !s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v|
 !s90 -reportprogress|300|-work|communicator|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v|
 !i113 1
-R4
-R5
+R8
+R7
 vuart_tx
 !s110 1749250174
 !i10b 1
 !s100 hlLzzW=Y=nVM1SkEHjlT12
-R0
-IoI]l[4n=0z4G1OB:Rc;kJ3
 R1
+IoI]l[4n=0z4G1OB:Rc;kJ3
 R2
+R3
 w1749227174
 8/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v
 F/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v
 !i122 103
 L0 1 49
-R3
+R4
 r1
 !s85 0
 31
@@ -76,45 +122,45 @@ r1
 !s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v|
 !s90 -reportprogress|300|-work|communicator|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v|
 !i113 1
-R4
-R5
+R8
+R7
 vuart_tx32
-R6
+R9
 !i10b 1
 !s100 4daFNTbS42njYkAEJFS7Y1
-R0
-IWJ162b5NkK;ULSH@G7iD?3
 R1
+IWJ162b5NkK;ULSH@G7iD?3
 R2
+R3
 w1749249527
 8/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx32.v
 F/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx32.v
 !i122 87
 L0 1 54
-R3
+R4
 r1
 !s85 0
 31
-R9
+R12
 !s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx32.v|
 !s90 -reportprogress|300|-work|communicator|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx32.v|
 !i113 1
-R4
-R5
+R8
+R7
 vuart_tx8
-Z11 !s110 1749250883
+Z14 !s110 1749250883
 !i10b 1
 !s100 :hA1`ocTbRHLWkhH<gmJj2
-R0
-IETekFGW:AlQ<>?L3F=l3P3
 R1
+IETekFGW:AlQ<>?L3F=l3P3
 R2
+R3
 w1749250442
 8/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx8.v
 F/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx8.v
 !i122 114
 L0 1 60
-R3
+R4
 r1
 !s85 0
 31
@@ -122,28 +168,28 @@ r1
 !s107 /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx8.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx8.v|
 !i113 1
-Z12 o-work work
-R5
+R6
+R7
 vuart_tx8_tb
-R11
+R14
 !i10b 1
 !s100 i<28kf4S9dM?[_LX;PA0J2
-R0
-I:zgOI76kFzF_lClYnc9gh1
 R1
+I:zgOI76kFzF_lClYnc9gh1
 R2
+R3
 w1749250860
-R7
-R8
+R10
+R11
 !i122 112
 L0 3 51
-R3
+R4
 r1
 !s85 0
 31
 !s108 1749250882.000000
-R10
+R13
 !s90 -reportprogress|300|-work|work|-stats=none|/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v|
 !i113 1
-R12
-R5
+R6
+R7

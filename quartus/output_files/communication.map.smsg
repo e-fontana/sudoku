@@ -1,0 +1,1 @@
+Info (10281): Verilog HDL Declaration information at design.v(5): object "start" differs only in case from object "START" in the same scope File: /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/design.v Line: 5

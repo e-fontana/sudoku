@@ -1,22 +1,15 @@
 # Compile of design.v failed with 1 errors.
+# Compile of testbench.v failed with 1 errors.
 # Compile of design.v was successful.
+# 3 compiles, 2 failed with 2 errors.
+# Compile of design.v failed with 1 errors.
 # Compile of testbench.v was successful.
+# Compile of design.v was successful.
 # 3 compiles, 1 failed with 1 error.
-# Compile of design.v was successful.
-# Compile of design.v was successful.
+# Compile of design.v failed with 1 errors.
 # Compile of testbench.v was successful.
-# 3 compiles, 0 failed with no errors.
-vsim work.tb_controller_reader
-# vsim work.tb_controller_reader 
-# Start time: 21:03:28 on Jun 06,2025
-# Loading work.tb_controller_reader
-# Loading work.controller_reader
-add wave -position insertpoint sim:/tb_controller_reader/*
-add wave -position insertpoint sim:/tb_controller_reader/uut/*
-run -all
-# ** Note: $finish    : /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v(54)
-#    Time: 1125 ns  Iteration: 0  Instance: /tb_controller_reader
-# 1
-# Break in Module tb_controller_reader at /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v line 54
-# End time: 21:04:56 on Jun 06,2025, Elapsed time: 0:01:28
-# Errors: 0, Warnings: 10
+# Compile of design.v was successful.
+# 3 compiles, 1 failed with 1 error.
+# Compile of testbench.v was successful.
+# Compile of design.v was successful.
+# 2 compiles, 0 failed with no errors.
