@@ -8,7 +8,7 @@ module sudoku(
     input b_button,
     input clk,
     input reset,
-    input [404:0] initial_board,
+    input [404:0] selected_map,
     output reg [404:0] board,
     output cursor_x,
     output cursor_y,
@@ -40,7 +40,7 @@ module sudoku(
     
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            board <= initial_board;
+            board <= selected_map;
             current_state <= INICIAR_JOGO;
             difficulty <= 2'b01;
             cursor_x <= 4'b0100;
@@ -64,17 +64,17 @@ module sudoku(
                     end
                 end
                 CORRENDO_MAPA: begin
-                    if (up_button && cursor_y > 0) begin
-                        cursor_y <= cursor_y - 1;
+                    if (up_button && pos_y > 0) begin
+                        pos_y <= pos_y - 1;
                     end
-                    if (down_button && cursor_y < 8) begin
-                        cursor_y <= cursor_y + 1;
+                    if (down_button && pos_y < 8) begin
+                        pos_y <= pos_y + 1;
                     end
-                    if (left_button && cursor_x > 0) begin
-                        cursor_x <= cursor_x - 1;
+                    if (left_button && pos_x > 0) begin
+                        pos_x <= pos_x - 1;
                     end
-                    if (right_button && cursor_x < 8) begin
-                        cursor_x <= cursor_x + 1;
+                    if (right_button && pos_x < 8) begin
+                        pos_x <= pos_x + 1;
                     end
                     if (a_button && cell_value[4] == 1'b0) begin
                         current_state <= PERCORRER_NUMEROS;
@@ -83,15 +83,14 @@ module sudoku(
                 PERCORRER_NUMEROS: begin
                     if (up_button) begin
                         if (selected_number < 9) selected_number <= selected_number + 1;
-                        else selected_number <= 4'd0;
+                        else selected_number <= 4'd1;
                         error <= 1'b0;
                     end
                     else if (down_button) begin
-                        if (selected_number > 0) selected_number <= selected_number - 1;
+                        if (selected_number > 1) selected_number <= selected_number - 1;
                         else selected_number <= 4'd9;
                         error <= 1'b0;
                     end
-                    
                     if (a_button) begin
                         if (cell_value[3:0] == selected_number) begin
                             board[index +: 5] <= {1'b1, selected_number};
@@ -102,7 +101,6 @@ module sudoku(
                             error <= 1'b1;
                         end
                     end
-
                     if (b_button) begin
                         current_state <= CORRENDO_MAPA;
                     end

@@ -68,7 +68,7 @@ class Sudoku:
                     return False
         return True
 
-    def remove_cells(self, clues=30):
+    def remove_cells(self, clues=27):
         positions = [(i, j) for i in range(9) for j in range(9)]
         random.shuffle(positions)
 

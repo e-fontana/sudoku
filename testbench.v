@@ -33,7 +33,6 @@ module testbench;
         for (integer i = 0; i < 81; i = i + 1) begin
             initial_board = initial_board | (board_scrapping[i] << (i * 5));
         end
-
         
     end
 endmodule

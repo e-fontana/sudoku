@@ -6,5 +6,5 @@ from formatter import Formatter
 # print(*sudoku.solution, sep="\n")
 # print("MAPA")
 # sudoku.print_sudoku()
-Formatter(f"maps.mif")
+Formatter(f"map.v")
 print(f"Arquivo gravado com sucesso!")

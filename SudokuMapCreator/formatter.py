@@ -16,22 +16,25 @@ class Formatter:
     ]
 
     def __init__(self, output_file='saida.mif'):
-        output_file = f"{os.getcwd()}/../maps/{output_file}"
+        output_file = f"{os.getcwd()}/../{output_file}"
         with open(output_file, 'w') as f:
-            # f.write("DEPTH = 81;\n")
-            # f.write("WIDTH = 4;\n")
-            # f.write("ADDRESS_RADIX = DEC;\n")
-            # f.write("DATA_RADIX = BIN;\n")
-            # f.write("CONTENT BEGIN\n")
+            f.write("module map(\n")
+            f.write(f"\toutput reg [404:0] ")
+            for map in range(50):
+                f.write(f"map{map}\n" if map == 19 else f"map{map}, ")
+            f.write(");\n")
 
             index = 0
-            for _ in range(1):
+            for map in range(50):
                 sudoku = Sudoku()
+                f.write(f"\t assign map{map} = 405'b")
                 for i, row in enumerate(sudoku.solution):
                     for j, cell in enumerate(row):
                         MSB = '0' if sudoku.board[i][j] == 0 else '1'
                         bits = self.ENCODER[cell-1]
-                        f.write(f"{MSB}{bits}\n")
+                        f.write(f"{MSB}{bits}")
                         index += 1
+                f.write(";\n")
             
+            f.write("endmodule\n")
             # f.write("END;")
