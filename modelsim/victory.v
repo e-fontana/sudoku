@@ -1,0 +1,87 @@
+module victory(
+    input [404:0] board,
+    output victory_condition
+);
+    assign victory_condition =
+        (board[4] == 1'b1) &&
+        (board[9] == 1'b1) &&
+        (board[14] == 1'b1) &&
+        (board[19] == 1'b1) &&
+        (board[24] == 1'b1) &&
+        (board[29] == 1'b1) &&
+        (board[34] == 1'b1) &&
+        (board[39] == 1'b1) &&
+        (board[44] == 1'b1) &&
+        (board[49] == 1'b1) &&
+        (board[54] == 1'b1) &&
+        (board[59] == 1'b1) &&
+        (board[64] == 1'b1) &&
+        (board[69] == 1'b1) &&
+        (board[74] == 1'b1) &&
+        (board[79] == 1'b1) &&
+        (board[84] == 1'b1) &&
+        (board[89] == 1'b1) &&
+        (board[94] == 1'b1) &&
+        (board[99] == 1'b1) &&
+        (board[104] == 1'b1) &&
+        (board[109] == 1'b1) &&
+        (board[114] == 1'b1) &&
+        (board[119] == 1'b1) &&
+        (board[124] == 1'b1) &&
+        (board[129] == 1'b1) &&
+        (board[134] == 1'b1) &&
+        (board[139] == 1'b1) &&
+        (board[144] == 1'b1) &&
+        (board[149] == 1'b1) &&
+        (board[154] == 1'b1) &&
+        (board[159] == 1'b1) &&
+        (board[164] == 1'b1) &&
+        (board[169] == 1'b1) &&
+        (board[174] == 1'b1) &&
+        (board[179] == 1'b1) &&
+        (board[184] == 1'b1) &&
+        (board[189] == 1'b1) &&
+        (board[194] == 1'b1) &&
+        (board[199] == 1'b1) &&
+        (board[204] == 1'b1) &&
+        (board[209] == 1'b1) &&
+        (board[214] == 1'b1) &&
+        (board[219] == 1'b1) &&
+        (board[224] == 1'b1) &&
+        (board[229] == 1'b1) &&
+        (board[234] == 1'b1) &&
+        (board[239] == 1'b1) &&
+        (board[244] == 1'b1) &&
+        (board[249] == 1'b1) &&
+        (board[254] == 1'b1) &&
+        (board[259] == 1'b1) &&
+        (board[264] == 1'b1) &&
+        (board[269] == 1'b1) &&
+        (board[274] == 1'b1) &&
+        (board[279] == 1'b1) &&
+        (board[284] == 1'b1) &&
+        (board[289] == 1'b1) &&
+        (board[294] == 1'b1) &&
+        (board[299] == 1'b1) &&
+        (board[304] == 1'b1) &&
+        (board[309] == 1'b1) &&
+        (board[314] == 1'b1) &&
+        (board[319] == 1'b1) &&
+        (board[324] == 1'b1) &&
+        (board[329] == 1'b1) &&
+        (board[334] == 1'b1) &&
+        (board[339] == 1'b1) &&
+        (board[344] == 1'b1) &&
+        (board[349] == 1'b1) &&
+        (board[354] == 1'b1) &&
+        (board[359] == 1'b1) &&
+        (board[364] == 1'b1) &&
+        (board[369] == 1'b1) &&
+        (board[374] == 1'b1) &&
+        (board[379] == 1'b1) &&
+        (board[384] == 1'b1) &&
+        (board[389] == 1'b1) &&
+        (board[394] == 1'b1) &&
+        (board[399] == 1'b1) &&
+        (board[404] == 1'b1);
+endmodule
