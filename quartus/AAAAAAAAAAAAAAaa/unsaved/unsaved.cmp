@@ -1,0 +1,18 @@
+	component unsaved is
+		port (
+			clk_clk                        : in  std_logic                     := 'X';             -- clk
+			reset_reset_n                  : in  std_logic                     := 'X';             -- reset_n
+			uart_0_external_connection_rxd : in  std_logic                     := 'X';             -- rxd
+			uart_0_external_connection_txd : out std_logic;                                        -- txd
+			uart_0_irq_irq                 : out std_logic;                                        -- irq
+			uart_0_reset_reset_n           : in  std_logic                     := 'X';             -- reset_n
+			uart_0_s1_address              : in  std_logic_vector(2 downto 0)  := (others => 'X'); -- address
+			uart_0_s1_begintransfer        : in  std_logic                     := 'X';             -- begintransfer
+			uart_0_s1_chipselect           : in  std_logic                     := 'X';             -- chipselect
+			uart_0_s1_read_n               : in  std_logic                     := 'X';             -- read_n
+			uart_0_s1_write_n              : in  std_logic                     := 'X';             -- write_n
+			uart_0_s1_writedata            : in  std_logic_vector(15 downto 0) := (others => 'X'); -- writedata
+			uart_0_s1_readdata             : out std_logic_vector(15 downto 0)                     -- readdata
+		);
+	end component unsaved;
+

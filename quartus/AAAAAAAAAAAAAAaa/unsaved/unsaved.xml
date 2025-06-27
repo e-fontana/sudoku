@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.06.26.14:23:58"
+ outputDirectory="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone IV E"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="EP4CE115F29C8L"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="8L"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface name="uart_0_external_connection" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port
+       name="uart_0_external_connection_rxd"
+       direction="input"
+       role="rxd"
+       width="1" />
+   <port
+       name="uart_0_external_connection_txd"
+       direction="output"
+       role="txd"
+       width="1" />
+  </interface>
+  <interface name="uart_0_irq" kind="interrupt" start="0">
+   <property name="associatedAddressablePoint" value="unsaved.uart_0_s1" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="uart_0_reset" />
+   <property name="bridgedReceiverOffset" value="0" />
+   <property name="bridgesToReceiver" value="" />
+   <property name="irqScheme" value="NONE" />
+   <port name="uart_0_irq_irq" direction="output" role="irq" width="1" />
+  </interface>
+  <interface name="uart_0_reset" kind="reset" start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port
+       name="uart_0_reset_reset_n"
+       direction="input"
+       role="reset_n"
+       width="1" />
+  </interface>
+  <interface name="uart_0_s1" kind="avalon" start="0">
+   <property name="addressAlignment" value="NATIVE" />
+   <property name="addressGroup" value="0" />
+   <property name="addressSpan" value="8" />
+   <property name="addressUnits" value="WORDS" />
+   <property name="alwaysBurstMaxBurst" value="false" />
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="uart_0_reset" />
+   <property name="bitsPerSymbol" value="8" />
+   <property name="bridgedAddressOffset" value="0" />
+   <property name="bridgesToMaster" value="" />
+   <property name="burstOnBurstBoundariesOnly" value="false" />
+   <property name="burstcountUnits" value="WORDS" />
+   <property name="constantBurstBehavior" value="false" />
+   <property name="explicitAddressSpan" value="0" />
+   <property name="holdTime" value="0" />
+   <property name="interleaveBursts" value="false" />
+   <property name="isBigEndian" value="false" />
+   <property name="isFlash" value="false" />
+   <property name="isMemoryDevice" value="false" />
+   <property name="isNonVolatileStorage" value="false" />
+   <property name="linewrapBursts" value="false" />
+   <property name="maximumPendingReadTransactions" value="0" />
+   <property name="maximumPendingWriteTransactions" value="0" />
+   <property name="minimumUninterruptedRunLength" value="1" />
+   <property name="printableDevice" value="true" />
+   <property name="readLatency" value="0" />
+   <property name="readWaitStates" value="1" />
+   <property name="readWaitTime" value="1" />
+   <property name="registerIncomingSignals" value="false" />
+   <property name="registerOutgoingSignals" value="false" />
+   <property name="setupTime" value="0" />
+   <property name="timingUnits" value="Cycles" />
+   <property name="transparentBridge" value="false" />
+   <property name="wellBehavedWaitrequest" value="false" />
+   <property name="writeLatency" value="0" />
+   <property name="writeWaitStates" value="1" />
+   <property name="writeWaitTime" value="1" />
+   <port name="uart_0_s1_address" direction="input" role="address" width="3" />
+   <port
+       name="uart_0_s1_begintransfer"
+       direction="input"
+       role="begintransfer"
+       width="1" />
+   <port
+       name="uart_0_s1_chipselect"
+       direction="input"
+       role="chipselect"
+       width="1" />
+   <port name="uart_0_s1_read_n" direction="input" role="read_n" width="1" />
+   <port name="uart_0_s1_write_n" direction="input" role="write_n" width="1" />
+   <port
+       name="uart_0_s1_writedata"
+       direction="input"
+       role="writedata"
+       width="16" />
+   <port
+       name="uart_0_s1_readdata"
+       direction="output"
+       role="readdata"
+       width="16" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="unsaved:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C8L,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8L,AUTO_GENERATION_ID=1750958638,AUTO_UNIQUE_ID=(clock_source:24.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(altera_avalon_uart:24.1:baud=115200,baudError=0.01,clockRate=50000000,dataBits=8,fixedBaud=true,parity=NONE,parityFisrtChar=N,simCharStream=,simInteractiveInputEnable=false,simInteractiveOutputEnable=false,simTrueBaud=false,stopBits=1,syncRegDepth=2,useCtsRts=false,useEopRegister=false,useRelativePathForSimFile=false)(clock:24.1:)"
+   instancePathKey="unsaved"
+   kind="unsaved"
+   version="1.0"
+   name="unsaved">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1750958638" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C8L" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8L" />
+  <generatedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/synthesis/unsaved.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/synthesis/submodules/unsaved_uart_0.v"
+       type="VERILOG"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/sopc_builder_ip/altera_avalon_uart/altera_avalon_uart_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="unsaved">queue size: 0 starting:unsaved "unsaved"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>1</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="unsaved"><![CDATA["<b>unsaved</b>" reuses <b>altera_avalon_uart</b> "<b>submodules/unsaved_uart_0</b>"]]></message>
+   <message level="Debug" culprit="unsaved">queue size: 0 starting:altera_avalon_uart "submodules/unsaved_uart_0"</message>
+   <message level="Info" culprit="uart_0">Starting RTL generation for module 'unsaved_uart_0'</message>
+   <message level="Info" culprit="uart_0">  Generation command is [exec /opt/intelFPGA/24.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA/24.1/quartus/linux64/perl/lib -I /opt/intelFPGA/24.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA/24.1/quartus/sopc_builder/bin -I /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=unsaved_uart_0 --dir=/tmp/alt0265_2144620298239114800.dir/0006_uart_0_gen/ --quartus_dir=/opt/intelFPGA/24.1/quartus --verilog --config=/tmp/alt0265_2144620298239114800.dir/0006_uart_0_gen//unsaved_uart_0_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="uart_0">Done RTL generation for module 'unsaved_uart_0'</message>
+   <message level="Info" culprit="uart_0"><![CDATA["<b>unsaved</b>" instantiated <b>altera_avalon_uart</b> "<b>uart_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_avalon_uart:24.1:baud=115200,baudError=0.01,clockRate=50000000,dataBits=8,fixedBaud=true,parity=NONE,parityFisrtChar=N,simCharStream=,simInteractiveInputEnable=false,simInteractiveOutputEnable=false,simTrueBaud=false,stopBits=1,syncRegDepth=2,useCtsRts=false,useEopRegister=false,useRelativePathForSimFile=false"
+   instancePathKey="unsaved:.:uart_0"
+   kind="altera_avalon_uart"
+   version="24.1"
+   name="unsaved_uart_0">
+  <parameter name="baud" value="115200" />
+  <parameter name="simInteractiveInputEnable" value="false" />
+  <parameter name="useRelativePathForSimFile" value="false" />
+  <parameter name="stopBits" value="1" />
+  <parameter name="parityFisrtChar" value="N" />
+  <parameter name="parity" value="NONE" />
+  <parameter name="useCtsRts" value="false" />
+  <parameter name="fixedBaud" value="true" />
+  <parameter name="dataBits" value="8" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="simTrueBaud" value="false" />
+  <parameter name="useEopRegister" value="false" />
+  <parameter name="simInteractiveOutputEnable" value="false" />
+  <parameter name="syncRegDepth" value="2" />
+  <parameter name="simCharStream" value="" />
+  <parameter name="baudError" value="0.01" />
+  <generatedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/synthesis/submodules/unsaved_uart_0.v"
+       type="VERILOG"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/sopc_builder_ip/altera_avalon_uart/altera_avalon_uart_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="unsaved" as="uart_0" />
+  <messages>
+   <message level="Debug" culprit="unsaved">queue size: 0 starting:altera_avalon_uart "submodules/unsaved_uart_0"</message>
+   <message level="Info" culprit="uart_0">Starting RTL generation for module 'unsaved_uart_0'</message>
+   <message level="Info" culprit="uart_0">  Generation command is [exec /opt/intelFPGA/24.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA/24.1/quartus/linux64/perl/lib -I /opt/intelFPGA/24.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA/24.1/quartus/sopc_builder/bin -I /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=unsaved_uart_0 --dir=/tmp/alt0265_2144620298239114800.dir/0006_uart_0_gen/ --quartus_dir=/opt/intelFPGA/24.1/quartus --verilog --config=/tmp/alt0265_2144620298239114800.dir/0006_uart_0_gen//unsaved_uart_0_component_configuration.pl  --do_build_sim=0  ]</message>
+   <message level="Info" culprit="uart_0">Done RTL generation for module 'unsaved_uart_0'</message>
+   <message level="Info" culprit="uart_0"><![CDATA["<b>unsaved</b>" instantiated <b>altera_avalon_uart</b> "<b>uart_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

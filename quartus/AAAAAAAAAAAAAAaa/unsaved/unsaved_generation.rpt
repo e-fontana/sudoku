@@ -1,0 +1,75 @@
+Info: Starting: Create simulation model
+Info: qsys-generate /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation --family="Cyclone IV E" --part=EP4CE115F29C8L
+Progress: Loading AAAAAAAAAAAAAAaa/unsaved.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 24.1]
+Progress: Parameterizing module clk_0
+Progress: Adding uart_0 [altera_avalon_uart 24.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: unsaved: Generating "unsaved" for SIM_VERILOG
+Info: uart_0: Starting RTL generation for module 'unsaved_uart_0'
+Info: uart_0:   Generation command is [exec /opt/intelFPGA/24.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA/24.1/quartus/linux64/perl/lib -I /opt/intelFPGA/24.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA/24.1/quartus/sopc_builder/bin -I /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=unsaved_uart_0 --dir=/tmp/alt0265_2144620298239114800.dir/0004_uart_0_gen/ --quartus_dir=/opt/intelFPGA/24.1/quartus --verilog --config=/tmp/alt0265_2144620298239114800.dir/0004_uart_0_gen//unsaved_uart_0_component_configuration.pl  --do_build_sim=1    --sim_dir=/tmp/alt0265_2144620298239114800.dir/0004_uart_0_gen/  ]
+Info: uart_0: Done RTL generation for module 'unsaved_uart_0'
+Info: uart_0: "unsaved" instantiated altera_avalon_uart "uart_0"
+Info: unsaved: Done "unsaved" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/unsaved.spd --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/unsaved.spd --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for XCELIUM simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation/ directory:
+Info: 	xcelium/cds.lib
+Info: 	xcelium/hdl.var
+Info: 	xcelium/xcelium_setup.sh
+Info: 	1 .cds.lib files in xcelium/cds_libs/ directory
+Info: Generating the following file(s) for MODELSIM simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCSMX simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for VCS simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for RIVIERA simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved.qsys --block-symbol-file --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved --family="Cyclone IV E" --part=EP4CE115F29C8L
+Progress: Loading AAAAAAAAAAAAAAaa/unsaved.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 24.1]
+Progress: Parameterizing module clk_0
+Progress: Adding uart_0 [altera_avalon_uart 24.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved.qsys --synthesis=VERILOG --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/unsaved/synthesis --family="Cyclone IV E" --part=EP4CE115F29C8L
+Progress: Loading AAAAAAAAAAAAAAaa/unsaved.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 24.1]
+Progress: Parameterizing module clk_0
+Progress: Adding uart_0 [altera_avalon_uart 24.1]
+Progress: Parameterizing module uart_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: unsaved: Generating "unsaved" for QUARTUS_SYNTH
+Info: uart_0: Starting RTL generation for module 'unsaved_uart_0'
+Info: uart_0:   Generation command is [exec /opt/intelFPGA/24.1/quartus/linux64/perl/bin/perl -I /opt/intelFPGA/24.1/quartus/linux64/perl/lib -I /opt/intelFPGA/24.1/quartus/sopc_builder/bin/europa -I /opt/intelFPGA/24.1/quartus/sopc_builder/bin -I /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/common -I /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart -- /opt/intelFPGA/24.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_uart/generate_rtl.pl --name=unsaved_uart_0 --dir=/tmp/alt0265_2144620298239114800.dir/0006_uart_0_gen/ --quartus_dir=/opt/intelFPGA/24.1/quartus --verilog --config=/tmp/alt0265_2144620298239114800.dir/0006_uart_0_gen//unsaved_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: uart_0: Done RTL generation for module 'unsaved_uart_0'
+Info: uart_0: "unsaved" instantiated altera_avalon_uart "uart_0"
+Info: unsaved: Done "unsaved" with 2 modules, 2 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

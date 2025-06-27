@@ -1,15 +1,3 @@
-# Compile of design.v failed with 1 errors.
-# Compile of testbench.v failed with 1 errors.
-# Compile of design.v was successful.
-# 3 compiles, 2 failed with 2 errors.
-# Compile of design.v failed with 1 errors.
+# Compile of test.v was successful.
 # Compile of testbench.v was successful.
-# Compile of design.v was successful.
-# 3 compiles, 1 failed with 1 error.
-# Compile of design.v failed with 1 errors.
-# Compile of testbench.v was successful.
-# Compile of design.v was successful.
-# 3 compiles, 1 failed with 1 error.
-# Compile of testbench.v was successful.
-# Compile of design.v was successful.
 # 2 compiles, 0 failed with no errors.

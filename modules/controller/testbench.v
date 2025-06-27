@@ -3,8 +3,8 @@
 module controller_reader_tb;
 
     // Sinais de entrada
-    reg clk = 0;
-    reg reset;
+    reg clock = 0;
+    reg reset = 1;
     reg PIN_UP_Z;
     reg PIN_DOWN_Y;
     reg PIN_LEFT_X;
@@ -12,13 +12,13 @@ module controller_reader_tb;
     reg PIN_A_B;
     reg PIN_START_C;
 
-    // Sinais de saída
+    // Sinais de saida
     wire select;
     wire [11:0] LEDR;
 
-    // Instância do módulo sendo testado
+    // Instancia do modulo sendo testado
     controller_reader uut (
-        .clk(clk),
+        .clock(clock),
         .reset(reset),
         .PIN_UP_Z(PIN_UP_Z),
         .PIN_DOWN_Y(PIN_DOWN_Y),
@@ -30,18 +30,18 @@ module controller_reader_tb;
         .LEDR(LEDR)
     );
 
-    // Geração do clock (20ns período => 50MHz)
-    always #10 clk = ~clk;
+    // Geracao do clock (20ns periodo => 50MHz)
+    always #10 clock = ~clock;
 
     initial begin
-        $display("Iniciando simulação...");
+        $display("Iniciando simula??o...");
         $monitor("Tempo: %dns | LEDR: %b | select: %b", $time, LEDR, select);
 
-        // Inicialização
-        clk = 0;
+        // Inicializacao
+        clock = 0;
         reset = 0;
 
-        // Todos os botões em estado não pressionado (ativo baixo)
+        // Todos os botoes em estado nao pressionado (ativo baixo)
         PIN_UP_Z = 1;
         PIN_DOWN_Y = 1;
         PIN_LEFT_X = 1;
@@ -49,27 +49,28 @@ module controller_reader_tb;
         PIN_A_B = 1;
         PIN_START_C = 1;
 
-        // Libera o reset após alguns ciclos
-        #25 reset = 1;
+        // Libera o reset apos alguns ciclos
+        #500 reset = 1;
 
         // Aguarda alguns ciclos para o DUT iniciar
-        #1000;
+        #20000;
 
-        // Simulação de sequência de botões pressionados
-        // Pressiona e solta cada botão com tempo suficiente entre os ciclos
+        // Simulacao de sequencia de botoes pressionados
+        // Pressiona e solta cada botao com tempo suficiente entre os ciclos
 
-        PIN_UP_Z = 0;     #200;  PIN_UP_Z = 1;       // UP
-        PIN_DOWN_Y = 0;   #200;  PIN_DOWN_Y = 1;     // DOWN
-        PIN_LEFT_X = 0;   #200;  PIN_LEFT_X = 1;     // LEFT
-        PIN_RIGHT_MODE = 0; #200; PIN_RIGHT_MODE = 1; // MODE
-        PIN_A_B = 0;      #200;  PIN_A_B = 1;        // A/B
-        PIN_START_C = 0;  #200;  PIN_START_C = 1;    // START/C
+	    PIN_UP_Z = 0;     #160000;  PIN_UP_Z = 1;       // UP
+        PIN_DOWN_Y = 0;   #160000;  PIN_DOWN_Y = 1;     // DOWN
+        PIN_LEFT_X = 0;   #160000;  PIN_LEFT_X = 1;     // LEFT
+        PIN_RIGHT_MODE = 0; #160000; PIN_RIGHT_MODE = 1; // MODE
+        PIN_A_B = 0;      #160000;  PIN_A_B = 1;        // A/B
+        PIN_START_C = 0;  #160000;  PIN_START_C = 1;    // START/C
 
         // Aguarda o tempo suficiente para passar por todos os estados (~8000 ciclos)
-        #100000;
+        #2000000;
 
-        $display("Finalizando simulação...");
+        $display("Finalizando simulacao...");
         $stop;
     end
 
 endmodule
+

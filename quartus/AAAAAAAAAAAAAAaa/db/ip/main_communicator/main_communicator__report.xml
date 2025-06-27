@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.06.27.19:03:36"
+ outputDirectory="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone IV E"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="EP4CE115F29C8L"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="8L"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_BRIDGE_0_IN_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_BRIDGE_0_IN_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLOCK_BRIDGE_0_IN_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clock_bridge_0_in_clk" kind="clock" start="0">
+   <property name="clockRate" value="0" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port
+       name="clock_bridge_0_in_clk_clk"
+       direction="input"
+       role="clk"
+       width="1" />
+  </interface>
+  <interface
+     name="rs232_0_avalon_data_receive_source"
+     kind="avalon_streaming"
+     start="1">
+   <property name="associatedClock" value="clock_bridge_0_in_clk" />
+   <property name="associatedReset" value="rs232_0_reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port
+       name="rs232_0_from_uart_ready"
+       direction="input"
+       role="ready"
+       width="1" />
+   <port
+       name="rs232_0_from_uart_data"
+       direction="output"
+       role="data"
+       width="8" />
+   <port
+       name="rs232_0_from_uart_error"
+       direction="output"
+       role="error"
+       width="1" />
+   <port
+       name="rs232_0_from_uart_valid"
+       direction="output"
+       role="valid"
+       width="1" />
+  </interface>
+  <interface
+     name="rs232_0_avalon_data_transmit_sink"
+     kind="avalon_streaming"
+     start="0">
+   <property name="associatedClock" value="clock_bridge_0_in_clk" />
+   <property name="associatedReset" value="rs232_0_reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="rs232_0_to_uart_data" direction="input" role="data" width="8" />
+   <port name="rs232_0_to_uart_error" direction="input" role="error" width="1" />
+   <port name="rs232_0_to_uart_valid" direction="input" role="valid" width="1" />
+   <port
+       name="rs232_0_to_uart_ready"
+       direction="output"
+       role="ready"
+       width="1" />
+  </interface>
+  <interface name="rs232_0_external_interface" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="rs232_0_UART_RXD" direction="input" role="RXD" width="1" />
+   <port name="rs232_0_UART_TXD" direction="output" role="TXD" width="1" />
+  </interface>
+  <interface name="rs232_0_reset" kind="reset" start="0">
+   <property name="associatedClock" value="clock_bridge_0_in_clk" />
+   <property name="synchronousEdges" value="DEASSERT" />
+   <port name="rs232_0_reset" direction="input" role="reset" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="main_communicator:1.0:AUTO_CLOCK_BRIDGE_0_IN_CLK_CLOCK_DOMAIN=-1,AUTO_CLOCK_BRIDGE_0_IN_CLK_CLOCK_RATE=-1,AUTO_CLOCK_BRIDGE_0_IN_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C7,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=7,AUTO_GENERATION_ID=1751061815,AUTO_UNIQUE_ID=(altera_clock_bridge:24.1:DERIVED_CLOCK_RATE=0,EXPLICIT_CLOCK_RATE=50000000,NUM_CLOCK_OUTPUTS=1)(altera_up_avalon_rs232:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone IV E,avalon_bus_type=Streaming,baud=115200,data_bits=8,parity=None,ref_clk_freq=5.0E7,stop_bits=1)(clock:24.1:)"
+   instancePathKey="main_communicator"
+   kind="main_communicator"
+   version="1.0"
+   name="main_communicator">
+  <parameter name="AUTO_CLOCK_BRIDGE_0_IN_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_CLOCK_BRIDGE_0_IN_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1751061815" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C7" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_CLOCK_BRIDGE_0_IN_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="7" />
+  <generatedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/main_communicator.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/altera_up_rs232_counters.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/altera_up_rs232_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/altera_up_rs232_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/main_communicator_rs232_0.v"
+       type="VERILOG" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/altera_up_avalon_rs232_hw.tcl" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_counters.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_in_deserializer.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_out_serializer.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_sync_fifo.v" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="main_communicator">queue size: 0 starting:main_communicator "main_communicator"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>1</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Debug" culprit="main_communicator"><![CDATA["<b>main_communicator</b>" reuses <b>altera_up_avalon_rs232</b> "<b>submodules/main_communicator_rs232_0</b>"]]></message>
+   <message level="Debug" culprit="main_communicator">queue size: 0 starting:altera_up_avalon_rs232 "submodules/main_communicator_rs232_0"</message>
+   <message level="Info" culprit="rs232_0">Starting Generation of RS232 UART</message>
+   <message level="Info" culprit="rs232_0"><![CDATA["<b>main_communicator</b>" instantiated <b>altera_up_avalon_rs232</b> "<b>rs232_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_rs232:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone IV E,avalon_bus_type=Streaming,baud=115200,data_bits=8,parity=None,ref_clk_freq=5.0E7,stop_bits=1"
+   instancePathKey="main_communicator:.:rs232_0"
+   kind="altera_up_avalon_rs232"
+   version="17.1"
+   name="main_communicator_rs232_0">
+  <parameter name="baud" value="115200" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="stop_bits" value="1" />
+  <parameter name="ref_clk_freq" value="5.0E7" />
+  <parameter name="avalon_bus_type" value="Streaming" />
+  <parameter name="data_bits" value="8" />
+  <parameter name="parity" value="None" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <generatedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/altera_up_rs232_counters.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/altera_up_rs232_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/altera_up_rs232_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/db/ip/main_communicator/submodules/main_communicator_rs232_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/altera_up_avalon_rs232_hw.tcl" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_counters.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_in_deserializer.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_out_serializer.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_sync_fifo.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="main_communicator" as="rs232_0" />
+  <messages>
+   <message level="Debug" culprit="main_communicator">queue size: 0 starting:altera_up_avalon_rs232 "submodules/main_communicator_rs232_0"</message>
+   <message level="Info" culprit="rs232_0">Starting Generation of RS232 UART</message>
+   <message level="Info" culprit="rs232_0"><![CDATA["<b>main_communicator</b>" instantiated <b>altera_up_avalon_rs232</b> "<b>rs232_0</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>

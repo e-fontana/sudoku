@@ -1,8 +1,22 @@
-/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v {1 {vlog -work work -stats=none /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v
+/home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/design.v {1 {vlog -work work -stats=none /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/design.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module controller_reader_tb
+-- Compiling module uart_tx8
 
 Top level modules:
-	controller_reader_tb
+	uart_tx8
+
+} {} {}} /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v {1 {vlog -work work -stats=none /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module uart_tx
+
+Top level modules:
+	uart_tx
+
+} {} {}} /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v {1 {vlog -work work -stats=none /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_test_top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module uart_tx8_tb
+
+Top level modules:
+	uart_tx8_tb
 
 } {} {}}

@@ -1,19 +1,33 @@
 module controller_top (
-    input wire CLOCK_50,
+    input wire clock,
     input wire reset,
-    output wire [11:0] LEDR,
-    inout wire [35:0] GPIO
+    output reg flag
 );
+    localparam CLOCK_COUNTER = 32'd50000000;
+    localparam FLAG_COUNTER = 16'd2000;
+
+    reg [31:0] counter = 0;
+
+    always @(posedge clock) begin
+        if (reset) begin
+            counter <= 0;
+            flag <= 0;
+        end
+        else begin
+            counter <= counter + 1;
+            if (counter > 10 && counter < 20) begin
+                flag <= 1;
+            end
+            else flag <= 0;
+            if (counter >= CLOCK_COUNTER) begin
+                counter <= 0;
+            end
+        end
+    end
+
     controller_reader controller (
-        .clk(CLOCK_50),
-        .LEDR(LEDR),
+        .clock(clock),
         .reset(reset),
-        .select(GPIO[29]),
-        .PIN_UP_Z(GPIO[35]),
-        .PIN_DOWN_Y(GPIO[31]),
-        .PIN_LEFT_X(GPIO[27]),
-        .PIN_RIGHT_MODE(GPIO[25]),
-        .PIN_A_B(GPIO[33]),
-        .PIN_START_C(GPIO[23]),
+        .flag(flag),
     );
 endmodule

@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="54d3c9f0ff3d509abeb3"/>
+  </project>
+  <file_info>
+    <file device="EP4CE115F29C7" path="AAAAAAAAAA.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="main_communicator:inst8" name="inst8">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME main_communicator HAS_SOPCINFO 1 GENERATION_ID 1751061815"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>

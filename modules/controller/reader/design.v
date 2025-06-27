@@ -1,5 +1,5 @@
 module controller_reader(
-    input clk,
+    input clock,
     input reset,
     input PIN_UP_Z,      
     input PIN_DOWN_Y,      
@@ -20,7 +20,7 @@ module controller_reader(
     localparam STATE_SIX    = 4'd7;
     localparam STATE_SEVEN  = 4'd8;
 
-    reg up, down, left, right, a, b, c, output_x, y, output_z, start, mode = 1'b0;
+    reg up= 1'b0, down= 1'b0, left= 1'b0, right= 1'b0, a= 1'b0, b= 1'b0, c= 1'b0, output_x= 1'b0, y= 1'b0, output_z= 1'b0, start= 1'b0, mode = 1'b0;
 
     reg flag = 1'b1;
     reg [3:0] state = STATE_IDLE;
@@ -28,7 +28,7 @@ module controller_reader(
 
     assign LEDR = {up, down, left, right, a, b, c, output_x, y, output_z, start, mode};
 
-    always @(posedge clk or negedge reset) begin
+    always @(posedge clock or negedge reset) begin
         if (!reset) begin
             select <= 1'b1;
             counter <= 12'd0;
@@ -41,7 +41,6 @@ module controller_reader(
                     select <= 1'b1;
 
                     if (flag) state <= STATE_ZERO;
-                    
                 end
                 STATE_ZERO: begin
                     select <= 1'b1;
@@ -61,7 +60,7 @@ module controller_reader(
                     select <= 1'b1;
                     counter <= counter + 12'd1;
                     
-                    up <= ~PIN_UP_Z;
+                    up <= PIN_UP_Z;
                     down <= ~PIN_DOWN_Y;
                     left <= ~PIN_LEFT_X;
                     right <= ~PIN_RIGHT_MODE;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for communication
-Wed Jun 11 21:38:18 2025
+Fri Jun 13 19:51:28 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -52,15 +52,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jun 11 21:38:18 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jun 13 19:51:28 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; communication                                   ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 43                                              ;
-;     Total combinational functions  ; 38                                              ;
-;     Dedicated logic registers      ; 27                                              ;
-; Total registers                    ; 27                                              ;
+; Total logic elements               ; 147                                             ;
+;     Total combinational functions  ; 136                                             ;
+;     Dedicated logic registers      ; 77                                              ;
+; Total registers                    ; 77                                              ;
 ; Total pins                         ; 52                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -190,20 +190,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 43             ;
+; Estimated Total logic elements              ; 147            ;
 ;                                             ;                ;
-; Total combinational functions               ; 38             ;
+; Total combinational functions               ; 136            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 10             ;
-;     -- 3 input functions                    ; 3              ;
-;     -- <=2 input functions                  ; 25             ;
+;     -- 4 input functions                    ; 75             ;
+;     -- 3 input functions                    ; 1              ;
+;     -- <=2 input functions                  ; 60             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 27             ;
-;     -- arithmetic mode                      ; 11             ;
+;     -- normal mode                          ; 94             ;
+;     -- arithmetic mode                      ; 42             ;
 ;                                             ;                ;
-; Total registers                             ; 27             ;
-;     -- Dedicated logic registers            ; 27             ;
+; Total registers                             ; 77             ;
+;     -- Dedicated logic registers            ; 77             ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 52             ;
@@ -211,9 +211,9 @@ on the Quartus Prime software download page.
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 27             ;
-; Total fan-out                               ; 278            ;
-; Average fan-out                             ; 1.36           ;
+; Maximum fan-out                             ; 77             ;
+; Total fan-out                               ; 720            ;
+; Average fan-out                             ; 2.04           ;
 +---------------------------------------------+----------------+
 
 
@@ -222,9 +222,9 @@ on the Quartus Prime software download page.
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-------------------+--------------+
 ; Compilation Hierarchy Node           ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                         ; Entity Name       ; Library Name ;
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-------------------+--------------+
-; |top                                 ; 38 (0)              ; 27 (0)                    ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |top                                                        ; top               ; work         ;
-;    |controller_top:controller|       ; 38 (0)              ; 27 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller_top:controller                              ; controller_top    ; work         ;
-;       |controller_reader:controller| ; 38 (38)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller_top:controller|controller_reader:controller ; controller_reader ; work         ;
+; |top                                 ; 136 (0)             ; 77 (0)                    ; 0           ; 0            ; 0       ; 0         ; 52   ; 0            ; |top                                                        ; top               ; work         ;
+;    |controller_top:controller|       ; 136 (76)            ; 77 (33)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller_top:controller                              ; controller_top    ; work         ;
+;       |controller_reader:controller| ; 60 (60)             ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller_top:controller|controller_reader:controller ; controller_reader ; work         ;
 +--------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------+-------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -259,44 +259,34 @@ Encoding Type:  One-Hot
 +-------------------+-----------------+------------------+------------------+-------------------+-----------------+-----------------+------------------+------------------+-------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                             ;
-+--------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-; Register name                                                            ; Reason for Removal                                                                  ;
-+--------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-; uart_tx8:uart|uart_tx:uart|sending                                       ; Merged with uart_tx8:uart|uart_tx:uart|busy                                         ;
-; uart_tx8:uart|sending                                                    ; Stuck at GND due to stuck port data_in                                              ;
-; uart_tx8:uart|byte_start                                                 ; Stuck at GND due to stuck port data_in                                              ;
-; uart_tx8:uart|uart_tx:uart|busy                                          ; Stuck at GND due to stuck port clock_enable                                         ;
-; uart_tx8:uart|state.START                                                ; Lost fanout                                                                         ;
-; controller_top:controller|controller_reader:controller|state~11          ; Lost fanout                                                                         ;
-; controller_top:controller|controller_reader:controller|state~12          ; Lost fanout                                                                         ;
-; controller_top:controller|controller_reader:controller|state~13          ; Lost fanout                                                                         ;
-; uart_tx8:uart|state.IDLE                                                 ; Stuck at GND due to stuck port data_in                                              ;
-; uart_tx8:uart|state.WAIT                                                 ; Lost fanout                                                                         ;
-; controller_top:controller|controller_reader:controller|state.STATE_SEVEN ; Merged with controller_top:controller|controller_reader:controller|state.STATE_FIVE ;
-; controller_top:controller|controller_reader:controller|state.STATE_SIX   ; Merged with controller_top:controller|controller_reader:controller|state.STATE_FIVE ;
-; controller_top:controller|controller_reader:controller|state.STATE_FIVE  ; Stuck at GND due to stuck port data_in                                              ;
-; controller_top:controller|controller_reader:controller|mode              ; Stuck at GND due to stuck port clock_enable                                         ;
-; controller_top:controller|controller_reader:controller|output_z          ; Stuck at GND due to stuck port clock_enable                                         ;
-; controller_top:controller|controller_reader:controller|y                 ; Stuck at GND due to stuck port clock_enable                                         ;
-; controller_top:controller|controller_reader:controller|output_x          ; Stuck at GND due to stuck port clock_enable                                         ;
-; Total Number of Removed Registers = 17                                   ;                                                                                     ;
-+--------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                               ;
++--------------------------------------------------------------------+---------------------------------------------+
+; Register name                                                      ; Reason for Removal                          ;
++--------------------------------------------------------------------+---------------------------------------------+
+; controller_top:controller|controller_reader:controller|led_reg[11] ; Stuck at GND due to stuck port data_in      ;
+; uart_tx8:uart|uart_tx:uart|sending                                 ; Merged with uart_tx8:uart|uart_tx:uart|busy ;
+; uart_tx8:uart|sending                                              ; Stuck at GND due to stuck port data_in      ;
+; uart_tx8:uart|byte_start                                           ; Stuck at GND due to stuck port data_in      ;
+; uart_tx8:uart|uart_tx:uart|busy                                    ; Stuck at GND due to stuck port clock_enable ;
+; uart_tx8:uart|state.START                                          ; Lost fanout                                 ;
+; controller_top:controller|controller_reader:controller|state~13    ; Lost fanout                                 ;
+; controller_top:controller|controller_reader:controller|state~14    ; Lost fanout                                 ;
+; controller_top:controller|controller_reader:controller|state~15    ; Lost fanout                                 ;
+; uart_tx8:uart|state.IDLE                                           ; Stuck at GND due to stuck port data_in      ;
+; uart_tx8:uart|state.WAIT                                           ; Lost fanout                                 ;
+; Total Number of Removed Registers = 11                             ;                                             ;
++--------------------------------------------------------------------+---------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                            ;
-+-------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
-; Register name                                                           ; Reason for Removal        ; Registers Removed due to This Register                           ;
-+-------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
-; controller_top:controller|controller_reader:controller|state.STATE_FIVE ; Stuck at GND              ; controller_top:controller|controller_reader:controller|mode,     ;
-;                                                                         ; due to stuck port data_in ; controller_top:controller|controller_reader:controller|output_z, ;
-;                                                                         ;                           ; controller_top:controller|controller_reader:controller|y,        ;
-;                                                                         ;                           ; controller_top:controller|controller_reader:controller|output_x  ;
-; uart_tx8:uart|byte_start                                                ; Stuck at GND              ; uart_tx8:uart|uart_tx:uart|busy                                  ;
-;                                                                         ; due to stuck port data_in ;                                                                  ;
-+-------------------------------------------------------------------------+---------------------------+------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                   ;
++--------------------------+---------------------------+----------------------------------------+
+; Register name            ; Reason for Removal        ; Registers Removed due to This Register ;
++--------------------------+---------------------------+----------------------------------------+
+; uart_tx8:uart|byte_start ; Stuck at GND              ; uart_tx8:uart|uart_tx:uart|busy        ;
+;                          ; due to stuck port data_in ;                                        ;
++--------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -304,12 +294,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 27    ;
+; Total registers                              ; 77    ;
 ; Number of registers using Synchronous Clear  ; 12    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 13    ;
+; Number of registers using Asynchronous Clear ; 22    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 13    ;
+; Number of registers using Clock Enable       ; 22    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -324,13 +314,14 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
-; 11:1               ; 9 bits    ; 63 LEs        ; 36 LEs               ; 27 LEs                 ; No         ; |top|controller_top:controller|controller_reader:controller|state.STATE_IDLE ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|controller_top:controller|counter[21]                             ;
+; 18:1               ; 9 bits    ; 108 LEs       ; 54 LEs               ; 54 LEs                 ; No         ; |top|controller_top:controller|controller_reader:controller|Selector19 ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------+
 
 
 +-------------------------------------------------------------------------+
@@ -359,24 +350,24 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 52                          ;
-; cycloneiii_ff         ; 27                          ;
-;     CLR               ; 1                           ;
+; cycloneiii_ff         ; 77                          ;
+;     CLR               ; 10                          ;
 ;     CLR SCLR          ; 12                          ;
-;     ENA               ; 13                          ;
-;     plain             ; 1                           ;
+;     ENA               ; 22                          ;
+;     plain             ; 33                          ;
 ; cycloneiii_io_obuf    ; 36                          ;
-; cycloneiii_lcell_comb ; 40                          ;
-;     arith             ; 11                          ;
-;         2 data inputs ; 11                          ;
-;     normal            ; 29                          ;
+; cycloneiii_lcell_comb ; 138                         ;
+;     arith             ; 42                          ;
+;         2 data inputs ; 42                          ;
+;     normal            ; 96                          ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 9                           ;
+;         1 data inputs ; 13                          ;
 ;         2 data inputs ; 5                           ;
-;         3 data inputs ; 3                           ;
-;         4 data inputs ; 10                          ;
+;         3 data inputs ; 1                           ;
+;         4 data inputs ; 75                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 1.65                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 3.16                        ;
 +-----------------------+-----------------------------+
 
 
@@ -395,7 +386,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Jun 11 21:38:14 2025
+    Info: Processing started: Fri Jun 13 19:51:23 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off communication -c communication
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -403,93 +394,86 @@ Info (12021): Found 1 design units, including 1 entities, in source file /home/f
     Info (12023): Found entity 1: uart_tx8 File: /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/design.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v
     Info (12023): Found entity 1: uart_tx File: /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v Line: 1
+Warning (10229): Verilog HDL Expression warning at design.v(92): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 92
+Warning (10229): Verilog HDL Expression warning at design.v(98): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 98
+Warning (10229): Verilog HDL Expression warning at design.v(109): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 109
+Warning (10229): Verilog HDL Expression warning at design.v(115): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 115
 Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v
     Info (12023): Found entity 1: controller_reader File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 1
-Warning (10275): Verilog HDL Module Instantiation warning at design.v(18): ignored dangling comma in List of Port Connections File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v Line: 18
 Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v
     Info (12023): Found entity 1: controller_top File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/design.v
     Info (12023): Found entity 1: top File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at design.v(29): object "uart_busy" assigned a value but never read File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 29
-Info (12128): Elaborating entity "controller_top" for hierarchy "controller_top:controller" File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 23
-Info (12128): Elaborating entity "controller_reader" for hierarchy "controller_top:controller|controller_reader:controller" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v Line: 18
-Warning (10230): Verilog HDL assignment warning at design.v(47): truncated value with size 32 to match size of target (12) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 47
-Warning (10230): Verilog HDL assignment warning at design.v(53): truncated value with size 32 to match size of target (12) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 53
-Warning (10230): Verilog HDL assignment warning at design.v(61): truncated value with size 32 to match size of target (12) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 61
-Warning (10230): Verilog HDL assignment warning at design.v(73): truncated value with size 32 to match size of target (12) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 73
-Warning (10230): Verilog HDL assignment warning at design.v(79): truncated value with size 32 to match size of target (12) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 79
-Warning (10230): Verilog HDL assignment warning at design.v(88): truncated value with size 32 to match size of target (12) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 88
-Warning (10230): Verilog HDL assignment warning at design.v(94): truncated value with size 32 to match size of target (12) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 94
-Warning (10230): Verilog HDL assignment warning at design.v(105): truncated value with size 32 to match size of target (12) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 105
-Info (12128): Elaborating entity "uart_tx8" for hierarchy "uart_tx8:uart" File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 38
+Warning (10036): Verilog HDL or VHDL warning at design.v(28): object "uart_busy" assigned a value but never read File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 28
+Info (12128): Elaborating entity "controller_top" for hierarchy "controller_top:controller" File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 22
+Info (12128): Elaborating entity "controller_reader" for hierarchy "controller_top:controller|controller_reader:controller" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v Line: 36
+Warning (10036): Verilog HDL or VHDL warning at design.v(24): object "mode" assigned a value but never read File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 24
+Info (12128): Elaborating entity "uart_tx8" for hierarchy "uart_tx8:uart" File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 37
 Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx8:uart|uart_tx:uart" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/design.v Line: 20
 Warning (10230): Verilog HDL assignment warning at uart_tx.v(45): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v Line: 45
 Warning (10240): Verilog HDL Always Construct warning at uart_tx.v(17): inferring latch(es) for variable "tx", which holds its previous value in one or more paths through the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v Line: 17
 Info (10041): Inferred latch for "tx" at uart_tx.v(17) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/comunication/uart_tx.v Line: 17
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[29]" and its non-tri-state driver. File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
+    Warning (13035): Inserted always-enabled tri-state buffer between "GPIO[29]" and its non-tri-state driver. File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "GPIO[0]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
-Info (13000): Registers with preset signals will power-up high File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 10
+    Warning (13040): bidirectional pin "GPIO[0]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[1]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[2]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[3]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[4]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[5]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[6]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[7]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[8]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[9]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[10]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[11]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[12]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[13]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[14]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[15]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[16]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[17]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[18]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[19]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[20]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[21]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[22]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[23]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[24]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[25]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[26]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[27]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[28]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[30]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[31]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[32]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[33]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[34]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+    Warning (13040): bidirectional pin "GPIO[35]" has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
+Info (13000): Registers with preset signals will power-up high File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/reader/design.v Line: 11
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "GPIO[29]~synth" File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 16
+    Warning (13010): Node "GPIO[29]~synth" File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 14
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 15
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 15
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 15
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 15
-    Warning (13410): Pin "tx" is stuck at VCC File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 26
-    Warning (13410): Pin "busy" is stuck at GND File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 26
+    Warning (13410): Pin "LEDR[11]" is stuck at GND File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 15
+    Warning (13410): Pin "tx" is stuck at VCC File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 25
+    Warning (13410): Pin "busy" is stuck at GND File: /home/fontana/dev/ufba/lab-1/sudoku/design.v Line: 25
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 5 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/fontana/dev/ufba/lab-1/sudoku/quartus/output_files/communication.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 96 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 199 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 2 input pins
     Info (21059): Implemented 14 output pins
     Info (21060): Implemented 36 bidirectional pins
-    Info (21061): Implemented 44 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
-    Info: Peak virtual memory: 495 megabytes
-    Info: Processing ended: Wed Jun 11 21:38:18 2025
-    Info: Elapsed time: 00:00:04
+    Info (21061): Implemented 147 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 53 warnings
+    Info: Peak virtual memory: 510 megabytes
+    Info: Processing ended: Fri Jun 13 19:51:28 2025
+    Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:14
 
 

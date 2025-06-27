@@ -1,0 +1,71 @@
+Info: Starting: Create simulation model
+Info: qsys-generate /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation --family="Cyclone IV E" --part=EP4CE115F29C8L
+Progress: Loading AAAAAAAAAAAAAAaa/main_communicator.qsys
+Progress: Reading input file
+Progress: Adding clock_bridge_0 [altera_clock_bridge 24.1]
+Progress: Parameterizing module clock_bridge_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: main_communicator: Generating "main_communicator" for SIM_VERILOG
+Info: rs232_0: Starting Generation of RS232 UART
+Info: rs232_0: "main_communicator" instantiated altera_up_avalon_rs232 "rs232_0"
+Info: main_communicator: Done "main_communicator" with 2 modules, 6 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/main_communicator.spd --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/main_communicator.spd --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for RIVIERA simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: Generating the following file(s) for VCSMX simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for VCS simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for XCELIUM simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation/ directory:
+Info: 	xcelium/cds.lib
+Info: 	xcelium/hdl.var
+Info: 	xcelium/xcelium_setup.sh
+Info: 	1 .cds.lib files in xcelium/cds_libs/ directory
+Info: Generating the following file(s) for MODELSIM simulator in /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator.qsys --block-symbol-file --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator --family="Cyclone IV E" --part=EP4CE115F29C8L
+Progress: Loading AAAAAAAAAAAAAAaa/main_communicator.qsys
+Progress: Reading input file
+Progress: Adding clock_bridge_0 [altera_clock_bridge 24.1]
+Progress: Parameterizing module clock_bridge_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator.qsys --synthesis=VERILOG --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/AAAAAAAAAAAAAAaa/main_communicator/synthesis --family="Cyclone IV E" --part=EP4CE115F29C8L
+Progress: Loading AAAAAAAAAAAAAAaa/main_communicator.qsys
+Progress: Reading input file
+Progress: Adding clock_bridge_0 [altera_clock_bridge 24.1]
+Progress: Parameterizing module clock_bridge_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: main_communicator: Generating "main_communicator" for QUARTUS_SYNTH
+Info: rs232_0: Starting Generation of RS232 UART
+Info: rs232_0: "main_communicator" instantiated altera_up_avalon_rs232 "rs232_0"
+Info: main_communicator: Done "main_communicator" with 2 modules, 6 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

@@ -1,0 +1,160 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 0 0 448 376)
+	(text "unsaved" (rect 201 -1 235 11)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 360 20 372)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 27 12)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 46 72)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 176 72)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "reset_reset_n" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 101 82 112)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 176 112)(line_width 1))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "uart_0_external_connection_rxd" (rect 0 0 128 12)(font "Arial" (font_size 8)))
+		(text "uart_0_external_connection_rxd" (rect 4 141 184 152)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 176 152)(line_width 1))
+	)
+	(port
+		(pt 0 208)
+		(input)
+		(text "uart_0_reset_reset_n" (rect 0 0 88 12)(font "Arial" (font_size 8)))
+		(text "uart_0_reset_reset_n" (rect 4 197 124 208)(font "Arial" (font_size 8)))
+		(line (pt 0 208)(pt 176 208)(line_width 1))
+	)
+	(port
+		(pt 0 248)
+		(input)
+		(text "uart_0_s1_address[2..0]" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "uart_0_s1_address[2..0]" (rect 4 237 142 248)(font "Arial" (font_size 8)))
+		(line (pt 0 248)(pt 176 248)(line_width 3))
+	)
+	(port
+		(pt 0 264)
+		(input)
+		(text "uart_0_s1_begintransfer" (rect 0 0 97 12)(font "Arial" (font_size 8)))
+		(text "uart_0_s1_begintransfer" (rect 4 253 142 264)(font "Arial" (font_size 8)))
+		(line (pt 0 264)(pt 176 264)(line_width 1))
+	)
+	(port
+		(pt 0 280)
+		(input)
+		(text "uart_0_s1_chipselect" (rect 0 0 83 12)(font "Arial" (font_size 8)))
+		(text "uart_0_s1_chipselect" (rect 4 269 124 280)(font "Arial" (font_size 8)))
+		(line (pt 0 280)(pt 176 280)(line_width 1))
+	)
+	(port
+		(pt 0 296)
+		(input)
+		(text "uart_0_s1_read_n" (rect 0 0 74 12)(font "Arial" (font_size 8)))
+		(text "uart_0_s1_read_n" (rect 4 285 100 296)(font "Arial" (font_size 8)))
+		(line (pt 0 296)(pt 176 296)(line_width 1))
+	)
+	(port
+		(pt 0 312)
+		(input)
+		(text "uart_0_s1_write_n" (rect 0 0 74 12)(font "Arial" (font_size 8)))
+		(text "uart_0_s1_write_n" (rect 4 301 106 312)(font "Arial" (font_size 8)))
+		(line (pt 0 312)(pt 176 312)(line_width 1))
+	)
+	(port
+		(pt 0 328)
+		(input)
+		(text "uart_0_s1_writedata[15..0]" (rect 0 0 103 12)(font "Arial" (font_size 8)))
+		(text "uart_0_s1_writedata[15..0]" (rect 4 317 160 328)(font "Arial" (font_size 8)))
+		(line (pt 0 328)(pt 176 328)(line_width 3))
+	)
+	(port
+		(pt 0 168)
+		(output)
+		(text "uart_0_external_connection_txd" (rect 0 0 127 12)(font "Arial" (font_size 8)))
+		(text "uart_0_external_connection_txd" (rect 4 157 184 168)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 176 168)(line_width 1))
+	)
+	(port
+		(pt 448 72)
+		(output)
+		(text "uart_0_irq_irq" (rect 0 0 56 12)(font "Arial" (font_size 8)))
+		(text "uart_0_irq_irq" (rect 376 61 460 72)(font "Arial" (font_size 8)))
+		(line (pt 448 72)(pt 272 72)(line_width 1))
+	)
+	(port
+		(pt 0 344)
+		(output)
+		(text "uart_0_s1_readdata[15..0]" (rect 0 0 103 12)(font "Arial" (font_size 8)))
+		(text "uart_0_s1_readdata[15..0]" (rect 4 333 154 344)(font "Arial" (font_size 8)))
+		(line (pt 0 344)(pt 176 344)(line_width 3))
+	)
+	(drawing
+		(text "clk" (rect 161 43 340 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 181 67 380 144)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 147 83 324 179)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 181 107 404 224)(font "Arial" (color 0 0 0)))
+		(text "uart_0_external_connection" (rect 16 123 188 259)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "rxd" (rect 181 147 380 304)(font "Arial" (color 0 0 0)))
+		(text "txd" (rect 181 163 380 336)(font "Arial" (color 0 0 0)))
+		(text "uart_0_irq" (rect 273 43 606 99)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "irq" (rect 258 67 534 144)(font "Arial" (color 0 0 0)))
+		(text "uart_0_reset" (rect 101 179 274 371)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 181 203 404 416)(font "Arial" (color 0 0 0)))
+		(text "uart_0_s1" (rect 119 219 292 451)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "address" (rect 181 243 404 496)(font "Arial" (color 0 0 0)))
+		(text "begintransfer" (rect 181 259 440 528)(font "Arial" (color 0 0 0)))
+		(text "chipselect" (rect 181 275 422 560)(font "Arial" (color 0 0 0)))
+		(text "read_n" (rect 181 291 398 592)(font "Arial" (color 0 0 0)))
+		(text "write_n" (rect 181 307 404 624)(font "Arial" (color 0 0 0)))
+		(text "writedata" (rect 181 323 416 656)(font "Arial" (color 0 0 0)))
+		(text "readdata" (rect 181 339 410 688)(font "Arial" (color 0 0 0)))
+		(text " unsaved " (rect 409 360 872 730)(font "Arial" ))
+		(line (pt 176 32)(pt 272 32)(line_width 1))
+		(line (pt 272 32)(pt 272 360)(line_width 1))
+		(line (pt 176 360)(pt 272 360)(line_width 1))
+		(line (pt 176 32)(pt 176 360)(line_width 1))
+		(line (pt 177 52)(pt 177 76)(line_width 1))
+		(line (pt 178 52)(pt 178 76)(line_width 1))
+		(line (pt 177 92)(pt 177 116)(line_width 1))
+		(line (pt 178 92)(pt 178 116)(line_width 1))
+		(line (pt 177 132)(pt 177 172)(line_width 1))
+		(line (pt 178 132)(pt 178 172)(line_width 1))
+		(line (pt 271 52)(pt 271 76)(line_width 1))
+		(line (pt 270 52)(pt 270 76)(line_width 1))
+		(line (pt 177 188)(pt 177 212)(line_width 1))
+		(line (pt 178 188)(pt 178 212)(line_width 1))
+		(line (pt 177 228)(pt 177 348)(line_width 1))
+		(line (pt 178 228)(pt 178 348)(line_width 1))
+		(line (pt 0 0)(pt 448 0)(line_width 1))
+		(line (pt 448 0)(pt 448 376)(line_width 1))
+		(line (pt 0 376)(pt 448 376)(line_width 1))
+		(line (pt 0 0)(pt 0 376)(line_width 1))
+	)
+)

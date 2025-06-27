@@ -1,0 +1,141 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "UART_TXD",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_valid",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO29",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_data[7]",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KEY[0]",
+					"strict" : false
+				},
+				{
+					"name" : "CLOCK_50",
+					"strict" : false
+				},
+				{
+					"name" : "rs232_0_from_uart_ready",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO35",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO31",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO27",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO25",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO33",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO23",
+					"strict" : false
+				},
+				{
+					"name" : "UART_RXD",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
