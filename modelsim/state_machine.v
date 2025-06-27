@@ -21,7 +21,7 @@ module state_machine(
     output reg [404:0] board
 );
     reg difficulty;
-    reg [2:0] strikes;
+    reg [1:0] strikes;
     reg [3:0] cursor_x;
     reg [3:0] cursor_y;
     reg [2:0] current_state, next_state;

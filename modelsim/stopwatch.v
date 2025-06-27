@@ -1,7 +1,7 @@
-module stopwatch (
+module stopwatch(
     input clk,
     input reset,
-    output reg [6:0] timer
+    output reg [10:0] timer
 );
     always @(posedge clk) begin
         if (reset) begin
