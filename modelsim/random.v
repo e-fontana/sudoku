@@ -1,4 +1,4 @@
-module random (
+module random(
     input clk,
     input reset,
     output reg [3:0] random_number

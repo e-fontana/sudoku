@@ -1,0 +1,15 @@
+# Current time Fri Jun 27 16:47:12 2025
+# ModelSim - Intel FPGA Edition Stack Trace
+# Program = vish
+# Id = "2020.1"
+# Version = "2020.02"
+# Date = "Feb 28 2020"
+# Platform = "linuxaloem"
+# 0    0x08423046: 'treepool_free_tree + 0x16' in '/opt/intelFPGA/20.1/modelsim_ase/linuxaloem/vish'
+# 1    0x082a9051: 'tree_delete + 0x11' in '/opt/intelFPGA/20.1/modelsim_ase/linuxaloem/vish'
+# 2    0x083040e0: 'wave_window_restart_prep + 0x170' in '/opt/intelFPGA/20.1/modelsim_ase/linuxaloem/vish'
+# 3    0x082bdf68: '<unknown (@0x82bdf68)>'
+# 4    0x0857e27a: '<unknown (@0x857e27a)>'
+# 5    0xfffffffb: '<unknown (@0xfffffffb)>'
+# End of Stack Trace
+

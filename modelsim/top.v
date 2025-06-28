@@ -1,7 +1,7 @@
 module top(
     // clock and reset
     input reset,
-    input clk_50MHz,
+    input clk,
     // buttons
     input a_button,
     input b_button,
@@ -12,32 +12,40 @@ module top(
     input start_button,
     // outputs
     output error,
-    output [3:0] pos_x,
-    output [3:0] pos_y,
+    output [3:0] pos_i,
+    output [3:0] pos_j,
     output [6:0] score,
-    output [10:0] timer,
+    output [10:0] playtime,
     output [404:0] board
 );
-    wire clk_1Hz;
     wire [404:0] selected_map;
+    wire playing_condition;
+    wire [10:0] timer;
+    wire [5:0] seconds;
+    wire [4:0] minutes;
 
-    // time
-
-    frequency fd (
-        .clk_50MHz(clk_50MHz),
-        .clk_1Hz(clk_1Hz)
-    );
+    assign playtime = {minutes, seconds};
 
     stopwatch sw (
-        .clk(clk_1Hz),
+        .clk(clk),
         .reset(reset),
-        .timer(timer)
+        .playing_condition(playing_condition),
+        .timer(timer),
+        .seconds(seconds),
+        .minutes(minutes)
+    );
+
+    score sc (
+        .clk(clk),
+        .timer(timer),
+        .playing_condition(playing_condition),
+        .score(score)
     );
 
     // map
 
     map_selector ms (
-        .clk(clk_1Hz),
+        .clk(clk),
         .reset(reset),
         .selected_map(selected_map)
     );
@@ -45,7 +53,7 @@ module top(
     // game
 
     state_machine sm (
-        .clk(clk_50MHz),
+        .clk(clk),
         .reset(reset),
         .timer(timer),
         .up_button(up_button),
@@ -56,10 +64,11 @@ module top(
         .a_button(a_button),
         .b_button(b_button),
         .selected_map(selected_map),
-        .pos_x(pos_x),
-        .pos_y(pos_y),
+        .pos_i(pos_i),
+        .pos_j(pos_j),
         .error(error),
         .score(score),
-        .board(board)
+        .board(board),
+        .playing_condition(playing_condition)
     );
 endmodule

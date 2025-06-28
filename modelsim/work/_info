@@ -1,6 +1,7 @@
 m255
 K4
 z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
 13
 !s112 1.1
 !i10d 8192
@@ -8,3 +9,256 @@ z2
 !i10f 100
 cModel Technology
 d/home/andreojr
+vdefeat
+Z0 !s110 1751067750
+!i10b 1
+!s100 f?G]HIFHdQ;28<3HiT4?N0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I6Kz_[YPEGodBZ7`TPoPUb0
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 d/home/andreojr/dev/edu/engg52/sudoku/modelsim
+w1751062744
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v
+!i122 1248
+L0 1 9
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1751067750.000000
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vdefine_maps
+R0
+!i10b 1
+!s100 b^I6ibFi8oBP?LeK^Zk[42
+R1
+ILRlCb6d;`QO:Lg52zQKUl2
+R2
+R3
+w1751066495
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v
+!i122 1243
+L0 1 5
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v|
+!i113 1
+R6
+R7
+vfrequency
+R0
+!i10b 1
+!s100 b;4bFb`DKmm9HFNYGWioP0
+R1
+IhDHJOiM7Tk3[zAID=7zNn2
+R2
+R3
+w1751052122
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v
+!i122 1246
+Z8 L0 1 20
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v|
+!i113 1
+R6
+R7
+vmap_selector
+R0
+!i10b 1
+!s100 UdHn:Jn_8bQJI7Y<DZD1b1
+R1
+I^:<WkDRKDWelKFIz@Z;ze2
+R2
+R3
+w1751046898
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v
+!i122 1244
+L0 1 21
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v|
+!i113 1
+R6
+R7
+vrandom
+R0
+!i10b 1
+!s100 AT9Az8CnE3JHzgV1BX0S^2
+R1
+I1CfY@NEP^eB5JLINE:F?b0
+R2
+R3
+w1751061708
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v
+!i122 1245
+L0 1 19
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v|
+!i113 1
+R6
+R7
+vscore
+R0
+!i10b 1
+!s100 ^c=YOjlhDGY@A:oKDAFOD3
+R1
+ISmXRg3mf1Xci=Wne;7BLh2
+R2
+R3
+w1750967815
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v
+!i122 1249
+R8
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v|
+!i113 1
+R6
+R7
+vstate_machine
+R0
+!i10b 1
+!s100 Q5ZIK5JoTAM:BCjJlj07W0
+R1
+I>Q8]WGmJz0OkWHbQM7[:z1
+R2
+R3
+w1751065463
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v
+!i122 1250
+L0 1 193
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v|
+!i113 1
+R6
+R7
+vstopwatch
+R0
+!i10b 1
+!s100 ePLn=K`9jDmRPc80>[eRL1
+R1
+IlQVdTfCmmA9i9Mh4FBOUE2
+R2
+R3
+w1751063127
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v
+!i122 1247
+L0 1 35
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v|
+!i113 1
+R6
+R7
+vtestbench
+R0
+!i10b 1
+!s100 13zTAB9cnlaYW2YT:<^8j1
+R1
+I@:<1mOhegFmX<h]Sgc8=A3
+R2
+R3
+w1751067745
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/testbench.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/testbench.v
+!i122 1242
+L0 1 187
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/testbench.v|
+!i113 1
+R6
+R7
+vtop
+R0
+!i10b 1
+!s100 PU2L=zW4E2JQ7j@jV?96i3
+R1
+IPfFOh<]6PcTmGIAoVH@;F0
+R2
+R3
+w1751063658
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v
+!i122 1241
+L0 1 74
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v|
+!i113 1
+R6
+R7
+vvictory
+R0
+!i10b 1
+!s100 ;3Wkm`ImkcEDNkCTbc<?C3
+R1
+IdC8<J`DP;N2`hNiHzLS9V2
+R2
+R3
+w1750968876
+8/home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v
+F/home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v
+!i122 1251
+L0 1 87
+R4
+r1
+!s85 0
+31
+R5
+!s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v|
+!s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v|
+!i113 1
+R6
+R7
