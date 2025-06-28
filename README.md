@@ -69,7 +69,7 @@ Este é um projeto universitário desenvolvido por estudantes da **UFBA (Univers
 - 🖥️ PC com Linux ou Windows
 
 ### Software:
-- Quartus II
+- Quartus Prime Lite
 - Python 3.x com:
   - `pygame`
   - `pyserial`
