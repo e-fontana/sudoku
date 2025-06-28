@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<deploy
+ date="2025.06.27.21:17:24"
+ outputDirectory="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/">
+ <perimeter>
+  <parameter
+     name="AUTO_GENERATION_ID"
+     type="Integer"
+     defaultValue="0"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_UNIQUE_ID"
+     type="String"
+     defaultValue=""
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_FAMILY"
+     type="String"
+     defaultValue="Cyclone IV E"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE"
+     type="String"
+     defaultValue="EP4CE115F29C8"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_DEVICE_SPEEDGRADE"
+     type="String"
+     defaultValue="8"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_RATE"
+     type="Long"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_CLOCK_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <parameter
+     name="AUTO_CLK_RESET_DOMAIN"
+     type="Integer"
+     defaultValue="-1"
+     onHdl="0"
+     affectsHdl="1" />
+  <interface name="clk" kind="clock" start="0">
+   <property name="clockRate" value="50000000" />
+   <property name="externallyDriven" value="false" />
+   <property name="ptfSchematicName" value="" />
+   <port name="clk_clk" direction="input" role="clk" width="1" />
+  </interface>
+  <interface name="reset" kind="reset" start="0">
+   <property name="associatedClock" value="" />
+   <property name="synchronousEdges" value="NONE" />
+   <port name="reset_reset_n" direction="input" role="reset_n" width="1" />
+  </interface>
+  <interface
+     name="rs232_0_avalon_data_receive_source"
+     kind="avalon_streaming"
+     start="1">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port
+       name="rs232_0_from_uart_ready"
+       direction="input"
+       role="ready"
+       width="1" />
+   <port
+       name="rs232_0_from_uart_data"
+       direction="output"
+       role="data"
+       width="8" />
+   <port
+       name="rs232_0_from_uart_error"
+       direction="output"
+       role="error"
+       width="1" />
+   <port
+       name="rs232_0_from_uart_valid"
+       direction="output"
+       role="valid"
+       width="1" />
+  </interface>
+  <interface
+     name="rs232_0_avalon_data_transmit_sink"
+     kind="avalon_streaming"
+     start="0">
+   <property name="associatedClock" value="clk" />
+   <property name="associatedReset" value="reset" />
+   <property name="beatsPerCycle" value="1" />
+   <property name="dataBitsPerSymbol" value="8" />
+   <property name="emptyWithinPacket" value="false" />
+   <property name="errorDescriptor" value="" />
+   <property name="firstSymbolInHighOrderBits" value="true" />
+   <property name="highOrderSymbolAtMSB" value="false" />
+   <property name="maxChannel" value="0" />
+   <property name="packetDescription" value="" />
+   <property name="readyLatency" value="0" />
+   <property name="symbolsPerBeat" value="1" />
+   <port name="rs232_0_to_uart_data" direction="input" role="data" width="8" />
+   <port name="rs232_0_to_uart_error" direction="input" role="error" width="1" />
+   <port name="rs232_0_to_uart_valid" direction="input" role="valid" width="1" />
+   <port
+       name="rs232_0_to_uart_ready"
+       direction="output"
+       role="ready"
+       width="1" />
+  </interface>
+  <interface name="rs232_0_external_interface" kind="conduit" start="0">
+   <property name="associatedClock" value="" />
+   <property name="associatedReset" value="" />
+   <port name="rs232_0_UART_RXD" direction="input" role="RXD" width="1" />
+   <port name="rs232_0_UART_TXD" direction="output" role="TXD" width="1" />
+  </interface>
+ </perimeter>
+ <entity
+   path=""
+   parameterizationKey="rs232:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1751069844,AUTO_UNIQUE_ID=(clock_source:24.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(altera_up_avalon_rs232:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone IV E,avalon_bus_type=Streaming,baud=115200,data_bits=8,parity=None,ref_clk_freq=5.0E7,stop_bits=1)(clock:24.1:)(reset:24.1:)"
+   instancePathKey="rs232"
+   kind="rs232"
+   version="1.0"
+   name="rs232">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
+  <parameter name="AUTO_GENERATION_ID" value="1751069844" />
+  <parameter name="AUTO_DEVICE" value="EP4CE115F29C8" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />
+  <parameter name="AUTO_CLK_CLOCK_DOMAIN" value="-1" />
+  <parameter name="AUTO_UNIQUE_ID" value="" />
+  <parameter name="AUTO_DEVICE_SPEEDGRADE" value="8" />
+  <generatedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/rs232.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_up_rs232_counters.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_up_rs232_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_up_rs232_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/rs232_rs232_0.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </childGeneratedFiles>
+  <sourceFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/rs232.qsys" />
+  </sourceFiles>
+  <childSourceFiles>
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/altera_up_avalon_rs232_hw.tcl" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_counters.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_in_deserializer.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_out_serializer.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_sync_fifo.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </childSourceFiles>
+  <messages>
+   <message level="Debug" culprit="rs232">queue size: 0 starting:rs232 "rs232"</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug">Transform: CustomInstructionTransform</message>
+   <message level="Debug">No custom instruction connections, skipping transform </message>
+   <message level="Debug" culprit="merlin_custom_instruction_transform"><![CDATA[After transform: <b>2</b> modules, <b>2</b> connections]]></message>
+   <message level="Debug">Transform: MMTransform</message>
+   <message level="Debug">Transform: InterruptMapperTransform</message>
+   <message level="Debug">Transform: InterruptSyncTransform</message>
+   <message level="Debug">Transform: InterruptFanoutTransform</message>
+   <message level="Debug">Transform: AvalonStreamingTransform</message>
+   <message level="Debug">Transform: ResetAdaptation</message>
+   <message level="Progress" culprit="min"></message>
+   <message level="Progress" culprit="max"></message>
+   <message level="Progress" culprit="current"></message>
+   <message level="Debug" culprit="reset_adaptation_transform"><![CDATA[After transform: <b>3</b> modules, <b>4</b> connections]]></message>
+   <message level="Debug" culprit="rs232"><![CDATA["<b>rs232</b>" reuses <b>altera_up_avalon_rs232</b> "<b>submodules/rs232_rs232_0</b>"]]></message>
+   <message level="Debug" culprit="rs232"><![CDATA["<b>rs232</b>" reuses <b>altera_reset_controller</b> "<b>submodules/altera_reset_controller</b>"]]></message>
+   <message level="Debug" culprit="rs232">queue size: 1 starting:altera_up_avalon_rs232 "submodules/rs232_rs232_0"</message>
+   <message level="Info" culprit="rs232_0">Starting Generation of RS232 UART</message>
+   <message level="Info" culprit="rs232_0"><![CDATA["<b>rs232</b>" instantiated <b>altera_up_avalon_rs232</b> "<b>rs232_0</b>"]]></message>
+   <message level="Debug" culprit="rs232">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>rs232</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_up_avalon_rs232:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone IV E,avalon_bus_type=Streaming,baud=115200,data_bits=8,parity=None,ref_clk_freq=5.0E7,stop_bits=1"
+   instancePathKey="rs232:.:rs232_0"
+   kind="altera_up_avalon_rs232"
+   version="17.1"
+   name="rs232_rs232_0">
+  <parameter name="baud" value="115200" />
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="stop_bits" value="1" />
+  <parameter name="ref_clk_freq" value="5.0E7" />
+  <parameter name="avalon_bus_type" value="Streaming" />
+  <parameter name="data_bits" value="8" />
+  <parameter name="parity" value="None" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <generatedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_up_rs232_counters.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_up_rs232_in_deserializer.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_up_rs232_out_serializer.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_up_sync_fifo.v"
+       type="VERILOG" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/rs232_rs232_0.v"
+       type="VERILOG" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/altera_up_avalon_rs232_hw.tcl" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_counters.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_in_deserializer.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_rs232_out_serializer.v" />
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/university_program/communication/altera_up_avalon_rs232/hdl/altera_up_sync_fifo.v" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="rs232" as="rs232_0" />
+  <messages>
+   <message level="Debug" culprit="rs232">queue size: 1 starting:altera_up_avalon_rs232 "submodules/rs232_rs232_0"</message>
+   <message level="Info" culprit="rs232_0">Starting Generation of RS232 UART</message>
+   <message level="Info" culprit="rs232_0"><![CDATA["<b>rs232</b>" instantiated <b>altera_up_avalon_rs232</b> "<b>rs232_0</b>"]]></message>
+  </messages>
+ </entity>
+ <entity
+   path="submodules/"
+   parameterizationKey="altera_reset_controller:24.1:ADAPT_RESET_REQUEST=0,MIN_RST_ASSERTION_TIME=3,NUM_RESET_INPUTS=1,OUTPUT_RESET_SYNC_EDGES=deassert,RESET_REQUEST_PRESENT=0,RESET_REQ_EARLY_DSRT_TIME=1,RESET_REQ_WAIT_TIME=1,SYNC_DEPTH=2,USE_RESET_REQUEST_IN0=0,USE_RESET_REQUEST_IN1=0,USE_RESET_REQUEST_IN10=0,USE_RESET_REQUEST_IN11=0,USE_RESET_REQUEST_IN12=0,USE_RESET_REQUEST_IN13=0,USE_RESET_REQUEST_IN14=0,USE_RESET_REQUEST_IN15=0,USE_RESET_REQUEST_IN2=0,USE_RESET_REQUEST_IN3=0,USE_RESET_REQUEST_IN4=0,USE_RESET_REQUEST_IN5=0,USE_RESET_REQUEST_IN6=0,USE_RESET_REQUEST_IN7=0,USE_RESET_REQUEST_IN8=0,USE_RESET_REQUEST_IN9=0,USE_RESET_REQUEST_INPUT=0"
+   instancePathKey="rs232:.:rst_controller"
+   kind="altera_reset_controller"
+   version="24.1"
+   name="altera_reset_controller">
+  <generatedFiles>
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_reset_controller.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_reset_synchronizer.v"
+       type="VERILOG"
+       attributes="" />
+   <file
+       path="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/submodules/altera_reset_controller.sdc"
+       type="SDC"
+       attributes="" />
+  </generatedFiles>
+  <childGeneratedFiles/>
+  <sourceFiles>
+   <file
+       path="/opt/intelFPGA/24.1/ip/altera/merlin/altera_reset_controller/altera_reset_controller_hw.tcl" />
+  </sourceFiles>
+  <childSourceFiles/>
+  <instantiator instantiator="rs232" as="rst_controller" />
+  <messages>
+   <message level="Debug" culprit="rs232">queue size: 0 starting:altera_reset_controller "submodules/altera_reset_controller"</message>
+   <message level="Info" culprit="rst_controller"><![CDATA["<b>rs232</b>" instantiated <b>altera_reset_controller</b> "<b>rst_controller</b>"]]></message>
+  </messages>
+ </entity>
+</deploy>
