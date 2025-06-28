@@ -35,6 +35,7 @@ on the Quartus Prime software download page.
 		(line (pt 141 12)(pt 145 8))
 	)
 	(text "VCC" (rect 160 7 180 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 672 568 736 584))
 )
 (pin
 	(input)
@@ -51,6 +52,7 @@ on the Quartus Prime software download page.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 296 160 352 176))
 )
 (pin
 	(input)
@@ -67,6 +69,7 @@ on the Quartus Prime software download page.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect 288 192 352 208))
 )
 (pin
 	(output)
@@ -100,6 +103,7 @@ on the Quartus Prime software download page.
 		(line (pt 114 4)(pt 110 8))
 	)
 	(rotate180)
+	(annotation_block (location)(rect 936 584 992 600))
 )
 (symbol
 	(rect 312 368 528 512)
@@ -290,6 +294,23 @@ on the Quartus Prime software download page.
 		(line (pt 544 0)(pt 544 288))
 		(line (pt 0 288)(pt 544 288))
 		(line (pt 0 0)(pt 0 288))
+	)
+)
+(symbol
+	(rect 1536 488 1568 520)
+	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
+	(text "inst3" (rect 3 21 27 33)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 0)
+		(output)
+		(text "1" (rect 18 0 26 11)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 18 0 26 11)(font "Courier New" (bold))(invisible))
+		(line (pt 16 8)(pt 16 0))
+	)
+	(drawing
+		(line (pt 8 8)(pt 16 16))
+		(line (pt 16 16)(pt 24 8))
+		(line (pt 8 8)(pt 24 8))
 	)
 )
 (connector
