@@ -14,7 +14,7 @@ try:
         while True:
             if ser.in_waiting > 0:
                 byte_recebido = ser.read(1)  # Lê 1 byte
-                logging.info(f"", "Byte recebido: ", byte_recebido, "É um byte válido? ", isinstance(byte_recebido, bytes), "Tamanho: ", len(byte_recebido))
+                logging.info("Byte recebido: ", byte_recebido, "É um byte válido? ", isinstance(byte_recebido, bytes), "Tamanho: ", len(byte_recebido))
                 try:
                     caractere = byte_recebido.decode('ascii')  # Converte para char
                     logging.info(f"Recebido: '{caractere}' (hex: {byte_recebido.hex()})")
