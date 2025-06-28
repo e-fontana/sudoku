@@ -1,0 +1,468 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 736 552 936 568)
+	(text "INPUT" (rect 157 0 185 9)(font "Arial" (font_size 6)))
+	(text "rs232_0_UART_RXD" (rect 5 0 106 11)(font "Arial" ))
+	(pt 200 8)
+	(drawing
+		(line (pt 116 12)(pt 141 12))
+		(line (pt 116 4)(pt 141 4))
+		(line (pt 145 8)(pt 200 8))
+		(line (pt 116 12)(pt 116 4))
+		(line (pt 141 4)(pt 145 8))
+		(line (pt 141 12)(pt 145 8))
+	)
+	(text "VCC" (rect 160 7 180 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 352 144 520 160)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "CLOCK_50" (rect 5 0 60 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 352 176 520 192)
+	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
+	(text "RESET" (rect 5 0 41 11)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 1480 416 1694 432)
+	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
+	(text "rs232_0_from_uart_error" (rect 90 0 208 11)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(pin
+	(output)
+	(rect 744 568 936 584)
+	(text "OUTPUT" (rect 153 7 191 16)(font "Arial" (font_size 6)))
+	(text "rs232_0_UART_TXD" (rect 5 5 105 16)(font "Arial" ))
+	(pt 192 8)
+	(drawing
+		(line (pt 192 8)(pt 140 8))
+		(line (pt 140 12)(pt 114 12))
+		(line (pt 140 4)(pt 114 4))
+		(line (pt 140 4)(pt 140 12))
+		(line (pt 114 12)(pt 110 8))
+		(line (pt 110 8)(pt 114 4))
+		(line (pt 114 4)(pt 110 8))
+	)
+	(rotate180)
+)
+(symbol
+	(rect 312 368 528 512)
+	(text "uart_avalon_st_tester" (rect 5 0 107 11)(font "Arial" ))
+	(text "inst1" (rect 8 128 32 140)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 12 11)(font "Arial" ))
+		(text "clk" (rect 21 27 33 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset_n" (rect 0 0 35 11)(font "Arial" ))
+		(text "reset_n" (rect 21 43 56 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "i_tx_ready" (rect 0 0 49 11)(font "Arial" ))
+		(text "i_tx_ready" (rect 21 59 70 70)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "i_rx_data[7..0]" (rect 0 0 67 11)(font "Arial" ))
+		(text "i_rx_data[7..0]" (rect 21 75 88 86)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "i_rx_valid" (rect 0 0 44 11)(font "Arial" ))
+		(text "i_rx_valid" (rect 21 91 65 102)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "o_tx_data[7..0]" (rect 0 0 70 11)(font "Arial" ))
+		(text "o_tx_data[7..0]" (rect 136 27 206 38)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
+	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "o_tx_valid" (rect 0 0 48 11)(font "Arial" ))
+		(text "o_tx_valid" (rect 155 43 203 54)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48))
+	)
+	(port
+		(pt 216 64)
+		(output)
+		(text "o_rx_ready" (rect 0 0 53 11)(font "Arial" ))
+		(text "o_rx_ready" (rect 151 59 204 70)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 128))
+	)
+)
+(symbol
+	(rect 936 320 1480 608)
+	(text "rs232" (rect 256 -1 294 14)(font "Arial" (font_size 10)))
+	(text "inst" (rect 8 272 24 283)(font "Arial" ))
+	(port
+		(pt 0 72)
+		(input)
+		(text "clk_clk" (rect 0 0 38 13)(font "Arial" (font_size 8)))
+		(text "clk_clk" (rect 4 61 42 74)(font "Arial" (font_size 8)))
+		(line (pt 0 72)(pt 224 72))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "reset_reset_n" (rect 0 0 80 13)(font "Arial" (font_size 8)))
+		(text "reset_reset_n" (rect 4 101 84 114)(font "Arial" (font_size 8)))
+		(line (pt 0 112)(pt 224 112))
+	)
+	(port
+		(pt 544 72)
+		(input)
+		(text "rs232_0_from_uart_ready" (rect 0 0 149 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_from_uart_ready" (rect 410 61 559 74)(font "Arial" (font_size 8)))
+		(line (pt 544 72)(pt 304 72))
+	)
+	(port
+		(pt 0 152)
+		(input)
+		(text "rs232_0_to_uart_data[7..0]" (rect 0 0 155 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_to_uart_data[7..0]" (rect 4 141 159 154)(font "Arial" (font_size 8)))
+		(line (pt 0 152)(pt 224 152)(line_width 3))
+	)
+	(port
+		(pt 0 168)
+		(input)
+		(text "rs232_0_to_uart_error" (rect 0 0 129 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_to_uart_error" (rect 4 157 133 170)(font "Arial" (font_size 8)))
+		(line (pt 0 168)(pt 224 168))
+	)
+	(port
+		(pt 0 184)
+		(input)
+		(text "rs232_0_to_uart_valid" (rect 0 0 128 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_to_uart_valid" (rect 4 173 132 186)(font "Arial" (font_size 8)))
+		(line (pt 0 184)(pt 224 184))
+	)
+	(port
+		(pt 0 240)
+		(input)
+		(text "rs232_0_UART_RXD" (rect 0 0 125 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_UART_RXD" (rect 4 229 129 242)(font "Arial" (font_size 8)))
+		(line (pt 0 240)(pt 224 240))
+	)
+	(port
+		(pt 544 88)
+		(output)
+		(text "rs232_0_from_uart_data[7..0]" (rect 0 0 171 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_from_uart_data[7..0]" (rect 393 77 564 90)(font "Arial" (font_size 8)))
+		(line (pt 544 88)(pt 304 88)(line_width 3))
+	)
+	(port
+		(pt 544 104)
+		(output)
+		(text "rs232_0_from_uart_error" (rect 0 0 145 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_from_uart_error" (rect 414 93 559 106)(font "Arial" (font_size 8)))
+		(line (pt 544 104)(pt 304 104))
+	)
+	(port
+		(pt 544 120)
+		(output)
+		(text "rs232_0_from_uart_valid" (rect 0 0 143 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_from_uart_valid" (rect 416 109 559 122)(font "Arial" (font_size 8)))
+		(line (pt 544 120)(pt 304 120))
+	)
+	(port
+		(pt 0 200)
+		(output)
+		(text "rs232_0_to_uart_ready" (rect 0 0 134 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_to_uart_ready" (rect 4 189 138 202)(font "Arial" (font_size 8)))
+		(line (pt 0 200)(pt 224 200))
+	)
+	(port
+		(pt 0 256)
+		(output)
+		(text "rs232_0_UART_TXD" (rect 0 0 122 13)(font "Arial" (font_size 8)))
+		(text "rs232_0_UART_TXD" (rect 4 245 126 258)(font "Arial" (font_size 8)))
+		(line (pt 0 256)(pt 224 256))
+	)
+	(drawing
+		(text "clk" (rect 209 43 227 57)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "clk" (rect 229 67 241 78)(font "Arial" (color 0 0 0)))
+		(text "reset" (rect 195 83 228 97)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "reset_n" (rect 229 107 264 118)(font "Arial" (color 0 0 0)))
+		(text "rs232_0_avalon_data_receive_source" (rect 305 43 545 57)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "ready" (rect 276 67 303 78)(font "Arial" (color 0 0 0)))
+		(text "data" (rect 283 83 304 94)(font "Arial" (color 0 0 0)))
+		(text "error" (rect 279 99 301 110)(font "Arial" (color 0 0 0)))
+		(text "valid" (rect 281 115 303 126)(font "Arial" (color 0 0 0)))
+		(text "rs232_0_avalon_data_transmit_sink" (rect 11 123 239 137)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "data" (rect 229 147 250 158)(font "Arial" (color 0 0 0)))
+		(text "error" (rect 229 163 251 174)(font "Arial" (color 0 0 0)))
+		(text "valid" (rect 229 179 251 190)(font "Arial" (color 0 0 0)))
+		(text "ready" (rect 229 195 256 206)(font "Arial" (color 0 0 0)))
+		(text "rs232_0_external_interface" (rect 64 211 236 225)(font "Arial" (color 128 0 0)(font_size 9)))
+		(text "RXD" (rect 229 235 251 246)(font "Arial" (color 0 0 0)))
+		(text "TXD" (rect 229 251 250 262)(font "Arial" (color 0 0 0)))
+		(text " rs232 " (rect 517 272 550 283)(font "Arial" ))
+		(line (pt 224 32)(pt 304 32))
+		(line (pt 304 32)(pt 304 272))
+		(line (pt 224 272)(pt 304 272))
+		(line (pt 224 32)(pt 224 272))
+		(line (pt 225 52)(pt 225 76))
+		(line (pt 226 52)(pt 226 76))
+		(line (pt 225 92)(pt 225 116))
+		(line (pt 226 92)(pt 226 116))
+		(line (pt 303 52)(pt 303 124))
+		(line (pt 302 52)(pt 302 124))
+		(line (pt 225 132)(pt 225 204))
+		(line (pt 226 132)(pt 226 204))
+		(line (pt 225 220)(pt 225 260))
+		(line (pt 226 220)(pt 226 260))
+		(line (pt 0 0)(pt 544 0))
+		(line (pt 544 0)(pt 544 288))
+		(line (pt 0 288)(pt 544 288))
+		(line (pt 0 0)(pt 0 288))
+	)
+)
+(connector
+	(pt 640 152)
+	(pt 520 152)
+)
+(connector
+	(pt 640 320)
+	(pt 256 320)
+)
+(connector
+	(pt 256 320)
+	(pt 256 400)
+)
+(connector
+	(pt 256 400)
+	(pt 312 400)
+)
+(connector
+	(pt 640 392)
+	(pt 936 392)
+)
+(connector
+	(pt 640 152)
+	(pt 640 320)
+)
+(connector
+	(pt 640 320)
+	(pt 640 392)
+)
+(connector
+	(pt 520 184)
+	(pt 560 184)
+)
+(connector
+	(pt 560 184)
+	(pt 560 304)
+)
+(connector
+	(pt 216 304)
+	(pt 216 416)
+)
+(connector
+	(pt 216 416)
+	(pt 312 416)
+)
+(connector
+	(pt 632 304)
+	(pt 632 432)
+)
+(connector
+	(pt 216 304)
+	(pt 560 304)
+)
+(connector
+	(pt 560 304)
+	(pt 632 304)
+)
+(connector
+	(pt 632 432)
+	(pt 936 432)
+)
+(connector
+	(pt 528 400)
+	(pt 608 400)
+	(bus)
+)
+(connector
+	(pt 608 472)
+	(pt 608 400)
+	(bus)
+)
+(connector
+	(pt 608 472)
+	(pt 936 472)
+	(bus)
+)
+(connector
+	(pt 528 416)
+	(pt 592 416)
+)
+(connector
+	(pt 592 416)
+	(pt 592 504)
+)
+(connector
+	(pt 592 504)
+	(pt 936 504)
+)
+(connector
+	(pt 936 520)
+	(pt 592 520)
+)
+(connector
+	(pt 592 520)
+	(pt 592 544)
+)
+(connector
+	(pt 592 544)
+	(pt 216 544)
+)
+(connector
+	(pt 216 544)
+	(pt 216 432)
+)
+(connector
+	(pt 312 432)
+	(pt 216 432)
+)
+(connector
+	(pt 528 432)
+	(pt 552 432)
+)
+(connector
+	(pt 552 704)
+	(pt 552 432)
+)
+(connector
+	(pt 1840 704)
+	(pt 552 704)
+)
+(connector
+	(pt 1840 392)
+	(pt 1840 704)
+)
+(connector
+	(pt 1840 392)
+	(pt 1480 392)
+)
+(connector
+	(pt 1480 408)
+	(pt 1824 408)
+	(bus)
+)
+(connector
+	(pt 1824 720)
+	(pt 1824 408)
+	(bus)
+)
+(connector
+	(pt 1824 720)
+	(pt 224 720)
+	(bus)
+)
+(connector
+	(pt 224 720)
+	(pt 224 448)
+	(bus)
+)
+(connector
+	(pt 224 448)
+	(pt 312 448)
+	(bus)
+)
+(connector
+	(pt 1480 440)
+	(pt 1808 440)
+)
+(connector
+	(pt 1808 728)
+	(pt 1808 440)
+)
+(connector
+	(pt 1808 728)
+	(pt 232 728)
+)
+(connector
+	(pt 232 728)
+	(pt 232 464)
+)
+(connector
+	(pt 232 464)
+	(pt 312 464)
+)
+(junction (pt 640 320))
+(junction (pt 560 304))

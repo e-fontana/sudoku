@@ -1,0 +1,34 @@
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/rs232.qsys --block-symbol-file --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/rs232 --family="Cyclone IV E" --part=EP4CE115F29C8
+Progress: Loading communicator/rs232.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 24.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/rs232.qsys --synthesis=VERILOG --output-directory=/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/rs232/synthesis --family="Cyclone IV E" --part=EP4CE115F29C8
+Progress: Loading communicator/rs232.qsys
+Progress: Reading input file
+Progress: Adding clk_0 [clock_source 24.1]
+Progress: Parameterizing module clk_0
+Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Progress: Parameterizing module rs232_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: rs232: Generating "rs232" for QUARTUS_SYNTH
+Info: rs232_0: Starting Generation of RS232 UART
+Info: rs232_0: "rs232" instantiated altera_up_avalon_rs232 "rs232_0"
+Info: rst_controller: "rs232" instantiated altera_reset_controller "rst_controller"
+Info: rs232: Done "rs232" with 3 modules, 9 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis

@@ -1,0 +1,17 @@
+	component communicator is
+		port (
+			clk_clk                 : in  std_logic                    := 'X';             -- clk
+			reset_reset_n           : in  std_logic                    := 'X';             -- reset_n
+			rs232_0_from_uart_ready : in  std_logic                    := 'X';             -- ready
+			rs232_0_from_uart_data  : out std_logic_vector(7 downto 0);                    -- data
+			rs232_0_from_uart_error : out std_logic;                                       -- error
+			rs232_0_from_uart_valid : out std_logic;                                       -- valid
+			rs232_0_to_uart_data    : in  std_logic_vector(7 downto 0) := (others => 'X'); -- data
+			rs232_0_to_uart_error   : in  std_logic                    := 'X';             -- error
+			rs232_0_to_uart_valid   : in  std_logic                    := 'X';             -- valid
+			rs232_0_to_uart_ready   : out std_logic;                                       -- ready
+			rs232_0_UART_RXD        : in  std_logic                    := 'X';             -- RXD
+			rs232_0_UART_TXD        : out std_logic                                        -- TXD
+		);
+	end component communicator;
+
