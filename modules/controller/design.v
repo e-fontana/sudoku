@@ -7,7 +7,7 @@ module controller_reader(
     input PIN_RIGHT_MODE,
     input PIN_A_B,
     input PIN_START_C,
-	 input flag,
+    input block,
     output reg select,
     output wire [11:0] LEDR
 );
@@ -40,7 +40,7 @@ module controller_reader(
                     counter <= 12'd0;
                     select <= 1'b1;
 
-                    if (flag) state <= STATE_ZERO;
+                    if (!block) state <= STATE_ZERO;
                     
                 end
                 STATE_ZERO: begin
