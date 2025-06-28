@@ -1,0 +1,15 @@
+/home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v {1 {vlog -work work -stats=none /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/testbench.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module controller_reader_tb
+
+Top level modules:
+	controller_reader_tb
+
+} {} {}} /home/fontana/dev/ufba/lab-1/sudoku/test.v {1 {vlog -work work -stats=none /home/fontana/dev/ufba/lab-1/sudoku/test.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module controller_reader
+
+Top level modules:
+	controller_reader
+
+} {} {}}

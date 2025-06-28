@@ -1,0 +1,12 @@
+
+State Machine - |top|controller_reader:inst|state
+Name state.STATE_SIX state.STATE_FIVE state.STATE_FOUR state.STATE_THREE state.STATE_TWO state.STATE_ONE state.STATE_ZERO state.STATE_IDLE state.STATE_SEVEN 
+state.STATE_IDLE 0 0 0 0 0 0 0 0 0 
+state.STATE_ZERO 0 0 0 0 0 0 1 1 0 
+state.STATE_ONE 0 0 0 0 0 1 0 1 0 
+state.STATE_TWO 0 0 0 0 1 0 0 1 0 
+state.STATE_THREE 0 0 0 1 0 0 0 1 0 
+state.STATE_FOUR 0 0 1 0 0 0 0 1 0 
+state.STATE_FIVE 0 1 0 0 0 0 0 1 0 
+state.STATE_SIX 1 0 0 0 0 0 0 1 0 
+state.STATE_SEVEN 0 0 0 0 0 0 0 1 1 
