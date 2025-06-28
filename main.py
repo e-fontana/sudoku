@@ -1,5 +1,4 @@
 import pyserial
-import pygame
 
 def main():
     try:
@@ -15,5 +14,6 @@ def main():
 
 
 ser = pyserial.Serial('/dev/ttyUSB0', 115200, timeout=1)
-    pygame.display.set_mode((640, 480))
-    pygame.display.set_caption("Serial Port Monitor")
+byte = ser.read(1)
+char = byte.decode('ascii', errors='replace')
+print(byte, char)
