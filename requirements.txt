@@ -1,2 +1,0 @@
-logging==0.4.9.6
-pyserial==3.5
