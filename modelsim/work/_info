@@ -10,7 +10,7 @@ z2
 cModel Technology
 d/home/andreojr
 vdefeat
-Z0 !s110 1751067750
+Z0 !s110 1751127401
 !i10b 1
 !s100 f?G]HIFHdQ;28<3HiT4?N0
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -20,13 +20,13 @@ Z3 d/home/andreojr/dev/edu/engg52/sudoku/modelsim
 w1751062744
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v
-!i122 1248
+!i122 1259
 L0 1 9
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1751067750.000000
+Z5 !s108 1751127401.000000
 !s107 /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v|
 !s90 -reportprogress|300|-work|work|-stats=none|/home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v|
 !i113 1
@@ -43,7 +43,7 @@ R3
 w1751066495
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v
-!i122 1243
+!i122 1254
 L0 1 5
 R4
 r1
@@ -66,7 +66,7 @@ R3
 w1751052122
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v
-!i122 1246
+!i122 1257
 Z8 L0 1 20
 R4
 r1
@@ -89,7 +89,7 @@ R3
 w1751046898
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v
-!i122 1244
+!i122 1255
 L0 1 21
 R4
 r1
@@ -112,7 +112,7 @@ R3
 w1751061708
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v
-!i122 1245
+!i122 1256
 L0 1 19
 R4
 r1
@@ -135,7 +135,7 @@ R3
 w1750967815
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v
-!i122 1249
+!i122 1260
 R8
 R4
 r1
@@ -150,16 +150,16 @@ R7
 vstate_machine
 R0
 !i10b 1
-!s100 Q5ZIK5JoTAM:BCjJlj07W0
+!s100 6CV>Wog]8`:fP[NXRT[T41
 R1
-I>Q8]WGmJz0OkWHbQM7[:z1
+IW??7BK4mC1fV>]H99mK[a3
 R2
 R3
-w1751065463
+w1751068237
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v
-!i122 1250
-L0 1 193
+!i122 1261
+L0 1 195
 R4
 r1
 !s85 0
@@ -181,7 +181,7 @@ R3
 w1751063127
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v
-!i122 1247
+!i122 1258
 L0 1 35
 R4
 r1
@@ -204,7 +204,7 @@ R3
 w1751067745
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/testbench.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/testbench.v
-!i122 1242
+!i122 1253
 L0 1 187
 R4
 r1
@@ -227,7 +227,7 @@ R3
 w1751063658
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v
-!i122 1241
+!i122 1252
 L0 1 74
 R4
 r1
@@ -250,7 +250,7 @@ R3
 w1750968876
 8/home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v
 F/home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v
-!i122 1251
+!i122 1262
 L0 1 87
 R4
 r1
