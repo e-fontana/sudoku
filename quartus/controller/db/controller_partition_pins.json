@@ -8,6 +8,54 @@
 					"strict" : false
 				},
 				{
+					"name" : "controller_output[11]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[10]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[9]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[8]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[7]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[6]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[5]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[4]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[3]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[2]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[0]",
+					"strict" : false
+				},
+				{
 					"name" : "LEDR[11]",
 					"strict" : false
 				},
@@ -56,11 +104,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "CLOCK_50",
 					"strict" : false
 				},
 				{
 					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "block",
 					"strict" : false
 				},
 				{
@@ -85,10 +137,6 @@
 				},
 				{
 					"name" : "PIN_START_C",
-					"strict" : false
-				},
-				{
-					"name" : "flag",
 					"strict" : false
 				}
 			]

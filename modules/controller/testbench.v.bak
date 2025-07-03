@@ -1,0 +1,90 @@
+`timescale 1ns / 1ps
+
+module controller_reader_tb;
+
+    // Sinais de entrada
+    reg clock = 0;
+    reg reset = 1;
+    reg PIN_UP_Z;
+    reg PIN_DOWN_Y;
+    reg PIN_LEFT_X;
+    reg PIN_RIGHT_MODE;
+    reg PIN_A_B;
+    reg PIN_START_C;
+    reg flag = 0;
+
+    // Sinais de saida
+    wire select;
+    wire [11:0] LEDR;
+    wire [11:0] controller_output;
+    wire [11:0] controller_reader_output;
+
+    // Parâmetros de tempo
+    localparam CLOCK_PERIOD_NS = 20;             // 50 MHz = 20ns
+    localparam ONE_MS = 1_000_000;                // 1 ms em ns
+    localparam SETUP_TIME = 20_000;               // tempo entre ações
+    localparam FINAL_WAIT = 2_000_000;            // aguarda antes de encerrar
+
+    // Instancia os módulos
+    controller cntrl (
+        .clk(clock),
+        .reset(reset),
+        .block_controller(flag),
+        .controller_input(controller_reader_output),
+        .LEDR(LEDR),
+        .controller_output(controller_output)
+    );
+
+    controller_reader uut (
+        .clk(clock),
+        .reset(reset),
+        .PIN_UP_Z(PIN_UP_Z),
+        .PIN_DOWN_Y(PIN_DOWN_Y),
+        .PIN_LEFT_X(PIN_LEFT_X),
+        .PIN_RIGHT_MODE(PIN_RIGHT_MODE),
+        .PIN_A_B(PIN_A_B),
+        .PIN_START_C(PIN_START_C),
+        .select(select),
+        .block(flag),
+        .LEDR(controller_reader_output)
+    );
+
+    // Geração do clock de 50MHz
+    always #(CLOCK_PERIOD_NS / 2) clock = ~clock;
+
+    initial begin
+        $display("Iniciando simulação...");
+        $monitor("Tempo: %dns | LEDR: %b | controller_output: %b", $time, LEDR, controller_output);
+
+        // Inicialização
+        PIN_UP_Z = 1;
+        PIN_DOWN_Y = 1;
+        PIN_LEFT_X = 1;
+        PIN_RIGHT_MODE = 1;
+        PIN_A_B = 1;
+        PIN_START_C = 1;
+
+        // Reset ativo por 500ns
+        reset = 1; #500;
+        reset = 0; // libera o sistema
+
+        // Aguarda para DUT estabilizar
+        #SETUP_TIME;
+
+        // Pressiona cada botão por 1ms (tempo mínimo exigido para gerar o pulso)
+        PIN_UP_Z = 0;       #ONE_MS;  PIN_UP_Z = 1;         #SETUP_TIME;
+        PIN_DOWN_Y = 0;     #ONE_MS;  PIN_DOWN_Y = 1;       #SETUP_TIME;
+        PIN_LEFT_X = 0;     #ONE_MS;  PIN_LEFT_X = 1;       #SETUP_TIME;
+        PIN_RIGHT_MODE = 0; #ONE_MS;  PIN_RIGHT_MODE = 1;   #SETUP_TIME;
+        PIN_A_B = 0;        #ONE_MS;  PIN_A_B = 1;          #SETUP_TIME;
+        PIN_START_C = 0;    #ONE_MS;  PIN_START_C = 1;      #SETUP_TIME;
+
+        // Espera final para observar os resultados
+        #FINAL_WAIT;
+
+        $display("Finalizando simulação...");
+        $stop;
+    end
+
+endmodule
+

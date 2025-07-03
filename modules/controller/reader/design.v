@@ -21,7 +21,7 @@ module controller_reader(
     localparam STATE_SIX    = 4'd7;
     localparam STATE_SEVEN  = 4'd8;
 
-    reg up, down, left, right, a, b, c, output_x, y, output_z, start, mode = 1'b0;
+    reg up = 1'b0, down = 1'b0, left = 1'b0, right = 1'b0, a = 1'b0, b = 1'b0, c = 1'b0, output_x = 1'b0, y = 1'b0, output_z = 1'b0, start = 1'b0, mode = 1'b0;
 
     reg [3:0] state = STATE_IDLE;
     reg [11:0] counter = 0;
@@ -33,6 +33,20 @@ module controller_reader(
             select <= 1'b1;
             counter <= 12'd0;
             state <= STATE_IDLE;
+
+            up <= 1'b0;
+            down <= 1'b0;
+            left <= 1'b0;
+            right <= 1'b0;
+
+            a <= 1'b0;
+            b <= 1'b0;
+            c <= 1'b0;
+            output_x <= 1'b0;
+            y <= 1'b0;
+            output_z <= 1'b0;
+            start <= 1'b0;
+            mode <= 1'b0;
         end
         else begin
             case (state)

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for controller
-Fri Jun 27 20:37:47 2025
+Thu Jul  3 18:40:44 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -10,17 +10,7 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |top|controller_reader:inst|state
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Post-Synthesis Netlist Statistics for Top Partition
- 14. Elapsed Time Per Partition
- 15. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -47,20 +37,20 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 27 20:37:47 2025           ;
+; Analysis & Synthesis Status        ; Failed - Thu Jul  3 18:40:44 2025               ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; controller                                      ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 65                                              ;
-;     Total combinational functions  ; 65                                              ;
-;     Dedicated logic registers      ; 34                                              ;
-; Total registers                    ; 34                                              ;
-; Total pins                         ; 22                                              ;
-; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 0                                               ;
-; Embedded Multiplier 9-bit elements ; 0                                               ;
-; Total PLLs                         ; 0                                               ;
+; Total logic elements               ; N/A until Partition Merge                       ;
+;     Total combinational functions  ; N/A until Partition Merge                       ;
+;     Dedicated logic registers      ; N/A until Partition Merge                       ;
+; Total registers                    ; N/A until Partition Merge                       ;
+; Total pins                         ; N/A until Partition Merge                       ;
+; Total virtual pins                 ; N/A until Partition Merge                       ;
+; Total memory bits                  ; N/A until Partition Merge                       ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
+; Total PLLs                         ; N/A until Partition Merge                       ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -159,162 +149,11 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 16          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                          ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                ; Library ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
-; controller.v                     ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller.v         ;         ;
-; output_files/top.bdf             ; yes             ; User Block Diagram/Schematic File  ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/output_files/top.bdf ;         ;
-+----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 65        ;
-;                                             ;           ;
-; Total combinational functions               ; 65        ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 27        ;
-;     -- 3 input functions                    ; 7         ;
-;     -- <=2 input functions                  ; 31        ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 54        ;
-;     -- arithmetic mode                      ; 11        ;
-;                                             ;           ;
-; Total registers                             ; 34        ;
-;     -- Dedicated logic registers            ; 34        ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 22        ;
-;                                             ;           ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 34        ;
-; Total fan-out                               ; 327       ;
-; Average fan-out                             ; 2.29      ;
-+---------------------------------------------+-----------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                     ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------------+--------------+
-; Compilation Hierarchy Node  ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name         ; Entity Name       ; Library Name ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------------+--------------+
-; |top                        ; 65 (0)              ; 34 (0)                    ; 0           ; 0            ; 0       ; 0         ; 22   ; 0            ; |top                        ; top               ; work         ;
-;    |controller_reader:inst| ; 65 (65)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller_reader:inst ; controller_reader ; work         ;
-+-----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------+-------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |top|controller_reader:inst|state                                                                                                                                           ;
-+-------------------+-----------------+------------------+------------------+-------------------+-----------------+-----------------+------------------+------------------+-------------------+
-; Name              ; state.STATE_SIX ; state.STATE_FIVE ; state.STATE_FOUR ; state.STATE_THREE ; state.STATE_TWO ; state.STATE_ONE ; state.STATE_ZERO ; state.STATE_IDLE ; state.STATE_SEVEN ;
-+-------------------+-----------------+------------------+------------------+-------------------+-----------------+-----------------+------------------+------------------+-------------------+
-; state.STATE_IDLE  ; 0               ; 0                ; 0                ; 0                 ; 0               ; 0               ; 0                ; 0                ; 0                 ;
-; state.STATE_ZERO  ; 0               ; 0                ; 0                ; 0                 ; 0               ; 0               ; 1                ; 1                ; 0                 ;
-; state.STATE_ONE   ; 0               ; 0                ; 0                ; 0                 ; 0               ; 1               ; 0                ; 1                ; 0                 ;
-; state.STATE_TWO   ; 0               ; 0                ; 0                ; 0                 ; 1               ; 0               ; 0                ; 1                ; 0                 ;
-; state.STATE_THREE ; 0               ; 0                ; 0                ; 1                 ; 0               ; 0               ; 0                ; 1                ; 0                 ;
-; state.STATE_FOUR  ; 0               ; 0                ; 1                ; 0                 ; 0               ; 0               ; 0                ; 1                ; 0                 ;
-; state.STATE_FIVE  ; 0               ; 1                ; 0                ; 0                 ; 0               ; 0               ; 0                ; 1                ; 0                 ;
-; state.STATE_SIX   ; 1               ; 0                ; 0                ; 0                 ; 0               ; 0               ; 0                ; 1                ; 0                 ;
-; state.STATE_SEVEN ; 0               ; 0                ; 0                ; 0                 ; 0               ; 0               ; 0                ; 1                ; 1                 ;
-+-------------------+-----------------+------------------+------------------+-------------------+-----------------+-----------------+------------------+------------------+-------------------+
-
-
-+------------------------------------------------------------+
-; Registers Removed During Synthesis                         ;
-+---------------------------------------+--------------------+
-; Register name                         ; Reason for Removal ;
-+---------------------------------------+--------------------+
-; controller_reader:inst|state~13       ; Lost fanout        ;
-; controller_reader:inst|state~14       ; Lost fanout        ;
-; controller_reader:inst|state~15       ; Lost fanout        ;
-; Total Number of Removed Registers = 3 ;                    ;
-+---------------------------------------+--------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 34    ;
-; Number of registers using Synchronous Clear  ; 12    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 22    ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 12    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; controller_reader:inst|select          ; 1       ;
-; Total number of inverted registers = 1 ;         ;
-+----------------------------------------+---------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-; 18:1               ; 9 bits    ; 108 LEs       ; 54 LEs               ; 54 LEs                 ; No         ; |top|controller_reader:inst|Selector12 ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 22                          ;
-; cycloneiii_ff         ; 34                          ;
-;     CLR               ; 10                          ;
-;     CLR SCLR          ; 12                          ;
-;     ENA               ; 12                          ;
-; cycloneiii_lcell_comb ; 66                          ;
-;     arith             ; 11                          ;
-;         2 data inputs ; 11                          ;
-;     normal            ; 55                          ;
-;         1 data inputs ; 14                          ;
-;         2 data inputs ; 7                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 27                          ;
-;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.16                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -323,10 +162,12 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jun 27 20:37:42 2025
+    Info: Processing started: Thu Jul  3 18:40:39 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off controller -c controller
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file debouncer.v
+    Info (12023): Found entity 1: button_debouncer File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 1
 Warning (10229): Verilog HDL Expression warning at controller.v(85): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller.v Line: 85
 Warning (10229): Verilog HDL Expression warning at controller.v(91): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller.v Line: 91
 Warning (10229): Verilog HDL Expression warning at controller.v(102): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller.v Line: 102
@@ -335,22 +176,44 @@ Info (12021): Found 1 design units, including 1 entities, in source file control
     Info (12023): Found entity 1: controller_reader File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file output_files/top.bdf
     Info (12023): Found entity 1: top
+Info (12021): Found 1 design units, including 1 entities, in source file controller_top.v
+    Info (12023): Found entity 1: controller File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller_top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file led_on_pulse.v
+    Info (12023): Found entity 1: led_on_pulse File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/led_on_pulse.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Info (12128): Elaborating entity "controller_reader" for hierarchy "controller_reader:inst"
-Info (13000): Registers with preset signals will power-up high File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller.v Line: 11
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 3 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 87 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 9 input pins
-    Info (21059): Implemented 13 output pins
-    Info (21061): Implemented 65 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 479 megabytes
-    Info: Processing ended: Fri Jun 27 20:37:47 2025
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:14
+Info (12128): Elaborating entity "controller" for hierarchy "controller:inst1"
+Warning (10034): Output port "LEDR" at controller_top.v(6) has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller_top.v Line: 6
+Info (12128): Elaborating entity "button_debouncer" for hierarchy "controller:inst1|button_debouncer:debounce_blocks[0].db" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller_top.v Line: 22
+Error (10200): Verilog HDL Conditional Statement error at debouncer.v(20): cannot match operand(s) in the condition to the corresponding edges in the enclosing event control of the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 20
+Warning (10230): Verilog HDL assignment warning at debouncer.v(43): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 43
+Warning (10240): Verilog HDL Always Construct warning at debouncer.v(19): inferring latch(es) for variable "state", which holds its previous value in one or more paths through the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Warning (10240): Verilog HDL Always Construct warning at debouncer.v(19): inferring latch(es) for variable "counter", which holds its previous value in one or more paths through the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[0]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[1]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[2]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[3]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[4]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[5]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[6]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[7]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[8]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[9]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[10]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[11]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[12]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[13]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[14]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "counter[15]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "state.S_WAIT_RELEASE" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "state.S_PULSE" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "state.S_COUNT" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Info (10041): Inferred latch for "state.S_IDLE" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
+Error (12152): Can't elaborate user hierarchy "controller:inst1|button_debouncer:debounce_blocks[0].db" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller_top.v Line: 22
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 9 warnings
+    Error: Peak virtual memory: 335 megabytes
+    Error: Processing ended: Thu Jul  3 18:40:44 2025
+    Error: Elapsed time: 00:00:05
+    Error: Total CPU time (on all processors): 00:00:13
 
 
