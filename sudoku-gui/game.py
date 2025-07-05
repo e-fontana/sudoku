@@ -3,7 +3,7 @@ from screens import MenuScreen, DifficultySelectionScreen, GameScreen, VictorySc
 
 class Game:
     WIDTH = 800
-    HEIGHT = 600
+    HEIGHT = 700
     TITLE = "SUDOKU"
 
     # ESTADOS

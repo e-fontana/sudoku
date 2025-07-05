@@ -3,8 +3,8 @@ import pygame
 from screens.base_screen import BaseScreen
 
 class MenuScreen(BaseScreen):
-    START_BUTOTN = "ENTER"
-    INSTRUCTION = f"press {START_BUTOTN} to start"
+    START_BUTTON = "START"
+    INSTRUCTION = f"press {START_BUTTON} to begin"
 
     BACKGROUND_IMAGE_PATH = "assets/images/main_menu_bg.png"
 

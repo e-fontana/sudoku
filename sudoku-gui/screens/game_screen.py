@@ -7,11 +7,18 @@ class GameScreen(BaseScreen):
     GRID_START_X = 175
     GRID_START_Y = 100
 
+    NS_GRID_DIMENSION = 9
+    NS_GRID_START_X = GRID_START_X
+    NS_GRID_START_Y = 600
+
+
     # Cores
     CELL_BG_COLOR = (255, 255, 255, 30) # Branco semi-transparente para o fundo da célula
     THIN_BORDER_COLOR = (200, 200, 200, 80) # Cinza claro semi-transparente para bordas finas
     THICK_BORDER_COLOR = (255, 100, 200) # Rosa para bordas grossas (cor única)
-    SELECTED_CELL_COLOR = (255, 255, 255, 80) # Branco mais claro e opaco para célula selecionada
+    ACTIVE_SELECTED_CELL_COLOR = (255, 255, 255, 85) # Branco mais claro e opaco para célula selecionada
+    INACTIVE_SELECTED_CELL_COLOR = (255, 255, 255, 60) # Branco mais escuro e opaco para célula selecionada
+    WRONG_CELL_COLOR =  (255, 7, 0, 100)
 
     # Larguras de Borda
     THIN_BORDER_WIDTH = 1
@@ -34,6 +41,9 @@ class GameScreen(BaseScreen):
         super().__init__(game)
         self.font_timer = self.game.get_font(24) 
         self.font_numbers = self.game.get_font(36)
+        self.number_selected = 1
+        self.select_number = False
+        self.is_selected_wrong = False
 
         # Posição inicial do cursor
         self.current_row = 4
@@ -60,16 +70,35 @@ class GameScreen(BaseScreen):
                 self.game.set_state(self.game.STATE_VICTORY)
             elif event.key == pygame.K_d:
                 self.game.set_state(self.game.STATE_DEFEAT)
-            # Movimento do cursor
-            elif event.key == pygame.K_UP:
-                self.current_row = max(0, self.current_row - 1)
-            elif event.key == pygame.K_DOWN:
-                self.current_row = min(self.GRID_DIMENSION - 1, self.current_row + 1)
-            elif event.key == pygame.K_LEFT:
-                self.current_col = max(0, self.current_col - 1)
-            elif event.key == pygame.K_RIGHT:
-                self.current_col = min(self.GRID_DIMENSION - 1, self.current_col + 1)
+            # seleção de número ou tabuleiro
+            elif self.select_number == False:
+                if event.key == pygame.K_UP:
+                    self.current_row = max(0, self.current_row - 1)
+                elif event.key == pygame.K_DOWN:
+                    self.current_row = min(self.GRID_DIMENSION - 1, self.current_row + 1)
+                elif event.key == pygame.K_LEFT:
+                    self.current_col = max(0, self.current_col - 1)
+                elif event.key == pygame.K_RIGHT:
+                    self.current_col = min(self.GRID_DIMENSION - 1, self.current_col + 1)
+                elif event.key == pygame.K_RETURN:
+                    self.select_number = True
+            elif self.select_number == True:
+                if event.key == pygame.K_LEFT:
+                    self.number_selected -= 1
+                elif event.key == pygame.K_RIGHT:
+                    self.number_selected += 1
+                elif event.key == pygame.K_j:
+                    self.is_selected_wrong = True
+                elif event.key == pygame.K_RETURN:
+                    self.sudoku_board[self.current_row][self.current_col] = self.number_selected
+                    self.select_number = False
+                elif event.key == pygame.K_ESCAPE:
+                    if self.is_selected_wrong:
+                        self.sudoku_board[self.current_row][self.current_col] = 0
+                        self.is_selected_wrong = False
+                    self.select_number = False                   
 
+    
     def update(self, _):
         self.game.elapsed_time = (pygame.time.get_ticks() - self.start_ticks) // 1000
 
@@ -106,8 +135,14 @@ class GameScreen(BaseScreen):
 
                 # Escolhe a cor de fundo da célula (normal ou selecionada)
                 cell_fill_color = self.CELL_BG_COLOR # Cor padrão
+
                 if row == self.current_row and col == self.current_col:
-                    cell_fill_color = self.SELECTED_CELL_COLOR # Cor para a célula selecionada
+                    if self.is_selected_wrong:
+                        cell_fill_color = self.WRONG_CELL_COLOR
+                    elif self.select_number:
+                        cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR
+                    else: # Cor para a célula selecionada
+                        cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
 
                 # Desenha o fundo opaco da célula com cantos arredondados (se CELL_BORDER_RADIUS > 0)
                 cell_surface = pygame.Surface(cell_rect.size, pygame.SRCALPHA)
@@ -145,3 +180,43 @@ class GameScreen(BaseScreen):
                     num_rect = num_surface.get_rect(center=(self.GRID_START_X + c * self.CELL_SIZE + self.CELL_SIZE // 2,
                                                              self.GRID_START_Y + r * self.CELL_SIZE + self.CELL_SIZE // 2))
                     screen.blit(num_surface, num_rect)
+
+        # --- DESENHO DO GRID DO NUMBER SELECTOR ---
+        for col in range(self.GRID_DIMENSION):
+            x = self.NS_GRID_START_X + col * self.CELL_SIZE
+            y = self.NS_GRID_START_Y
+            cell_rect = pygame.Rect(x, y, self.CELL_SIZE, self.CELL_SIZE)
+
+            # Escolhe a cor de fundo da célula (normal ou selecionada)
+            cell_fill_color = self.CELL_BG_COLOR # Cor padrão
+            if col == self.number_selected - 1:
+                if self.select_number == False:
+                    cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
+                else:
+                    cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
+
+            # Desenha o fundo opaco da célula com cantos arredondados (se CELL_BORDER_RADIUS > 0)
+            cell_surface = pygame.Surface(cell_rect.size, pygame.SRCALPHA)
+            pygame.draw.rect(cell_surface, cell_fill_color, (0, 0, cell_rect.width, cell_rect.height), border_radius=self.CELL_BORDER_RADIUS)
+            screen.blit(cell_surface, cell_rect.topleft)
+
+            # Desenha a borda fina da célula
+            pygame.draw.rect(screen, self.THIN_BORDER_COLOR, cell_rect, self.THIN_BORDER_WIDTH, border_radius=self.CELL_BORDER_RADIUS)
+
+        # --- Desenho da Borda Externa do Number Selector (rosa) ---
+        pygame.draw.line(screen, self.THICK_BORDER_COLOR, (self.NS_GRID_START_X, self.NS_GRID_START_Y), (self.NS_GRID_START_X + self.GRID_DIMENSION * self.CELL_SIZE, self.NS_GRID_START_Y), self.THICK_BORDER_WIDTH)
+        pygame.draw.line(screen, self.THICK_BORDER_COLOR, (self.NS_GRID_START_X, self.NS_GRID_START_Y + 50), (self.NS_GRID_START_X + self.GRID_DIMENSION * self.CELL_SIZE, self.NS_GRID_START_Y + 50), self.THICK_BORDER_WIDTH)
+        pygame.draw.line(screen, self.THICK_BORDER_COLOR, (self.NS_GRID_START_X, self.NS_GRID_START_Y), (self.NS_GRID_START_X + self.GRID_DIMENSION * self.CELL_SIZE, self.NS_GRID_START_Y), self.THICK_BORDER_WIDTH)
+        pygame.draw.line(screen, self.THICK_BORDER_COLOR, (self.NS_GRID_START_X, self.NS_GRID_START_Y + 50), (self.NS_GRID_START_X + self.GRID_DIMENSION * self.CELL_SIZE, self.NS_GRID_START_Y + 50), self.THICK_BORDER_WIDTH)
+
+        ns_grid_width = self.GRID_DIMENSION * self.CELL_SIZE
+        ns_grid_height = self.CELL_SIZE
+        ns_outer_grid_rect = pygame.Rect(self.NS_GRID_START_X, self.NS_GRID_START_Y, ns_grid_width, ns_grid_height)
+        pygame.draw.rect(screen, self.THICK_BORDER_COLOR, ns_outer_grid_rect, self.THICK_BORDER_WIDTH + 1, border_radius=self.CELL_BORDER_RADIUS)
+
+        # --- Desenho dos Números do Number selector ---
+        for i in range(self.GRID_DIMENSION):
+            num_surface = self.font_numbers.render(str(i+1), True, self.PURE_WHITE) # Texto em branco puro
+            num_rect = num_surface.get_rect(center=(self.NS_GRID_START_X + i * self.CELL_SIZE + self.CELL_SIZE // 2,
+                                                        self.NS_GRID_START_Y + self.CELL_SIZE // 2))
+            screen.blit(num_surface, num_rect)
