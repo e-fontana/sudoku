@@ -2,8 +2,8 @@ module frequency (
     input clk,
     input reset,
     output reg clk_1Hz 
-);
-    localparam CLK_FREQ = 4;
+);  
+    localparam CLK_FREQ = 50_000_000 - 1;
     reg [25:0] counter;
 
     always @(posedge clk or posedge reset) begin

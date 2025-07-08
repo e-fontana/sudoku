@@ -4,15 +4,43 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "c",
+					"name" : "error",
 					"strict" : false
 				},
 				{
-					"name" : "a",
+					"name" : "a_button",
 					"strict" : false
 				},
 				{
-					"name" : "b",
+					"name" : "up_button",
+					"strict" : false
+				},
+				{
+					"name" : "down_button",
+					"strict" : false
+				},
+				{
+					"name" : "b_button",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "right_button",
+					"strict" : false
+				},
+				{
+					"name" : "left_button",
+					"strict" : false
+				},
+				{
+					"name" : "start_button",
 					"strict" : false
 				}
 			]

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Fri Jun 27 21:56:47 2025
+Fri Jul  4 18:17:53 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,10 +13,24 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. Removed Registers Triggering Further Register Optimizations
+ 11. General Register Statistics
+ 12. Inverted Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: state_machine:sm
+ 15. Parameter Settings for User Entity Instance: state_machine:sm|board_updater:b_up
+ 16. Parameter Settings for User Entity Instance: state_machine:sm|position_updater:pos_up
+ 17. Parameter Settings for User Entity Instance: state_machine:sm|difficulty_selector:d_sel
+ 18. Parameter Settings for Inferred Entity Instance: map_selector:ms|lpm_mult:Mult1
+ 19. lpm_mult Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "state_machine:sm"
+ 21. Port Connectivity Checks: "score:sc"
+ 22. Port Connectivity Checks: "stopwatch:sw"
+ 23. Post-Synthesis Netlist Statistics for Top Partition
+ 24. Elapsed Time Per Partition
+ 25. Analysis & Synthesis Messages
 
 
 
@@ -43,16 +57,16 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 27 21:56:47 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul  4 18:17:53 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top                                             ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 1                                               ;
-;     Total combinational functions  ; 1                                               ;
-;     Dedicated logic registers      ; 0                                               ;
-; Total registers                    ; 0                                               ;
-; Total pins                         ; 4                                               ;
+; Total logic elements               ; 244                                             ;
+;     Total combinational functions  ; 238                                             ;
+;     Dedicated logic registers      ; 106                                             ;
+; Total registers                    ; 106                                             ;
+; Total pins                         ; 10                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -155,62 +169,256 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 10          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                     ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                       ; Library ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
-; top.v                            ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/quartus/top.v ;         ;
-+----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++-----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path  ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                             ; Library ;
++-----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
+; ../modelsim/board_updater.v       ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v                            ;         ;
+; ../modelsim/defeat.v              ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v                                   ;         ;
+; ../modelsim/define_maps.v         ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v                              ;         ;
+; ../modelsim/difficulty_selector.v ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/difficulty_selector.v                      ;         ;
+; ../modelsim/frequency.v           ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v                                ;         ;
+; ../modelsim/map_selector.v        ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v                             ;         ;
+; ../modelsim/position_updater.v    ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v                         ;         ;
+; ../modelsim/random.v              ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v                                   ;         ;
+; ../modelsim/score.v               ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v                                    ;         ;
+; ../modelsim/state_machine.v       ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v                            ;         ;
+; ../modelsim/stopwatch.v           ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v                                ;         ;
+; ../modelsim/top.v                 ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v                                      ;         ;
+; ../modelsim/victory.v             ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v                                  ;         ;
+; lpm_mult.tdf                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf       ;         ;
+; aglobal241.inc                    ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/aglobal241.inc     ;         ;
+; lpm_add_sub.inc                   ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_add_sub.inc    ;         ;
+; multcore.inc                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/multcore.inc       ;         ;
+; bypassff.inc                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/bypassff.inc       ;         ;
+; altshift.inc                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altshift.inc       ;         ;
+; multcore.tdf                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/multcore.tdf       ;         ;
+; csa_add.inc                       ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/csa_add.inc        ;         ;
+; mpar_add.inc                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/mpar_add.inc       ;         ;
+; muleabz.inc                       ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/muleabz.inc        ;         ;
+; mul_lfrg.inc                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/mul_lfrg.inc       ;         ;
+; mul_boothc.inc                    ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/mul_boothc.inc     ;         ;
+; alt_ded_mult.inc                  ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/alt_ded_mult.inc   ;         ;
+; alt_ded_mult_y.inc                ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/alt_ded_mult_y.inc ;         ;
+; dffpipe.inc                       ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/dffpipe.inc        ;         ;
+; mpar_add.tdf                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/mpar_add.tdf       ;         ;
+; altshift.tdf                      ; yes             ; Megafunction           ; /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/altshift.tdf       ;         ;
++-----------------------------------+-----------------+------------------------+------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Estimated Total logic elements              ; 1     ;
-;                                             ;       ;
-; Total combinational functions               ; 1     ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- <=2 input functions                  ; 1     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 1     ;
-;     -- arithmetic mode                      ; 0     ;
-;                                             ;       ;
-; Total registers                             ; 0     ;
-;     -- Dedicated logic registers            ; 0     ;
-;     -- I/O registers                        ; 0     ;
-;                                             ;       ;
-; I/O pins                                    ; 4     ;
-;                                             ;       ;
-; Embedded Multiplier 9-bit elements          ; 0     ;
-;                                             ;       ;
-; Maximum fan-out node                        ; c~0   ;
-; Maximum fan-out                             ; 1     ;
-; Total fan-out                               ; 7     ;
-; Average fan-out                             ; 0.78  ;
-+---------------------------------------------+-------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++---------------------------------------------+-------------+
+; Resource                                    ; Usage       ;
++---------------------------------------------+-------------+
+; Estimated Total logic elements              ; 244         ;
+;                                             ;             ;
+; Total combinational functions               ; 238         ;
+; Logic element usage by number of LUT inputs ;             ;
+;     -- 4 input functions                    ; 107         ;
+;     -- 3 input functions                    ; 51          ;
+;     -- <=2 input functions                  ; 80          ;
+;                                             ;             ;
+; Logic elements by mode                      ;             ;
+;     -- normal mode                          ; 191         ;
+;     -- arithmetic mode                      ; 47          ;
+;                                             ;             ;
+; Total registers                             ; 106         ;
+;     -- Dedicated logic registers            ; 106         ;
+;     -- I/O registers                        ; 0           ;
+;                                             ;             ;
+; I/O pins                                    ; 10          ;
+;                                             ;             ;
+; Embedded Multiplier 9-bit elements          ; 0           ;
+;                                             ;             ;
+; Maximum fan-out node                        ; reset~input ;
+; Maximum fan-out                             ; 102         ;
+; Total fan-out                               ; 1109        ;
+; Average fan-out                             ; 3.05        ;
++---------------------------------------------+-------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
-; |top                       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 4    ; 0            ; |top                ; top         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name         ; Library Name ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
+; |top                              ; 238 (2)             ; 106 (0)                   ; 0           ; 0            ; 0       ; 0         ; 10   ; 0            ; |top                                            ; top                 ; work         ;
+;    |map_selector:ms|              ; 29 (26)             ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|map_selector:ms                            ; map_selector        ; work         ;
+;       |random:r|                  ; 3 (3)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|map_selector:ms|random:r                   ; random              ; work         ;
+;    |state_machine:sm|             ; 126 (54)            ; 49 (3)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm                           ; state_machine       ; work         ;
+;       |board_updater:b_up|        ; 60 (60)             ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|board_updater:b_up        ; board_updater       ; work         ;
+;       |defeat:d|                  ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|defeat:d                  ; defeat              ; work         ;
+;       |difficulty_selector:d_sel| ; 2 (2)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|difficulty_selector:d_sel ; difficulty_selector ; work         ;
+;       |position_updater:pos_up|   ; 4 (4)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|position_updater:pos_up   ; position_updater    ; work         ;
+;    |stopwatch:sw|                 ; 81 (32)             ; 49 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|stopwatch:sw                               ; stopwatch           ; work         ;
+;       |frequency:fd|              ; 49 (49)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|stopwatch:sw|frequency:fd                  ; frequency           ; work         ;
++-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                                       ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal                        ; Free of Timing Hazards ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+; state_machine:sm|board_updater:b_up|next_board[8]   ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[0]   ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[32]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[40]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[1]   ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[9]   ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[33]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[41]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[49]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[57]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[2]   ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[10]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[50]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[58]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[3]   ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[11]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[51]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[59]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[34]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[42]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[4]   ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[12]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[52]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[60]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[35]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[43]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[36]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[44]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[13]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[5]   ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[53]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; state_machine:sm|board_updater:b_up|next_board[61]  ; state_machine:sm|board_updater:b_up|Equal1 ; yes                    ;
+; Number of user-specified and inferred latches = 32  ;                                            ;                        ;
++-----------------------------------------------------+--------------------------------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                      ;
++---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+; Register name                                                                                           ; Reason for Removal                                            ;
++---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+; state_machine:sm|position_updater:pos_up|pos_i[1,3]                                                     ; Stuck at GND due to stuck port data_in                        ;
+; state_machine:sm|position_updater:pos_up|pos_j[1,3]                                                     ; Stuck at GND due to stuck port data_in                        ;
+; state_machine:sm|board_updater:b_up|board[67..130]                                                      ; Lost fanout                                                   ;
+; state_machine:sm|position_updater:pos_up|pos_j[2]                                                       ; Merged with state_machine:sm|position_updater:pos_up|pos_i[2] ;
+; state_machine:sm|board_updater:b_up|visibilities[4..7,12..15,20..23,28..31,36..39,44..47,52..55,60..80] ; Stuck at GND due to stuck port data_in                        ;
+; state_machine:sm|board_updater:b_up|board[7,15..31,37..39,45..47,55,63..66]                             ; Lost fanout                                                   ;
+; state_machine:sm|board_updater:b_up|visibilities[2,3,8,11,16..19,24..27,32..35,42,56..59]               ; Stuck at GND due to stuck port data_in                        ;
+; state_machine:sm|board_updater:b_up|board[6,14,48,54,56,62]                                             ; Lost fanout                                                   ;
+; state_machine:sm|board_updater:b_up|visibilities[43,48,51]                                              ; Stuck at GND due to stuck port data_in                        ;
+; state_machine:sm|board_updater:b_up|board[5,32,36,57,59]                                                ; Lost fanout                                                   ;
+; Total Number of Removed Registers = 182                                                                 ;                                                               ;
++---------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                           ;
++---------------------------------------------------+---------------------------+-------------------------------------------------------+
+; Register name                                     ; Reason for Removal        ; Registers Removed due to This Register                ;
++---------------------------------------------------+---------------------------+-------------------------------------------------------+
+; state_machine:sm|position_updater:pos_up|pos_i[3] ; Stuck at GND              ; state_machine:sm|board_updater:b_up|board[130],       ;
+;                                                   ; due to stuck port data_in ; state_machine:sm|board_updater:b_up|board[129],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|board[128],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|board[127],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|board[126],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|board[125],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|board[124],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|board[123],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|board[122],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|board[121],       ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[80], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[79], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[78], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[77], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[76], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[75], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[74], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[73], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[72], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[71], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[70], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[69], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[68], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[67], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[66], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[65], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[64], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[63], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[62], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[61], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[60], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[55], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[54], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[53], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[52], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[47], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[46], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[45], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[44], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[39], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[38], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[37], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[36], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[31], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[30], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[29], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[28], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[23], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[22], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[21], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[20], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[15], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[14], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[13], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[12], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[7],  ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[6],  ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[5],  ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[4],  ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[59], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[58], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[57], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[56], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[42], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[35], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[34], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[33], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[32], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[27], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[26], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[25], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[24], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[19], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[18], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[17], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[16], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[11], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[8],  ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[3],  ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[2],  ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[51], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[48], ;
+;                                                   ;                           ; state_machine:sm|board_updater:b_up|visibilities[43]  ;
+; state_machine:sm|position_updater:pos_up|pos_j[3] ; Stuck at GND              ; state_machine:sm|board_updater:b_up|board[120]        ;
+;                                                   ; due to stuck port data_in ;                                                       ;
++---------------------------------------------------+---------------------------+-------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -218,14 +426,173 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Total registers                              ; 106   ;
+; Number of registers using Synchronous Clear  ; 17    ;
+; Number of registers using Synchronous Load   ; 3     ;
+; Number of registers using Asynchronous Clear ; 102   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 30    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------+
+; Inverted Register Statistics                                     ;
++--------------------------------------------------------+---------+
+; Inverted Register                                      ; Fan out ;
++--------------------------------------------------------+---------+
+; state_machine:sm|position_updater:pos_up|pos_i[2]      ; 23      ;
+; state_machine:sm|board_updater:b_up|selected_number[0] ; 4       ;
+; map_selector:ms|random:r|seed[0]                       ; 2       ;
+; Total number of inverted registers = 3                 ;         ;
++--------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|stopwatch:sw|minutes[0]                                ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|stopwatch:sw|seconds[0]                                ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |top|state_machine:sm|board_updater:b_up|visibilities[41]   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|state_machine:sm|board_updater:b_up|selected_number[1] ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; Yes        ; |top|state_machine:sm|current_state[2]                      ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |top|state_machine:sm|Mux4                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: state_machine:sm ;
++------------------------+-------+------------------------------+
+; Parameter Name         ; Value ; Type                         ;
++------------------------+-------+------------------------------+
+; INICIAR_JOGO           ; 000   ; Unsigned Binary              ;
+; SELECIONAR_DIFICULDADE ; 001   ; Unsigned Binary              ;
+; CARREGANDO             ; 010   ; Unsigned Binary              ;
+; CORRENDO_MAPA          ; 011   ; Unsigned Binary              ;
+; PERCORRER_NUMEROS      ; 100   ; Unsigned Binary              ;
+; VITORIA                ; 101   ; Unsigned Binary              ;
+; DERROTA                ; 110   ; Unsigned Binary              ;
++------------------------+-------+------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: state_machine:sm|board_updater:b_up ;
++-------------------+-------+------------------------------------------------------+
+; Parameter Name    ; Value ; Type                                                 ;
++-------------------+-------+------------------------------------------------------+
+; CARREGANDO        ; 010   ; Unsigned Binary                                      ;
+; PERCORRER_NUMEROS ; 100   ; Unsigned Binary                                      ;
++-------------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: state_machine:sm|position_updater:pos_up ;
++----------------+-------+--------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                         ;
++----------------+-------+--------------------------------------------------------------+
+; CORRENDO_MAPA  ; 011   ; Unsigned Binary                                              ;
++----------------+-------+--------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: state_machine:sm|difficulty_selector:d_sel ;
++------------------------+-------+--------------------------------------------------------+
+; Parameter Name         ; Value ; Type                                                   ;
++------------------------+-------+--------------------------------------------------------+
+; SELECIONAR_DIFICULDADE ; 001   ; Unsigned Binary                                        ;
++------------------------+-------+--------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: map_selector:ms|lpm_mult:Mult1     ;
++------------------------------------------------+--------------+---------------------+
+; Parameter Name                                 ; Value        ; Type                ;
++------------------------------------------------+--------------+---------------------+
+; AUTO_CARRY_CHAINS                              ; ON           ; AUTO_CARRY          ;
+; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY        ;
+; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE        ;
+; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE      ;
+; LPM_WIDTHA                                     ; 4            ; Untyped             ;
+; LPM_WIDTHB                                     ; 9            ; Untyped             ;
+; LPM_WIDTHP                                     ; 13           ; Untyped             ;
+; LPM_WIDTHR                                     ; 13           ; Untyped             ;
+; LPM_WIDTHS                                     ; 1            ; Untyped             ;
+; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped             ;
+; LPM_PIPELINE                                   ; 0            ; Untyped             ;
+; LATENCY                                        ; 0            ; Untyped             ;
+; INPUT_A_IS_CONSTANT                            ; NO           ; Untyped             ;
+; INPUT_B_IS_CONSTANT                            ; YES          ; Untyped             ;
+; USE_EAB                                        ; OFF          ; Untyped             ;
+; MAXIMIZE_SPEED                                 ; 5            ; Untyped             ;
+; DEVICE_FAMILY                                  ; Cyclone IV E ; Untyped             ;
+; CARRY_CHAIN                                    ; MANUAL       ; Untyped             ;
+; APEX20K_TECHNOLOGY_MAPPER                      ; LUT          ; TECH_MAPPER_APEX20K ;
+; DEDICATED_MULTIPLIER_CIRCUITRY                 ; AUTO         ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_INPUT_WIDTH_FOR_AUTO  ; 0            ; Untyped             ;
+; DEDICATED_MULTIPLIER_MIN_OUTPUT_WIDTH_FOR_AUTO ; 0            ; Untyped             ;
+; CBXI_PARAMETER                                 ; NOTHING      ; Untyped             ;
+; INPUT_A_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; INPUT_B_FIXED_VALUE                            ; Bx           ; Untyped             ;
+; USE_AHDL_IMPLEMENTATION                        ; OFF          ; Untyped             ;
++------------------------------------------------+--------------+---------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------+
+; lpm_mult Parameter Settings by Entity Instance                         ;
++---------------------------------------+--------------------------------+
+; Name                                  ; Value                          ;
++---------------------------------------+--------------------------------+
+; Number of entity instances            ; 1                              ;
+; Entity Instance                       ; map_selector:ms|lpm_mult:Mult1 ;
+;     -- LPM_WIDTHA                     ; 4                              ;
+;     -- LPM_WIDTHB                     ; 9                              ;
+;     -- LPM_WIDTHP                     ; 13                             ;
+;     -- LPM_REPRESENTATION             ; UNSIGNED                       ;
+;     -- INPUT_A_IS_CONSTANT            ; NO                             ;
+;     -- INPUT_B_IS_CONSTANT            ; YES                            ;
+;     -- USE_EAB                        ; OFF                            ;
+;     -- DEDICATED_MULTIPLIER_CIRCUITRY ; AUTO                           ;
+;     -- INPUT_A_FIXED_VALUE            ; Bx                             ;
+;     -- INPUT_B_FIXED_VALUE            ; Bx                             ;
++---------------------------------------+--------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "state_machine:sm"                                                                           ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port         ; Type   ; Severity ; Details                                                                             ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+; pos_i        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; pos_j        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; visibilities ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; board        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++--------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "score:sc"                                                                            ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; Port  ; Type   ; Severity ; Details                                                                             ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+; score ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "stopwatch:sw"                                                                          ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; seconds ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; minutes ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +-----------------------------------------------------+
@@ -233,13 +600,26 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_lcell_comb ; 1                           ;
-;     normal            ; 1                           ;
-;         2 data inputs ; 1                           ;
+; boundary_port         ; 10                          ;
+; cycloneiii_ff         ; 106                         ;
+;     CLR               ; 72                          ;
+;     ENA CLR           ; 10                          ;
+;     ENA CLR SCLR      ; 17                          ;
+;     ENA CLR SLD       ; 3                           ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 238                         ;
+;     arith             ; 47                          ;
+;         2 data inputs ; 45                          ;
+;         3 data inputs ; 2                           ;
+;     normal            ; 191                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 27                          ;
+;         3 data inputs ; 49                          ;
+;         4 data inputs ; 107                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
+; Max LUT depth         ; 10.00                       ;
+; Average LUT depth     ; 3.95                        ;
 +-----------------------+-----------------------------+
 
 
@@ -248,7 +628,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:00     ;
+; Top            ; 00:00:02     ;
 +----------------+--------------+
 
 
@@ -258,26 +638,430 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jun 27 21:56:43 2025
+    Info: Processing started: Fri Jul  4 18:17:46 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sudoku -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file top.v
-    Info (12023): Found entity 1: top File: /home/andreojr/dev/edu/engg52/sudoku/quartus/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v
+    Info (12023): Found entity 1: board_updater File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v
+    Info (12023): Found entity 1: defeat File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v
+    Info (12023): Found entity 1: define_maps File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/difficulty_selector.v
+    Info (12023): Found entity 1: difficulty_selector File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/difficulty_selector.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/display.v
+    Info (12023): Found entity 1: display File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v
+    Info (12023): Found entity 1: frequency File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v
+    Info (12023): Found entity 1: map_selector File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v
+    Info (12023): Found entity 1: position_updater File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v
+    Info (12023): Found entity 1: random File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v
+    Info (12023): Found entity 1: score File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v
+    Info (12023): Found entity 1: state_machine File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v
+    Info (12023): Found entity 1: stopwatch File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v
+    Info (12023): Found entity 1: top File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v
+    Info (12023): Found entity 1: victory File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at define_maps.v(5): created implicit net for "visibilites" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v Line: 5
 Info (12127): Elaborating entity "top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at top.v(24): object "playtime" assigned a value but never read File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 24
+Info (12128): Elaborating entity "stopwatch" for hierarchy "stopwatch:sw" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 39
+Info (12128): Elaborating entity "frequency" for hierarchy "stopwatch:sw|frequency:fd" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v Line: 15
+Warning (10230): Verilog HDL assignment warning at frequency.v(17): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v Line: 17
+Info (12128): Elaborating entity "score" for hierarchy "score:sc" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 46
+Warning (10230): Verilog HDL assignment warning at score.v(16): truncated value with size 32 to match size of target (7) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v Line: 16
+Info (12128): Elaborating entity "map_selector" for hierarchy "map_selector:ms" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 55
+Warning (10230): Verilog HDL assignment warning at map_selector.v(22): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 22
+Info (12128): Elaborating entity "define_maps" for hierarchy "map_selector:ms|define_maps:dm" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 14
+Warning (10036): Verilog HDL or VHDL warning at define_maps.v(5): object "visibilites" assigned a value but never read File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v Line: 5
+Warning (10230): Verilog HDL assignment warning at define_maps.v(5): truncated value with size 1215 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v Line: 5
+Warning (10034): Output port "visibilities" at define_maps.v(2) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v Line: 2
+Info (12128): Elaborating entity "random" for hierarchy "map_selector:ms|random:r" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 20
+Info (12128): Elaborating entity "state_machine" for hierarchy "state_machine:sm" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 84
+Warning (10230): Verilog HDL assignment warning at state_machine.v(40): truncated value with size 32 to match size of target (7) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 40
+Warning (10270): Verilog HDL Case Statement warning at state_machine.v(117): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 117
+Warning (10034): Output port "score" at state_machine.v(12) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 12
+Info (12128): Elaborating entity "board_updater" for hierarchy "state_machine:sm|board_updater:b_up" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 67
+Warning (10230): Verilog HDL assignment warning at board_updater.v(38): truncated value with size 324 to match size of target (81) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 38
+Warning (10230): Verilog HDL assignment warning at board_updater.v(67): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 67
+Warning (10230): Verilog HDL assignment warning at board_updater.v(73): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 73
+Warning (10230): Verilog HDL assignment warning at board_updater.v(85): truncated value with size 32 to match size of target (2) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 85
+Warning (10270): Verilog HDL Case Statement warning at board_updater.v(55): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 55
+Info (10264): Verilog HDL Case Statement information at board_updater.v(55): all case item expressions in this case statement are onehot File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 55
+Warning (10240): Verilog HDL Always Construct warning at board_updater.v(50): inferring latch(es) for variable "next_board", which holds its previous value in one or more paths through the always construct File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[0]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[1]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[2]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[3]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[4]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[5]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[6]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[7]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[8]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[9]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[10]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[11]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[12]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[13]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[14]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[15]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[16]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[17]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[18]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[19]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[20]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[21]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[22]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[23]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[24]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[25]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[26]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[27]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[28]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[29]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[30]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[31]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[32]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[33]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[34]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[35]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[36]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[37]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[38]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[39]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[40]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[41]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[42]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[43]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[44]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[45]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[46]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[47]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[48]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[49]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[50]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[51]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[52]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[53]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[54]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[55]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[56]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[57]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[58]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[59]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[60]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[61]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[62]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[63]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[64]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[65]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[66]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[67]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[68]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[69]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[70]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[71]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[72]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[73]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[74]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[75]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[76]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[77]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[78]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[79]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[80]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[81]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[82]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[83]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[84]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[85]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[86]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[87]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[88]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[89]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[90]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[91]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[92]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[93]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[94]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[95]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[96]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[97]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[98]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[99]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[100]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[101]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[102]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[103]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[104]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[105]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[106]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[107]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[108]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[109]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[110]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[111]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[112]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[113]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[114]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[115]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[116]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[117]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[118]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[119]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[120]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[121]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[122]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[123]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[124]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[125]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[126]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[127]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[128]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[129]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[130]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[131]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[132]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[133]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[134]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[135]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[136]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[137]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[138]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[139]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[140]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[141]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[142]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[143]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[144]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[145]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[146]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[147]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[148]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[149]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[150]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[151]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[152]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[153]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[154]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[155]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[156]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[157]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[158]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[159]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[160]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[161]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[162]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[163]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[164]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[165]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[166]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[167]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[168]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[169]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[170]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[171]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[172]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[173]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[174]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[175]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[176]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[177]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[178]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[179]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[180]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[181]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[182]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[183]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[184]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[185]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[186]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[187]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[188]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[189]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[190]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[191]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[192]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[193]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[194]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[195]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[196]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[197]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[198]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[199]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[200]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[201]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[202]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[203]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[204]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[205]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[206]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[207]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[208]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[209]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[210]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[211]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[212]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[213]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[214]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[215]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[216]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[217]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[218]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[219]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[220]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[221]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[222]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[223]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[224]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[225]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[226]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[227]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[228]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[229]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[230]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[231]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[232]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[233]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[234]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[235]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[236]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[237]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[238]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[239]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[240]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[241]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[242]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[243]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[244]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[245]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[246]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[247]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[248]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[249]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[250]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[251]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[252]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[253]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[254]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[255]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[256]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[257]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[258]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[259]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[260]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[261]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[262]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[263]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[264]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[265]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[266]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[267]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[268]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[269]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[270]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[271]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[272]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[273]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[274]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[275]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[276]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[277]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[278]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[279]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[280]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[281]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[282]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[283]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[284]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[285]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[286]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[287]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[288]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[289]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[290]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[291]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[292]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[293]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[294]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[295]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[296]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[297]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[298]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[299]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[300]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[301]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[302]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[303]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[304]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[305]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[306]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[307]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[308]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[309]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[310]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[311]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[312]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[313]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[314]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[315]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[316]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[317]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[318]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[319]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[320]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[321]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[322]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (10041): Inferred latch for "next_board[323]" at board_updater.v(50) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 50
+Info (12128): Elaborating entity "position_updater" for hierarchy "state_machine:sm|position_updater:pos_up" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 81
+Warning (10230): Verilog HDL assignment warning at position_updater.v(30): truncated value with size 4 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 30
+Warning (10230): Verilog HDL assignment warning at position_updater.v(31): truncated value with size 4 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 31
+Warning (10230): Verilog HDL assignment warning at position_updater.v(36): truncated value with size 4 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 36
+Warning (10230): Verilog HDL assignment warning at position_updater.v(39): truncated value with size 4 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 39
+Warning (10230): Verilog HDL assignment warning at position_updater.v(42): truncated value with size 4 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 42
+Warning (10230): Verilog HDL assignment warning at position_updater.v(45): truncated value with size 4 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 45
+Warning (10270): Verilog HDL Case Statement warning at position_updater.v(33): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 33
+Info (12128): Elaborating entity "difficulty_selector" for hierarchy "state_machine:sm|difficulty_selector:d_sel" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 92
+Info (12128): Elaborating entity "victory" for hierarchy "state_machine:sm|victory:v" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 97
+Info (12128): Elaborating entity "defeat" for hierarchy "state_machine:sm|defeat:d" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 104
+Info (278001): Inferred 1 megafunctions from design logic
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "map_selector:ms|Mult1" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 24
+Info (12130): Elaborated megafunction instantiation "map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 24
+Info (12133): Instantiated megafunction "map_selector:ms|lpm_mult:Mult1" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 24
+    Info (12134): Parameter "LPM_WIDTHA" = "4"
+    Info (12134): Parameter "LPM_WIDTHB" = "9"
+    Info (12134): Parameter "LPM_WIDTHP" = "13"
+    Info (12134): Parameter "LPM_WIDTHR" = "13"
+    Info (12134): Parameter "LPM_WIDTHS" = "1"
+    Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
+    Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
+    Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
+Info (12131): Elaborated megafunction instantiation "map_selector:ms|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "map_selector:ms|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "map_selector:ms|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA_lite/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (13000): Registers with preset signals will power-up high File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 41
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 104 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk" File: /home/andreojr/dev/edu/engg52/sudoku/quartus/top.v Line: 2
-Info (21057): Implemented 5 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+Info (21057): Implemented 281 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
     Info (21059): Implemented 1 output pins
-    Info (21061): Implemented 1 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 447 megabytes
-    Info: Processing ended: Fri Jun 27 21:56:47 2025
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:11
+    Info (21061): Implemented 271 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
+    Info: Peak virtual memory: 569 megabytes
+    Info: Processing ended: Fri Jul  4 18:17:53 2025
+    Info: Elapsed time: 00:00:07
+    Info: Total CPU time (on all processors): 00:00:15
 
 

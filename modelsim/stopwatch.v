@@ -15,7 +15,7 @@ module stopwatch(
     );
 
     always @(posedge clk_1Hz or posedge reset) begin
-        if (reset || !playing_condition) begin
+        if (reset) begin
             timer <= 11'd0;
             seconds <= 6'd0;
             minutes <= 5'd0;
@@ -29,6 +29,10 @@ module stopwatch(
                 end
 
                 timer <= timer + 11'd1;
+            end else begin
+                timer <= 11'd0;
+                seconds <= 6'd0;
+                minutes <= 5'd0;
             end
         end
     end

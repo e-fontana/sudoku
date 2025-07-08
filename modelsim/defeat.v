@@ -1,5 +1,5 @@
 module defeat(
-    input timer,
+    input [10:0] timer,
     input difficulty,
     input [1:0] strikes,
     output defeat_condition
