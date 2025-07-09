@@ -1,27 +1,24 @@
 import serial
-import logging
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+# Configure a porta serial
+ser = serial.Serial(
+    port='/dev/ttyUSB0',         # substitua por sua porta, ex: '/dev/ttyUSB0' no Linux
+    baudrate=115200,
+    bytesize=serial.EIGHTBITS,
+    parity=serial.PARITY_NONE,
+    stopbits=serial.STOPBITS_ONE,
+    timeout=1  # 1 segundo de timeout para leitura
+)
 
-porta = 'COM1'
-baudrate = 115200
+print("Esperando dados da UART...")
 
 try:
-    logging.info(f"Conectando à porta {porta} com baudrate {baudrate}...")
-    with serial.Serial(porta, baudrate, timeout=1) as ser:
-        logging.info(f"Lendo da porta {porta}... Pressione Ctrl+C para sair")
-
-        while True:
-            if ser.in_waiting > 0:
-                byte_recebido = ser.read(1)  # Lê 1 byte
-                logging.info("Byte recebido: ", byte_recebido, "É um byte válido? ", isinstance(byte_recebido, bytes), "Tamanho: ", len(byte_recebido))
-                try:
-                    caractere = byte_recebido.decode('ascii')  # Converte para char
-                    logging.info(f"Recebido: '{caractere}' (hex: {byte_recebido.hex()})")
-                except UnicodeDecodeError:
-                    logging.warning(f"Byte inválido para ASCII: {byte_recebido.hex()}")
-
-except serial.SerialException as e:
-    logging.error(f"Erro na porta serial: {e}")
+    while True:
+        byte = ser.read(1)  # lê um byte
+        if byte:
+            value = byte[0]
+            print(f"Byte recebido: 0x{value:02X} {'✅ OK' if value == 0xAA else '❌ INCORRETO'}")
 except KeyboardInterrupt:
-    logging.warning("\nLeitura encerrada pelo usuário.")
+    print("Interrompido pelo usuário.")
+finally:
+    ser.close()

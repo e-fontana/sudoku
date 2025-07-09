@@ -1,0 +1,48 @@
+module ControladorPrincipal (
+    input  clk,
+    input  rst,
+    input  UART_RXD,
+    output UART_TXD
+);
+
+wire [7:0] rx_data;
+wire       rx_ready;
+reg  [7:0] tx_data;
+reg        tx_start;
+wire       tx_busy;
+
+reg [25:0] timer;
+
+uart uart_inst (
+    .clk(clk),
+    .rst(rst),
+    .rx(UART_RXD),
+    .tx(UART_TXD),
+    .rx_data(rx_data),
+    .rx_ready(rx_ready),
+    .tx_data(tx_data),
+    .tx_start(tx_start),
+    .tx_busy(tx_busy)
+);
+
+// contador simples e envio periódico
+always @(posedge clk or posedge rst) begin
+    if (rst) begin
+        timer <= 0;
+        tx_data <= 8'h41; // letra A
+        tx_start <= 0;
+    end else begin
+        if (timer == 50_000_000) begin // 1 segundo @ 50 MHz
+            timer <= 0;
+            if (!tx_busy) begin
+                tx_start <= 1;
+                tx_data <= tx_data + 1;
+            end
+        end else begin
+            timer <= timer + 1;
+            tx_start <= 0;
+        end
+    end
+end
+
+endmodule

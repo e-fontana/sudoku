@@ -1,0 +1,10 @@
+
+State Machine - |UART_Memoria|ControladorPrincipal:inst|estado_atual
+Name estado_atual.Aguardar_Tempo estado_atual.Aguardar_TX estado_atual.Incrementar_i estado_atual.Transmitir_UART estado_atual.Ler_RAM estado_atual.Config_Enderecos estado_atual.Inicio 
+estado_atual.Inicio 0 0 0 0 0 0 0 
+estado_atual.Config_Enderecos 0 0 0 0 0 1 1 
+estado_atual.Ler_RAM 0 0 0 0 1 0 1 
+estado_atual.Transmitir_UART 0 0 0 1 0 0 1 
+estado_atual.Incrementar_i 0 0 1 0 0 0 1 
+estado_atual.Aguardar_TX 0 1 0 0 0 0 1 
+estado_atual.Aguardar_Tempo 1 0 0 0 0 0 1 

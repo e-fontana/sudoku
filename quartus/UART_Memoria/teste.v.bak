@@ -1,0 +1,9 @@
+module send_byte(
+	input clock,
+	input reset,
+	output reg [7:0] data
+);
+	always @(posedge clock) begin
+		data <= 8'hAA;
+	end
+endmodule

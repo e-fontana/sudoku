@@ -1,0 +1,29 @@
+------------------------------------------------------------
+Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Setup 'clock'
+Slack : -4.370
+TNS   : -310.257
+
+Type  : Setup 'ControladorPrincipal:inst|estado_atual.Ler_RAM'
+Slack : -0.814
+TNS   : -2.241
+
+Type  : Hold 'ControladorPrincipal:inst|estado_atual.Ler_RAM'
+Slack : -0.040
+TNS   : -0.075
+
+Type  : Hold 'clock'
+Slack : 0.387
+TNS   : 0.000
+
+Type  : Minimum Pulse Width 'clock'
+Slack : -3.000
+TNS   : -135.355
+
+Type  : Minimum Pulse Width 'ControladorPrincipal:inst|estado_atual.Ler_RAM'
+Slack : -2.693
+TNS   : -5.386
+
+------------------------------------------------------------

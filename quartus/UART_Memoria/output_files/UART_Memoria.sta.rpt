@@ -1,0 +1,617 @@
+Timing Analyzer report for UART_Memoria
+Wed Jul  9 16:23:30 2025
+Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Fmax Summary
+  6. Timing Closure Recommendations
+  7. Setup Summary
+  8. Hold Summary
+  9. Recovery Summary
+ 10. Removal Summary
+ 11. Minimum Pulse Width Summary
+ 12. Setup: 'clock'
+ 13. Setup: 'ControladorPrincipal:inst|estado_atual.Ler_RAM'
+ 14. Hold: 'ControladorPrincipal:inst|estado_atual.Ler_RAM'
+ 15. Hold: 'clock'
+ 16. Metastability Summary
+ 17. Board Trace Model Assignments
+ 18. Input Transition Times
+ 19. Signal Integrity Metrics (Slow 1200mv 85c Model)
+ 20. Setup Transfers
+ 21. Hold Transfers
+ 22. Report TCCS
+ 23. Report RSKM
+ 24. Unconstrained Paths Summary
+ 25. Clock Status Summary
+ 26. Unconstrained Input Ports
+ 27. Unconstrained Output Ports
+ 28. Unconstrained Input Ports
+ 29. Unconstrained Output Ports
+ 30. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+
+
+
++---------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                         ;
++-----------------------+---------------------------------------------------------+
+; Quartus Prime Version ; Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
+; Timing Analyzer       ; Legacy Timing Analyzer                                  ;
+; Revision Name         ; UART_Memoria                                            ;
+; Device Family         ; Cyclone IV E                                            ;
+; Device Name           ; EP4CE115F29C7                                           ;
+; Timing Models         ; Final                                                   ;
+; Delay Model           ; Slow 1200mV 85C Model                                   ;
+; Rise/Fall Delays      ; Enabled                                                 ;
++-----------------------+---------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 16          ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.5%      ;
++----------------------------+-------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                                                                                         ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
+; Clock Name                                     ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets                                            ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
+; clock                                          ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock }                                          ;
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { ControladorPrincipal:inst|estado_atual.Ler_RAM } ;
++------------------------------------------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+----------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------+
+; Fmax Summary                                                                                                                   ;
++------------+-----------------+------------------------------------------------+------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name                                     ; Note                                           ;
++------------+-----------------+------------------------------------------------+------------------------------------------------+
+; 211.91 MHz ; 211.91 MHz      ; clock                                          ;                                                ;
+; 380.52 MHz ; 270.78 MHz      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; limit due to minimum period restriction (tmin) ;
++------------+-----------------+------------------------------------------------+------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
+----------------------------------
+; Timing Closure Recommendations ;
+----------------------------------
+HTML report is unavailable in plain text report export.
+
+
++-------------------------------------------------------------------------+
+; Setup Summary                                                           ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; clock                                          ; -4.370 ; -310.257      ;
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.814 ; -2.241        ;
++------------------------------------------------+--------+---------------+
+
+
++-------------------------------------------------------------------------+
+; Hold Summary                                                            ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.040 ; -0.075        ;
+; clock                                          ; 0.387  ; 0.000         ;
++------------------------------------------------+--------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++-------------------------------------------------------------------------+
+; Minimum Pulse Width Summary                                             ;
++------------------------------------------------+--------+---------------+
+; Clock                                          ; Slack  ; End Point TNS ;
++------------------------------------------------+--------+---------------+
+; clock                                          ; -3.000 ; -135.355      ;
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -2.693 ; -5.386        ;
++------------------------------------------------+--------+---------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clock'                                                                                                                                                                                                                                                              ;
++--------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                                                                                    ; To Node                                     ; Launch Clock                                   ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------+-------------+--------------+------------+------------+
+; -4.370 ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; UART:inst1|tx_shift[3]                      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock       ; 1.000        ; -1.467     ; 3.891      ;
+; -4.266 ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; UART:inst1|tx_shift[2]                      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock       ; 1.000        ; -1.467     ; 3.787      ;
+; -4.240 ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; UART:inst1|tx_shift[1]                      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock       ; 1.000        ; -1.467     ; 3.761      ;
+; -3.990 ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; UART:inst1|tx_shift[8]                      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock       ; 1.000        ; -1.053     ; 3.925      ;
+; -3.987 ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; UART:inst1|tx_shift[7]                      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock       ; 1.000        ; -1.053     ; 3.922      ;
+; -3.853 ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; UART:inst1|tx_shift[4]                      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock       ; 1.000        ; -1.053     ; 3.788      ;
+; -3.851 ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; UART:inst1|tx_shift[6]                      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock       ; 1.000        ; -1.053     ; 3.786      ;
+; -3.826 ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; UART:inst1|tx_shift[5]                      ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock       ; 1.000        ; -1.053     ; 3.761      ;
+; -3.719 ; UART:inst1|tx_clk_cnt[12]                                                                                    ; UART:inst1|tx_shift[1]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.605      ;
+; -3.719 ; UART:inst1|tx_clk_cnt[12]                                                                                    ; UART:inst1|tx_shift[2]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.605      ;
+; -3.719 ; UART:inst1|tx_clk_cnt[12]                                                                                    ; UART:inst1|tx_shift[3]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.605      ;
+; -3.675 ; UART:inst1|tx_clk_cnt[6]                                                                                     ; UART:inst1|tx_shift[1]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.561      ;
+; -3.675 ; UART:inst1|tx_clk_cnt[6]                                                                                     ; UART:inst1|tx_shift[2]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.561      ;
+; -3.675 ; UART:inst1|tx_clk_cnt[6]                                                                                     ; UART:inst1|tx_shift[3]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.561      ;
+; -3.538 ; UART:inst1|tx_clk_cnt[5]                                                                                     ; UART:inst1|tx_shift[1]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.424      ;
+; -3.538 ; UART:inst1|tx_clk_cnt[5]                                                                                     ; UART:inst1|tx_shift[2]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.424      ;
+; -3.538 ; UART:inst1|tx_clk_cnt[5]                                                                                     ; UART:inst1|tx_shift[3]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.424      ;
+; -3.536 ; UART:inst1|tx_clk_cnt[14]                                                                                    ; UART:inst1|tx_shift[1]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.422      ;
+; -3.536 ; UART:inst1|tx_clk_cnt[14]                                                                                    ; UART:inst1|tx_shift[2]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.422      ;
+; -3.536 ; UART:inst1|tx_clk_cnt[14]                                                                                    ; UART:inst1|tx_shift[3]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.422      ;
+; -3.532 ; UART:inst1|tx_clk_cnt[10]                                                                                    ; UART:inst1|tx_shift[1]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.418      ;
+; -3.532 ; UART:inst1|tx_clk_cnt[10]                                                                                    ; UART:inst1|tx_shift[2]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.418      ;
+; -3.532 ; UART:inst1|tx_clk_cnt[10]                                                                                    ; UART:inst1|tx_shift[3]                      ; clock                                          ; clock       ; 1.000        ; -0.112     ; 4.418      ;
+; -3.525 ; ControladorPrincipal:inst|i[7]                                                                               ; ControladorPrincipal:inst|i[16]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.438      ;
+; -3.525 ; ControladorPrincipal:inst|i[7]                                                                               ; ControladorPrincipal:inst|i[17]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.438      ;
+; -3.525 ; ControladorPrincipal:inst|i[7]                                                                               ; ControladorPrincipal:inst|i[19]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.438      ;
+; -3.525 ; ControladorPrincipal:inst|i[7]                                                                               ; ControladorPrincipal:inst|i[20]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.438      ;
+; -3.525 ; ControladorPrincipal:inst|i[7]                                                                               ; ControladorPrincipal:inst|i[27]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.438      ;
+; -3.525 ; ControladorPrincipal:inst|i[7]                                                                               ; ControladorPrincipal:inst|i[29]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.438      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[18] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[26] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[16] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[17] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[20] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[21] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[24] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[25] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[29] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[27] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[28] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.489 ; ControladorPrincipal:inst|ContadorTempo[17]                                                                  ; ControladorPrincipal:inst|ContadorTempo[30] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.407      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[18] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[26] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[16] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[17] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[20] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[21] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[24] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[25] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[29] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[27] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[28] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.486 ; ControladorPrincipal:inst|ContadorTempo[19]                                                                  ; ControladorPrincipal:inst|ContadorTempo[30] ; clock                                          ; clock       ; 1.000        ; -0.511     ; 3.973      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[18] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[26] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[16] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[17] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[20] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[21] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[24] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[25] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[29] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[27] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[28] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.465 ; ControladorPrincipal:inst|ContadorTempo[28]                                                                  ; ControladorPrincipal:inst|ContadorTempo[30] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.383      ;
+; -3.442 ; ControladorPrincipal:inst|i[26]                                                                              ; ControladorPrincipal:inst|i[16]             ; clock                                          ; clock       ; 1.000        ; -0.510     ; 3.930      ;
+; -3.442 ; ControladorPrincipal:inst|i[26]                                                                              ; ControladorPrincipal:inst|i[17]             ; clock                                          ; clock       ; 1.000        ; -0.510     ; 3.930      ;
+; -3.442 ; ControladorPrincipal:inst|i[26]                                                                              ; ControladorPrincipal:inst|i[19]             ; clock                                          ; clock       ; 1.000        ; -0.510     ; 3.930      ;
+; -3.442 ; ControladorPrincipal:inst|i[26]                                                                              ; ControladorPrincipal:inst|i[20]             ; clock                                          ; clock       ; 1.000        ; -0.510     ; 3.930      ;
+; -3.442 ; ControladorPrincipal:inst|i[26]                                                                              ; ControladorPrincipal:inst|i[27]             ; clock                                          ; clock       ; 1.000        ; -0.510     ; 3.930      ;
+; -3.442 ; ControladorPrincipal:inst|i[26]                                                                              ; ControladorPrincipal:inst|i[29]             ; clock                                          ; clock       ; 1.000        ; -0.510     ; 3.930      ;
+; -3.441 ; ControladorPrincipal:inst|i[0]                                                                               ; ControladorPrincipal:inst|i[16]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.354      ;
+; -3.441 ; ControladorPrincipal:inst|i[0]                                                                               ; ControladorPrincipal:inst|i[17]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.354      ;
+; -3.441 ; ControladorPrincipal:inst|i[0]                                                                               ; ControladorPrincipal:inst|i[19]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.354      ;
+; -3.441 ; ControladorPrincipal:inst|i[0]                                                                               ; ControladorPrincipal:inst|i[20]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.354      ;
+; -3.441 ; ControladorPrincipal:inst|i[0]                                                                               ; ControladorPrincipal:inst|i[27]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.354      ;
+; -3.441 ; ControladorPrincipal:inst|i[0]                                                                               ; ControladorPrincipal:inst|i[29]             ; clock                                          ; clock       ; 1.000        ; -0.085     ; 4.354      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[18] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[26] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[16] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[17] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[20] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[21] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[24] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[25] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[29] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[27] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[28] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.438 ; ControladorPrincipal:inst|ContadorTempo[27]                                                                  ; ControladorPrincipal:inst|ContadorTempo[30] ; clock                                          ; clock       ; 1.000        ; -0.080     ; 4.356      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[18] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[26] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[16] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[17] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[20] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[21] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[24] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[25] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[29] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[27] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
+; -3.417 ; ControladorPrincipal:inst|ContadorTempo[12]                                                                  ; ControladorPrincipal:inst|ContadorTempo[28] ; clock                                          ; clock       ; 1.000        ; -0.083     ; 4.332      ;
++--------+--------------------------------------------------------------------------------------------------------------+---------------------------------------------+------------------------------------------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'ControladorPrincipal:inst|estado_atual.Ler_RAM'                                                                                                                                                                                                                                               ;
++--------+------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                                                                                                      ; Launch Clock                                   ; Latch Clock                                    ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
+; -0.814 ; ControladorPrincipal:inst|a_ram[1] ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0.500        ; -0.528     ; 0.824      ;
+; -0.761 ; ControladorPrincipal:inst|a_ram[3] ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0.500        ; -0.529     ; 0.770      ;
+; -0.756 ; ControladorPrincipal:inst|a_ram[2] ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0.500        ; -0.529     ; 0.765      ;
+; -0.747 ; ControladorPrincipal:inst|a_ram[0] ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0.500        ; -0.529     ; 0.756      ;
+; -0.450 ; ControladorPrincipal:inst|i[2]     ; ControladorPrincipal:inst|a_ram[2]                                                                           ; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0.500        ; 1.506      ; 1.424      ;
+; -0.438 ; ControladorPrincipal:inst|i[3]     ; ControladorPrincipal:inst|a_ram[3]                                                                           ; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0.500        ; 1.506      ; 1.406      ;
+; -0.384 ; ControladorPrincipal:inst|i[0]     ; ControladorPrincipal:inst|a_ram[0]                                                                           ; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0.500        ; 1.505      ; 1.358      ;
+; -0.155 ; ControladorPrincipal:inst|i[1]     ; ControladorPrincipal:inst|a_ram[1]                                                                           ; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0.500        ; 1.504      ; 1.439      ;
++--------+------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'ControladorPrincipal:inst|estado_atual.Ler_RAM'                                                                                                                                                                                                                                                ;
++--------+------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                                                                                                      ; Launch Clock                                   ; Latch Clock                                    ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
+; -0.040 ; ControladorPrincipal:inst|i[0]     ; ControladorPrincipal:inst|a_ram[0]                                                                           ; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.500       ; 1.806      ; 1.296      ;
+; -0.035 ; ControladorPrincipal:inst|i[1]     ; ControladorPrincipal:inst|a_ram[1]                                                                           ; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.500       ; 1.805      ; 1.300      ;
+; 0.011  ; ControladorPrincipal:inst|i[3]     ; ControladorPrincipal:inst|a_ram[3]                                                                           ; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.500       ; 1.806      ; 1.347      ;
+; 0.028  ; ControladorPrincipal:inst|i[2]     ; ControladorPrincipal:inst|a_ram[2]                                                                           ; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.500       ; 1.806      ; 1.364      ;
+; 1.142  ; ControladorPrincipal:inst|a_ram[0] ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.500       ; -0.163     ; 0.721      ;
+; 1.155  ; ControladorPrincipal:inst|a_ram[2] ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.500       ; -0.164     ; 0.733      ;
+; 1.160  ; ControladorPrincipal:inst|a_ram[3] ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.500       ; -0.164     ; 0.738      ;
+; 1.209  ; ControladorPrincipal:inst|a_ram[1] ; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ram_block1a0~porta_address_reg0 ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; -0.500       ; -0.162     ; 0.789      ;
++--------+------------------------------------+--------------------------------------------------------------------------------------------------------------+------------------------------------------------+------------------------------------------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clock'                                                                                                                                                                           ;
++-------+------------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                            ; To Node                                            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.387 ; ControladorPrincipal:inst|estado_atual.Aguardar_TX   ; ControladorPrincipal:inst|estado_atual.Aguardar_TX ; clock        ; clock       ; 0.000        ; 0.096      ; 0.669      ;
+; 0.387 ; ControladorPrincipal:inst|FlagTemporizador           ; ControladorPrincipal:inst|FlagTemporizador         ; clock        ; clock       ; 0.000        ; 0.096      ; 0.669      ;
+; 0.403 ; UART:inst1|tx                                        ; UART:inst1|tx                                      ; clock        ; clock       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; UART:inst1|tx_shift[0]                               ; UART:inst1|tx_shift[0]                             ; clock        ; clock       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; UART:inst1|tx_busy                                   ; UART:inst1|tx_busy                                 ; clock        ; clock       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.403 ; UART:inst1|tx_bit_cnt[2]                             ; UART:inst1|tx_bit_cnt[2]                           ; clock        ; clock       ; 0.000        ; 0.080      ; 0.669      ;
+; 0.448 ; ControladorPrincipal:inst|estado_atual.Incrementar_i ; ControladorPrincipal:inst|estado_atual.Aguardar_TX ; clock        ; clock       ; 0.000        ; 0.478      ; 1.112      ;
+; 0.521 ; ControladorPrincipal:inst|ContadorTempo[1]           ; ControladorPrincipal:inst|ContadorTempo[2]         ; clock        ; clock       ; 0.000        ; 0.511      ; 1.218      ;
+; 0.543 ; ControladorPrincipal:inst|ContadorTempo[21]          ; ControladorPrincipal:inst|ContadorTempo[22]        ; clock        ; clock       ; 0.000        ; 0.511      ; 1.240      ;
+; 0.544 ; ControladorPrincipal:inst|i[17]                      ; ControladorPrincipal:inst|i[18]                    ; clock        ; clock       ; 0.000        ; 0.510      ; 1.240      ;
+; 0.544 ; ControladorPrincipal:inst|i[29]                      ; ControladorPrincipal:inst|i[30]                    ; clock        ; clock       ; 0.000        ; 0.510      ; 1.240      ;
+; 0.545 ; ControladorPrincipal:inst|i[27]                      ; ControladorPrincipal:inst|i[28]                    ; clock        ; clock       ; 0.000        ; 0.510      ; 1.241      ;
+; 0.557 ; ControladorPrincipal:inst|ContadorTempo[18]          ; ControladorPrincipal:inst|ContadorTempo[19]        ; clock        ; clock       ; 0.000        ; 0.511      ; 1.254      ;
+; 0.558 ; ControladorPrincipal:inst|ContadorTempo[30]          ; ControladorPrincipal:inst|ContadorTempo[31]        ; clock        ; clock       ; 0.000        ; 0.511      ; 1.255      ;
+; 0.558 ; ControladorPrincipal:inst|i[20]                      ; ControladorPrincipal:inst|i[21]                    ; clock        ; clock       ; 0.000        ; 0.510      ; 1.254      ;
+; 0.562 ; ControladorPrincipal:inst|ContadorTempo[20]          ; ControladorPrincipal:inst|ContadorTempo[22]        ; clock        ; clock       ; 0.000        ; 0.511      ; 1.259      ;
+; 0.562 ; ControladorPrincipal:inst|i[16]                      ; ControladorPrincipal:inst|i[18]                    ; clock        ; clock       ; 0.000        ; 0.510      ; 1.258      ;
+; 0.563 ; ControladorPrincipal:inst|i[20]                      ; ControladorPrincipal:inst|i[22]                    ; clock        ; clock       ; 0.000        ; 0.510      ; 1.259      ;
+; 0.616 ; ControladorPrincipal:inst|ContadorTempo[3]           ; ControladorPrincipal:inst|ContadorTempo[3]         ; clock        ; clock       ; 0.000        ; 0.097      ; 0.899      ;
+; 0.617 ; ControladorPrincipal:inst|ContadorTempo[5]           ; ControladorPrincipal:inst|ContadorTempo[5]         ; clock        ; clock       ; 0.000        ; 0.097      ; 0.900      ;
+; 0.619 ; ControladorPrincipal:inst|ContadorTempo[6]           ; ControladorPrincipal:inst|ContadorTempo[6]         ; clock        ; clock       ; 0.000        ; 0.097      ; 0.902      ;
+; 0.621 ; UART:inst1|tx_shift[8]                               ; UART:inst1|tx_shift[7]                             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.903      ;
+; 0.621 ; ControladorPrincipal:inst|ContadorTempo[2]           ; ControladorPrincipal:inst|ContadorTempo[2]         ; clock        ; clock       ; 0.000        ; 0.097      ; 0.904      ;
+; 0.622 ; ControladorPrincipal:inst|ContadorTempo[4]           ; ControladorPrincipal:inst|ContadorTempo[4]         ; clock        ; clock       ; 0.000        ; 0.097      ; 0.905      ;
+; 0.623 ; UART:inst1|tx_shift[5]                               ; UART:inst1|tx_shift[4]                             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.905      ;
+; 0.624 ; UART:inst1|tx_shift[7]                               ; UART:inst1|tx_shift[6]                             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.906      ;
+; 0.625 ; UART:inst1|tx_shift[6]                               ; UART:inst1|tx_shift[5]                             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.907      ;
+; 0.635 ; ControladorPrincipal:inst|ContadorTempo[1]           ; ControladorPrincipal:inst|ContadorTempo[1]         ; clock        ; clock       ; 0.000        ; 0.080      ; 0.901      ;
+; 0.639 ; ControladorPrincipal:inst|ContadorTempo[19]          ; ControladorPrincipal:inst|ContadorTempo[19]        ; clock        ; clock       ; 0.000        ; 0.097      ; 0.922      ;
+; 0.640 ; ControladorPrincipal:inst|i[21]                      ; ControladorPrincipal:inst|i[21]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.922      ;
+; 0.641 ; UART:inst1|tx_shift[3]                               ; UART:inst1|tx_shift[2]                             ; clock        ; clock       ; 0.000        ; 0.079      ; 0.906      ;
+; 0.641 ; ControladorPrincipal:inst|ContadorTempo[22]          ; ControladorPrincipal:inst|ContadorTempo[22]        ; clock        ; clock       ; 0.000        ; 0.097      ; 0.924      ;
+; 0.641 ; ControladorPrincipal:inst|ContadorTempo[31]          ; ControladorPrincipal:inst|ContadorTempo[31]        ; clock        ; clock       ; 0.000        ; 0.097      ; 0.924      ;
+; 0.642 ; UART:inst1|tx_shift[2]                               ; UART:inst1|tx_shift[1]                             ; clock        ; clock       ; 0.000        ; 0.079      ; 0.907      ;
+; 0.642 ; ControladorPrincipal:inst|ContadorTempo[23]          ; ControladorPrincipal:inst|ContadorTempo[23]        ; clock        ; clock       ; 0.000        ; 0.097      ; 0.925      ;
+; 0.642 ; ControladorPrincipal:inst|i[31]                      ; ControladorPrincipal:inst|i[31]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.924      ;
+; 0.642 ; ControladorPrincipal:inst|i[22]                      ; ControladorPrincipal:inst|i[22]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.924      ;
+; 0.642 ; ControladorPrincipal:inst|ContadorTempo[1]           ; ControladorPrincipal:inst|ContadorTempo[3]         ; clock        ; clock       ; 0.000        ; 0.511      ; 1.339      ;
+; 0.643 ; ControladorPrincipal:inst|ContadorTempo[0]           ; ControladorPrincipal:inst|ContadorTempo[0]         ; clock        ; clock       ; 0.000        ; 0.097      ; 0.926      ;
+; 0.643 ; ControladorPrincipal:inst|i[23]                      ; ControladorPrincipal:inst|i[23]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.925      ;
+; 0.643 ; ControladorPrincipal:inst|i[25]                      ; ControladorPrincipal:inst|i[25]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.925      ;
+; 0.645 ; ControladorPrincipal:inst|i[18]                      ; ControladorPrincipal:inst|i[18]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.927      ;
+; 0.646 ; ControladorPrincipal:inst|i[24]                      ; ControladorPrincipal:inst|i[24]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.928      ;
+; 0.646 ; ControladorPrincipal:inst|i[26]                      ; ControladorPrincipal:inst|i[26]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.928      ;
+; 0.646 ; ControladorPrincipal:inst|i[30]                      ; ControladorPrincipal:inst|i[30]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.928      ;
+; 0.646 ; ControladorPrincipal:inst|i[28]                      ; ControladorPrincipal:inst|i[28]                    ; clock        ; clock       ; 0.000        ; 0.096      ; 0.928      ;
+; 0.647 ; ControladorPrincipal:inst|ContadorTempo[1]           ; ControladorPrincipal:inst|ContadorTempo[4]         ; clock        ; clock       ; 0.000        ; 0.511      ; 1.344      ;
+; 0.655 ; ControladorPrincipal:inst|ContadorTempo[13]          ; ControladorPrincipal:inst|ContadorTempo[13]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.921      ;
+; 0.655 ; ControladorPrincipal:inst|ContadorTempo[15]          ; ControladorPrincipal:inst|ContadorTempo[15]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.921      ;
+; 0.656 ; ControladorPrincipal:inst|ContadorTempo[11]          ; ControladorPrincipal:inst|ContadorTempo[11]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.922      ;
+; 0.656 ; ControladorPrincipal:inst|ContadorTempo[21]          ; ControladorPrincipal:inst|ContadorTempo[21]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.922      ;
+; 0.656 ; ControladorPrincipal:inst|ContadorTempo[29]          ; ControladorPrincipal:inst|ContadorTempo[29]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.922      ;
+; 0.656 ; ControladorPrincipal:inst|i[5]                       ; ControladorPrincipal:inst|i[5]                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.921      ;
+; 0.656 ; ControladorPrincipal:inst|i[13]                      ; ControladorPrincipal:inst|i[13]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.921      ;
+; 0.656 ; ControladorPrincipal:inst|i[15]                      ; ControladorPrincipal:inst|i[15]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.921      ;
+; 0.657 ; UART:inst1|tx_clk_cnt[3]                             ; UART:inst1|tx_clk_cnt[3]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; UART:inst1|tx_clk_cnt[5]                             ; UART:inst1|tx_clk_cnt[5]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; UART:inst1|tx_clk_cnt[13]                            ; UART:inst1|tx_clk_cnt[13]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; ControladorPrincipal:inst|ContadorTempo[17]          ; ControladorPrincipal:inst|ContadorTempo[17]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.923      ;
+; 0.657 ; ControladorPrincipal:inst|ContadorTempo[27]          ; ControladorPrincipal:inst|ContadorTempo[27]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.923      ;
+; 0.657 ; ControladorPrincipal:inst|i[1]                       ; ControladorPrincipal:inst|i[1]                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; ControladorPrincipal:inst|i[11]                      ; ControladorPrincipal:inst|i[11]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; ControladorPrincipal:inst|i[19]                      ; ControladorPrincipal:inst|i[19]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; ControladorPrincipal:inst|i[29]                      ; ControladorPrincipal:inst|i[29]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.658 ; UART:inst1|tx_clk_cnt[11]                            ; UART:inst1|tx_clk_cnt[11]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.658 ; UART:inst1|tx_clk_cnt[1]                             ; UART:inst1|tx_clk_cnt[1]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.658 ; ControladorPrincipal:inst|ContadorTempo[7]           ; ControladorPrincipal:inst|ContadorTempo[7]         ; clock        ; clock       ; 0.000        ; 0.080      ; 0.924      ;
+; 0.658 ; ControladorPrincipal:inst|ContadorTempo[9]           ; ControladorPrincipal:inst|ContadorTempo[9]         ; clock        ; clock       ; 0.000        ; 0.080      ; 0.924      ;
+; 0.658 ; ControladorPrincipal:inst|i[17]                      ; ControladorPrincipal:inst|i[17]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.658 ; ControladorPrincipal:inst|i[27]                      ; ControladorPrincipal:inst|i[27]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.659 ; UART:inst1|tx_clk_cnt[6]                             ; UART:inst1|tx_clk_cnt[6]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; UART:inst1|tx_clk_cnt[15]                            ; UART:inst1|tx_clk_cnt[15]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; ControladorPrincipal:inst|ContadorTempo[25]          ; ControladorPrincipal:inst|ContadorTempo[25]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.925      ;
+; 0.659 ; ControladorPrincipal:inst|i[6]                       ; ControladorPrincipal:inst|i[6]                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; ControladorPrincipal:inst|i[7]                       ; ControladorPrincipal:inst|i[7]                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; ControladorPrincipal:inst|i[9]                       ; ControladorPrincipal:inst|i[9]                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.660 ; UART:inst1|tx_clk_cnt[7]                             ; UART:inst1|tx_clk_cnt[7]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
+; 0.660 ; UART:inst1|tx_clk_cnt[9]                             ; UART:inst1|tx_clk_cnt[9]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
+; 0.660 ; ControladorPrincipal:inst|ContadorTempo[14]          ; ControladorPrincipal:inst|ContadorTempo[14]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.926      ;
+; 0.660 ; ControladorPrincipal:inst|ContadorTempo[16]          ; ControladorPrincipal:inst|ContadorTempo[16]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.926      ;
+; 0.661 ; ControladorPrincipal:inst|ContadorTempo[18]          ; ControladorPrincipal:inst|ContadorTempo[18]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.927      ;
+; 0.661 ; ControladorPrincipal:inst|ContadorTempo[8]           ; ControladorPrincipal:inst|ContadorTempo[8]         ; clock        ; clock       ; 0.000        ; 0.080      ; 0.927      ;
+; 0.661 ; ControladorPrincipal:inst|ContadorTempo[10]          ; ControladorPrincipal:inst|ContadorTempo[10]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.927      ;
+; 0.661 ; ControladorPrincipal:inst|ContadorTempo[12]          ; ControladorPrincipal:inst|ContadorTempo[12]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.927      ;
+; 0.661 ; ControladorPrincipal:inst|ContadorTempo[20]          ; ControladorPrincipal:inst|ContadorTempo[20]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.927      ;
+; 0.661 ; ControladorPrincipal:inst|i[14]                      ; ControladorPrincipal:inst|i[14]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.926      ;
+; 0.661 ; ControladorPrincipal:inst|i[16]                      ; ControladorPrincipal:inst|i[16]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.926      ;
+; 0.662 ; UART:inst1|tx_clk_cnt[2]                             ; UART:inst1|tx_clk_cnt[2]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.662 ; UART:inst1|tx_clk_cnt[4]                             ; UART:inst1|tx_clk_cnt[4]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.662 ; ControladorPrincipal:inst|ContadorTempo[26]          ; ControladorPrincipal:inst|ContadorTempo[26]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.928      ;
+; 0.662 ; ControladorPrincipal:inst|ContadorTempo[24]          ; ControladorPrincipal:inst|ContadorTempo[24]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.928      ;
+; 0.662 ; ControladorPrincipal:inst|ContadorTempo[28]          ; ControladorPrincipal:inst|ContadorTempo[28]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.928      ;
+; 0.662 ; ControladorPrincipal:inst|ContadorTempo[30]          ; ControladorPrincipal:inst|ContadorTempo[30]        ; clock        ; clock       ; 0.000        ; 0.080      ; 0.928      ;
+; 0.662 ; ControladorPrincipal:inst|i[4]                       ; ControladorPrincipal:inst|i[4]                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.662 ; ControladorPrincipal:inst|i[8]                       ; ControladorPrincipal:inst|i[8]                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.662 ; ControladorPrincipal:inst|i[10]                      ; ControladorPrincipal:inst|i[10]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.662 ; ControladorPrincipal:inst|i[12]                      ; ControladorPrincipal:inst|i[12]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.662 ; ControladorPrincipal:inst|i[20]                      ; ControladorPrincipal:inst|i[20]                    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.663 ; UART:inst1|tx_clk_cnt[8]                             ; UART:inst1|tx_clk_cnt[8]                           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.928      ;
+; 0.663 ; UART:inst1|tx_clk_cnt[10]                            ; UART:inst1|tx_clk_cnt[10]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.928      ;
++-------+------------------------------------------------------+----------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
+-------------------------
+; Metastability Summary ;
+-------------------------
+No synchronizer chains to report.
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Board Trace Model Assignments                                                                                                                                                                                                                                                                                                                                                                                    ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; Pin           ; I/O Standard ; Near Tline Length ; Near Tline L per Length ; Near Tline C per Length ; Near Series R ; Near Differential R ; Near Pull-up R ; Near Pull-down R ; Near C ; Far Tline Length ; Far Tline L per Length ; Far Tline C per Length ; Far Series R ; Far Pull-up R ; Far Pull-down R ; Far C ; Termination Voltage ; Far Differential R ; EBD File Name ; EBD Signal Name ; EBD Far-end ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+; tx            ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_ready      ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_data[7]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_data[6]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_data[5]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_data[4]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_data[3]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_data[2]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_data[1]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; rx_data[0]    ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 in              ; 0 H/in                  ; 0 F/in                  ; short         ; -                   ; open           ; open             ; open   ; 0 in             ; 0 H/in                 ; 0 F/in                 ; short        ; open          ; open            ; open  ; 0 V                 ; -                  ; n/a           ; n/a             ; n/a         ;
++---------------+--------------+-------------------+-------------------------+-------------------------+---------------+---------------------+----------------+------------------+--------+------------------+------------------------+------------------------+--------------+---------------+-----------------+-------+---------------------+--------------------+---------------+-----------------+-------------+
+
+
++----------------------------------------------------------------------------+
+; Input Transition Times                                                     ;
++-------------------------+--------------+-----------------+-----------------+
+; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
++-------------------------+--------------+-----------------+-----------------+
+; rx                      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; clock                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; reset                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_FLASH_nCE_nCSO~ ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
+; ~ALTERA_DATA0~          ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
++-------------------------+--------------+-----------------+-----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Signal Integrity Metrics (Slow 1200mv 85c Model)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+; tx            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; rx_ready      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
+; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
++---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup Transfers                                                                                                                             ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                     ; To Clock                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; clock                                          ; clock                                          ; 4157     ; 0        ; 0        ; 0        ;
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock                                          ; 9        ; 1        ; 0        ; 0        ;
+; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0        ; 0        ; 4        ; 0        ;
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0        ; 4        ; 0        ; 0        ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold Transfers                                                                                                                              ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; From Clock                                     ; To Clock                                       ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+; clock                                          ; clock                                          ; 4157     ; 0        ; 0        ; 0        ;
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; clock                                          ; 9        ; 1        ; 0        ; 0        ;
+; clock                                          ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0        ; 0        ; 4        ; 0        ;
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; 0        ; 4        ; 0        ; 0        ;
++------------------------------------------------+------------------------------------------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No non-DPA dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths Summary                    ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 103   ; 103  ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Clock Status Summary                                                                                                 ;
++------------------------------------------------+------------------------------------------------+------+-------------+
+; Target                                         ; Clock                                          ; Type ; Status      ;
++------------------------------------------------+------------------------------------------------+------+-------------+
+; ControladorPrincipal:inst|estado_atual.Ler_RAM ; ControladorPrincipal:inst|estado_atual.Ler_RAM ; Base ; Constrained ;
+; clock                                          ; clock                                          ; Base ; Constrained ;
++------------------------------------------------+------------------------------------------------+------+-------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; tx          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Unconstrained Input Ports                                                                         ;
++------------+--------------------------------------------------------------------------------------+
+; Input Port ; Comment                                                                              ;
++------------+--------------------------------------------------------------------------------------+
+; reset      ; No input delay, min/max delays, false-path exceptions, or max skew assignments found ;
++------------+--------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------+
+; Unconstrained Output Ports                                                                          ;
++-------------+---------------------------------------------------------------------------------------+
+; Output Port ; Comment                                                                               ;
++-------------+---------------------------------------------------------------------------------------+
+; tx          ; No output delay, min/max delays, false-path exceptions, or max skew assignments found ;
++-------------+---------------------------------------------------------------------------------------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Timing Analyzer
+    Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+    Info: Processing started: Wed Jul  9 16:23:29 2025
+Info: Command: quartus_sta UART_Memoria -c UART_Memoria
+Info: qsta_default_script.tcl version: #1
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Warning (335093): The Timing Analyzer is analyzing 4 combinational loops as latches. For more details, run the Check Timing command in the Timing Analyzer or view the "User-Specified and Inferred Latches" table in the Analysis & Synthesis report.
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'UART_Memoria.sdc'. A Synopsys Design Constraints File is required by the Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+    Info (332105): create_clock -period 1.000 -name ControladorPrincipal:inst|estado_atual.Ler_RAM ControladorPrincipal:inst|estado_atual.Ler_RAM
+Info (332143): No user constrained clock uncertainty found in the design. Calling "derive_clock_uncertainty"
+Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Timing Analyzer to see clock uncertainties.
+Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Critical Warning (332148): Timing requirements not met
+    Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
+Info (332146): Worst-case setup slack is -4.370
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -4.370            -310.257 clock 
+    Info (332119):    -0.814              -2.241 ControladorPrincipal:inst|estado_atual.Ler_RAM 
+Info (332146): Worst-case hold slack is -0.040
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -0.040              -0.075 ControladorPrincipal:inst|estado_atual.Ler_RAM 
+    Info (332119):     0.387               0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -3.000
+    Info (332119):     Slack       End Point TNS Clock 
+    Info (332119): ========= =================== =====================
+    Info (332119):    -3.000            -135.355 clock 
+    Info (332119):    -2.693              -5.386 ControladorPrincipal:inst|estado_atual.Ler_RAM 
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus Prime Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 481 megabytes
+    Info: Processing ended: Wed Jul  9 16:23:30 2025
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

@@ -41,7 +41,7 @@ on the Quartus Prime software download page.
 	(input)
 	(rect 352 144 520 160)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "CLOCK_50" (rect 5 0 60 11)(font "Arial" ))
+	(text "CLOCK_50" (rect 5 0 59 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -58,7 +58,7 @@ on the Quartus Prime software download page.
 	(input)
 	(rect 352 176 520 192)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "RESET" (rect 5 0 41 11)(font "Arial" ))
+	(text "RESET" (rect 5 0 40 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -294,23 +294,6 @@ on the Quartus Prime software download page.
 		(line (pt 544 0)(pt 544 288))
 		(line (pt 0 288)(pt 544 288))
 		(line (pt 0 0)(pt 0 288))
-	)
-)
-(symbol
-	(rect 1536 488 1568 520)
-	(text "GND" (rect 8 16 29 25)(font "Arial" (font_size 6)))
-	(text "inst3" (rect 3 21 27 33)(font "Intel Clear" )(invisible))
-	(port
-		(pt 16 0)
-		(output)
-		(text "1" (rect 18 0 26 11)(font "Courier New" (bold))(invisible))
-		(text "1" (rect 18 0 26 11)(font "Courier New" (bold))(invisible))
-		(line (pt 16 8)(pt 16 0))
-	)
-	(drawing
-		(line (pt 8 8)(pt 16 16))
-		(line (pt 16 16)(pt 24 8))
-		(line (pt 8 8)(pt 24 8))
 	)
 )
 (connector
