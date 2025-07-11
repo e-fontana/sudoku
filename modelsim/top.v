@@ -108,6 +108,8 @@ module top(
         .visibilities(visibilities),
         .board(board),
         
-        .playing_condition(playing_condition)
+        .playing_condition(playing_condition),
+
+        .n6(n6), .n7(n7)
     );
 endmodule

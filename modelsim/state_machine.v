@@ -15,7 +15,8 @@ module state_machine(
     output [80:0] visibilities,
     output [323:0] board,
 
-    output playing_condition
+    output playing_condition,
+    output [3:0] n6, n7
 );
     reg [2:0] current_state, next_state;
 
@@ -36,6 +37,9 @@ module state_machine(
         PERCORRER_NUMEROS        	 = 3'b100,
         VITORIA 					 = 3'b101,
         DERROTA						 = 3'b110;
+
+    assign n6 = {1'b0, current_state};
+    assign n7 = {3'b000, difficulty};
 
     assign index = pos_i * 9 + pos_j;
     assign cell_visibility_value = visibilities[index];
@@ -105,7 +109,7 @@ module state_machine(
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            current_state <= CORRENDO_MAPA;
+            current_state <= INICIAR_JOGO;
         end else begin
             current_state <= next_state;
         end
