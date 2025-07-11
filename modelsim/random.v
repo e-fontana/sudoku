@@ -14,6 +14,6 @@ module random(
     end
 
     always @(posedge clk) begin
-        random_number <= seed;
+        random_number <=  seed;
     end
 endmodule

@@ -35,7 +35,7 @@ module board_updater #(
             error <= 1'b0;
             strikes <= 2'b00;
             selected_number <= 4'd1;
-            visibilities <= 324'b0;
+            visibilities <= 81'b0;
             board <= 324'b0;
         end else begin
             error <= next_error;
@@ -51,6 +51,7 @@ module board_updater #(
         next_strikes = strikes;
         next_visibilities = visibilities;
         next_selected_number = selected_number;
+        next_board = board;
 
         case (current_state)
             CARREGANDO: begin
@@ -64,13 +65,13 @@ module board_updater #(
                 
                 if (up_button) begin
                     if (selected_number < 9) begin
-                        next_selected_number = selected_number + 1;
+                        next_selected_number = selected_number + 4'd1;
                     end else begin
                         next_selected_number = 4'd1;
                     end
                 end else if (down_button) begin
                     if (selected_number > 1) begin
-                        next_selected_number = selected_number - 1;
+                        next_selected_number = selected_number - 4'd1;
                     end else begin
                         next_selected_number = 4'd9;
                     end

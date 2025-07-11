@@ -14,7 +14,7 @@ module position_updater #(
     output reg [3:0] pos_i,
     output reg [3:0] pos_j
 );
-    reg next_pos_i, next_pos_j;
+    reg [3:0] next_pos_i, next_pos_j;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
@@ -32,17 +32,17 @@ module position_updater #(
 
         case (current_state)
             CORRENDO_MAPA: begin
-                if (up_button && pos_j > 0) begin
-                    next_pos_j = pos_j - 4'd1;
-                end
-                if (down_button && pos_j < 8) begin
-                    next_pos_j = pos_j + 4'd1;
-                end
-                if (left_button && pos_i > 0) begin
+                if (up_button && pos_i > 0) begin
                     next_pos_i = pos_i - 4'd1;
                 end
-                if (right_button && pos_i < 8) begin
+                if (down_button && pos_i < 8) begin
                     next_pos_i = pos_i + 4'd1;
+                end
+                if (left_button && pos_j > 0) begin
+                    next_pos_j = pos_j - 4'd1;
+                end
+                if (right_button && pos_j < 8) begin
+                    next_pos_j = pos_j + 4'd1;
                 end
             end
         endcase

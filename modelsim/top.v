@@ -3,51 +3,44 @@ module top(
     input reset,
     input clk,
     // buttons
-    input a_button,
-    input b_button,
+    input original_a_button,
+    input original_b_button,
     input original_up_button,
     input original_down_button,
     input original_left_button,
     input original_right_button,
-    input start_button,
+    input original_start_button,
     // outputs
-    output error,
-    output [6:0] d0, d1, d2, d3, d4, d5, d6, d7
+    output error, difficulty, playing_condition,
+    output up_button, down_button, left_button, right_button, start_button, a_button, b_button,
+    output [6:0] states, d0, d1, d2, d3, d4, d5, d6, d7
 );
+    wire clk_1Hz, game_clk;
     wire [3:0] n0, n1, n2, n3, n4, n5, n6, n7;
-    wire [80:0] selected_visibility;
+
     wire [323:0] selected_map;
-    wire up_button, down_button, left_button, right_button;
-
-    wire playing_condition;
-    wire [6:0] score;
+    wire [80:0] selected_visibility;
     wire [10:0] timer;
-    wire [5:0] seconds;
-    wire [4:0] minutes;
-    wire [10:0] playtime;
-    wire [3:0] pos_i, pos_j;
-
-    wire [80:0] visibilities;
-    wire [323:0] board;
-
-    assign n5 = pos_i;
-    assign n4 = pos_j;
-    assign n3 = {3'b000, up_button};
-    assign n2 = {3'b000, down_button};
-    assign n1 = {3'b000, left_button};
-    assign n0 = {3'b000, right_button};
-
-    assign playtime = {minutes, seconds};
 
     button_handler bh (
+        // inputs
+        .clk(clk),
+        .reset(reset),
         .original_up_button(original_up_button),
         .original_down_button(original_down_button),
         .original_left_button(original_left_button),
         .original_right_button(original_right_button),
+        .original_start_button(original_start_button),
+        .original_a_button(original_a_button),
+        .original_b_button(original_b_button),
+        // outputs
         .up_button(up_button),
         .down_button(down_button),
         .left_button(left_button),
-        .right_button(right_button)  
+        .right_button(right_button),
+        .start_button(start_button),
+        .a_button(a_button),
+        .b_button(b_button)
     );
 
     display d (
@@ -57,38 +50,43 @@ module top(
         .d4(d4), .d5(d5), .d6(d6), .d7(d7)
     );
 
-    stopwatch sw (
+    stopwatch_frequency stopwatch_frequency (
         .clk(clk),
+        .reset(reset),
+        .stopwatch_clk(clk_1Hz)
+    );
+
+    stopwatch stopwatch (
+        .clk(clk_1Hz),
         .reset(reset),
         .playing_condition(playing_condition),
         .timer(timer),
-        .seconds(seconds),
-        .minutes(minutes)
-    );
 
-    score sc (
-        .clk(clk),
-        .timer(timer),
-        .playing_condition(playing_condition),
-        .score(score)
+        .n0(n0), .n1(n1), .n2(n2)
     );
 
     // map
 
     map_selector ms (
-        .clk(clk),
+        .clk(game_clk),
         .reset(reset),
         .selected_visibility(selected_visibility),
         .selected_map(selected_map)
     );
 
-    // game
-
-    state_machine sm (
+    game_frequency game_frequency (
         .clk(clk),
         .reset(reset),
-        .timer(timer),
+        .game_clk(game_clk)
+    );
 
+    // game
+
+    game_state_machine game_state_machine (
+        // inputs
+        .clk(game_clk),
+        .reset(reset),
+        .timer(timer),
         .up_button(up_button),
         .down_button(down_button),
         .left_button(left_button),
@@ -96,18 +94,13 @@ module top(
         .start_button(start_button),
         .a_button(a_button),
         .b_button(b_button),
-
         .selected_visibility(selected_visibility),
         .selected_map(selected_map),
-
-        .pos_i(pos_i),
-        .pos_j(pos_j),
+        // outputs
         .error(error),
-        .score(score),
-
-        .visibilities(visibilities),
-        .board(board),
+        .difficulty(difficulty),
+        .playing_condition(playing_condition),
         
-        .playing_condition(playing_condition)
+        .n3(n3), .n4(n4), .n5(n5), .n6(n6), .n7(n7)
     );
 endmodule

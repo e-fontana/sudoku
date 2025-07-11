@@ -9,4 +9,29 @@
 # Compile of score.v was successful.
 # Compile of state_machine.v was successful.
 # Compile of victory.v was successful.
-# 11 compiles, 0 failed with no errors.
+# Compile of board_updater.v was successful.
+# Compile of button_debouncer.v was successful.
+# Compile of button_handler.v was successful.
+# Compile of difficulty_selector.v was successful.
+# Compile of display.v was successful.
+# Compile of position_updater.v was successful.
+# 17 compiles, 0 failed with no errors.
+# Load canceled
+# Compile of top.v was successful.
+# Compile of testbench.v was successful.
+# Compile of define_maps.v was successful.
+# Compile of map_selector.v was successful.
+# Compile of random.v was successful.
+# Compile of frequency.v was successful.
+# Compile of stopwatch.v was successful.
+# Compile of defeat.v was successful.
+# Compile of score.v was successful.
+# Compile of state_machine.v was successful.
+# Compile of victory.v was successful.
+# Compile of board_updater.v was successful.
+# Compile of button_debouncer.v was successful.
+# Compile of button_handler.v was successful.
+# Compile of difficulty_selector.v was successful.
+# Compile of display.v was successful.
+# Compile of position_updater.v was successful.
+# 17 compiles, 0 failed with no errors.

@@ -1,0 +1,14 @@
+
+State Machine - |top|button_handler:bh|button_debouncer:bd1|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|button_handler:bh|button_debouncer:bd0|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
