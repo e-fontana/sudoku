@@ -16,7 +16,7 @@ module state_machine(
     output [323:0] board,
 
     output playing_condition,
-    output [3:0] n6, n7
+    output [3:0] n0, n6, n7
 );
     reg [2:0] current_state, next_state;
 
@@ -38,12 +38,13 @@ module state_machine(
         VITORIA 					 = 3'b101,
         DERROTA						 = 3'b110;
 
+    assign n0 = cell_value;
     assign n6 = {1'b0, current_state};
     assign n7 = {3'b000, difficulty};
 
     assign index = pos_i * 9 + pos_j;
+    assign cell_value = board[index -: 4];
     assign cell_visibility_value = visibilities[index];
-    assign cell_value = board[index +: 4];
 
     assign playing_condition = (current_state == CORRENDO_MAPA || current_state == PERCORRER_NUMEROS);
 

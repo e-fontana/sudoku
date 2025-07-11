@@ -11,7 +11,7 @@ module stopwatch(
     frequency fd (
         .clk(clk),
         .reset(reset),
-        .clk_1Hz(clk_1Hz)
+        .out_clk(clk_1Hz)
     );
 
     always @(posedge clk_1Hz or posedge reset) begin

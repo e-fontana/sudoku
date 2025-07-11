@@ -29,15 +29,21 @@ module top(
 
     wire [80:0] visibilities;
     wire [323:0] board;
+    wire game_clk;
 
     assign n5 = pos_i;
     assign n4 = pos_j;
-    assign n3 = {3'b000, up_button};
-    assign n2 = {3'b000, down_button};
-    assign n1 = {3'b000, left_button};
-    assign n0 = {3'b000, right_button};
 
     assign playtime = {minutes, seconds};
+
+    parameter GAME_FREQ = (50_000_000 - 1) / 8;
+    frequency #(
+        .COUNTER_LIMIT(GAME_FREQ)
+    ) game_frequency (
+        .clk(clk),
+        .reset(reset),
+        .out_clk(game_clk)
+    );
 
     button_handler bh (
         .original_up_button(original_up_button),
@@ -85,7 +91,7 @@ module top(
     // game
 
     state_machine sm (
-        .clk(clk),
+        .clk(game_clk),
         .reset(reset),
         .timer(timer),
 
@@ -110,6 +116,6 @@ module top(
         
         .playing_condition(playing_condition),
 
-        .n6(n6), .n7(n7)
+        .n0(n0), .n6(n6), .n7(n7)
     );
 endmodule

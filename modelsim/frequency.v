@@ -1,17 +1,18 @@
-module frequency (
+module frequency #(
+    parameter COUNTER_LIMIT = 50_000_000 - 1
+) (
     input clk,
     input reset,
-    output reg clk_1Hz 
+    output reg out_clk 
 );  
-    localparam CLK_FREQ = 50_000_000 - 1;
     reg [25:0] counter;
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            clk_1Hz <= 0;
+            out_clk <= 0;
             counter <= 0;
-        end else if (counter == CLK_FREQ) begin
-            clk_1Hz <= ~clk_1Hz;
+        end else if (counter == COUNTER_LIMIT) begin
+            out_clk <= ~out_clk;
             counter <= 0;
         end else begin
             counter <= counter + 1;

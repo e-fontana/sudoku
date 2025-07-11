@@ -50,6 +50,7 @@ module board_updater #(
         next_error = error;
         next_strikes = strikes;
         next_visibilities = visibilities;
+        next_board = board;
         next_selected_number = selected_number;
 
         case (current_state)
