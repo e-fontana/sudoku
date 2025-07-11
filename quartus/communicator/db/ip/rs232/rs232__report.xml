@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <deploy
- date="2025.06.27.21:17:24"
+ date="2025.07.09.17:28:48"
  outputDirectory="/home/fontana/dev/ufba/lab-1/sudoku/quartus/communicator/db/ip/rs232/">
  <perimeter>
   <parameter
@@ -133,13 +133,13 @@
  </perimeter>
  <entity
    path=""
-   parameterizationKey="rs232:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1751069844,AUTO_UNIQUE_ID=(clock_source:24.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(altera_up_avalon_rs232:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone IV E,avalon_bus_type=Streaming,baud=115200,data_bits=8,parity=None,ref_clk_freq=5.0E7,stop_bits=1)(clock:24.1:)(reset:24.1:)"
+   parameterizationKey="rs232:1.0:AUTO_CLK_CLOCK_DOMAIN=-1,AUTO_CLK_CLOCK_RATE=-1,AUTO_CLK_RESET_DOMAIN=-1,AUTO_DEVICE=EP4CE115F29C8,AUTO_DEVICE_FAMILY=Cyclone IV E,AUTO_DEVICE_SPEEDGRADE=8,AUTO_GENERATION_ID=1752092928,AUTO_UNIQUE_ID=(clock_source:24.1:clockFrequency=50000000,clockFrequencyKnown=true,inputClockFrequency=0,resetSynchronousEdges=NONE)(altera_up_avalon_rs232:17.1:AUTO_CLK_CLOCK_RATE=50000000,AUTO_DEVICE_FAMILY=Cyclone IV E,avalon_bus_type=Streaming,baud=115200,data_bits=8,parity=None,ref_clk_freq=5.0E7,stop_bits=1)(clock:24.1:)(reset:24.1:)"
    instancePathKey="rs232"
    kind="rs232"
    version="1.0"
    name="rs232">
   <parameter name="AUTO_CLK_CLOCK_RATE" value="-1" />
-  <parameter name="AUTO_GENERATION_ID" value="1751069844" />
+  <parameter name="AUTO_GENERATION_ID" value="1752092928" />
   <parameter name="AUTO_DEVICE" value="EP4CE115F29C8" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
   <parameter name="AUTO_CLK_RESET_DOMAIN" value="-1" />

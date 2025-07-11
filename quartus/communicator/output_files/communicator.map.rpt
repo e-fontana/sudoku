@@ -1,5 +1,5 @@
 Analysis & Synthesis report for communicator
-Fri Jun 27 21:17:26 2025
+Wed Jul  9 17:28:50 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -72,7 +72,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 27 21:17:26 2025           ;
+; Analysis & Synthesis Status        ; Successful - Wed Jul  9 17:28:50 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; communicator                                    ;
 ; Top-level Entity Name              ; communicator                                    ;
@@ -188,7 +188,8 @@ on the Quartus Prime software download page.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-16        ;   0.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processors 3-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -788,21 +789,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jun 27 21:17:17 2025
+    Info: Processing started: Wed Jul  9 17:28:41 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off communicator -c communicator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12248): Elaborating Platform Designer system entity "rs232.qsys"
-Info (12250): 2025.06.27.21:17:23 Progress: Loading communicator/rs232.qsys
-Info (12250): 2025.06.27.21:17:23 Progress: Reading input file
-Info (12250): 2025.06.27.21:17:23 Progress: Adding clk_0 [clock_source 24.1]
-Info (12250): 2025.06.27.21:17:24 Progress: Parameterizing module clk_0
-Info (12250): 2025.06.27.21:17:24 Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
-Info (12250): 2025.06.27.21:17:24 Progress: Parameterizing module rs232_0
-Info (12250): 2025.06.27.21:17:24 Progress: Building connections
-Info (12250): 2025.06.27.21:17:24 Progress: Parameterizing connections
-Info (12250): 2025.06.27.21:17:24 Progress: Validating
-Info (12250): 2025.06.27.21:17:24 Progress: Done reading input file
+Info (12250): 2025.07.09.17:28:47 Progress: Loading communicator/rs232.qsys
+Info (12250): 2025.07.09.17:28:47 Progress: Reading input file
+Info (12250): 2025.07.09.17:28:47 Progress: Adding clk_0 [clock_source 24.1]
+Info (12250): 2025.07.09.17:28:48 Progress: Parameterizing module clk_0
+Info (12250): 2025.07.09.17:28:48 Progress: Adding rs232_0 [altera_up_avalon_rs232 17.1]
+Info (12250): 2025.07.09.17:28:48 Progress: Parameterizing module rs232_0
+Info (12250): 2025.07.09.17:28:48 Progress: Building connections
+Info (12250): 2025.07.09.17:28:48 Progress: Parameterizing connections
+Info (12250): 2025.07.09.17:28:48 Progress: Validating
+Info (12250): 2025.07.09.17:28:48 Progress: Done reading input file
 Info (12250): Rs232: Generating "rs232" for QUARTUS_SYNTH
 Info (12250): Rs232_0: Starting Generation of RS232 UART
 Info (12250): Rs232_0: "rs232" instantiated altera_up_avalon_rs232 "rs232_0"
@@ -904,8 +905,8 @@ Info (21057): Implemented 179 device resources after synthesis - the final resou
     Info (21061): Implemented 166 logic cells
     Info (21064): Implemented 8 RAM segments
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 18 warnings
-    Info: Peak virtual memory: 490 megabytes
-    Info: Processing ended: Fri Jun 27 21:17:26 2025
+    Info: Peak virtual memory: 503 megabytes
+    Info: Processing ended: Wed Jul  9 17:28:50 2025
     Info: Elapsed time: 00:00:09
     Info: Total CPU time (on all processors): 00:00:26
 

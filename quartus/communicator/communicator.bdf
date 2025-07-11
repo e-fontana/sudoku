@@ -35,7 +35,7 @@ on the Quartus Prime software download page.
 		(line (pt 141 12)(pt 145 8))
 	)
 	(text "VCC" (rect 160 7 180 16)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 672 568 736 584))
+	(annotation_block (location)(rect 664 552 728 568))
 )
 (pin
 	(input)
@@ -103,7 +103,7 @@ on the Quartus Prime software download page.
 		(line (pt 114 4)(pt 110 8))
 	)
 	(rotate180)
-	(annotation_block (location)(rect 936 584 992 600))
+	(annotation_block (location)(rect 688 568 744 584))
 )
 (symbol
 	(rect 312 368 528 512)

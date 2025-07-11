@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at ControladorPrincipal.v(103): always construct contains both blocking and non-blocking assignments File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 103

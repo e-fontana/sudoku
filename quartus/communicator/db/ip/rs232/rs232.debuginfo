@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="rs232" kind="system" version="24.1" fabric="QSYS">
  <!-- Format version 24.1 1077 (Future versions may contain additional information.) -->
- <!-- 2025.06.27.21:17:24 -->
+ <!-- 2025.07.09.17:28:48 -->
  <!-- A collection of modules and connections -->
  <parameter name="clockCrossingAdapter">
   <type>com.altera.sopcmodel.ensemble.EClockAdapter</type>
@@ -53,7 +53,7 @@
  </parameter>
  <parameter name="generationId">
   <type>int</type>
-  <value>1751069844</value>
+  <value>1752092928</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>true</visible>
@@ -1610,5 +1610,5 @@ parameters are a RESULT of the module parameters. -->
   <version>24.1</version>
  </plugin>
  <reportVersion>24.1 1077</reportVersion>
- <uniqueIdentifier>628A69162AFB00000197B3E56501</uniqueIdentifier>
+ <uniqueIdentifier>1611DEAE49F800000197F0E06ADD</uniqueIdentifier>
 </EnsembleReport>

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UART_Memoria
-Wed Jul  9 16:23:16 2025
+Fri Jul 11 18:24:37 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,22 +13,22 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis IP Cores Summary
- 10. State Machine - |UART_Memoria|ControladorPrincipal:inst|estado_atual
- 11. User-Specified and Inferred Latches
- 12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated
- 17. Parameter Settings for User Entity Instance: UART:inst1
- 18. Parameter Settings for User Entity Instance: ControladorPrincipal:inst
- 19. Parameter Settings for User Entity Instance: Memoria:inst2|altsyncram:altsyncram_component
- 20. altsyncram Parameter Settings by Entity Instance
- 21. Post-Synthesis Netlist Statistics for Top Partition
- 22. Elapsed Time Per Partition
- 23. Analysis & Synthesis Messages
+  8. Analysis & Synthesis IP Cores Summary
+  9. State Machine - |UART_Memoria|ControladorPrincipal:inst|estado_atual
+ 10. Registers Removed During Synthesis
+ 11. Removed Registers Triggering Further Register Optimizations
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated
+ 16. Parameter Settings for User Entity Instance: UART:inst1
+ 17. Parameter Settings for User Entity Instance: ControladorPrincipal:inst
+ 18. Parameter Settings for User Entity Instance: Memoria:inst2|altsyncram:altsyncram_component
+ 19. altsyncram Parameter Settings by Entity Instance
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -55,18 +55,18 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jul  9 16:23:16 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 11 18:24:37 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; UART_Memoria                                    ;
 ; Top-level Entity Name              ; UART_Memoria                                    ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 150                                             ;
-;     Total combinational functions  ; 150                                             ;
-;     Dedicated logic registers      ; 103                                             ;
-; Total registers                    ; 103                                             ;
-; Total pins                         ; 13                                              ;
+; Total logic elements               ; 139                                             ;
+;     Total combinational functions  ; 139                                             ;
+;     Dedicated logic registers      ; 102                                             ;
+; Total registers                    ; 102                                             ;
+; Total pins                         ; 14                                              ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 128                                             ;
+; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
 ; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
@@ -171,8 +171,7 @@ on the Quartus Prime software download page.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-16        ;   0.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -186,7 +185,6 @@ on the Quartus Prime software download page.
 ; UART.v                           ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v                 ;         ;
 ; UART_Memoria.mif                 ; yes             ; User Memory Initialization File    ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART_Memoria.mif       ;         ;
 ; Memoria.vhd                      ; yes             ; User Wizard-Generated File         ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/Memoria.vhd            ;         ;
-; teste.v                          ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/teste.v                ;         ;
 ; altsyncram.tdf                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/altsyncram.tdf              ;         ;
 ; stratix_ram_block.inc            ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/stratix_ram_block.inc       ;         ;
 ; lpm_mux.inc                      ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/lpm_mux.inc                 ;         ;
@@ -205,56 +203,43 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 150         ;
+; Estimated Total logic elements              ; 139         ;
 ;                                             ;             ;
-; Total combinational functions               ; 150         ;
+; Total combinational functions               ; 139         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 43          ;
-;     -- 3 input functions                    ; 14          ;
-;     -- <=2 input functions                  ; 93          ;
+;     -- 4 input functions                    ; 35          ;
+;     -- 3 input functions                    ; 16          ;
+;     -- <=2 input functions                  ; 88          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 73          ;
+;     -- normal mode                          ; 62          ;
 ;     -- arithmetic mode                      ; 77          ;
 ;                                             ;             ;
-; Total registers                             ; 103         ;
-;     -- Dedicated logic registers            ; 103         ;
+; Total registers                             ; 102         ;
+;     -- Dedicated logic registers            ; 102         ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 13          ;
-; Total memory bits                           ; 128         ;
+; I/O pins                                    ; 14          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 103         ;
-; Total fan-out                               ; 823         ;
-; Average fan-out                             ; 2.87        ;
+; Maximum fan-out                             ; 102         ;
+; Total fan-out                               ; 744         ;
+; Average fan-out                             ; 2.77        ;
 +---------------------------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                     ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                        ; Entity Name          ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
-; |UART_Memoria                             ; 150 (1)             ; 103 (0)                   ; 128         ; 0            ; 0       ; 0         ; 13   ; 0            ; |UART_Memoria                                                                              ; UART_Memoria         ; work         ;
-;    |ControladorPrincipal:inst|            ; 103 (103)           ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|ControladorPrincipal:inst                                                    ; ControladorPrincipal ; work         ;
-;    |Memoria:inst2|                        ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|Memoria:inst2                                                                ; Memoria              ; work         ;
-;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|Memoria:inst2|altsyncram:altsyncram_component                                ; altsyncram           ; work         ;
-;          |altsyncram_9js3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 128         ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated ; altsyncram_9js3      ; work         ;
-;    |UART:inst1|                           ; 46 (46)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|UART:inst1                                                                   ; UART                 ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------+----------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                       ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                     ; Entity Name          ; Library Name ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+----------------------+--------------+
+; |UART_Memoria                  ; 139 (0)             ; 102 (0)                   ; 0           ; 0            ; 0       ; 0         ; 14   ; 0            ; |UART_Memoria                           ; UART_Memoria         ; work         ;
+;    |ControladorPrincipal:inst| ; 97 (97)             ; 72 (72)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|ControladorPrincipal:inst ; ControladorPrincipal ; work         ;
+;    |UART:inst1|                ; 42 (42)             ; 30 (30)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|UART:inst1                ; UART                 ; work         ;
++--------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------+----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                   ;
-+-----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------------+
-; Name                                                                                    ; Type ; Mode        ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF              ;
-+-----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------------+
-; Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|ALTSYNCRAM ; AUTO ; Single Port ; 16           ; 8            ; --           ; --           ; 128  ; UART_Memoria.mif ;
-+-----------------------------------------------------------------------------------------+------+-------------+--------------+--------------+--------------+--------------+------+------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------+
@@ -282,40 +267,28 @@ Encoding Type:  One-Hot
 +-------------------------------+-----------------------------+--------------------------+----------------------------+------------------------------+----------------------+-------------------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                              ;
-+----------------------------------------------------+------------------------------------+------------------------+
-; Latch Name                                         ; Latch Enable Signal                ; Free of Timing Hazards ;
-+----------------------------------------------------+------------------------------------+------------------------+
-; ControladorPrincipal:inst|a_ram[0]                 ; ControladorPrincipal:inst|WideNor0 ; yes                    ;
-; ControladorPrincipal:inst|a_ram[1]                 ; ControladorPrincipal:inst|WideNor0 ; yes                    ;
-; ControladorPrincipal:inst|a_ram[2]                 ; ControladorPrincipal:inst|WideNor0 ; yes                    ;
-; ControladorPrincipal:inst|a_ram[3]                 ; ControladorPrincipal:inst|WideNor0 ; yes                    ;
-; Number of user-specified and inferred latches = 4  ;                                    ;                        ;
-+----------------------------------------------------+------------------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 +-----------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                ;
 +------------------------------------------+----------------------------------------+
 ; Register name                            ; Reason for Removal                     ;
 +------------------------------------------+----------------------------------------+
-; send_byte:inst4|data[0]                  ; Stuck at GND due to stuck port data_in ;
-; send_byte:inst4|data[1]                  ; Stuck at VCC due to stuck port data_in ;
-; send_byte:inst4|data[2]                  ; Stuck at GND due to stuck port data_in ;
-; send_byte:inst4|data[3]                  ; Stuck at VCC due to stuck port data_in ;
-; send_byte:inst4|data[4]                  ; Stuck at GND due to stuck port data_in ;
-; send_byte:inst4|data[5]                  ; Stuck at VCC due to stuck port data_in ;
-; send_byte:inst4|data[6]                  ; Stuck at GND due to stuck port data_in ;
-; send_byte:inst4|data[7]                  ; Stuck at VCC due to stuck port data_in ;
 ; UART:inst1|rx_ready                      ; Stuck at GND due to stuck port data_in ;
-; UART:inst1|tx_shift[9]                   ; Stuck at VCC due to stuck port data_in ;
+; UART:inst1|tx_shift[8,9]                 ; Stuck at VCC due to stuck port data_in ;
 ; ControladorPrincipal:inst|estado_atual~2 ; Lost fanout                            ;
 ; ControladorPrincipal:inst|estado_atual~3 ; Lost fanout                            ;
 ; ControladorPrincipal:inst|estado_atual~4 ; Lost fanout                            ;
-; Total Number of Removed Registers = 13   ;                                        ;
+; Total Number of Removed Registers = 6    ;                                        ;
 +------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                 ;
++------------------------+---------------------------+----------------------------------------+
+; Register name          ; Reason for Removal        ; Registers Removed due to This Register ;
++------------------------+---------------------------+----------------------------------------+
+; UART:inst1|tx_shift[9] ; Stuck at VCC              ; UART:inst1|tx_shift[8]                 ;
+;                        ; due to stuck port data_in ;                                        ;
++------------------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -323,7 +296,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 103   ;
+; Total registers                              ; 102   ;
 ; Number of registers using Synchronous Clear  ; 83    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 22    ;
@@ -333,23 +306,22 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------+
-; Inverted Register Statistics                      ;
-+-----------------------------------------+---------+
-; Inverted Register                       ; Fan out ;
-+-----------------------------------------+---------+
-; UART:inst1|tx                           ; 2       ;
-; UART:inst1|tx_shift[0]                  ; 2       ;
-; UART:inst1|tx_shift[1]                  ; 1       ;
-; UART:inst1|tx_shift[2]                  ; 1       ;
-; UART:inst1|tx_shift[3]                  ; 1       ;
-; UART:inst1|tx_shift[4]                  ; 1       ;
-; UART:inst1|tx_shift[5]                  ; 1       ;
-; UART:inst1|tx_shift[6]                  ; 1       ;
-; UART:inst1|tx_shift[7]                  ; 1       ;
-; UART:inst1|tx_shift[8]                  ; 1       ;
-; Total number of inverted registers = 10 ;         ;
-+-----------------------------------------+---------+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; UART:inst1|tx                          ; 2       ;
+; UART:inst1|tx_shift[0]                 ; 1       ;
+; UART:inst1|tx_shift[1]                 ; 1       ;
+; UART:inst1|tx_shift[2]                 ; 1       ;
+; UART:inst1|tx_shift[3]                 ; 1       ;
+; UART:inst1|tx_shift[4]                 ; 1       ;
+; UART:inst1|tx_shift[5]                 ; 1       ;
+; UART:inst1|tx_shift[6]                 ; 1       ;
+; UART:inst1|tx_shift[7]                 ; 1       ;
+; Total number of inverted registers = 9 ;         ;
++----------------------------------------+---------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -361,7 +333,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_bit_cnt[3]                    ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UART_Memoria|UART:inst1|tx_clk_cnt[14]                   ;
 ; 4:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; Yes        ; |UART_Memoria|ControladorPrincipal:inst|i[13]             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_shift[1]                      ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_shift[0]                      ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_shift[2]                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
@@ -487,28 +460,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 103                         ;
+; boundary_port         ; 14                          ;
+; cycloneiii_ff         ; 102                         ;
 ;     CLR               ; 2                           ;
 ;     ENA               ; 8                           ;
 ;     ENA CLR           ; 4                           ;
 ;     ENA CLR SCLR      ; 16                          ;
 ;     ENA SCLR          ; 32                          ;
 ;     SCLR              ; 35                          ;
-;     plain             ; 6                           ;
-; cycloneiii_lcell_comb ; 151                         ;
+;     plain             ; 5                           ;
+; cycloneiii_lcell_comb ; 141                         ;
 ;     arith             ; 77                          ;
 ;         2 data inputs ; 77                          ;
-;     normal            ; 74                          ;
+;     normal            ; 64                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 5                           ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 14                          ;
-;         4 data inputs ; 43                          ;
-; cycloneiii_ram_block  ; 8                           ;
+;         2 data inputs ; 7                           ;
+;         3 data inputs ; 16                          ;
+;         4 data inputs ; 35                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 5.00                        ;
-; Average LUT depth     ; 3.09                        ;
+; Average LUT depth     ; 3.14                        ;
 +-----------------------+-----------------------------+
 
 
@@ -527,7 +499,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Wed Jul  9 16:23:10 2025
+    Info: Processing started: Fri Jul 11 18:24:32 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART_Memoria -c UART_Memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -540,8 +512,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file UART.v
 Info (12021): Found 2 design units, including 1 entities, in source file Memoria.vhd
     Info (12022): Found design unit 1: memoria-SYN File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/Memoria.vhd Line: 54
     Info (12023): Found entity 1: Memoria File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/Memoria.vhd Line: 42
-Info (12021): Found 1 design units, including 1 entities, in source file teste.v
-    Info (12023): Found entity 1: send_byte File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/teste.v Line: 1
 Info (12127): Elaborating entity "UART_Memoria" for the top level hierarchy
 Info (12128): Elaborating entity "UART" for hierarchy "UART:inst1"
 Warning (10230): Verilog HDL assignment warning at UART.v(41): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 41
@@ -553,16 +523,16 @@ Warning (10230): Verilog HDL assignment warning at UART.v(101): truncated value 
 Warning (10230): Verilog HDL assignment warning at UART.v(110): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 110
 Warning (10034): Output port "rx_data" at UART.v(6) has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 6
 Info (12128): Elaborating entity "ControladorPrincipal" for hierarchy "ControladorPrincipal:inst"
-Warning (10230): Verilog HDL assignment warning at ControladorPrincipal.v(105): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 105
 Warning (10230): Verilog HDL assignment warning at ControladorPrincipal.v(108): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 108
-Warning (10230): Verilog HDL assignment warning at ControladorPrincipal.v(112): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 112
-Warning (10270): Verilog HDL Case Statement warning at ControladorPrincipal.v(103): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 103
-Info (10264): Verilog HDL Case Statement information at ControladorPrincipal.v(103): all case item expressions in this case statement are onehot File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 103
-Warning (10240): Verilog HDL Always Construct warning at ControladorPrincipal.v(101): inferring latch(es) for variable "a_ram", which holds its previous value in one or more paths through the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 101
-Info (10041): Inferred latch for "a_ram[0]" at ControladorPrincipal.v(101) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 101
-Info (10041): Inferred latch for "a_ram[1]" at ControladorPrincipal.v(101) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 101
-Info (10041): Inferred latch for "a_ram[2]" at ControladorPrincipal.v(101) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 101
-Info (10041): Inferred latch for "a_ram[3]" at ControladorPrincipal.v(101) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 101
+Warning (10230): Verilog HDL assignment warning at ControladorPrincipal.v(111): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 111
+Warning (10230): Verilog HDL assignment warning at ControladorPrincipal.v(116): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 116
+Warning (10270): Verilog HDL Case Statement warning at ControladorPrincipal.v(106): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 106
+Info (10264): Verilog HDL Case Statement information at ControladorPrincipal.v(106): all case item expressions in this case statement are onehot File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 106
+Warning (10240): Verilog HDL Always Construct warning at ControladorPrincipal.v(103): inferring latch(es) for variable "a_ram", which holds its previous value in one or more paths through the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 103
+Info (10041): Inferred latch for "a_ram[0]" at ControladorPrincipal.v(103) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 103
+Info (10041): Inferred latch for "a_ram[1]" at ControladorPrincipal.v(103) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 103
+Info (10041): Inferred latch for "a_ram[2]" at ControladorPrincipal.v(103) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 103
+Info (10041): Inferred latch for "a_ram[3]" at ControladorPrincipal.v(103) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 103
 Info (12128): Elaborating entity "Memoria" for hierarchy "Memoria:inst2"
 Info (12128): Elaborating entity "altsyncram" for hierarchy "Memoria:inst2|altsyncram:altsyncram_component" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/Memoria.vhd Line: 61
 Info (12130): Elaborated megafunction instantiation "Memoria:inst2|altsyncram:altsyncram_component" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/Memoria.vhd Line: 61
@@ -620,7 +590,16 @@ Info (12133): Instantiated megafunction "Memoria:inst2|altsyncram:altsyncram_com
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_9js3.tdf
     Info (12023): Found entity 1: altsyncram_9js3 File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_9js3" for hierarchy "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated" File: /opt/intelFPGA/24.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "send_byte" for hierarchy "send_byte:inst4"
+Warning (14284): Synthesized away the following node(s):
+    Warning (14285): Synthesized away the following RAM node(s):
+        Warning (14320): Synthesized away node "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|q_a[0]" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 37
+        Warning (14320): Synthesized away node "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|q_a[1]" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 61
+        Warning (14320): Synthesized away node "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|q_a[2]" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 85
+        Warning (14320): Synthesized away node "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|q_a[3]" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 109
+        Warning (14320): Synthesized away node "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|q_a[4]" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 133
+        Warning (14320): Synthesized away node "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|q_a[5]" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 157
+        Warning (14320): Synthesized away node "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|q_a[6]" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 181
+        Warning (14320): Synthesized away node "Memoria:inst2|altsyncram:altsyncram_component|altsyncram_9js3:auto_generated|q_a[7]" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/db/altsyncram_9js3.tdf Line: 205
 Info (13000): Registers with preset signals will power-up high File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 5
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
@@ -635,19 +614,26 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rx_data[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 3 registers lost all their fanouts during netlist optimizations.
+Info (144001): Generated suppressed messages file /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/output_files/UART_Memoria.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 1 input pin(s) that do not drive logic
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rx"
-Info (21057): Implemented 172 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 3 input pins
+    Warning (15610): No output dependent on input pin "start"
+Info (21057): Implemented 155 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 4 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 151 logic cells
-    Info (21064): Implemented 8 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 26 warnings
-    Info: Peak virtual memory: 519 megabytes
-    Info: Processing ended: Wed Jul  9 16:23:16 2025
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:15
+    Info (21061): Implemented 141 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 37 warnings
+    Info: Peak virtual memory: 507 megabytes
+    Info: Processing ended: Fri Jul 11 18:24:37 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:14
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/output_files/UART_Memoria.map.smsg.
 
 

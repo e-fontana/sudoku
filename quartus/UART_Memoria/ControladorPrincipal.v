@@ -2,9 +2,11 @@ module ControladorPrincipal (
 	input clock,
 	input reset,
 	input tx_busy,
+	input send_data,
 	output reg [3:0] a_ram,
 	output reg clock_ram,
-	output reg tx_start
+	output reg tx_start,
+	output reg [7:0] tx_data
 );
 
 parameter	Inicio = 					3'b000, // use este estado para aguardar a solicitacao de envio para o PC
@@ -67,7 +69,7 @@ begin
 		Config_Enderecos: 	estado_futuro = Ler_RAM;
 		Ler_RAM: 				estado_futuro = Transmitir_UART;
 		Transmitir_UART: 		estado_futuro = Incrementar_i;
-		Incrementar_i:			estado_futuro = Aguardar_TX;	
+		Incrementar_i:			estado_futuro = Aguardar_TX;
 		Aguardar_TX:			if (tx_busy)
 										begin
 											estado_futuro = Aguardar_TX;
@@ -81,7 +83,7 @@ begin
 											begin
 												estado_futuro = Config_Enderecos;
 											end
-		Aguardar_Tempo:		if (ContadorTempo < 50000000)			// Aguarda 1 segundo (adaptem para suas necessidades)
+		Aguardar_Tempo:		if (ContadorTempo < 5000000)			// Aguarda 1 segundo (adaptem para suas necessidades)
 									begin
 										estado_futuro = Aguardar_Tempo;
 									end
@@ -100,6 +102,7 @@ begin
 	// atribuicoes default
 	clock_ram = 0;
 	tx_start = 0;
+	tx_data <= 8'h00;
 	case (estado_atual)
 		Config_Enderecos: begin
 									a_ram = i;
@@ -109,6 +112,7 @@ begin
 									clock_ram = 1;
 								end
 		Transmitir_UART:	begin
+									tx_data <= 8'hAA;
 									a_ram = i;
 									tx_start = 1;
 								end

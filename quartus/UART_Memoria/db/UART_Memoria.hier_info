@@ -2,11 +2,11 @@
 tx <= UART:inst1.tx
 clock => UART:inst1.clock
 clock => ControladorPrincipal:inst.clock
-clock => send_byte:inst4.clock
+clock => Memoria:inst2.clock
 reset => UART:inst1.reset
 reset => ControladorPrincipal:inst.reset
-reset => send_byte:inst4.reset
 rx => UART:inst1.rx
+start => ControladorPrincipal:inst.send_data
 rx_ready <= UART:inst1.rx_ready
 rx_data[0] <= UART:inst1.rx_data[0]
 rx_data[1] <= UART:inst1.rx_data[1]
@@ -250,12 +250,21 @@ reset => FlagTemporizador.OUTPUTSELECT
 tx_busy => estado_futuro.OUTPUTSELECT
 tx_busy => estado_futuro.OUTPUTSELECT
 tx_busy => Selector1.IN3
+send_data => ~NO_FANOUT~
 a_ram[0] <= a_ram[0]$latch.DB_MAX_OUTPUT_PORT_TYPE
 a_ram[1] <= a_ram[1]$latch.DB_MAX_OUTPUT_PORT_TYPE
 a_ram[2] <= a_ram[2]$latch.DB_MAX_OUTPUT_PORT_TYPE
 a_ram[3] <= a_ram[3]$latch.DB_MAX_OUTPUT_PORT_TYPE
 clock_ram <= clock_ram.DB_MAX_OUTPUT_PORT_TYPE
 tx_start <= tx_start.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[0] <= <GND>
+tx_data[1] <= tx_start.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[2] <= <GND>
+tx_data[3] <= tx_start.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[4] <= <GND>
+tx_data[5] <= tx_start.DB_MAX_OUTPUT_PORT_TYPE
+tx_data[6] <= <GND>
+tx_data[7] <= tx_start.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |UART_Memoria|Memoria:inst2
@@ -393,25 +402,5 @@ wren_a => ram_block1a4.PORTAWE
 wren_a => ram_block1a5.PORTAWE
 wren_a => ram_block1a6.PORTAWE
 wren_a => ram_block1a7.PORTAWE
-
-
-|UART_Memoria|send_byte:inst4
-clock => data[0]~reg0.CLK
-clock => data[1]~reg0.CLK
-clock => data[2]~reg0.CLK
-clock => data[3]~reg0.CLK
-clock => data[4]~reg0.CLK
-clock => data[5]~reg0.CLK
-clock => data[6]~reg0.CLK
-clock => data[7]~reg0.CLK
-reset => ~NO_FANOUT~
-data[0] <= data[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[1] <= data[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[2] <= data[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[3] <= data[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[4] <= data[4]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[5] <= data[5]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
-data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
