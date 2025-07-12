@@ -3,16 +3,16 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'frequency:game_frequency|out_clk'
-Slack : -9.066
-TNS   : -278.043
+Slack : -8.148
+TNS   : -248.565
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -5.046
-TNS   : -129.696
+Slack : -5.132
+TNS   : -122.120
 
 Type  : Slow 1200mV 85C Model Setup 'stopwatch:sw|frequency:fd|out_clk'
-Slack : -1.877
-TNS   : -36.962
+Slack : -1.875
+TNS   : -37.632
 
 Type  : Slow 1200mV 85C Model Hold 'frequency:game_frequency|out_clk'
 Slack : 0.444
@@ -39,27 +39,27 @@ Slack : -1.487
 TNS   : -32.714
 
 Type  : Slow 1200mV 0C Model Setup 'frequency:game_frequency|out_clk'
-Slack : -8.339
-TNS   : -255.443
+Slack : -7.551
+TNS   : -230.121
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -4.775
-TNS   : -115.837
+Slack : -4.762
+TNS   : -107.044
 
 Type  : Slow 1200mV 0C Model Setup 'stopwatch:sw|frequency:fd|out_clk'
-Slack : -1.613
-TNS   : -32.962
+Slack : -1.612
+TNS   : -33.925
 
 Type  : Slow 1200mV 0C Model Hold 'frequency:game_frequency|out_clk'
 Slack : 0.393
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'stopwatch:sw|frequency:fd|out_clk'
-Slack : 0.393
+Slack : 0.394
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.461
+Slack : 0.462
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -75,23 +75,23 @@ Slack : -1.487
 TNS   : -32.714
 
 Type  : Fast 1200mV 0C Model Setup 'frequency:game_frequency|out_clk'
-Slack : -3.291
-TNS   : -95.523
+Slack : -2.970
+TNS   : -84.965
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.703
-TNS   : -29.492
+Slack : -1.716
+TNS   : -25.911
 
 Type  : Fast 1200mV 0C Model Setup 'stopwatch:sw|frequency:fd|out_clk'
 Slack : -0.244
-TNS   : -3.236
+TNS   : -3.415
 
 Type  : Fast 1200mV 0C Model Hold 'frequency:game_frequency|out_clk'
 Slack : 0.182
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'stopwatch:sw|frequency:fd|out_clk'
-Slack : 0.183
+Slack : 0.182
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
@@ -100,7 +100,7 @@ TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -56.017
+TNS   : -56.018
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequency:game_frequency|out_clk'
 Slack : -1.000

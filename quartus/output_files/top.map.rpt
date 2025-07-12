@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Fri Jul 11 21:49:59 2025
+Fri Jul 11 22:13:57 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -59,13 +59,13 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 11 21:49:59 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 11 22:13:56 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top                                             ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 354                                             ;
-;     Total combinational functions  ; 354                                             ;
+; Total logic elements               ; 342                                             ;
+;     Total combinational functions  ; 342                                             ;
 ;     Dedicated logic registers      ; 113                                             ;
 ; Total registers                    ; 113                                             ;
 ; Total pins                         ; 67                                              ;
@@ -175,8 +175,7 @@ on the Quartus Prime software download page.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-10        ;   0.0%      ;
+;     Processors 2-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -208,16 +207,16 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 354         ;
+; Estimated Total logic elements              ; 342         ;
 ;                                             ;             ;
-; Total combinational functions               ; 354         ;
+; Total combinational functions               ; 342         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 178         ;
-;     -- 3 input functions                    ; 71          ;
-;     -- <=2 input functions                  ; 105         ;
+;     -- 4 input functions                    ; 174         ;
+;     -- 3 input functions                    ; 69          ;
+;     -- <=2 input functions                  ; 99          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 271         ;
+;     -- normal mode                          ; 259         ;
 ;     -- arithmetic mode                      ; 83          ;
 ;                                             ;             ;
 ; Total registers                             ; 113         ;
@@ -230,7 +229,7 @@ on the Quartus Prime software download page.
 ;                                             ;             ;
 ; Maximum fan-out node                        ; reset~input ;
 ; Maximum fan-out                             ; 113         ;
-; Total fan-out                               ; 1648        ;
+; Total fan-out                               ; 1611        ;
 ; Average fan-out                             ; 2.74        ;
 +---------------------------------------------+-------------+
 
@@ -240,12 +239,12 @@ on the Quartus Prime software download page.
 +-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name         ; Library Name ;
 +-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
-; |top                              ; 354 (1)             ; 113 (0)                   ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |top                                            ; top                 ; work         ;
-;    |display:d|                    ; 44 (44)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|display:d                                  ; display             ; work         ;
+; |top                              ; 342 (1)             ; 113 (0)                   ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |top                                            ; top                 ; work         ;
+;    |display:d|                    ; 33 (33)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|display:d                                  ; display             ; work         ;
 ;    |frequency:game_frequency|     ; 47 (47)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|frequency:game_frequency                   ; frequency           ; work         ;
-;    |state_machine:sm|             ; 185 (101)           ; 41 (3)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm                           ; state_machine       ; work         ;
-;       |board_updater:b_up|        ; 61 (61)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|board_updater:b_up        ; board_updater       ; work         ;
-;       |defeat:d|                  ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|defeat:d                  ; defeat              ; work         ;
+;    |state_machine:sm|             ; 184 (104)           ; 41 (3)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm                           ; state_machine       ; work         ;
+;       |board_updater:b_up|        ; 58 (58)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|board_updater:b_up        ; board_updater       ; work         ;
+;       |defeat:d|                  ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|defeat:d                  ; defeat              ; work         ;
 ;       |difficulty_selector:d_sel| ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|difficulty_selector:d_sel ; difficulty_selector ; work         ;
 ;       |position_updater:pos_up|   ; 16 (16)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|position_updater:pos_up   ; position_updater    ; work         ;
 ;    |stopwatch:sw|                 ; 77 (32)             ; 45 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|stopwatch:sw                               ; stopwatch           ; work         ;
@@ -626,7 +625,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------+---------+
 ; state_machine:sm|position_updater:pos_up|pos_j[2]      ; 10      ;
 ; state_machine:sm|position_updater:pos_up|pos_i[2]      ; 12      ;
-; state_machine:sm|board_updater:b_up|selected_number[0] ; 11      ;
+; state_machine:sm|board_updater:b_up|selected_number[0] ; 12      ;
 ; Total number of inverted registers = 3                 ;         ;
 +--------------------------------------------------------+---------+
 
@@ -636,11 +635,11 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|stopwatch:sw|minutes[0]                                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|stopwatch:sw|minutes[4]                                ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|stopwatch:sw|seconds[0]                                ;
-; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |top|state_machine:sm|board_updater:b_up|visibilities[64]   ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|state_machine:sm|board_updater:b_up|selected_number[1] ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; Yes        ; |top|state_machine:sm|current_state[1]                      ;
+; 3:1                ; 20 bits   ; 40 LEs        ; 20 LEs               ; 20 LEs                 ; Yes        ; |top|state_machine:sm|board_updater:b_up|visibilities[20]   ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|state_machine:sm|board_updater:b_up|selected_number[3] ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; Yes        ; |top|state_machine:sm|current_state[2]                      ;
 ; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top|state_machine:sm|board_updater:b_up|ShiftLeft0         ;
 ; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|state_machine:sm|board_updater:b_up|ShiftLeft0         ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
@@ -783,19 +782,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR           ; 28                          ;
 ;     ENA CLR SCLR      ; 17                          ;
 ;     ENA CLR SLD       ; 3                           ;
-; cycloneiii_lcell_comb ; 359                         ;
+; cycloneiii_lcell_comb ; 347                         ;
 ;     arith             ; 83                          ;
 ;         2 data inputs ; 70                          ;
 ;         3 data inputs ; 13                          ;
-;     normal            ; 276                         ;
+;     normal            ; 264                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 9                           ;
-;         2 data inputs ; 29                          ;
-;         3 data inputs ; 58                          ;
-;         4 data inputs ; 178                         ;
+;         2 data inputs ; 23                          ;
+;         3 data inputs ; 56                          ;
+;         4 data inputs ; 174                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.30                       ;
-; Average LUT depth     ; 5.69                        ;
+; Max LUT depth         ; 11.30                       ;
+; Average LUT depth     ; 5.02                        ;
 +-----------------------+-----------------------------+
 
 
@@ -814,7 +813,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jul 11 21:49:49 2025
+    Info: Processing started: Fri Jul 11 22:13:47 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sudoku -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -864,23 +863,24 @@ Warning (10230): Verilog HDL assignment warning at map_selector.v(22): truncated
 Info (12128): Elaborating entity "define_maps" for hierarchy "map_selector:ms|define_maps:dm" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 14
 Info (12128): Elaborating entity "random" for hierarchy "map_selector:ms|random:r" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 20
 Info (12128): Elaborating entity "state_machine" for hierarchy "state_machine:sm" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 121
-Warning (10230): Verilog HDL assignment warning at state_machine.v(46): truncated value with size 32 to match size of target (9) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 46
-Warning (10270): Verilog HDL Case Statement warning at state_machine.v(123): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 123
+Warning (10230): Verilog HDL assignment warning at state_machine.v(47): truncated value with size 32 to match size of target (9) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 47
+Warning (10230): Verilog HDL assignment warning at state_machine.v(49): truncated value with size 4 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 49
+Warning (10270): Verilog HDL Case Statement warning at state_machine.v(125): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 125
 Warning (10034): Output port "score" at state_machine.v(12) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 12
 Warning (10034): Output port "n0" at state_machine.v(20) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 20
 Warning (10034): Output port "n1" at state_machine.v(20) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 20
-Info (12128): Elaborating entity "board_updater" for hierarchy "state_machine:sm|board_updater:b_up" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 73
+Info (12128): Elaborating entity "board_updater" for hierarchy "state_machine:sm|board_updater:b_up" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 75
 Warning (10230): Verilog HDL assignment warning at board_updater.v(38): truncated value with size 324 to match size of target (81) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 38
 Warning (10230): Verilog HDL assignment warning at board_updater.v(68): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 68
 Warning (10230): Verilog HDL assignment warning at board_updater.v(74): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 74
 Warning (10230): Verilog HDL assignment warning at board_updater.v(86): truncated value with size 32 to match size of target (2) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 86
 Warning (10270): Verilog HDL Case Statement warning at board_updater.v(56): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 56
 Info (10264): Verilog HDL Case Statement information at board_updater.v(56): all case item expressions in this case statement are onehot File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 56
-Info (12128): Elaborating entity "position_updater" for hierarchy "state_machine:sm|position_updater:pos_up" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 87
+Info (12128): Elaborating entity "position_updater" for hierarchy "state_machine:sm|position_updater:pos_up" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 89
 Warning (10270): Verilog HDL Case Statement warning at position_updater.v(33): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 33
-Info (12128): Elaborating entity "difficulty_selector" for hierarchy "state_machine:sm|difficulty_selector:d_sel" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 98
-Info (12128): Elaborating entity "victory" for hierarchy "state_machine:sm|victory:v" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 103
-Info (12128): Elaborating entity "defeat" for hierarchy "state_machine:sm|defeat:d" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 110
+Info (12128): Elaborating entity "difficulty_selector" for hierarchy "state_machine:sm|difficulty_selector:d_sel" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 100
+Info (12128): Elaborating entity "victory" for hierarchy "state_machine:sm|victory:v" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 105
+Info (12128): Elaborating entity "defeat" for hierarchy "state_machine:sm|defeat:d" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 112
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13000): Registers with preset signals will power-up high File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 41
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
@@ -900,17 +900,20 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "d1[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
     Warning (13410): Pin "d1[6]" is stuck at VCC File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
     Warning (13410): Pin "d2[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
+    Warning (13410): Pin "d4[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
+    Warning (13410): Pin "d4[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
+    Warning (13410): Pin "d4[6]" is stuck at VCC File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 421 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 409 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 58 output pins
-    Info (21061): Implemented 354 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
-    Info: Peak virtual memory: 572 megabytes
-    Info: Processing ended: Fri Jul 11 21:49:59 2025
+    Info (21061): Implemented 342 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 38 warnings
+    Info: Peak virtual memory: 584 megabytes
+    Info: Processing ended: Fri Jul 11 22:13:57 2025
     Info: Elapsed time: 00:00:10
-    Info: Total CPU time (on all processors): 00:00:17
+    Info: Total CPU time (on all processors): 00:00:18
 
 

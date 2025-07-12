@@ -3,8 +3,6 @@ JedecChain;
 	FileRevision(JESD32A);
 	DefaultMfr(6E);
 
-	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("/home/andreojr/dev/edu/engg52/sudoku/quartus/output_files/") File("top.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

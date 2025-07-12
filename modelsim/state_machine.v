@@ -28,6 +28,7 @@ module state_machine(
     wire cell_visibility_value;
 
     wire victory_condition, defeat_condition;
+    wire visible_cell_value;
     
     parameter [2:0] 
         INICIAR_JOGO        		 = 3'b000,
@@ -40,11 +41,12 @@ module state_machine(
 
     assign n2 = {2'b00, strikes};
     assign n3 = selected_number;
-    assign n4 = cell_value;
+    assign n4 = visible_cell_value;
     assign n5 = {1'b0, current_state};
 
     assign index = (pos_i * 9 + pos_j) * 4;
-    assign cell_value = visibilities[index] ? board[index +: 4] : 4'd0;
+    assign cell_value = board[index +: 4];
+    assign visible_cell_value = visibilities[index] ? board[index +: 4] : 4'd0;
     assign cell_visibility_value = visibilities[index];
 
     assign playing_condition = (current_state == CORRENDO_MAPA || current_state == PERCORRER_NUMEROS);

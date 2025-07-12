@@ -68,14 +68,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "d4[1]",
-					"strict" : false
-				},
-				{
-					"name" : "d4[2]",
-					"strict" : false
-				},
-				{
 					"name" : "d4[3]",
 					"strict" : false
 				},
@@ -85,10 +77,6 @@
 				},
 				{
 					"name" : "d4[5]",
-					"strict" : false
-				},
-				{
-					"name" : "d4[6]",
 					"strict" : false
 				},
 				{
@@ -176,15 +164,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "a_button",
+					"strict" : false
+				},
+				{
 					"name" : "original_up_button",
 					"strict" : false
 				},
 				{
 					"name" : "original_down_button",
-					"strict" : false
-				},
-				{
-					"name" : "a_button",
 					"strict" : false
 				},
 				{
