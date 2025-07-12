@@ -3,19 +3,19 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'frequency:game_frequency|out_clk'
-Slack : -8.245
-TNS   : -683.104
+Slack : -8.242
+TNS   : -248.213
 
 Type  : Slow 1200mV 85C Model Setup 'clk'
-Slack : -4.930
-TNS   : -122.271
+Slack : -5.067
+TNS   : -123.180
 
 Type  : Slow 1200mV 85C Model Setup 'stopwatch:sw|frequency:fd|out_clk'
-Slack : -1.980
-TNS   : -42.250
+Slack : -2.880
+TNS   : -58.438
 
 Type  : Slow 1200mV 85C Model Hold 'frequency:game_frequency|out_clk'
-Slack : 0.424
+Slack : 0.445
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'stopwatch:sw|frequency:fd|out_clk'
@@ -23,7 +23,7 @@ Slack : 0.446
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk'
-Slack : 0.498
+Slack : 0.501
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'clk'
@@ -32,26 +32,26 @@ TNS   : -77.350
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'frequency:game_frequency|out_clk'
 Slack : -1.487
-TNS   : -150.187
+TNS   : -60.967
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'stopwatch:sw|frequency:fd|out_clk'
 Slack : -1.487
 TNS   : -32.714
 
 Type  : Slow 1200mV 0C Model Setup 'frequency:game_frequency|out_clk'
-Slack : -7.614
-TNS   : -630.868
+Slack : -7.583
+TNS   : -228.088
 
 Type  : Slow 1200mV 0C Model Setup 'clk'
-Slack : -4.622
-TNS   : -106.959
+Slack : -4.797
+TNS   : -108.905
 
 Type  : Slow 1200mV 0C Model Setup 'stopwatch:sw|frequency:fd|out_clk'
-Slack : -1.711
-TNS   : -37.281
+Slack : -2.698
+TNS   : -54.343
 
 Type  : Slow 1200mV 0C Model Hold 'frequency:game_frequency|out_clk'
-Slack : 0.375
+Slack : 0.394
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'stopwatch:sw|frequency:fd|out_clk'
@@ -59,7 +59,7 @@ Slack : 0.395
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk'
-Slack : 0.460
+Slack : 0.462
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'clk'
@@ -68,26 +68,26 @@ TNS   : -77.350
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'frequency:game_frequency|out_clk'
 Slack : -1.487
-TNS   : -150.187
+TNS   : -60.967
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'stopwatch:sw|frequency:fd|out_clk'
 Slack : -1.487
 TNS   : -32.714
 
 Type  : Fast 1200mV 0C Model Setup 'frequency:game_frequency|out_clk'
-Slack : -2.989
-TNS   : -239.562
+Slack : -2.958
+TNS   : -83.379
 
 Type  : Fast 1200mV 0C Model Setup 'clk'
-Slack : -1.656
-TNS   : -26.074
+Slack : -1.677
+TNS   : -26.575
 
 Type  : Fast 1200mV 0C Model Setup 'stopwatch:sw|frequency:fd|out_clk'
-Slack : -0.280
-TNS   : -5.349
+Slack : -0.702
+TNS   : -13.532
 
 Type  : Fast 1200mV 0C Model Hold 'frequency:game_frequency|out_clk'
-Slack : 0.175
+Slack : 0.183
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'stopwatch:sw|frequency:fd|out_clk'
@@ -95,16 +95,16 @@ Slack : 0.184
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk'
-Slack : 0.199
+Slack : 0.201
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'clk'
 Slack : -3.000
-TNS   : -56.000
+TNS   : -56.048
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'frequency:game_frequency|out_clk'
 Slack : -1.000
-TNS   : -101.000
+TNS   : -41.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'stopwatch:sw|frequency:fd|out_clk'
 Slack : -1.000

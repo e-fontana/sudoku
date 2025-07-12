@@ -20,7 +20,7 @@ module state_machine(
 );
     reg [2:0] current_state, next_state;
 
-    wire [6:0] index;
+    wire [8:0] index;
     wire [3:0] cell_value;
     wire [1:0] strikes;
     wire [3:0] selected_number;
@@ -42,8 +42,8 @@ module state_machine(
     assign n6 = {1'b0, current_state};
     assign n7 = {3'b000, difficulty};
 
-    assign index = pos_i * 9 + pos_j;
-    assign cell_value = board[index -: 4];
+    assign index = (pos_i * 9 + pos_j) * 4;
+    assign cell_value = board[index +: 4];
     assign cell_visibility_value = visibilities[index];
 
     assign playing_condition = (current_state == CORRENDO_MAPA || current_state == PERCORRER_NUMEROS);

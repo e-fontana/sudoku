@@ -21,6 +21,7 @@ class Formatter:
     def define(self):
         for _ in range(15):
             sudoku = Sudoku()
+            sudoku.print_sudoku()
             for i, row in enumerate(sudoku.solution):
                 for j, cell in enumerate(row):
                     self.visibilities.append('0' if sudoku.board[i][j] == 0 else '1')
@@ -29,7 +30,7 @@ class Formatter:
     def __init__(self, output_file='output.v'):
         self.define()
 
-        output_file = f"{os.getcwd()}/../{output_file}"
+        output_file = f"{os.getcwd()}/../modelsim/{output_file}"
         with open(output_file, 'w') as f:
             f.write("module define_maps(\n")
             f.write(f"\toutput [{81*15 - 1}:0] visibilities,\n")

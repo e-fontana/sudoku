@@ -1,9 +1,9 @@
-/home/andreojr/dev/edu/engg52/sudoku/modelsim/testbench.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/testbench.v
+/home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module testbench
+-- Compiling module victory
 
 Top level modules:
-	testbench
+	victory
 
 } {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -12,26 +12,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	score
 
-} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v
+} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module victory
+-- Compiling module random
 
 Top level modules:
-	victory
-
-} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module state_machine
-
-Top level modules:
-	state_machine
-
-} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module defeat
-
-Top level modules:
-	defeat
+	random
 
 } {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -40,19 +26,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	stopwatch
 
-} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v
+} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module random
+-- Compiling module defeat
 
 Top level modules:
-	random
-
-} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module map_selector
-
-Top level modules:
-	map_selector
+	defeat
 
 } {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -61,18 +40,18 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	frequency
 
+} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module map_selector
+
+Top level modules:
+	map_selector
+
 } {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module top
 
 Top level modules:
 	top
-
-} {} {}} /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v {1 {vlog -work work -stats=none /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module define_maps
-
-Top level modules:
-	define_maps
 
 } {} {}}
