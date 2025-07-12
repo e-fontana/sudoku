@@ -23,7 +23,7 @@ module controller(
             led_on_pulse led_module (
                 .clk(clk),
                 .reset(reset),
-                .pulse_in(controller_output[i),
+                .pulse_in(controller_output[i]),
                 .led_out(LEDR[i])
             );
         end
