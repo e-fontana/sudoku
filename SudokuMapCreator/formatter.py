@@ -17,11 +17,12 @@ class Formatter:
 
     visibilities = []
     bits = []
+    sudokus = []
 
     def define(self):
         for _ in range(15):
             sudoku = Sudoku()
-            sudoku.print_sudoku()
+            self.sudokus.append(sudoku)
             for i, row in enumerate(sudoku.solution):
                 for j, cell in enumerate(row):
                     self.visibilities.append('0' if sudoku.board[i][j] == 0 else '1')
@@ -33,6 +34,10 @@ class Formatter:
         self.define()
 
         output_file = f"{os.getcwd()}/../modelsim/{output_file}"
+        with open(f"{os.getcwd()}/maps-viewer.txt", 'w') as f:
+            for sudoku in self.sudokus:
+                f.write(f"{sudoku.print_sudoku()}\n")
+
         with open(output_file, 'w') as f:
             f.write("module define_maps(\n")
             f.write(f"\toutput [{81*15 - 1}:0] visibilities,\n")

@@ -68,7 +68,7 @@ class Sudoku:
                     return False
         return True
 
-    def remove_cells(self, clues=79):
+    def remove_cells(self, clues=70):
         positions = [(i, j) for i in range(9) for j in range(9)]
         random.shuffle(positions)
 
@@ -84,16 +84,17 @@ class Sudoku:
         return str(cell) if cell != 0 else "·"
     
     def print_sudoku(self):
-        print("╔═══════╦═══════╦═══════╗")
+        string = "╔═══════╦═══════╦═══════╗\n"
         for i in range(9):
             row = "║"
             for j in range(9):
                 row += f" {self.format_cell(self.board[i][j])}"
                 if (j + 1) % 3 == 0:
                     row += " ║"
-            print(row)
+            string += f"{row}\n"
             if (i + 1) % 3 == 0 and i != 8:
-                print("╠═══════╬═══════╬═══════╣")
-        print("╚═══════╩═══════╩═══════╝")
+                string += "╠═══════╬═══════╬═══════╣\n"
+        string += "╚═══════╩═══════╩═══════╝\n"
+        return string
         
 
