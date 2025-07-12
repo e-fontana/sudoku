@@ -16,7 +16,8 @@ module state_machine(
     output [323:0] board,
 
     output playing_condition,
-    output [3:0] n0, n6, n7
+    output difficulty,
+    output [3:0] n0, n1, n2, n3, n4, n5
 );
     reg [2:0] current_state, next_state;
 
@@ -26,7 +27,6 @@ module state_machine(
     wire [3:0] selected_number;
     wire cell_visibility_value;
 
-    wire difficulty;
     wire victory_condition, defeat_condition;
     
     parameter [2:0] 
@@ -38,12 +38,13 @@ module state_machine(
         VITORIA 					 = 3'b101,
         DERROTA						 = 3'b110;
 
-    assign n0 = cell_value;
-    assign n6 = {1'b0, current_state};
-    assign n7 = {3'b000, difficulty};
+    assign n2 = {2'b00, strikes};
+    assign n3 = selected_number;
+    assign n4 = cell_value;
+    assign n5 = {1'b0, current_state};
 
     assign index = (pos_i * 9 + pos_j) * 4;
-    assign cell_value = board[index +: 4];
+    assign cell_value = visibilities[index] ? board[index +: 4] : 4'd0;
     assign cell_visibility_value = visibilities[index];
 
     assign playing_condition = (current_state == CORRENDO_MAPA || current_state == PERCORRER_NUMEROS);

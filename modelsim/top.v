@@ -12,6 +12,7 @@ module top(
     input start_button,
     // outputs
     output error,
+    output difficulty,
     output [6:0] d0, d1, d2, d3, d4, d5, d6, d7
 );
     wire [3:0] n0, n1, n2, n3, n4, n5, n6, n7;
@@ -31,8 +32,8 @@ module top(
     wire [323:0] board;
     wire game_clk;
 
-    assign n5 = pos_i;
-    assign n4 = pos_j;
+    assign n6 = pos_i;
+    assign n7 = pos_j;
 
     assign playtime = {minutes, seconds};
 
@@ -115,7 +116,7 @@ module top(
         .board(board),
         
         .playing_condition(playing_condition),
-
-        .n0(n0), .n6(n6), .n7(n7)
+        .difficulty(difficulty),
+        .n0(n0), .n1(n1), .n2(n2), .n3(n3), .n4(n4), .n5(n5)
     );
 endmodule

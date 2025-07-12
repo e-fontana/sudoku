@@ -8,31 +8,59 @@
 					"strict" : false
 				},
 				{
-					"name" : "d0[0]",
+					"name" : "difficulty",
 					"strict" : false
 				},
 				{
-					"name" : "d0[1]",
+					"name" : "d2[0]",
 					"strict" : false
 				},
 				{
-					"name" : "d0[2]",
+					"name" : "d2[2]",
 					"strict" : false
 				},
 				{
-					"name" : "d0[3]",
+					"name" : "d2[3]",
 					"strict" : false
 				},
 				{
-					"name" : "d0[4]",
+					"name" : "d2[4]",
 					"strict" : false
 				},
 				{
-					"name" : "d0[5]",
+					"name" : "d2[5]",
 					"strict" : false
 				},
 				{
-					"name" : "d0[6]",
+					"name" : "d2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "d3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "d3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "d3[2]",
+					"strict" : false
+				},
+				{
+					"name" : "d3[3]",
+					"strict" : false
+				},
+				{
+					"name" : "d3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "d3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "d3[6]",
 					"strict" : false
 				},
 				{
@@ -124,6 +152,14 @@
 					"strict" : false
 				},
 				{
+					"name" : "d7[1]",
+					"strict" : false
+				},
+				{
+					"name" : "d7[2]",
+					"strict" : false
+				},
+				{
 					"name" : "d7[3]",
 					"strict" : false
 				},
@@ -136,7 +172,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "a_button",
+					"name" : "d7[6]",
 					"strict" : false
 				},
 				{
@@ -145,6 +181,10 @@
 				},
 				{
 					"name" : "original_down_button",
+					"strict" : false
+				},
+				{
+					"name" : "a_button",
 					"strict" : false
 				},
 				{
