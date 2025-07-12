@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Fri Jul 11 22:19:31 2025
+Sat Jul 12 11:43:33 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -13,26 +13,11 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. Registers Removed During Synthesis
-  9. Removed Registers Triggering Further Register Optimizations
- 10. General Register Statistics
- 11. Inverted Register Statistics
- 12. Multiplexer Restructuring Statistics (Restructuring Performed)
- 13. Parameter Settings for User Entity Instance: Top-level Entity: |top
- 14. Parameter Settings for User Entity Instance: frequency:game_frequency
- 15. Parameter Settings for User Entity Instance: display:d
- 16. Parameter Settings for User Entity Instance: stopwatch:sw|frequency:fd
- 17. Parameter Settings for User Entity Instance: state_machine:sm
- 18. Parameter Settings for User Entity Instance: state_machine:sm|board_updater:b_up
- 19. Parameter Settings for User Entity Instance: state_machine:sm|position_updater:pos_up
- 20. Parameter Settings for User Entity Instance: state_machine:sm|difficulty_selector:d_sel
- 21. Port Connectivity Checks: "state_machine:sm|board_updater:b_up"
- 22. Port Connectivity Checks: "state_machine:sm"
- 23. Port Connectivity Checks: "score:sc"
- 24. Port Connectivity Checks: "stopwatch:sw"
- 25. Post-Synthesis Netlist Statistics for Top Partition
- 26. Elapsed Time Per Partition
- 27. Analysis & Synthesis Messages
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |top
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -59,15 +44,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 11 22:19:31 2025           ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 12 11:43:33 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top                                             ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 343                                             ;
-;     Total combinational functions  ; 343                                             ;
-;     Dedicated logic registers      ; 113                                             ;
-; Total registers                    ; 113                                             ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
 ; Total pins                         ; 67                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -171,437 +156,61 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 10          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 10          ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                       ;
-+-----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-; File Name with User-Entered Path  ; Used in Netlist ; File Type              ; File Name with Absolute Path                                        ; Library ;
-+-----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
-; ../modelsim/victory.v             ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v             ;         ;
-; ../modelsim/top.v                 ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v                 ;         ;
-; ../modelsim/stopwatch.v           ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v           ;         ;
-; ../modelsim/state_machine.v       ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v       ;         ;
-; ../modelsim/score.v               ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v               ;         ;
-; ../modelsim/random.v              ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v              ;         ;
-; ../modelsim/position_updater.v    ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v    ;         ;
-; ../modelsim/map_selector.v        ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v        ;         ;
-; ../modelsim/frequency.v           ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v           ;         ;
-; ../modelsim/display.v             ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/display.v             ;         ;
-; ../modelsim/difficulty_selector.v ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/difficulty_selector.v ;         ;
-; ../modelsim/define_maps.v         ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v         ;         ;
-; ../modelsim/defeat.v              ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v              ;         ;
-; ../modelsim/button_handler.v      ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/button_handler.v      ;         ;
-; ../modelsim/board_updater.v       ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v       ;         ;
-+-----------------------------------+-----------------+------------------------+---------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                     ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                       ; Library ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
+; ../modules/top.v                 ; yes             ; User Verilog HDL File  ; /home/andreojr/dev/edu/engg52/sudoku/modules/top.v ;         ;
++----------------------------------+-----------------+------------------------+----------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary               ;
-+---------------------------------------------+-------------+
-; Resource                                    ; Usage       ;
-+---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 343         ;
-;                                             ;             ;
-; Total combinational functions               ; 343         ;
-; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 173         ;
-;     -- 3 input functions                    ; 65          ;
-;     -- <=2 input functions                  ; 105         ;
-;                                             ;             ;
-; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 260         ;
-;     -- arithmetic mode                      ; 83          ;
-;                                             ;             ;
-; Total registers                             ; 113         ;
-;     -- Dedicated logic registers            ; 113         ;
-;     -- I/O registers                        ; 0           ;
-;                                             ;             ;
-; I/O pins                                    ; 67          ;
-;                                             ;             ;
-; Embedded Multiplier 9-bit elements          ; 0           ;
-;                                             ;             ;
-; Maximum fan-out node                        ; reset~input ;
-; Maximum fan-out                             ; 113         ;
-; Total fan-out                               ; 1611        ;
-; Average fan-out                             ; 2.73        ;
-+---------------------------------------------+-------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 67    ;
+;                                             ;       ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+;                                             ;       ;
+; Maximum fan-out node                        ; reset ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 67    ;
+; Average fan-out                             ; 0.50  ;
++---------------------------------------------+-------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                 ;
-+-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node        ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Entity Name         ; Library Name ;
-+-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
-; |top                              ; 343 (1)             ; 113 (0)                   ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |top                                            ; top                 ; work         ;
-;    |display:d|                    ; 41 (41)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|display:d                                  ; display             ; work         ;
-;    |frequency:game_frequency|     ; 47 (47)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|frequency:game_frequency                   ; frequency           ; work         ;
-;    |state_machine:sm|             ; 177 (105)           ; 41 (3)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm                           ; state_machine       ; work         ;
-;       |board_updater:b_up|        ; 50 (50)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|board_updater:b_up        ; board_updater       ; work         ;
-;       |defeat:d|                  ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|defeat:d                  ; defeat              ; work         ;
-;       |difficulty_selector:d_sel| ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|difficulty_selector:d_sel ; difficulty_selector ; work         ;
-;       |position_updater:pos_up|   ; 16 (16)             ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|state_machine:sm|position_updater:pos_up   ; position_updater    ; work         ;
-;    |stopwatch:sw|                 ; 77 (32)             ; 45 (22)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|stopwatch:sw                               ; stopwatch           ; work         ;
-;       |frequency:fd|              ; 45 (45)             ; 23 (23)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|stopwatch:sw|frequency:fd                  ; frequency           ; work         ;
-+-----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+---------------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                      ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
+; |top                       ; 0 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 67   ; 0            ; |top                ; top         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------+-------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-; Register name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Reason for Removal                                         ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-; map_selector:ms|random:r|random_number[1..3]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ; Stuck at GND due to stuck port data_in                     ;
-; map_selector:ms|random:r|random_number[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           ; Stuck at VCC due to stuck port data_in                     ;
-; state_machine:sm|board_updater:b_up|board[1,2,5,7,9..11,15,18..21,23,24,26..30,32,35,36,38..40,43,47,49,51,53..58,62,63,65,66,68,69,71..74,76,77,79,82,83,85,86,88,90..92,95,99,101..103,105,107,111,114..116,118,119,121..124,127,129,131,133,134,136,137,139..142,144,145,147,149,150,153,155..158,163,164,166..168,171,174,175,177..179,181..186,188,191,194..197,199,201,202,205,207,208,210,211,215,216,219,220,222,223,225,226,228,229,231..234,239,241..243,245,247,250,251,253,255,257..262,264,267,269,270,274..277,279,283,284,286,287,290,291,295..297,299,300,302,303,305,307,309..314,316,319,321,322] ; Stuck at GND due to stuck port data_in                     ;
-; state_machine:sm|board_updater:b_up|visibilities[1,21]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              ; Stuck at GND due to stuck port data_in                     ;
-; state_machine:sm|board_updater:b_up|board[238]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[237] ;
-; state_machine:sm|board_updater:b_up|board[237]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[236] ;
-; state_machine:sm|board_updater:b_up|board[236]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[235] ;
-; state_machine:sm|board_updater:b_up|board[235]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[230] ;
-; state_machine:sm|board_updater:b_up|board[230]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[227] ;
-; state_machine:sm|board_updater:b_up|board[227]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[224] ;
-; state_machine:sm|board_updater:b_up|board[224]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[221] ;
-; state_machine:sm|board_updater:b_up|board[221]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[218] ;
-; state_machine:sm|board_updater:b_up|board[218]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[217] ;
-; state_machine:sm|board_updater:b_up|board[217]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[214] ;
-; state_machine:sm|board_updater:b_up|board[214]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[213] ;
-; state_machine:sm|board_updater:b_up|board[213]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[212] ;
-; state_machine:sm|board_updater:b_up|board[212]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[209] ;
-; state_machine:sm|board_updater:b_up|board[209]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[206] ;
-; state_machine:sm|board_updater:b_up|board[206]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[323] ;
-; state_machine:sm|board_updater:b_up|board[323]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[162] ;
-; state_machine:sm|board_updater:b_up|board[162]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[165] ;
-; state_machine:sm|board_updater:b_up|board[165]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[169] ;
-; state_machine:sm|board_updater:b_up|board[169]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[170] ;
-; state_machine:sm|board_updater:b_up|board[170]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[172] ;
-; state_machine:sm|board_updater:b_up|board[172]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[173] ;
-; state_machine:sm|board_updater:b_up|board[173]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[176] ;
-; state_machine:sm|board_updater:b_up|board[176]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[204] ;
-; state_machine:sm|board_updater:b_up|board[204]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[187] ;
-; state_machine:sm|board_updater:b_up|board[187]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[189] ;
-; state_machine:sm|board_updater:b_up|board[189]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[190] ;
-; state_machine:sm|board_updater:b_up|board[190]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[192] ;
-; state_machine:sm|board_updater:b_up|board[192]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[193] ;
-; state_machine:sm|board_updater:b_up|board[193]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[198] ;
-; state_machine:sm|board_updater:b_up|board[198]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[200] ;
-; state_machine:sm|board_updater:b_up|board[200]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[203] ;
-; state_machine:sm|board_updater:b_up|board[203]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[180] ;
-; state_machine:sm|board_updater:b_up|board[180]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[282] ;
-; state_machine:sm|board_updater:b_up|board[282]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[285] ;
-; state_machine:sm|board_updater:b_up|board[285]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[288] ;
-; state_machine:sm|board_updater:b_up|board[288]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[289] ;
-; state_machine:sm|board_updater:b_up|board[289]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[292] ;
-; state_machine:sm|board_updater:b_up|board[292]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[293] ;
-; state_machine:sm|board_updater:b_up|board[293]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[294] ;
-; state_machine:sm|board_updater:b_up|board[294]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[240] ;
-; state_machine:sm|board_updater:b_up|board[240]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[301] ;
-; state_machine:sm|board_updater:b_up|board[301]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[304] ;
-; state_machine:sm|board_updater:b_up|board[304]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[306] ;
-; state_machine:sm|board_updater:b_up|board[306]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[308] ;
-; state_machine:sm|board_updater:b_up|board[308]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[315] ;
-; state_machine:sm|board_updater:b_up|board[315]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[317] ;
-; state_machine:sm|board_updater:b_up|board[317]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[318] ;
-; state_machine:sm|board_updater:b_up|board[318]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[320] ;
-; state_machine:sm|board_updater:b_up|board[320]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[298] ;
-; state_machine:sm|board_updater:b_up|board[298]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[244] ;
-; state_machine:sm|board_updater:b_up|board[244]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[246] ;
-; state_machine:sm|board_updater:b_up|board[246]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[248] ;
-; state_machine:sm|board_updater:b_up|board[248]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[249] ;
-; state_machine:sm|board_updater:b_up|board[249]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[252] ;
-; state_machine:sm|board_updater:b_up|board[252]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[254] ;
-; state_machine:sm|board_updater:b_up|board[254]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[256] ;
-; state_machine:sm|board_updater:b_up|board[256]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[281] ;
-; state_machine:sm|board_updater:b_up|board[281]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[265] ;
-; state_machine:sm|board_updater:b_up|board[265]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[266] ;
-; state_machine:sm|board_updater:b_up|board[266]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[268] ;
-; state_machine:sm|board_updater:b_up|board[268]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[271] ;
-; state_machine:sm|board_updater:b_up|board[271]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[272] ;
-; state_machine:sm|board_updater:b_up|board[272]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[273] ;
-; state_machine:sm|board_updater:b_up|board[273]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[278] ;
-; state_machine:sm|board_updater:b_up|board[278]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[280] ;
-; state_machine:sm|board_updater:b_up|board[280]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[263] ;
-; state_machine:sm|board_updater:b_up|board[263]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[42]  ;
-; state_machine:sm|board_updater:b_up|board[42]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[44]  ;
-; state_machine:sm|board_updater:b_up|board[44]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[45]  ;
-; state_machine:sm|board_updater:b_up|board[45]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[46]  ;
-; state_machine:sm|board_updater:b_up|board[46]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[48]  ;
-; state_machine:sm|board_updater:b_up|board[48]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[50]  ;
-; state_machine:sm|board_updater:b_up|board[50]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[52]  ;
-; state_machine:sm|board_updater:b_up|board[52]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[161] ;
-; state_machine:sm|board_updater:b_up|board[161]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[60]  ;
-; state_machine:sm|board_updater:b_up|board[60]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[61]  ;
-; state_machine:sm|board_updater:b_up|board[61]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[64]  ;
-; state_machine:sm|board_updater:b_up|board[64]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[67]  ;
-; state_machine:sm|board_updater:b_up|board[67]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[70]  ;
-; state_machine:sm|board_updater:b_up|board[70]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[75]  ;
-; state_machine:sm|board_updater:b_up|board[75]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[78]  ;
-; state_machine:sm|board_updater:b_up|board[78]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[80]  ;
-; state_machine:sm|board_updater:b_up|board[80]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[59]  ;
-; state_machine:sm|board_updater:b_up|board[59]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[0]   ;
-; state_machine:sm|board_updater:b_up|board[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ; Merged with state_machine:sm|board_updater:b_up|board[3]   ;
-; state_machine:sm|board_updater:b_up|board[3]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ; Merged with state_machine:sm|board_updater:b_up|board[4]   ;
-; state_machine:sm|board_updater:b_up|board[4]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ; Merged with state_machine:sm|board_updater:b_up|board[6]   ;
-; state_machine:sm|board_updater:b_up|board[6]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ; Merged with state_machine:sm|board_updater:b_up|board[8]   ;
-; state_machine:sm|board_updater:b_up|board[8]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        ; Merged with state_machine:sm|board_updater:b_up|board[12]  ;
-; state_machine:sm|board_updater:b_up|board[12]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[13]  ;
-; state_machine:sm|board_updater:b_up|board[13]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[41]  ;
-; state_machine:sm|board_updater:b_up|board[41]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[16]  ;
-; state_machine:sm|board_updater:b_up|board[16]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[17]  ;
-; state_machine:sm|board_updater:b_up|board[17]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[22]  ;
-; state_machine:sm|board_updater:b_up|board[22]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[25]  ;
-; state_machine:sm|board_updater:b_up|board[25]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[31]  ;
-; state_machine:sm|board_updater:b_up|board[31]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[33]  ;
-; state_machine:sm|board_updater:b_up|board[33]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[34]  ;
-; state_machine:sm|board_updater:b_up|board[34]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[37]  ;
-; state_machine:sm|board_updater:b_up|board[37]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[14]  ;
-; state_machine:sm|board_updater:b_up|board[14]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[120] ;
-; state_machine:sm|board_updater:b_up|board[120]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[125] ;
-; state_machine:sm|board_updater:b_up|board[125]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[126] ;
-; state_machine:sm|board_updater:b_up|board[126]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[128] ;
-; state_machine:sm|board_updater:b_up|board[128]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[130] ;
-; state_machine:sm|board_updater:b_up|board[130]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[132] ;
-; state_machine:sm|board_updater:b_up|board[132]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[135] ;
-; state_machine:sm|board_updater:b_up|board[135]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[81]  ;
-; state_machine:sm|board_updater:b_up|board[81]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[143] ;
-; state_machine:sm|board_updater:b_up|board[143]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[146] ;
-; state_machine:sm|board_updater:b_up|board[146]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[148] ;
-; state_machine:sm|board_updater:b_up|board[148]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[151] ;
-; state_machine:sm|board_updater:b_up|board[151]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[152] ;
-; state_machine:sm|board_updater:b_up|board[152]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[154] ;
-; state_machine:sm|board_updater:b_up|board[154]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[159] ;
-; state_machine:sm|board_updater:b_up|board[159]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[160] ;
-; state_machine:sm|board_updater:b_up|board[160]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[138] ;
-; state_machine:sm|board_updater:b_up|board[138]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[84]  ;
-; state_machine:sm|board_updater:b_up|board[84]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[87]  ;
-; state_machine:sm|board_updater:b_up|board[87]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[89]  ;
-; state_machine:sm|board_updater:b_up|board[89]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[93]  ;
-; state_machine:sm|board_updater:b_up|board[93]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[94]  ;
-; state_machine:sm|board_updater:b_up|board[94]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[96]  ;
-; state_machine:sm|board_updater:b_up|board[96]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[97]  ;
-; state_machine:sm|board_updater:b_up|board[97]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       ; Merged with state_machine:sm|board_updater:b_up|board[117] ;
-; state_machine:sm|board_updater:b_up|board[117]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[100] ;
-; state_machine:sm|board_updater:b_up|board[100]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[104] ;
-; state_machine:sm|board_updater:b_up|board[104]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[106] ;
-; state_machine:sm|board_updater:b_up|board[106]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[108] ;
-; state_machine:sm|board_updater:b_up|board[108]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[109] ;
-; state_machine:sm|board_updater:b_up|board[109]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[110] ;
-; state_machine:sm|board_updater:b_up|board[110]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[112] ;
-; state_machine:sm|board_updater:b_up|board[112]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[113] ;
-; state_machine:sm|board_updater:b_up|board[113]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      ; Merged with state_machine:sm|board_updater:b_up|board[98]  ;
-; state_machine:sm|board_updater:b_up|visibilities[2,3,5..7,9..11,13..15,17..19,22,23,25..27,29..31,33..35,37..39,41..43,45..47,49..51,53..55,57..59,61..63,65..67,69..71,73..75,77..79]                                                                                                                                                                                                                                                                                                                                                                                                                              ; Merged with state_machine:sm|board_updater:b_up|board[98]  ;
-; stopwatch:sw|frequency:fd|counter[0]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; Merged with frequency:game_frequency|counter[0]            ;
-; stopwatch:sw|frequency:fd|counter[1]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; Merged with frequency:game_frequency|counter[1]            ;
-; stopwatch:sw|frequency:fd|counter[2]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; Merged with frequency:game_frequency|counter[2]            ;
-; stopwatch:sw|frequency:fd|counter[3]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ; Merged with frequency:game_frequency|counter[3]            ;
-; Total Number of Removed Registers = 391                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             ;                                                            ;
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                   ;
-+-------------------------------------------+---------------------------+-------------------------------------------------------+
-; Register name                             ; Reason for Removal        ; Registers Removed due to This Register                ;
-+-------------------------------------------+---------------------------+-------------------------------------------------------+
-; map_selector:ms|random:r|random_number[3] ; Stuck at GND              ; state_machine:sm|board_updater:b_up|board[322],       ;
-;                                           ; due to stuck port data_in ; state_machine:sm|board_updater:b_up|board[321],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[319],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[316],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[314],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[313],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[312],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[311],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[310],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[309],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[307],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[305],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[303],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[302],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[300],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[299],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[297],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[296],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[295],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[291],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[290],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[287],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[286],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[284],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[283],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[279],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[277],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[276],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[275],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[274],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[270],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[269],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[267],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[264],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[262],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[261],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[260],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[259],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[258],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[257],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[255],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[253],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[251],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[250],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[247],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[245],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[243],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[242],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[241],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[239],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[234],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[233],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[232],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[231],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[229],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[228],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[226],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[225],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[223],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[222],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[220],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[219],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[216],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[215],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[211],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[210],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[208],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[207],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[205],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[202],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[201],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[199],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[197],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[196],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[195],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[194],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[191],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[188],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[186],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[185],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[184],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[183],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[182],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[181],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[179],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[178],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[177],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[175],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[174],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[171],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[168],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[167],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[166],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[164],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[163],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[158],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[157],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[156],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[155],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[153],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[150],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[149],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[147],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[145],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[144],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[142],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[141],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[140],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[139],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[137],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[136],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[134],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[133],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[131],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[129],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[127],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[124],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[123],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[122],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[121],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[119],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[118],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[116],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[115],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[114],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[111],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[107],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[105],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[103],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[102],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[101],       ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[99],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[95],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[92],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[91],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[90],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[88],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[86],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[85],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[83],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[82],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[79],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[77],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[76],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[74],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[73],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[72],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[71],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[69],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[68],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[66],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[65],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[63],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[62],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[58],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[57],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[56],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[55],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[54],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[53],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[51],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[49],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[47],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[43],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[40],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[39],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[38],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[36],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[35],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[32],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[30],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[29],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[28],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[27],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[26],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[24],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[23],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[21],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[20],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[19],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[18],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[15],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[11],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[10],        ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[9],         ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[7],         ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[5],         ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[2],         ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|board[1],         ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|visibilities[21], ;
-;                                           ;                           ; state_machine:sm|board_updater:b_up|visibilities[1]   ;
-+-------------------------------------------+---------------------------+-------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -609,41 +218,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 113   ;
-; Number of registers using Synchronous Clear  ; 17    ;
-; Number of registers using Synchronous Load   ; 3     ;
-; Number of registers using Asynchronous Clear ; 113   ;
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 49    ;
+; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------+
-; Inverted Register Statistics                                     ;
-+--------------------------------------------------------+---------+
-; Inverted Register                                      ; Fan out ;
-+--------------------------------------------------------+---------+
-; state_machine:sm|position_updater:pos_up|pos_j[2]      ; 10      ;
-; state_machine:sm|position_updater:pos_up|pos_i[2]      ; 12      ;
-; state_machine:sm|board_updater:b_up|selected_number[0] ; 12      ;
-; Total number of inverted registers = 3                 ;         ;
-+--------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |top|stopwatch:sw|minutes[4]                                ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|stopwatch:sw|seconds[4]                                ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |top|state_machine:sm|board_updater:b_up|visibilities[4]    ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|state_machine:sm|board_updater:b_up|selected_number[1] ;
-; 12:1               ; 2 bits    ; 16 LEs        ; 6 LEs                ; 10 LEs                 ; Yes        ; |top|state_machine:sm|current_state[2]                      ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |top|state_machine:sm|board_updater:b_up|ShiftLeft0         ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; No         ; |top|state_machine:sm|board_updater:b_up|ShiftLeft0         ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
 
 +---------------------------------------------------------------------+
@@ -656,146 +238,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: frequency:game_frequency ;
-+----------------+---------+--------------------------------------------+
-; Parameter Name ; Value   ; Type                                       ;
-+----------------+---------+--------------------------------------------+
-; COUNTER_LIMIT  ; 6249999 ; Signed Integer                             ;
-+----------------+---------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: display:d                                                    ;
-+----------------+------------------------------------------------------------------------+-----------------+
-; Parameter Name ; Value                                                                  ; Type            ;
-+----------------+------------------------------------------------------------------------+-----------------+
-; n              ; 1000000111100101001000110000001100100100100000010111100000000000010000 ; Unsigned Binary ;
-+----------------+------------------------------------------------------------------------+-----------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: stopwatch:sw|frequency:fd ;
-+----------------+----------+--------------------------------------------+
-; Parameter Name ; Value    ; Type                                       ;
-+----------------+----------+--------------------------------------------+
-; COUNTER_LIMIT  ; 49999999 ; Signed Integer                             ;
-+----------------+----------+--------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: state_machine:sm ;
-+------------------------+-------+------------------------------+
-; Parameter Name         ; Value ; Type                         ;
-+------------------------+-------+------------------------------+
-; INICIAR_JOGO           ; 000   ; Unsigned Binary              ;
-; SELECIONAR_DIFICULDADE ; 001   ; Unsigned Binary              ;
-; CARREGANDO             ; 010   ; Unsigned Binary              ;
-; CORRENDO_MAPA          ; 011   ; Unsigned Binary              ;
-; PERCORRER_NUMEROS      ; 100   ; Unsigned Binary              ;
-; VITORIA                ; 101   ; Unsigned Binary              ;
-; DERROTA                ; 110   ; Unsigned Binary              ;
-+------------------------+-------+------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: state_machine:sm|board_updater:b_up ;
-+-------------------+-------+------------------------------------------------------+
-; Parameter Name    ; Value ; Type                                                 ;
-+-------------------+-------+------------------------------------------------------+
-; CARREGANDO        ; 010   ; Unsigned Binary                                      ;
-; PERCORRER_NUMEROS ; 100   ; Unsigned Binary                                      ;
-+-------------------+-------+------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: state_machine:sm|position_updater:pos_up ;
-+----------------+-------+--------------------------------------------------------------+
-; Parameter Name ; Value ; Type                                                         ;
-+----------------+-------+--------------------------------------------------------------+
-; CORRENDO_MAPA  ; 011   ; Unsigned Binary                                              ;
-+----------------+-------+--------------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-----------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: state_machine:sm|difficulty_selector:d_sel ;
-+------------------------+-------+--------------------------------------------------------+
-; Parameter Name         ; Value ; Type                                                   ;
-+------------------------+-------+--------------------------------------------------------+
-; SELECIONAR_DIFICULDADE ; 001   ; Unsigned Binary                                        ;
-+------------------------+-------+--------------------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "state_machine:sm|board_updater:b_up"                                                                                                                                                   ;
-+-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port        ; Type  ; Severity ; Details                                                                                                                                                                          ;
-+-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; index       ; Input ; Warning  ; Input port expression (9 bits) is wider than the input port (7 bits) it drives.  The 2 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; index[1..0] ; Input ; Info     ; Stuck at GND                                                                                                                                                                     ;
-+-------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "state_machine:sm"                                                                           ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; Port         ; Type   ; Severity ; Details                                                                             ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-; visibilities ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; board        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+--------------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "score:sc"                                                                            ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                             ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-; score ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+-------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "stopwatch:sw"                                                                          ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                             ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-; seconds ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; minutes ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+---------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 67                          ;
-; cycloneiii_ff         ; 113                         ;
-;     CLR               ; 64                          ;
-;     ENA CLR           ; 29                          ;
-;     ENA CLR SCLR      ; 17                          ;
-;     ENA CLR SLD       ; 3                           ;
-; cycloneiii_lcell_comb ; 349                         ;
-;     arith             ; 83                          ;
-;         2 data inputs ; 70                          ;
-;         3 data inputs ; 13                          ;
-;     normal            ; 266                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 10                          ;
-;         2 data inputs ; 29                          ;
-;         3 data inputs ; 52                          ;
-;         4 data inputs ; 173                         ;
+; cycloneiii_lcell_comb ; 1                           ;
+;     normal            ; 1                           ;
+;         0 data inputs ; 1                           ;
 ;                       ;                             ;
-; Max LUT depth         ; 13.30                       ;
-; Average LUT depth     ; 5.56                        ;
+; Max LUT depth         ; 0.00                        ;
+; Average LUT depth     ; 0.00                        ;
 +-----------------------+-----------------------------+
 
 
@@ -804,7 +258,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:05     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -814,103 +268,135 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jul 11 22:19:20 2025
+    Info: Processing started: Sat Jul 12 11:43:29 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sudoku -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v
-    Info (12023): Found entity 1: victory File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/victory.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v
-    Info (12023): Found entity 1: top File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v
-    Info (12023): Found entity 1: stopwatch File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v
-    Info (12023): Found entity 1: state_machine File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v
-    Info (12023): Found entity 1: score File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v
-    Info (12023): Found entity 1: random File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/random.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v
-    Info (12023): Found entity 1: position_updater File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v
-    Info (12023): Found entity 1: map_selector File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v
-    Info (12023): Found entity 1: frequency File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/display.v
-    Info (12023): Found entity 1: display File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/display.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/difficulty_selector.v
-    Info (12023): Found entity 1: difficulty_selector File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/difficulty_selector.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v
-    Info (12023): Found entity 1: define_maps File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/define_maps.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v
-    Info (12023): Found entity 1: defeat File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/defeat.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/button_handler.v
-    Info (12023): Found entity 1: button_handler File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/button_handler.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v
-    Info (12023): Found entity 1: board_updater File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/top.v
+    Info (12023): Found entity 1: top File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/frequency.v
+    Info (12023): Found entity 1: frequency File: /home/andreojr/dev/edu/engg52/sudoku/modules/frequency.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/timer/stopwatch.v
+    Info (12023): Found entity 1: stopwatch File: /home/andreojr/dev/edu/engg52/sudoku/modules/timer/stopwatch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/timer/score.v
+    Info (12023): Found entity 1: score File: /home/andreojr/dev/edu/engg52/sudoku/modules/timer/score.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/maps/random.v
+    Info (12023): Found entity 1: random File: /home/andreojr/dev/edu/engg52/sudoku/modules/maps/random.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/maps/map_selector.v
+    Info (12023): Found entity 1: map_selector File: /home/andreojr/dev/edu/engg52/sudoku/modules/maps/map_selector.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/maps/define_maps.v
+    Info (12023): Found entity 1: define_maps File: /home/andreojr/dev/edu/engg52/sudoku/modules/maps/define_maps.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/io/display.v
+    Info (12023): Found entity 1: display File: /home/andreojr/dev/edu/engg52/sudoku/modules/io/display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/io/button_handler.v
+    Info (12023): Found entity 1: button_handler File: /home/andreojr/dev/edu/engg52/sudoku/modules/io/button_handler.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v
+    Info (12023): Found entity 1: state_machine File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/result.v
+    Info (12023): Found entity 1: result File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/result.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v
+    Info (12023): Found entity 1: position_updater File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/difficulty_selector.v
+    Info (12023): Found entity 1: difficulty_selector File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/difficulty_selector.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/board_updater.v
+    Info (12023): Found entity 1: board_updater File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/board_updater.v Line: 1
 Info (12127): Elaborating entity "top" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at top.v(28): object "playtime" assigned a value but never read File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 28
-Info (12128): Elaborating entity "frequency" for hierarchy "frequency:game_frequency" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 47
-Warning (10230): Verilog HDL assignment warning at frequency.v(18): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v Line: 18
-Info (12128): Elaborating entity "button_handler" for hierarchy "button_handler:bh" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 58
-Info (12128): Elaborating entity "display" for hierarchy "display:d" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 65
-Info (12128): Elaborating entity "stopwatch" for hierarchy "stopwatch:sw" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 74
-Info (12128): Elaborating entity "frequency" for hierarchy "stopwatch:sw|frequency:fd" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/stopwatch.v Line: 15
-Warning (10230): Verilog HDL assignment warning at frequency.v(18): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/frequency.v Line: 18
-Info (12128): Elaborating entity "score" for hierarchy "score:sc" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 81
-Warning (10230): Verilog HDL assignment warning at score.v(16): truncated value with size 32 to match size of target (7) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/score.v Line: 16
-Info (12128): Elaborating entity "map_selector" for hierarchy "map_selector:ms" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 90
-Warning (10230): Verilog HDL assignment warning at map_selector.v(22): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 22
-Info (12128): Elaborating entity "define_maps" for hierarchy "map_selector:ms|define_maps:dm" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 14
-Info (12128): Elaborating entity "random" for hierarchy "map_selector:ms|random:r" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/map_selector.v Line: 20
-Info (12128): Elaborating entity "state_machine" for hierarchy "state_machine:sm" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 121
-Warning (10230): Verilog HDL assignment warning at state_machine.v(47): truncated value with size 32 to match size of target (9) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 47
-Warning (10270): Verilog HDL Case Statement warning at state_machine.v(124): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 124
-Warning (10034): Output port "score" at state_machine.v(12) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 12
-Warning (10034): Output port "n0" at state_machine.v(20) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 20
-Warning (10034): Output port "n1" at state_machine.v(20) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 20
-Info (12128): Elaborating entity "board_updater" for hierarchy "state_machine:sm|board_updater:b_up" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 74
-Warning (10230): Verilog HDL assignment warning at board_updater.v(38): truncated value with size 324 to match size of target (81) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 38
-Warning (10230): Verilog HDL assignment warning at board_updater.v(68): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 68
-Warning (10230): Verilog HDL assignment warning at board_updater.v(74): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 74
-Warning (10230): Verilog HDL assignment warning at board_updater.v(86): truncated value with size 32 to match size of target (2) File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 86
-Warning (10270): Verilog HDL Case Statement warning at board_updater.v(56): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 56
-Info (10264): Verilog HDL Case Statement information at board_updater.v(56): all case item expressions in this case statement are onehot File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 56
-Info (12128): Elaborating entity "position_updater" for hierarchy "state_machine:sm|position_updater:pos_up" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 88
-Warning (10270): Verilog HDL Case Statement warning at position_updater.v(33): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/position_updater.v Line: 33
-Info (12128): Elaborating entity "difficulty_selector" for hierarchy "state_machine:sm|difficulty_selector:d_sel" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 99
-Info (12128): Elaborating entity "victory" for hierarchy "state_machine:sm|victory:v" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 104
-Info (12128): Elaborating entity "defeat" for hierarchy "state_machine:sm|defeat:d" File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/state_machine.v Line: 111
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Info (13000): Registers with preset signals will power-up high File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/board_updater.v Line: 41
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (10036): Verilog HDL or VHDL warning at top.v(18): object "n6" assigned a value but never read File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 18
+Warning (10036): Verilog HDL or VHDL warning at top.v(18): object "n7" assigned a value but never read File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 18
+Warning (10858): Verilog HDL warning at top.v(26): object seconds used but never assigned File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 26
+Warning (10858): Verilog HDL warning at top.v(27): object minutes used but never assigned File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 27
+Warning (10036): Verilog HDL or VHDL warning at top.v(28): object "playtime" assigned a value but never read File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 28
+Warning (10858): Verilog HDL warning at top.v(29): object pos_i used but never assigned File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 29
+Warning (10858): Verilog HDL warning at top.v(29): object pos_j used but never assigned File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 29
+Warning (10034): Output port "d0" at top.v(16) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+Warning (10034): Output port "d1" at top.v(16) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+Warning (10034): Output port "d2" at top.v(16) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+Warning (10034): Output port "d3" at top.v(16) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+Warning (10034): Output port "d4" at top.v(16) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+Warning (10034): Output port "d5" at top.v(16) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+Warning (10034): Output port "d6" at top.v(16) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+Warning (10034): Output port "d7" at top.v(17) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 17
+Warning (10034): Output port "error" at top.v(14) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 14
+Warning (10034): Output port "difficulty" at top.v(15) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 15
+Warning (12158): Entity "top" contains only dangling pins
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "d0[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d0[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d0[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d0[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d0[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d0[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d0[6]" is stuck at VCC File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d1[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d1[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d1[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d1[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d1[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d1[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d1[6]" is stuck at VCC File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-    Warning (13410): Pin "d2[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modelsim/top.v Line: 16
-Info (286030): Timing-Driven Synthesis is running
+    Warning (13410): Pin "error" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 14
+    Warning (13410): Pin "difficulty" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 15
+    Warning (13410): Pin "d0[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d0[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d0[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d0[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d0[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d0[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d0[6]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d1[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d1[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d1[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d1[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d1[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d1[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d1[6]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d2[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d2[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d2[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d2[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d2[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d2[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d2[6]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d3[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d3[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d3[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d3[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d3[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d3[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d3[6]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d4[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d4[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d4[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d4[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d4[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d4[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d4[6]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d5[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d5[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d5[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d5[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d5[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d5[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d5[6]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d6[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d6[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d6[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d6[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d6[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d6[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d6[6]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 16
+    Warning (13410): Pin "d7[0]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 17
+    Warning (13410): Pin "d7[1]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 17
+    Warning (13410): Pin "d7[2]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 17
+    Warning (13410): Pin "d7[3]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 17
+    Warning (13410): Pin "d7[4]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 17
+    Warning (13410): Pin "d7[5]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 17
+    Warning (13410): Pin "d7[6]" is stuck at GND File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 17
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 410 device resources after synthesis - the final resource count might be different
+Warning (21074): Design contains 9 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "reset" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 3
+    Warning (15610): No output dependent on input pin "clk" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 4
+    Warning (15610): No output dependent on input pin "a_button" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 6
+    Warning (15610): No output dependent on input pin "b_button" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 7
+    Warning (15610): No output dependent on input pin "original_up_button" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 8
+    Warning (15610): No output dependent on input pin "original_down_button" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 9
+    Warning (15610): No output dependent on input pin "original_left_button" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 10
+    Warning (15610): No output dependent on input pin "original_right_button" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 11
+    Warning (15610): No output dependent on input pin "start_button" File: /home/andreojr/dev/edu/engg52/sudoku/modules/top.v Line: 12
+Info (21057): Implemented 67 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 58 output pins
-    Info (21061): Implemented 343 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 34 warnings
-    Info: Peak virtual memory: 584 megabytes
-    Info: Processing ended: Fri Jul 11 22:19:31 2025
-    Info: Elapsed time: 00:00:11
-    Info: Total CPU time (on all processors): 00:00:21
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 88 warnings
+    Info: Peak virtual memory: 351 megabytes
+    Info: Processing ended: Sat Jul 12 11:43:33 2025
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:12
 
 
