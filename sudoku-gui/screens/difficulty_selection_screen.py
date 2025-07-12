@@ -14,12 +14,11 @@ class DifficultySelectionScreen(BaseScreen):
         self.background_image = pygame.transform.scale(self.background_image, (game.WIDTH, game.HEIGHT))
     
     def handle_event(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
-                self.selected_index = 0
-            elif event.key == pygame.K_DOWN:
-                self.selected_index = 1
-            elif event.key == pygame.K_RETURN:
+        if self.game.modelo.difficulty :
+            self.selected_index = 1
+        else:
+            self.selected_index = 0
+        if self.game.modelo.receivedAnswerKey():
                 chosen_difficulty = self.options[self.selected_index]
                 print(f"Dificuldade escolhida: {chosen_difficulty}")
                 self.game.set_state(self.game.STATE_GAME)

@@ -1,5 +1,5 @@
 import pygame
-from screens import MenuScreen, DifficultySelectionScreen, GameScreen, VictoryScreen, DefeatScreen
+from screens import MenuScreen, DifficultySelectionScreen, GameScreen, VictoryScreen, DefeatScreen, Modelo
 
 class Game:
     WIDTH = 800
@@ -28,6 +28,11 @@ class Game:
 
     def __init__(self):
         pygame.init()
+    
+        REFRESH = pygame.USEREVENT + 1
+        pygame.time.set_timer(REFRESH, 30)
+        self.modelo = Modelo(self)
+
         self.screen = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
         pygame.display.set_caption(self.TITLE)
 

@@ -32,10 +32,9 @@ class MenuScreen(BaseScreen):
         self.background_image = pygame.transform.scale(self.background_image, (game.WIDTH, game.HEIGHT))
 
     def handle_event(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_RETURN:
-                self.game.set_state(self.game.STATE_DIFFICULTY_SELECTION)
-                print("Mudando para Seleção de Dificuldade")
+        if self.game.modelo.start :
+            self.game.set_state(self.game.STATE_DIFFICULTY_SELECTION)
+            print("Mudando para Seleção de Dificuldade")
     
     def update(self, dt):
         self.pulse_timer += dt

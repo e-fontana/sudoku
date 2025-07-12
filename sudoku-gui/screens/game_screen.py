@@ -41,62 +41,31 @@ class GameScreen(BaseScreen):
         super().__init__(game)
         self.font_timer = self.game.get_font(24) 
         self.font_numbers = self.game.get_font(36)
-        self.number_selected = 1
-        self.select_number = False
-        self.is_selected_wrong = False
+        self.position = self.game.modelo.positions # CASA SELECIONADA
+        self.selectedNumber = self.game.modelo.selectedNumber
+        self.endgame = self.game.modelo.endgame
+        self.positionColor = self.visibility[self.position[0]][self.position[1]][1]
 
         # Posição inicial do cursor
         self.current_row = 4
         self.current_col = 4
         
-        self.sudoku_board = [
-            [5, 3, 0, 0, 7, 0, 0, 0, 0],
-            [6, 0, 0, 1, 9, 5, 0, 0, 0],
-            [0, 9, 8, 0, 0, 0, 0, 6, 0],
-            [8, 0, 0, 0, 6, 0, 0, 0, 3],
-            [4, 0, 0, 8, 0, 3, 0, 0, 1],
-            [7, 0, 0, 0, 2, 0, 0, 0, 6],
-            [0, 6, 0, 0, 0, 0, 2, 8, 0],
-            [0, 0, 0, 4, 1, 9, 0, 0, 5],
-            [0, 0, 0, 0, 8, 0, 0, 7, 9]
-        ]
+        self.sudoku_board = self.game.modelo.map # MAPA
+        self.visibility = self.game.modelo.visibility # MATRIZ DE DICT {VISIBILITY, COLORS}
+
         
         self.start_ticks = pygame.time.get_ticks()
 
     def handle_event(self, event):
-        if event.type == pygame.KEYDOWN:
+        # ACABOU O JOGO
+        if self.game.modelo.finishedGame:
             # Transição para telas de vitória/derrota (para teste)
-            if event.key == pygame.K_v:
+            if self.game.modelo.endgame[1]:
                 self.game.set_state(self.game.STATE_VICTORY)
-            elif event.key == pygame.K_d:
+            else:
                 self.game.set_state(self.game.STATE_DEFEAT)
-            # seleção de número ou tabuleiro
-            elif self.select_number == False:
-                if event.key == pygame.K_UP:
-                    self.current_row = max(0, self.current_row - 1)
-                elif event.key == pygame.K_DOWN:
-                    self.current_row = min(self.GRID_DIMENSION - 1, self.current_row + 1)
-                elif event.key == pygame.K_LEFT:
-                    self.current_col = max(0, self.current_col - 1)
-                elif event.key == pygame.K_RIGHT:
-                    self.current_col = min(self.GRID_DIMENSION - 1, self.current_col + 1)
-                elif event.key == pygame.K_RETURN:
-                    self.select_number = True
-            elif self.select_number == True:
-                if event.key == pygame.K_LEFT:
-                    self.number_selected -= 1
-                elif event.key == pygame.K_RIGHT:
-                    self.number_selected += 1
-                elif event.key == pygame.K_j:
-                    self.is_selected_wrong = True
-                elif event.key == pygame.K_RETURN:
-                    self.sudoku_board[self.current_row][self.current_col] = self.number_selected
-                    self.select_number = False
-                elif event.key == pygame.K_ESCAPE:
-                    if self.is_selected_wrong:
-                        self.sudoku_board[self.current_row][self.current_col] = 0
-                        self.is_selected_wrong = False
-                    self.select_number = False                   
+
+                               
 
     
     def update(self, _):
@@ -137,9 +106,9 @@ class GameScreen(BaseScreen):
                 cell_fill_color = self.CELL_BG_COLOR # Cor padrão
 
                 if row == self.current_row and col == self.current_col:
-                    if self.is_selected_wrong:
+                    if self.positionColor == 'red':
                         cell_fill_color = self.WRONG_CELL_COLOR
-                    elif self.select_number:
+                    elif self.positionColor == 'yellow':
                         cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR
                     else: # Cor para a célula selecionada
                         cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
@@ -175,7 +144,7 @@ class GameScreen(BaseScreen):
         for r in range(self.GRID_DIMENSION):
             for c in range(self.GRID_DIMENSION):
                 num = self.sudoku_board[r][c] # Pega o número do seu tabuleiro
-                if num != 0: # Se a célula não estiver vazia
+                if self.visibility[r][c][0]: # Se for para mostar a célula
                     num_surface = self.font_numbers.render(str(num), True, self.PURE_WHITE) # Texto em branco puro
                     num_rect = num_surface.get_rect(center=(self.GRID_START_X + c * self.CELL_SIZE + self.CELL_SIZE // 2,
                                                              self.GRID_START_Y + r * self.CELL_SIZE + self.CELL_SIZE // 2))
@@ -189,8 +158,8 @@ class GameScreen(BaseScreen):
 
             # Escolhe a cor de fundo da célula (normal ou selecionada)
             cell_fill_color = self.CELL_BG_COLOR # Cor padrão
-            if col == self.number_selected - 1:
-                if self.select_number == False:
+            if col == self.selectedNumber - 1:
+                if self.positionColor == 'yellow':
                     cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
                 else:
                     cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
