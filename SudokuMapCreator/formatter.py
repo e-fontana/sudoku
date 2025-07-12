@@ -26,6 +26,8 @@ class Formatter:
                 for j, cell in enumerate(row):
                     self.visibilities.append('0' if sudoku.board[i][j] == 0 else '1')
                     self.bits.append(self.ENCODER[cell-1])
+        self.visibilities.reverse()
+        self.bits.reverse()
 
     def __init__(self, output_file='output.v'):
         self.define()
@@ -36,6 +38,6 @@ class Formatter:
             f.write(f"\toutput [{81*15 - 1}:0] visibilities,\n")
             f.write(f"\toutput [{81*4*15 - 1}:0] maps\n")
             f.write(");\n")
-            f.write(f"\tassign visibilites = {81*15}'b{"".join(self.visibilities)};\n")
+            f.write(f"\tassign visibilities = {81*15}'b{"".join(self.visibilities)};\n")
             f.write(f"\tassign maps = {81*4*15}'b{"".join(self.bits)};\n")
             f.write("endmodule\n")
