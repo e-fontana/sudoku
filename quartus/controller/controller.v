@@ -28,8 +28,8 @@ module controller_reader(
 
     assign LEDR = {up, down, left, right, a, b, c, output_x, y, output_z, start, mode};
 
-    always @(posedge clk or negedge reset) begin
-        if (!reset) begin
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
             select <= 1'b1;
             counter <= 12'd0;
             state <= STATE_IDLE;

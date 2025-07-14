@@ -1,26 +1,23 @@
-module FullMapSendController (
+module FullMapSendController #(parameter EVENT_CODE = 8'hAC) (
     input  wire         clock,
     input  wire         reset,
     input  wire         habilitar_envio,    // pulso de ativação externo
     input  wire         uart_ocupado,
+    input  wire [323:0] full_map_input,
 
     output reg          iniciar_envio,
     output reg [7:0]    dado_saida,
     output wire         envio_concluido     // pulso de 1 ciclo ao final
 );
-    parameter S_PAUSA_PACOTE   = 3'b000;
-    parameter S_PREPARA_CHUNK  = 3'b001;
-    parameter S_INICIA_ENVIO   = 3'b010;
-    parameter S_ESPERA_FIM     = 3'b011;
-    parameter S_PROXIMO_CHUNK  = 3'b100;
-
+    localparam S_PAUSA_PACOTE   = 3'b000;
+    localparam S_PREPARA_CHUNK  = 3'b001;
+    localparam S_INICIA_ENVIO   = 3'b010;
+    localparam S_ESPERA_FIM     = 3'b011;
+    localparam S_PROXIMO_CHUNK  = 3'b100;
     localparam QTD_CHUNKS = 42;
     localparam DELAY_PACOTE = 50_000_000;
 
-    reg [327:0] grande_registrador_padded = {
-        4'h0,
-        324'h019638095430796528016975308406351927104860395726183049260187435962370481092635170
-    };
+    reg [327:0] full_map_data = 328'd0;
 
     reg [2:0]  estado_atual;
     reg [5:0]  indice_chunk;
@@ -84,9 +81,9 @@ module FullMapSendController (
                 begin
                     reg [7:0] byte_original;
                     if (indice_chunk == 0) begin
-                        dado_saida <= 8'hAC;
+                        dado_saida <= EVENT_CODE;
                     end else begin
-                        byte_original = grande_registrador_padded >> ((indice_chunk - 1) * 8);
+                        byte_original = full_map_data >> ((indice_chunk - 1) * 8);
                         dado_saida <= {byte_original[3:0], byte_original[7:4]};
                     end
                     if (!uart_ocupado)
@@ -126,6 +123,10 @@ module FullMapSendController (
     reg [2:0] estado_futuro;
     always @(*) begin
         estado_futuro = estado_atual;
+        full_map_data = {
+            4'h0,
+            full_map_input,
+        };
         case (estado_atual)
             S_PAUSA_PACOTE:
                 if (habilitacao_reg && contador_delay >= DELAY_PACOTE - 1)

@@ -1,34 +1,17 @@
-/**
- * @file ControladorUART.v
- * @brief Módulo de controle para iniciar uma transmissão UART.
- * @details Este módulo age como uma interface para um transmissor UART.
- * Ele aguarda um pulso em 'start_transmission', captura o dado em 'data_in'
- * e gera os sinais 'tx_start' e 'tx_data' para o módulo UART.
- * Depois, aguarda o fim da transmissão monitorando 'tx_busy'.
- */
 module ControladorUART (
-    // --- Entradas do Sistema ---
     input  wire        clock,
     input  wire        reset,
+    input  wire        tx_busy,
+    input  wire        start_transmission,
+    input  wire [7:0]  data_in,
 
-    // --- Interface com o Módulo UART ---
-    input  wire        tx_busy,          // Sinal da UART indicando que está ocupada
-
-    // --- Interface de Controle e Dados ---
-    input  wire        start_transmission, // Sinal para iniciar a transmissão
-    input  wire [7:0]  data_in,          // Dado de 8 bits a ser transmitido
-
-    // --- Saídas para o Módulo UART ---
-    output reg         tx_start,         // Pulso para iniciar a transmissão na UART
-    output reg [7:0]   tx_data           // Dado a ser enviado para a UART
+    output reg         tx_start,
+    output reg [7:0]   tx_data
 );
+    parameter OCIOSO   = 2'b00;
+    parameter TRANSMITIR = 2'b01;
+    parameter AGUARDAR = 2'b10;
 
-    // --- Definição dos Estados da Máquina de Estados ---
-    parameter OCIOSO   = 2'b00; // Estado inicial, aguardando comando para transmitir
-    parameter TRANSMITIR = 2'b01; // Estado para carregar o dado e iniciar a UART
-    parameter AGUARDAR = 2'b10; // Estado para esperar a UART terminar a transmissão
-
-    // --- Registradores da Máquina de Estados ---
     reg [1:0] estado_atual;
     reg [1:0] proximo_estado;
 

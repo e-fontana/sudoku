@@ -16,7 +16,7 @@ module button_debouncer (
     reg [1:0] state = S_IDLE;
     reg [15:0] counter = 0;
 
-    always @(posedge clk or posedge reset) begin
+    always @(posedge clk or negedge reset) begin
         if (!reset) begin
             state <= S_IDLE;
             counter <= 0;

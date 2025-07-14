@@ -1,5 +1,5 @@
 Analysis & Synthesis report for controller
-Thu Jul  3 18:40:44 2025
+Sat Jul 12 18:46:31 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -10,7 +10,29 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[11].db|state
+  9. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[10].db|state
+ 10. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[9].db|state
+ 11. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[8].db|state
+ 12. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[7].db|state
+ 13. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[6].db|state
+ 14. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[5].db|state
+ 15. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[4].db|state
+ 16. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[3].db|state
+ 17. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[2].db|state
+ 18. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[1].db|state
+ 19. State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[0].db|state
+ 20. State Machine - |top|controller_reader:inst|state
+ 21. Registers Removed During Synthesis
+ 22. General Register Statistics
+ 23. Inverted Register Statistics
+ 24. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -37,20 +59,20 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Thu Jul  3 18:40:44 2025               ;
+; Analysis & Synthesis Status        ; Successful - Sat Jul 12 18:46:31 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; controller                                      ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; N/A until Partition Merge                       ;
-;     Total combinational functions  ; N/A until Partition Merge                       ;
-;     Dedicated logic registers      ; N/A until Partition Merge                       ;
-; Total registers                    ; N/A until Partition Merge                       ;
-; Total pins                         ; N/A until Partition Merge                       ;
-; Total virtual pins                 ; N/A until Partition Merge                       ;
-; Total memory bits                  ; N/A until Partition Merge                       ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                       ;
-; Total PLLs                         ; N/A until Partition Merge                       ;
+; Total logic elements               ; 665                                             ;
+;     Total combinational functions  ; 653                                             ;
+;     Dedicated logic registers      ; 286                                             ;
+; Total registers                    ; 286                                             ;
+; Total pins                         ; 34                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
 +------------------------------------+-------------------------------------------------+
 
 
@@ -149,11 +171,389 @@ on the Quartus Prime software download page.
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
+;     Processor 5            ;   0.0%      ;
+;     Processor 6            ;   0.0%      ;
+;     Processor 7            ;   0.0%      ;
+;     Processor 8            ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                ; Library ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
+; debouncer.v                      ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v          ;         ;
+; controller.v                     ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller.v         ;         ;
+; output_files/top.bdf             ; yes             ; User Block Diagram/Schematic File  ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/output_files/top.bdf ;         ;
+; controller_top.v                 ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller_top.v     ;         ;
++----------------------------------+-----------------+------------------------------------+-----------------------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimated Total logic elements              ; 665            ;
+;                                             ;                ;
+; Total combinational functions               ; 653            ;
+; Logic element usage by number of LUT inputs ;                ;
+;     -- 4 input functions                    ; 375            ;
+;     -- 3 input functions                    ; 31             ;
+;     -- <=2 input functions                  ; 247            ;
+;                                             ;                ;
+; Logic elements by mode                      ;                ;
+;     -- normal mode                          ; 462            ;
+;     -- arithmetic mode                      ; 191            ;
+;                                             ;                ;
+; Total registers                             ; 286            ;
+;     -- Dedicated logic registers            ; 286            ;
+;     -- I/O registers                        ; 0              ;
+;                                             ;                ;
+; I/O pins                                    ; 34             ;
+;                                             ;                ;
+; Embedded Multiplier 9-bit elements          ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; CLOCK_50~input ;
+; Maximum fan-out                             ; 286            ;
+; Total fan-out                               ; 2979           ;
+; Average fan-out                             ; 2.96           ;
++---------------------------------------------+----------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                           ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+-------------------+--------------+
+; Compilation Hierarchy Node                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                           ; Entity Name       ; Library Name ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+-------------------+--------------+
+; |top                                            ; 653 (0)             ; 286 (0)                   ; 0           ; 0            ; 0       ; 0         ; 34   ; 0            ; |top                                                          ; top               ; work         ;
+;    |controller:inst1|                           ; 588 (0)             ; 252 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1                                         ; controller        ; work         ;
+;       |button_debouncer:debounce_blocks[0].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[0].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[10].db| ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[10].db ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[11].db| ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[11].db ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[1].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[1].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[2].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[2].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[3].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[3].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[4].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[4].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[5].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[5].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[6].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[6].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[7].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[7].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[8].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[8].db  ; button_debouncer  ; work         ;
+;       |button_debouncer:debounce_blocks[9].db|  ; 49 (49)             ; 21 (21)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst1|button_debouncer:debounce_blocks[9].db  ; button_debouncer  ; work         ;
+;    |controller_reader:inst|                     ; 65 (65)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller_reader:inst                                   ; controller_reader ; work         ;
++-------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------+-------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[11].db|state        ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[10].db|state        ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[9].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[8].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[7].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[6].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[5].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[4].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[3].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[2].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[1].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------+
+; State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[0].db|state         ;
++----------------------+----------------------+---------------+---------------+--------------+
+; Name                 ; state.S_WAIT_RELEASE ; state.S_PULSE ; state.S_COUNT ; state.S_IDLE ;
++----------------------+----------------------+---------------+---------------+--------------+
+; state.S_IDLE         ; 0                    ; 0             ; 0             ; 0            ;
+; state.S_COUNT        ; 0                    ; 0             ; 1             ; 1            ;
+; state.S_PULSE        ; 0                    ; 1             ; 0             ; 1            ;
+; state.S_WAIT_RELEASE ; 1                    ; 0             ; 0             ; 1            ;
++----------------------+----------------------+---------------+---------------+--------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |top|controller_reader:inst|state                                                                                                                                           ;
++-------------------+-----------------+------------------+------------------+-------------------+-----------------+-----------------+------------------+------------------+-------------------+
+; Name              ; state.STATE_SIX ; state.STATE_FIVE ; state.STATE_FOUR ; state.STATE_THREE ; state.STATE_TWO ; state.STATE_ONE ; state.STATE_ZERO ; state.STATE_IDLE ; state.STATE_SEVEN ;
++-------------------+-----------------+------------------+------------------+-------------------+-----------------+-----------------+------------------+------------------+-------------------+
+; state.STATE_IDLE  ; 0               ; 0                ; 0                ; 0                 ; 0               ; 0               ; 0                ; 0                ; 0                 ;
+; state.STATE_ZERO  ; 0               ; 0                ; 0                ; 0                 ; 0               ; 0               ; 1                ; 1                ; 0                 ;
+; state.STATE_ONE   ; 0               ; 0                ; 0                ; 0                 ; 0               ; 1               ; 0                ; 1                ; 0                 ;
+; state.STATE_TWO   ; 0               ; 0                ; 0                ; 0                 ; 1               ; 0               ; 0                ; 1                ; 0                 ;
+; state.STATE_THREE ; 0               ; 0                ; 0                ; 1                 ; 0               ; 0               ; 0                ; 1                ; 0                 ;
+; state.STATE_FOUR  ; 0               ; 0                ; 1                ; 0                 ; 0               ; 0               ; 0                ; 1                ; 0                 ;
+; state.STATE_FIVE  ; 0               ; 1                ; 0                ; 0                 ; 0               ; 0               ; 0                ; 1                ; 0                 ;
+; state.STATE_SIX   ; 1               ; 0                ; 0                ; 0                 ; 0               ; 0               ; 0                ; 1                ; 0                 ;
+; state.STATE_SEVEN ; 0               ; 0                ; 0                ; 0                 ; 0               ; 0               ; 0                ; 1                ; 1                 ;
++-------------------+-----------------+------------------+------------------+-------------------+-----------------+-----------------+------------------+------------------+-------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++------------------------------------------------------------------+--------------------+
+; Register name                                                    ; Reason for Removal ;
++------------------------------------------------------------------+--------------------+
+; controller:inst1|button_debouncer:debounce_blocks[11].db|state~8 ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[11].db|state~9 ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[10].db|state~8 ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[10].db|state~9 ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[9].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[9].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[8].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[8].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[7].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[7].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[6].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[6].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[5].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[5].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[4].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[4].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[3].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[3].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[2].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[2].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[1].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[1].db|state~9  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[0].db|state~8  ; Lost fanout        ;
+; controller:inst1|button_debouncer:debounce_blocks[0].db|state~9  ; Lost fanout        ;
+; controller_reader:inst|state~13                                  ; Lost fanout        ;
+; controller_reader:inst|state~14                                  ; Lost fanout        ;
+; controller_reader:inst|state~15                                  ; Lost fanout        ;
+; Total Number of Removed Registers = 27                           ;                    ;
++------------------------------------------------------------------+--------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 286   ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 274   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 12    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; controller_reader:inst|select          ; 1       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[11].db|counter    ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[10].db|counter    ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[9].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[8].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[7].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[6].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[5].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[4].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[3].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[2].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[1].db|counter     ;
+; 3:1                ; 15 bits   ; 30 LEs        ; 30 LEs               ; 0 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[0].db|counter     ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[11].db|Selector18 ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[10].db|Selector16 ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[9].db|Selector16  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[8].db|Selector16  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[7].db|Selector17  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[6].db|Selector16  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[5].db|Selector16  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[4].db|Selector16  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[3].db|Selector16  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[2].db|Selector19  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[1].db|Selector16  ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |top|controller:inst1|button_debouncer:debounce_blocks[0].db|Selector16  ;
+; 18:1               ; 9 bits    ; 108 LEs       ; 54 LEs               ; 54 LEs                 ; No         ; |top|controller_reader:inst|Selector16                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 34                          ;
+; cycloneiii_ff         ; 286                         ;
+;     CLR               ; 262                         ;
+;     CLR SCLR          ; 12                          ;
+;     ENA               ; 12                          ;
+; cycloneiii_lcell_comb ; 655                         ;
+;     arith             ; 191                         ;
+;         2 data inputs ; 191                         ;
+;     normal            ; 464                         ;
+;         0 data inputs ; 1                           ;
+;         1 data inputs ; 26                          ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 31                          ;
+;         4 data inputs ; 375                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.58                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -162,7 +562,7 @@ on the Quartus Prime software download page.
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Thu Jul  3 18:40:39 2025
+    Info: Processing started: Sat Jul 12 18:46:26 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off controller -c controller
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -185,35 +585,34 @@ Info (12128): Elaborating entity "controller_reader" for hierarchy "controller_r
 Info (12128): Elaborating entity "controller" for hierarchy "controller:inst1"
 Warning (10034): Output port "LEDR" at controller_top.v(6) has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller_top.v Line: 6
 Info (12128): Elaborating entity "button_debouncer" for hierarchy "controller:inst1|button_debouncer:debounce_blocks[0].db" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller_top.v Line: 22
-Error (10200): Verilog HDL Conditional Statement error at debouncer.v(20): cannot match operand(s) in the condition to the corresponding edges in the enclosing event control of the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 20
 Warning (10230): Verilog HDL assignment warning at debouncer.v(43): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 43
-Warning (10240): Verilog HDL Always Construct warning at debouncer.v(19): inferring latch(es) for variable "state", which holds its previous value in one or more paths through the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Warning (10240): Verilog HDL Always Construct warning at debouncer.v(19): inferring latch(es) for variable "counter", which holds its previous value in one or more paths through the always construct File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[0]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[1]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[2]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[3]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[4]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[5]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[6]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[7]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[8]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[9]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[10]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[11]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[12]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[13]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[14]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "counter[15]" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "state.S_WAIT_RELEASE" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "state.S_PULSE" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "state.S_COUNT" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Info (10041): Inferred latch for "state.S_IDLE" at debouncer.v(19) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/debouncer.v Line: 19
-Error (12152): Can't elaborate user hierarchy "controller:inst1|button_debouncer:debounce_blocks[0].db" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller_top.v Line: 22
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 9 warnings
-    Error: Peak virtual memory: 335 megabytes
-    Error: Processing ended: Thu Jul  3 18:40:44 2025
-    Error: Elapsed time: 00:00:05
-    Error: Total CPU time (on all processors): 00:00:13
+Info (13000): Registers with preset signals will power-up high File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/controller/controller.v Line: 11
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[7]" is stuck at GND
+    Warning (13410): Pin "LEDR[6]" is stuck at GND
+    Warning (13410): Pin "LEDR[5]" is stuck at GND
+    Warning (13410): Pin "LEDR[4]" is stuck at GND
+    Warning (13410): Pin "LEDR[3]" is stuck at GND
+    Warning (13410): Pin "LEDR[2]" is stuck at GND
+    Warning (13410): Pin "LEDR[1]" is stuck at GND
+    Warning (13410): Pin "LEDR[0]" is stuck at GND
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 27 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 699 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 9 input pins
+    Info (21059): Implemented 25 output pins
+    Info (21061): Implemented 665 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 493 megabytes
+    Info: Processing ended: Sat Jul 12 18:46:31 2025
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:15
 
 

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UART_Memoria
-Sat Jul 12 01:53:29 2025
+Mon Jul 14 17:58:37 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -14,18 +14,21 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. State Machine - |UART_Memoria|FullMapSendController:inst7|estado_atual
-  9. State Machine - |UART_Memoria|ControladorUART:inst|estado_atual
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: UART:inst1
- 15. Parameter Settings for User Entity Instance: ControladorUART:inst
- 16. Parameter Settings for User Entity Instance: FullMapSendController:inst7
- 17. Post-Synthesis Netlist Statistics for Top Partition
- 18. Elapsed Time Per Partition
- 19. Analysis & Synthesis Messages
- 20. Analysis & Synthesis Suppressed Messages
+  9. State Machine - |UART_Memoria|GameStatusSend:inst3|estado_atual
+ 10. State Machine - |UART_Memoria|ControladorUART:inst|estado_atual
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: UART:inst1
+ 17. Parameter Settings for User Entity Instance: ControladorUART:inst
+ 18. Parameter Settings for User Entity Instance: GameStatusSend:inst3
+ 19. Parameter Settings for User Entity Instance: FullMapSendController:inst7
+ 20. Post-Synthesis Netlist Statistics for Top Partition
+ 21. Elapsed Time Per Partition
+ 22. Analysis & Synthesis Messages
+ 23. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -52,15 +55,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sat Jul 12 01:53:29 2025           ;
+; Analysis & Synthesis Status        ; Successful - Mon Jul 14 17:58:37 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; UART_Memoria                                    ;
 ; Top-level Entity Name              ; UART_Memoria                                    ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 162                                             ;
-;     Total combinational functions  ; 153                                             ;
-;     Dedicated logic registers      ; 89                                              ;
-; Total registers                    ; 89                                              ;
+; Total logic elements               ; 109                                             ;
+;     Total combinational functions  ; 108                                             ;
+;     Dedicated logic registers      ; 75                                              ;
+; Total registers                    ; 75                                              ;
 ; Total pins                         ; 13                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -181,6 +184,7 @@ on the Quartus Prime software download page.
 ; UART_Memoria.bdf                 ; yes             ; User Block Diagram/Schematic File  ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART_Memoria.bdf        ;         ;
 ; ControladorPrincipal.v           ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v  ;         ;
 ; UART.v                           ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v                  ;         ;
+; GameStatus.v                     ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v            ;         ;
 +----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
 
 
@@ -189,20 +193,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 162         ;
+; Estimated Total logic elements              ; 109         ;
 ;                                             ;             ;
-; Total combinational functions               ; 153         ;
+; Total combinational functions               ; 108         ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 73          ;
-;     -- 3 input functions                    ; 26          ;
-;     -- <=2 input functions                  ; 54          ;
+;     -- 4 input functions                    ; 37          ;
+;     -- 3 input functions                    ; 18          ;
+;     -- <=2 input functions                  ; 53          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 108         ;
+;     -- normal mode                          ; 63          ;
 ;     -- arithmetic mode                      ; 45          ;
 ;                                             ;             ;
-; Total registers                             ; 89          ;
-;     -- Dedicated logic registers            ; 89          ;
+; Total registers                             ; 75          ;
+;     -- Dedicated logic registers            ; 75          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 13          ;
@@ -210,9 +214,9 @@ on the Quartus Prime software download page.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 89          ;
-; Total fan-out                               ; 873         ;
-; Average fan-out                             ; 3.26        ;
+; Maximum fan-out                             ; 75          ;
+; Total fan-out                               ; 643         ;
+; Average fan-out                             ; 3.08        ;
 +---------------------------------------------+-------------+
 
 
@@ -221,10 +225,11 @@ on the Quartus Prime software download page.
 +----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+-----------------------+--------------+
 ; Compilation Hierarchy Node       ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Entity Name           ; Library Name ;
 +----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+-----------------------+--------------+
-; |UART_Memoria                    ; 153 (0)             ; 89 (0)                    ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |UART_Memoria                             ; UART_Memoria          ; work         ;
-;    |ControladorUART:inst|        ; 3 (3)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|ControladorUART:inst        ; ControladorUART       ; work         ;
-;    |FullMapSendController:inst7| ; 104 (104)           ; 47 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|FullMapSendController:inst7 ; FullMapSendController ; work         ;
-;    |UART:inst1|                  ; 46 (46)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|UART:inst1                  ; UART                  ; work         ;
+; |UART_Memoria                    ; 108 (0)             ; 75 (0)                    ; 0           ; 0            ; 0       ; 0         ; 13   ; 0            ; |UART_Memoria                             ; UART_Memoria          ; work         ;
+;    |ControladorUART:inst|        ; 4 (4)               ; 4 (4)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|ControladorUART:inst        ; ControladorUART       ; work         ;
+;    |FullMapSendController:inst7| ; 0 (0)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|FullMapSendController:inst7 ; FullMapSendController ; work         ;
+;    |GameStatusSend:inst3|        ; 59 (59)             ; 39 (39)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|GameStatusSend:inst3        ; GameStatusSend        ; work         ;
+;    |UART:inst1|                  ; 45 (45)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |UART_Memoria|UART:inst1                  ; UART                  ; work         ;
 +----------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+-----------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -232,6 +237,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Encoding Type:  One-Hot
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; State Machine - |UART_Memoria|FullMapSendController:inst7|estado_atual                                                                                                             ;
++------------------------------+---------------------------+-----------------------------+------------------------------+-----------------------------+------------------------------+
+; Name                         ; estado_atual.S_ESPERA_FIM ; estado_atual.S_INICIA_ENVIO ; estado_atual.S_PREPARA_CHUNK ; estado_atual.S_PAUSA_PACOTE ; estado_atual.S_PROXIMO_CHUNK ;
++------------------------------+---------------------------+-----------------------------+------------------------------+-----------------------------+------------------------------+
+; estado_atual.S_PAUSA_PACOTE  ; 0                         ; 0                           ; 0                            ; 0                           ; 0                            ;
+; estado_atual.S_PREPARA_CHUNK ; 0                         ; 0                           ; 1                            ; 1                           ; 0                            ;
+; estado_atual.S_INICIA_ENVIO  ; 0                         ; 1                           ; 0                            ; 1                           ; 0                            ;
+; estado_atual.S_ESPERA_FIM    ; 1                         ; 0                           ; 0                            ; 1                           ; 0                            ;
+; estado_atual.S_PROXIMO_CHUNK ; 0                         ; 0                           ; 0                            ; 1                           ; 1                            ;
++------------------------------+---------------------------+-----------------------------+------------------------------+-----------------------------+------------------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |UART_Memoria|GameStatusSend:inst3|estado_atual                                                                                                                    ;
 +------------------------------+---------------------------+-----------------------------+------------------------------+-----------------------------+------------------------------+
 ; Name                         ; estado_atual.S_ESPERA_FIM ; estado_atual.S_INICIA_ENVIO ; estado_atual.S_PREPARA_CHUNK ; estado_atual.S_PAUSA_PACOTE ; estado_atual.S_PROXIMO_CHUNK ;
 +------------------------------+---------------------------+-----------------------------+------------------------------+-----------------------------+------------------------------+
@@ -255,17 +274,56 @@ Encoding Type:  One-Hot
 +-------------------------+---------------------+-----------------------+-------------------------+
 
 
-+-------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                  ;
-+--------------------------------------------+----------------------------------------+
-; Register name                              ; Reason for Removal                     ;
-+--------------------------------------------+----------------------------------------+
-; UART:inst1|rx_ready                        ; Stuck at GND due to stuck port data_in ;
-; UART:inst1|tx_shift[9]                     ; Stuck at VCC due to stuck port data_in ;
-; FullMapSendController:inst7|estado_atual~7 ; Lost fanout                            ;
-; FullMapSendController:inst7|estado_atual~8 ; Lost fanout                            ;
-; Total Number of Removed Registers = 4      ;                                        ;
-+--------------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                 ;
++----------------------------------------------------------+---------------------------------------------------------+
+; Register name                                            ; Reason for Removal                                      ;
++----------------------------------------------------------+---------------------------------------------------------+
+; UART:inst1|rx_ready                                      ; Stuck at GND due to stuck port data_in                  ;
+; GameStatusSend:inst3|habilitacao_reg                     ; Merged with FullMapSendController:inst7|habilitacao_reg ;
+; GameStatusSend:inst3|dado_saida[1,4,6]                   ; Stuck at GND due to stuck port data_in                  ;
+; ControladorUART:inst|data_reg[1,4,6]                     ; Stuck at GND due to stuck port data_in                  ;
+; GameStatusSend:inst3|dado_saida[2,3,5,7]                 ; Merged with GameStatusSend:inst3|dado_saida[0]          ;
+; ControladorUART:inst|data_reg[2,3,5,7]                   ; Merged with ControladorUART:inst|data_reg[0]            ;
+; UART:inst1|tx_shift[9]                                   ; Stuck at VCC due to stuck port data_in                  ;
+; FullMapSendController:inst7|estado_atual~7               ; Lost fanout                                             ;
+; FullMapSendController:inst7|estado_atual~8               ; Lost fanout                                             ;
+; GameStatusSend:inst3|estado_atual~7                      ; Lost fanout                                             ;
+; GameStatusSend:inst3|estado_atual~8                      ; Lost fanout                                             ;
+; FullMapSendController:inst7|contador_delay[0..25]        ; Lost fanout                                             ;
+; FullMapSendController:inst7|indice_chunk[0..5]           ; Lost fanout                                             ;
+; FullMapSendController:inst7|estado_atual.S_PROXIMO_CHUNK ; Lost fanout                                             ;
+; FullMapSendController:inst7|estado_atual.S_PAUSA_PACOTE  ; Lost fanout                                             ;
+; FullMapSendController:inst7|estado_atual.S_PREPARA_CHUNK ; Lost fanout                                             ;
+; FullMapSendController:inst7|estado_atual.S_INICIA_ENVIO  ; Lost fanout                                             ;
+; FullMapSendController:inst7|estado_atual.S_ESPERA_FIM    ; Lost fanout                                             ;
+; Total Number of Removed Registers = 58                   ;                                                         ;
++----------------------------------------------------------+---------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                            ;
++------------------------------------------------+---------------------------+-----------------------------------------------------------+
+; Register name                                  ; Reason for Removal        ; Registers Removed due to This Register                    ;
++------------------------------------------------+---------------------------+-----------------------------------------------------------+
+; FullMapSendController:inst7|estado_atual~7     ; Lost Fanouts              ; FullMapSendController:inst7|indice_chunk[5],              ;
+;                                                ;                           ; FullMapSendController:inst7|indice_chunk[4],              ;
+;                                                ;                           ; FullMapSendController:inst7|indice_chunk[3],              ;
+;                                                ;                           ; FullMapSendController:inst7|indice_chunk[2],              ;
+;                                                ;                           ; FullMapSendController:inst7|estado_atual.S_PROXIMO_CHUNK, ;
+;                                                ;                           ; FullMapSendController:inst7|estado_atual.S_PREPARA_CHUNK, ;
+;                                                ;                           ; FullMapSendController:inst7|estado_atual.S_INICIA_ENVIO   ;
+; FullMapSendController:inst7|contador_delay[25] ; Lost Fanouts              ; FullMapSendController:inst7|contador_delay[24],           ;
+;                                                ;                           ; FullMapSendController:inst7|contador_delay[23],           ;
+;                                                ;                           ; FullMapSendController:inst7|contador_delay[22],           ;
+;                                                ;                           ; FullMapSendController:inst7|estado_atual.S_PAUSA_PACOTE   ;
+; GameStatusSend:inst3|dado_saida[6]             ; Stuck at GND              ; ControladorUART:inst|data_reg[6]                          ;
+;                                                ; due to stuck port data_in ;                                                           ;
+; GameStatusSend:inst3|dado_saida[4]             ; Stuck at GND              ; ControladorUART:inst|data_reg[4]                          ;
+;                                                ; due to stuck port data_in ;                                                           ;
+; GameStatusSend:inst3|dado_saida[1]             ; Stuck at GND              ; ControladorUART:inst|data_reg[1]                          ;
+;                                                ; due to stuck port data_in ;                                                           ;
++------------------------------------------------+---------------------------+-----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -273,12 +331,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 89    ;
-; Number of registers using Synchronous Clear  ; 49    ;
-; Number of registers using Synchronous Load   ; 1     ;
-; Number of registers using Asynchronous Clear ; 80    ;
+; Total registers                              ; 75    ;
+; Number of registers using Synchronous Clear  ; 48    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 66    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 76    ;
+; Number of registers using Clock Enable       ; 61    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -289,7 +347,7 @@ Encoding Type:  One-Hot
 ; Inverted Register                       ; Fan out ;
 +-----------------------------------------+---------+
 ; UART:inst1|tx                           ; 2       ;
-; UART:inst1|tx_shift[0]                  ; 2       ;
+; UART:inst1|tx_shift[0]                  ; 1       ;
 ; UART:inst1|tx_shift[1]                  ; 1       ;
 ; UART:inst1|tx_shift[2]                  ; 1       ;
 ; UART:inst1|tx_shift[3]                  ; 1       ;
@@ -307,13 +365,18 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_bit_cnt[3]                      ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |UART_Memoria|FullMapSendController:inst7|contador_delay[4] ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UART_Memoria|UART:inst1|tx_clk_cnt[6]                      ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |UART_Memoria|FullMapSendController:inst7|indice_chunk[0]   ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_shift[2]                        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UART_Memoria|FullMapSendController:inst7|Selector8         ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UART_Memoria|FullMapSendController:inst7|Selector11        ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_bit_cnt[0]                      ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |UART_Memoria|FullMapSendController:inst7|contador_delay[5] ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |UART_Memoria|GameStatusSend:inst3|contador_delay[23]       ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |UART_Memoria|UART:inst1|tx_clk_cnt[10]                     ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |UART_Memoria|FullMapSendController:inst7|indice_chunk[5]   ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |UART_Memoria|GameStatusSend:inst3|indice_chunk[1]          ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_shift[0]                        ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |UART_Memoria|UART:inst1|tx_shift[8]                        ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UART_Memoria|FullMapSendController:inst7|Selector7         ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UART_Memoria|GameStatusSend:inst3|Selector7                ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UART_Memoria|FullMapSendController:inst7|Selector9         ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |UART_Memoria|GameStatusSend:inst3|Selector9                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------+
 
 
@@ -340,6 +403,20 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: GameStatusSend:inst3 ;
++-----------------+-------+-----------------------------------------+
+; Parameter Name  ; Value ; Type                                    ;
++-----------------+-------+-----------------------------------------+
+; S_PAUSA_PACOTE  ; 000   ; Unsigned Binary                         ;
+; S_PREPARA_CHUNK ; 001   ; Unsigned Binary                         ;
+; S_INICIA_ENVIO  ; 010   ; Unsigned Binary                         ;
+; S_ESPERA_FIM    ; 011   ; Unsigned Binary                         ;
+; S_PROXIMO_CHUNK ; 100   ; Unsigned Binary                         ;
++-----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +--------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: FullMapSendController:inst7 ;
 +-----------------+-------+------------------------------------------------+
@@ -360,25 +437,23 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 13                          ;
-; cycloneiii_ff         ; 89                          ;
-;     CLR               ; 12                          ;
-;     ENA               ; 8                           ;
-;     ENA CLR           ; 19                          ;
+; cycloneiii_ff         ; 75                          ;
+;     CLR               ; 14                          ;
+;     ENA               ; 9                           ;
+;     ENA CLR           ; 4                           ;
 ;     ENA CLR SCLR      ; 48                          ;
-;     ENA CLR SCLR SLD  ; 1                           ;
-;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 155                         ;
+; cycloneiii_lcell_comb ; 110                         ;
 ;     arith             ; 45                          ;
 ;         2 data inputs ; 45                          ;
-;     normal            ; 110                         ;
+;     normal            ; 65                          ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 6                           ;
-;         3 data inputs ; 26                          ;
-;         4 data inputs ; 73                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 18                          ;
+;         4 data inputs ; 37                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 2.88                        ;
+; Max LUT depth         ; 7.00                        ;
+; Average LUT depth     ; 2.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -397,7 +472,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Sat Jul 12 01:53:24 2025
+    Info: Processing started: Mon Jul 14 17:58:32 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART_Memoria -c UART_Memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
@@ -406,12 +481,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file FullMap
 Info (12021): Found 1 design units, including 1 entities, in source file UART_Memoria.bdf
     Info (12023): Found entity 1: UART_Memoria
 Info (12021): Found 1 design units, including 1 entities, in source file ControladorPrincipal.v
-    Info (12023): Found entity 1: ControladorUART File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 9
+    Info (12023): Found entity 1: ControladorUART File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file UART.v
     Info (12023): Found entity 1: UART File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 1
 Info (12021): Found 2 design units, including 1 entities, in source file Memoria.vhd
     Info (12022): Found design unit 1: memoria-SYN File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/Memoria.vhd Line: 54
     Info (12023): Found entity 1: Memoria File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/Memoria.vhd Line: 42
+Info (12021): Found 1 design units, including 1 entities, in source file GameStatus.v
+    Info (12023): Found entity 1: GameStatusSend File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v Line: 1
 Info (12127): Elaborating entity "UART_Memoria" for the top level hierarchy
 Info (12128): Elaborating entity "UART" for hierarchy "UART:inst1"
 Warning (10230): Verilog HDL assignment warning at UART.v(41): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 41
@@ -423,7 +500,11 @@ Warning (10230): Verilog HDL assignment warning at UART.v(101): truncated value 
 Warning (10230): Verilog HDL assignment warning at UART.v(110): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 110
 Warning (10034): Output port "rx_data" at UART.v(6) has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 6
 Info (12128): Elaborating entity "ControladorUART" for hierarchy "ControladorUART:inst"
-Warning (10270): Verilog HDL Case Statement warning at ControladorPrincipal.v(109): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 109
+Warning (10270): Verilog HDL Case Statement warning at ControladorPrincipal.v(92): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 92
+Info (12128): Elaborating entity "GameStatusSend" for hierarchy "GameStatusSend:inst3"
+Warning (10230): Verilog HDL assignment warning at GameStatus.v(79): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v Line: 79
+Warning (10230): Verilog HDL assignment warning at GameStatus.v(89): truncated value with size 200 to match size of target (8) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v Line: 89
+Warning (10230): Verilog HDL assignment warning at GameStatus.v(111): truncated value with size 32 to match size of target (6) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v Line: 111
 Info (12128): Elaborating entity "FullMapSendController" for hierarchy "FullMapSendController:inst7"
 Warning (10230): Verilog HDL assignment warning at FullMapSendController.v(79): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 79
 Warning (10230): Verilog HDL assignment warning at FullMapSendController.v(89): truncated value with size 328 to match size of target (8) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 89
@@ -441,19 +522,19 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rx_data[1]" is stuck at GND
     Warning (13410): Pin "rx_data[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
-Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (17049): 41 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/output_files/UART_Memoria.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "rx"
-Info (21057): Implemented 176 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 122 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 163 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 505 megabytes
-    Info: Processing ended: Sat Jul 12 01:53:29 2025
+    Info (21061): Implemented 109 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 503 megabytes
+    Info: Processing ended: Mon Jul 14 17:58:37 2025
     Info: Elapsed time: 00:00:05
     Info: Total CPU time (on all processors): 00:00:15
 

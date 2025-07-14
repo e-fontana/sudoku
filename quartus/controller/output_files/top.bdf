@@ -126,7 +126,7 @@ on the Quartus Prime software download page.
 	(input)
 	(rect -8 224 160 240)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "block" (rect 5 0 30 11)(font "Arial" ))
+	(text "block" (rect 5 0 29 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -160,7 +160,7 @@ on the Quartus Prime software download page.
 	(input)
 	(rect 0 40 168 56)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "CLOCK_50" (rect 5 0 60 11)(font "Arial" ))
+	(text "CLOCK_50" (rect 5 0 59 11)(font "Arial" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -205,7 +205,7 @@ on the Quartus Prime software download page.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 912 384 976 400))
+	(annotation_block (location)(rect 912 384 976 392))
 )
 (pin
 	(output)
@@ -294,14 +294,14 @@ on the Quartus Prime software download page.
 		(pt 240 32)
 		(output)
 		(text "select" (rect 0 0 28 11)(font "Arial" ))
-		(text "select" (rect 196 27 219 38)(font "Arial" ))
+		(text "select" (rect 196 27 224 38)(font "Arial" ))
 		(line (pt 240 32)(pt 224 32))
 	)
 	(port
 		(pt 240 48)
 		(output)
 		(text "LEDR[11..0]" (rect 0 0 57 11)(font "Arial" ))
-		(text "LEDR[11..0]" (rect 171 43 219 54)(font "Arial" ))
+		(text "LEDR[11..0]" (rect 171 43 228 54)(font "Arial" ))
 		(line (pt 240 48)(pt 224 48)(line_width 3))
 	)
 	(drawing
