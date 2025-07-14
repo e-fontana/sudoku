@@ -1,9 +1,4 @@
-PALETA_DE_CORES = [
-    "Transparente",   # Índice 0 (0b00)
-    "Amarelo",    # Índice 1 (0b01)
-    "Vermelho",   # Índice 2 (0b10)
-    "Branco" # Índice 3 (0b11)
-]
+from colors import Color
 
 def decode_status(payload_bytes):
     """
@@ -29,7 +24,7 @@ def decode_status(payload_bytes):
     mask_numero = 0x0F # Máscara de 4 bits (2^4 - 1)
     numero_selecionado = (payload_int >> shift_numero) & mask_numero
 
-    colors = [PALETA_DE_CORES[i] for i in decodificar_cores(cores_int=cores)]
+    colors = [Color[i] for i in decodificar_cores(cores_int=cores)]
     
     return {
         "colors": colors,

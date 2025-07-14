@@ -1,5 +1,5 @@
 import serial
-from data_treatment import game_status, full_map
+from data_treatment import game_status, full_map, Modelo
 
 EVENT_LIST = {
     0xAA: "start",
@@ -10,7 +10,7 @@ EVENT_LIST = {
 }
 
 class SerialReader:
-    def __init__(self, port, baudrate, model=None): # model é opcional
+    def __init__(self, port, baudrate, model: Modelo):
         self.port = port
         self.baudrate = baudrate
         self.model = model
@@ -50,7 +50,7 @@ class SerialReader:
                             continue
                         
                         correct_map = full_map.decode_full_map(full_map_bytes)
-                        print(correct_map)
+                        self.model.map = correct_map
                     
                     case 0xAD:  # Visibilidade
                         print("Visibilidade recebida.")
@@ -73,10 +73,8 @@ class SerialReader:
                 ser.close()
                 break
     
-
-
 # Exemplo de como usar a classe
 if __name__ == '__main__':
-    # Altere a porta 'COM3' para a porta correta no seu sistema ('/dev/ttyUSB0', etc.)
-    leitor = SerialReader(port='/dev/ttyUSB0', baudrate=115200)
+    model = Modelo()
+    leitor = SerialReader(port='/dev/ttyUSB0', baudrate=115200, model=model)
     leitor.read_serial()
