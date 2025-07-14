@@ -1,34 +1,44 @@
-module state_machine(
+module state_machine #(
+    parameter TIME_LIMIT_MINUTES = 5
+) (
     // time
     input clk, reset,
     input [10:0] timer,
     // buttons
     input up_button, down_button, left_button, right_button, start_button, a_button, b_button,
     // map
-    input [80:0] selected_visibility,
+    input [161:0] selected_visibility,
     input [323:0] selected_map,
+    // timer and score
+    input [6:0] score,
+    input [4:0] minutes,
+    input [5:0] seconds,
     // outputs
     output [3:0] pos_i, pos_j,
-    output [6:0] score,
     output error,
 
-    output [80:0] visibilities,
+    output [161:0] visibilities,
     output [323:0] board,
 
     output playing_condition,
     output difficulty,
+
+    output [6:0] states,
+
     output [3:0] n0, n1, n2, n3, n4, n5
 );
     reg [2:0] current_state, next_state;
 
-    wire [8:0] index;
+    wire [6:0] index;
+    wire [8:0] board_index;
+    wire [7:0] visibilities_index;
     wire [3:0] cell_value;
     wire [1:0] strikes;
     wire [3:0] selected_number;
     wire cell_visibility_value;
 
     wire victory_condition, defeat_condition;
-    wire visible_cell_value;
+    wire [3:0] visible_cell_value;
     
     parameter [2:0] 
         INICIAR_JOGO        		 = 3'b000,
@@ -39,14 +49,31 @@ module state_machine(
         VITORIA 					 = 3'b101,
         DERROTA						 = 3'b110;
 
-    assign n2 = {2'b00, strikes};
-    assign n3 = selected_number;
-    assign n4 = cell_value;
-    assign n5 = {1'b0, current_state};
+    assign states = {
+        current_state == INICIAR_JOGO,
+        current_state == SELECIONAR_DIFICULDADE,
+        current_state == CARREGANDO,
+        current_state == CORRENDO_MAPA,
+        current_state == PERCORRER_NUMEROS,
+        current_state == VITORIA,
+        current_state == DERROTA
+    };
 
-    assign index = (pos_i * 9 + pos_j) * 4;
-    assign cell_value = board[index +: 4];
-    assign cell_visibility_value = visibilities[index];
+    assign n0 = playing_condition ? seconds % 10 : score % 10;
+    assign n1 = playing_condition ? seconds / 10 : (score / 10) % 10;
+    assign n2 = playing_condition ? minutes % 10 : score / 100;
+
+    assign n3 = {2'b00, strikes};
+    assign n4 = selected_number;
+    assign n5 = visible_cell_value;
+
+    assign index = pos_i * 9 + pos_j;
+    assign visibilities_index = index * 2;
+    assign board_index = index * 4;
+
+    assign cell_value = board[board_index +: 4];
+    assign cell_visibility_value = &visibilities[visibilities_index +: 2];
+    assign visible_cell_value = cell_visibility_value ? cell_value : 4'b0000;
 
     assign playing_condition = (current_state == CORRENDO_MAPA || current_state == PERCORRER_NUMEROS);
 
@@ -59,7 +86,7 @@ module state_machine(
         .down_button(down_button),
         .a_button(a_button),
         .b_button(b_button),
-        .index(index),
+        .index(visibilities_index),
         .cell_value(cell_value),
         .current_state(current_state),
 
@@ -103,7 +130,9 @@ module state_machine(
         .victory_condition(victory_condition)
     );
 
-    defeat d (
+    defeat #(
+        .TIME_LIMIT_MINUTES(TIME_LIMIT_MINUTES)
+    ) d (
         .timer(timer),
         .strikes(strikes),
         .difficulty(difficulty),

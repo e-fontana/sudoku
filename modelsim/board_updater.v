@@ -10,14 +10,14 @@ module board_updater #(
     input a_button,
     input b_button,
 
-    input [6:0] index,
+    input [7:0] index,
     input [3:0] cell_value,
 
     input [2:0] current_state,
 
-    input [80:0] selected_visibility,
+    input [161:0] selected_visibility,
     input [323:0] selected_map,
-    output reg [80:0] visibilities,
+    output reg [161:0] visibilities,
     output reg [323:0] board,
 
     output reg error,
@@ -27,7 +27,7 @@ module board_updater #(
     reg next_error;
     reg [1:0] next_strikes;
     reg [323:0] next_board;
-    reg [80:0] next_visibilities;
+    reg [161:0] next_visibilities;
     reg [3:0] next_selected_number;
 
     always @(posedge clk or posedge reset) begin
@@ -35,7 +35,7 @@ module board_updater #(
             error <= 1'b0;
             strikes <= 2'b00;
             selected_number <= 4'd1;
-            visibilities <= 324'b0;
+            visibilities <= 162'b0;
             board <= 324'b0;
         end else begin
             error <= next_error;
@@ -59,19 +59,25 @@ module board_updater #(
                 next_board = selected_map;
             end
             PERCORRER_NUMEROS: begin
+                if (error) begin
+                    next_visibilities[index +: 2] = 2'b10; // Mark the cell as visited with error
+                end else begin
+                    next_visibilities[index +: 2] = 2'b01; // Mark the cell as visited
+                end
+
                 if (up_button | down_button | a_button | b_button) begin
                     next_error = 1'b0;
                 end
                 
                 if (up_button) begin
                     if (selected_number < 9) begin
-                        next_selected_number = selected_number + 1;
+                        next_selected_number = selected_number + 4'd1;
                     end else begin
                         next_selected_number = 4'd1;
                     end
                 end else if (down_button) begin
                     if (selected_number > 1) begin
-                        next_selected_number = selected_number - 1;
+                        next_selected_number = selected_number - 4'd1;
                     end else begin
                         next_selected_number = 4'd9;
                     end
@@ -79,11 +85,13 @@ module board_updater #(
 
                 if (a_button) begin
                     if (cell_value == selected_number) begin
-                        next_visibilities = visibilities | (1'b1 << index);
+                        next_visibilities[index +: 2] = 2'b11; // Mark the cell as correctly visited
                     end else begin
                         next_error = 1'b1;
+                        next_visibilities[index +: 2] = 2'b10; // Mark the cell as visited with error
+
                         if (strikes < 2'b11) begin
-                            next_strikes = strikes + 1;
+                            next_strikes = strikes + 2'd1;
                         end
                     end
                 end

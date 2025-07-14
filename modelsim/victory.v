@@ -1,5 +1,5 @@
 module victory(
-    input [80:0] visibilities,
+    input [161:0] visibilities,
     output victory_condition
 );
     assign victory_condition = &visibilities;

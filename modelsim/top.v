@@ -13,10 +13,11 @@ module top(
     // outputs
     output error,
     output difficulty,
+    output [6:0] states,
     output [6:0] d0, d1, d2, d3, d4, d5, d6, d7
 );
     wire [3:0] n0, n1, n2, n3, n4, n5, n6, n7;
-    wire [80:0] selected_visibility;
+    wire [161:0] selected_visibility;
     wire [323:0] selected_map;
     wire up_button, down_button, left_button, right_button;
 
@@ -25,19 +26,18 @@ module top(
     wire [10:0] timer;
     wire [5:0] seconds;
     wire [4:0] minutes;
-    wire [10:0] playtime;
     wire [3:0] pos_i, pos_j;
 
-    wire [80:0] visibilities;
+    wire [161:0] visibilities;
     wire [323:0] board;
     wire game_clk;
 
-    assign n6 = pos_i;
-    assign n7 = pos_j;
-
-    assign playtime = {minutes, seconds};
+    assign n6 = pos_j;
+    assign n7 = pos_i;
 
     parameter GAME_FREQ = (50_000_000 - 1) / 8;
+    parameter TIME_LIMIT_MINUTES = 5;
+
     frequency #(
         .COUNTER_LIMIT(GAME_FREQ)
     ) game_frequency (
@@ -64,7 +64,9 @@ module top(
         .d4(d4), .d5(d5), .d6(d6), .d7(d7)
     );
 
-    stopwatch sw (
+    stopwatch #(
+        .TIME_LIMIT_MINUTES(TIME_LIMIT_MINUTES)
+    ) sw (
         .clk(clk),
         .reset(reset),
         .playing_condition(playing_condition),
@@ -73,10 +75,12 @@ module top(
         .minutes(minutes)
     );
 
-    score sc (
+    score #(
+        .TIME_LIMIT_MINUTES(TIME_LIMIT_MINUTES)
+    ) sc (
         .clk(clk),
+        .reset(reset),
         .timer(timer),
-        .playing_condition(playing_condition),
         .score(score)
     );
 
@@ -91,7 +95,9 @@ module top(
 
     // game
 
-    state_machine sm (
+    state_machine #(
+        .TIME_LIMIT_MINUTES(TIME_LIMIT_MINUTES)
+    ) sm (
         .clk(game_clk),
         .reset(reset),
         .timer(timer),
@@ -107,16 +113,22 @@ module top(
         .selected_visibility(selected_visibility),
         .selected_map(selected_map),
 
+        .score(score),
+        .minutes(minutes),
+        .seconds(seconds),
+
         .pos_i(pos_i),
         .pos_j(pos_j),
         .error(error),
-        .score(score),
 
         .visibilities(visibilities),
         .board(board),
         
         .playing_condition(playing_condition),
         .difficulty(difficulty),
+
+        .states(states),
+
         .n0(n0), .n1(n1), .n2(n2), .n3(n3), .n4(n4), .n5(n5)
     );
 endmodule

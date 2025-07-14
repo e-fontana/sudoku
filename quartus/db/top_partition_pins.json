@@ -12,7 +12,95 @@
 					"strict" : false
 				},
 				{
+					"name" : "states[0]",
+					"strict" : false
+				},
+				{
+					"name" : "states[1]",
+					"strict" : false
+				},
+				{
+					"name" : "states[2]",
+					"strict" : false
+				},
+				{
+					"name" : "states[3]",
+					"strict" : false
+				},
+				{
+					"name" : "states[4]",
+					"strict" : false
+				},
+				{
+					"name" : "states[5]",
+					"strict" : false
+				},
+				{
+					"name" : "states[6]",
+					"strict" : false
+				},
+				{
+					"name" : "d0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "d0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "d0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "d0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "d0[4]",
+					"strict" : false
+				},
+				{
+					"name" : "d0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "d0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "d1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "d1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "d1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "d1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "d1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "d1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "d1[6]",
+					"strict" : false
+				},
+				{
 					"name" : "d2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "d2[1]",
 					"strict" : false
 				},
 				{
@@ -37,10 +125,6 @@
 				},
 				{
 					"name" : "d3[0]",
-					"strict" : false
-				},
-				{
-					"name" : "d3[1]",
 					"strict" : false
 				},
 				{
@@ -176,15 +260,15 @@
 					"strict" : false
 				},
 				{
+					"name" : "a_button",
+					"strict" : false
+				},
+				{
 					"name" : "original_up_button",
 					"strict" : false
 				},
 				{
 					"name" : "original_down_button",
-					"strict" : false
-				},
-				{
-					"name" : "a_button",
 					"strict" : false
 				},
 				{
@@ -196,19 +280,19 @@
 					"strict" : false
 				},
 				{
-					"name" : "original_right_button",
-					"strict" : false
-				},
-				{
-					"name" : "original_left_button",
-					"strict" : false
-				},
-				{
 					"name" : "start_button",
 					"strict" : false
 				},
 				{
 					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "original_right_button",
+					"strict" : false
+				},
+				{
+					"name" : "original_left_button",
 					"strict" : false
 				}
 			]
