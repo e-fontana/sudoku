@@ -25,7 +25,7 @@ class Formatter:
             self.sudokus.append(sudoku)
             for i, row in enumerate(sudoku.solution):
                 for j, cell in enumerate(row):
-                    self.visibilities.append('0' if sudoku.board[i][j] == 0 else '1')
+                    self.visibilities.append('00' if sudoku.board[i][j] == 0 else '11')
                     self.bits.append(self.ENCODER[cell-1])
         self.visibilities.reverse()
         self.bits.reverse()
@@ -40,9 +40,9 @@ class Formatter:
 
         with open(output_file, 'w') as f:
             f.write("module define_maps(\n")
-            f.write(f"\toutput [{81*15 - 1}:0] visibilities,\n")
+            f.write(f"\toutput [{81*2*15 - 1}:0] visibilities,\n")
             f.write(f"\toutput [{81*4*15 - 1}:0] maps\n")
             f.write(");\n")
-            f.write(f"\tassign visibilities = {81*15}'b{"".join(self.visibilities)};\n")
+            f.write(f"\tassign visibilities = {81*2*15}'b{"".join(self.visibilities)};\n")
             f.write(f"\tassign maps = {81*4*15}'b{"".join(self.bits)};\n")
             f.write("endmodule\n")
