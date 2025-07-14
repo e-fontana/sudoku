@@ -1,122 +1,101 @@
-module ControladorPrincipal (
-	input clock,
-	input reset,
-	input tx_busy,
-	input send_data,
-	output reg [3:0] a_ram,
-	output reg clock_ram,
-	output reg tx_start,
-	output reg [7:0] tx_data
+module ControladorUART (
+    input  wire        clock,
+    input  wire        reset,
+    input  wire        tx_busy,
+    input  wire        start_transmission,
+    input  wire [7:0]  data_in,
+
+    output reg         tx_start,
+    output reg [7:0]   tx_data
 );
+    parameter OCIOSO   = 2'b00;
+    parameter TRANSMITIR = 2'b01;
+    parameter AGUARDAR = 2'b10;
 
-parameter	Inicio = 					3'b000, // use este estado para aguardar a solicitacao de envio para o PC
-				Config_Enderecos = 		3'b001,
-				Ler_RAM = 					3'b010,
-				Transmitir_UART = 		3'b011,
-				Incrementar_i = 			3'b100,
-				Aguardar_TX = 				3'b101,
-				Aguardar_Tempo =        3'b110;
-				
-reg [2:0] estado_atual, estado_futuro;
+    reg [1:0] estado_atual;
+    reg [1:0] proximo_estado;
 
-integer i, ContadorTempo;
-
-reg FlagTemporizador;
-
-// reg estado
-always @ (posedge clock)
-begin
-	if (reset)
-	begin
-		estado_atual <= Inicio;
-		i <= 0;
-		ContadorTempo <= 0;
-		FlagTemporizador <= 0;
-	end
-	else
-	begin
-		estado_atual <= estado_futuro;
-		if (estado_futuro == Incrementar_i)
-		begin
-			if (i == 10) // limitado a 11 palavras de memoria, reiniciando para a posicao inicial
-			begin
-				i <= 0;
-				FlagTemporizador <= 1;
-			end
-			else
-			begin
-				i <= i + 1;
-			end
-		end
-		if (estado_futuro == Aguardar_Tempo)
-		begin
-			ContadorTempo <= ContadorTempo + 1;
-			FlagTemporizador <= 0; 
-		end
-		else
-		begin
-			ContadorTempo <= 0;
-		end
-	end
-end
+    // --- Registrador para armazenar o dado de entrada ---
+    // É importante para garantir que o dado não mude no meio da transmissão
+    reg [7:0] data_reg;
 
 
-// dec proximo estado
-always @ (*)
-begin
-	case (estado_atual)
-		Inicio: 					estado_futuro = Config_Enderecos;
-		Config_Enderecos: 	estado_futuro = Ler_RAM;
-		Ler_RAM: 				estado_futuro = Transmitir_UART;
-		Transmitir_UART: 		estado_futuro = Incrementar_i;
-		Incrementar_i:			estado_futuro = Aguardar_TX;
-		Aguardar_TX:			if (tx_busy)
-										begin
-											estado_futuro = Aguardar_TX;
-										end
-									else
-										if (FlagTemporizador)
-											begin
-												estado_futuro = Aguardar_Tempo;
-											end
-										else
-											begin
-												estado_futuro = Config_Enderecos;
-											end
-		Aguardar_Tempo:		if (ContadorTempo < 5000000)			// Aguarda 1 segundo (adaptem para suas necessidades)
-									begin
-										estado_futuro = Aguardar_Tempo;
-									end
-									else
-									begin
-										estado_futuro = Config_Enderecos; 
-									end
-		default: estado_futuro = Inicio;
-	endcase
-end
+    //==================================================================
+    // Lógica Sequencial: Atualização de Estados e Registradores
+    //==================================================================
+    always @(posedge clock or posedge reset)
+    begin
+        if (reset)
+        begin
+            estado_atual <= OCIOSO;
+            data_reg     <= 8'h00;
+        end
+        else
+        begin
+            estado_atual <= proximo_estado;
+            // Captura o dado de entrada quando a transmissão é iniciada
+            if (proximo_estado == TRANSMITIR)
+            begin
+                data_reg <= data_in;
+            end
+        end
+    end
 
 
-// dec saida
-always @ (*)
-begin
-	// atribuicoes default
-	clock_ram = 0;
-	tx_start = 0;
-	tx_data <= 8'h00;
-	case (estado_atual)
-		Config_Enderecos: begin
-									a_ram = i;
-								end
-		Ler_RAM:				begin
-									a_ram = i;
-									clock_ram = 1;
-								end
-		Transmitir_UART:	begin
-									tx_data <= 8'hAA;
-									a_ram = i;
-									tx_start = 1;
-								end
-	endcase
-end
+    //==================================================================
+    // Lógica Combinacional: Decodificador de Próximo Estado
+    //==================================================================
+    always @(*)
+    begin
+        case (estado_atual)
+            OCIOSO:
+            begin
+                // Se o sinal de início for recebido, avança para o estado de transmissão
+                if (start_transmission)
+                    proximo_estado = TRANSMITIR;
+                else
+                    proximo_estado = OCIOSO;
+            end
+
+            TRANSMITIR:
+            begin
+                // Após o estado de transmissão, sempre vai para o estado de espera
+                proximo_estado = AGUARDAR;
+            end
+
+            AGUARDAR:
+            begin
+                // Se a UART ainda estiver ocupada, continua esperando
+                if (tx_busy)
+                    proximo_estado = AGUARDAR;
+                // Se a UART ficou livre, volta ao estado ocioso para a próxima transmissão
+                else
+                    proximo_estado = OCIOSO;
+            end
+
+            default:
+                proximo_estado = OCIOSO;
+        endcase
+    end
+
+
+    //==================================================================
+    // Lógica Combinacional: Lógica de Saída
+    //==================================================================
+    always @(*)
+    begin
+        // --- Atribuições Padrão ---
+        tx_start = 1'b0;
+        tx_data  = data_reg; // A saída de dados sempre reflete o dado capturado
+
+        // --- Lógica de Saída baseada no Estado Atual ---
+        case (estado_atual)
+            TRANSMITIR:
+            begin
+                // Gera um pulso de um ciclo de clock em tx_start para iniciar a UART
+                tx_start = 1'b1;
+            end
+        endcase
+    end
 
 endmodule

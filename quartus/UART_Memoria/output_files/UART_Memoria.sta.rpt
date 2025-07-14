@@ -1,5 +1,5 @@
 Timing Analyzer report for UART_Memoria
-Fri Jul 11 18:24:51 2025
+Mon Jul 14 17:58:50 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -101,7 +101,7 @@ on the Quartus Prime software download page.
 +------------+-----------------+------------+------+
 ; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
 +------------+-----------------+------------+------+
-; 221.48 MHz ; 221.48 MHz      ; clock      ;      ;
+; 235.46 MHz ; 235.46 MHz      ; clock      ;      ;
 +------------+-----------------+------------+------+
 This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
 
@@ -117,7 +117,7 @@ HTML report is unavailable in plain text report export.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clock ; -3.515 ; -281.536      ;
+; clock ; -3.247 ; -193.191      ;
 +-------+--------+---------------+
 
 
@@ -126,7 +126,7 @@ HTML report is unavailable in plain text report export.
 +-------+-------+---------------+
 ; Clock ; Slack ; End Point TNS ;
 +-------+-------+---------------+
-; clock ; 0.386 ; 0.000         ;
+; clock ; 0.387 ; 0.000         ;
 +-------+-------+---------------+
 
 
@@ -147,224 +147,224 @@ No paths to report.
 +-------+--------+---------------+
 ; Clock ; Slack  ; End Point TNS ;
 +-------+--------+---------------+
-; clock ; -3.000 ; -134.070      ;
+; clock ; -3.000 ; -99.375       ;
 +-------+--------+---------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Setup: 'clock'                                                                                                                                                           ;
-+--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack  ; From Node                                   ; To Node                                     ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
-; -3.515 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.509     ; 4.004      ;
-; -3.515 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.509     ; 4.004      ;
-; -3.515 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.509     ; 4.004      ;
-; -3.515 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.509     ; 4.004      ;
-; -3.515 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.509     ; 4.004      ;
-; -3.468 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.957      ;
-; -3.468 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.957      ;
-; -3.468 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.957      ;
-; -3.468 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.957      ;
-; -3.468 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.957      ;
-; -3.399 ; ControladorPrincipal:inst|ContadorTempo[12] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.312      ;
-; -3.399 ; ControladorPrincipal:inst|ContadorTempo[12] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.312      ;
-; -3.399 ; ControladorPrincipal:inst|ContadorTempo[12] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.312      ;
-; -3.399 ; ControladorPrincipal:inst|ContadorTempo[12] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.312      ;
-; -3.399 ; ControladorPrincipal:inst|ContadorTempo[12] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.312      ;
-; -3.394 ; ControladorPrincipal:inst|ContadorTempo[16] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.883      ;
-; -3.394 ; ControladorPrincipal:inst|ContadorTempo[16] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.883      ;
-; -3.394 ; ControladorPrincipal:inst|ContadorTempo[16] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.883      ;
-; -3.394 ; ControladorPrincipal:inst|ContadorTempo[16] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.883      ;
-; -3.394 ; ControladorPrincipal:inst|ContadorTempo[16] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.883      ;
-; -3.383 ; ControladorPrincipal:inst|ContadorTempo[25] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.302      ;
-; -3.383 ; ControladorPrincipal:inst|ContadorTempo[25] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.302      ;
-; -3.383 ; ControladorPrincipal:inst|ContadorTempo[25] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.302      ;
-; -3.383 ; ControladorPrincipal:inst|ContadorTempo[25] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.302      ;
-; -3.383 ; ControladorPrincipal:inst|ContadorTempo[25] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.302      ;
-; -3.370 ; ControladorPrincipal:inst|ContadorTempo[9]  ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.283      ;
-; -3.370 ; ControladorPrincipal:inst|ContadorTempo[9]  ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.283      ;
-; -3.370 ; ControladorPrincipal:inst|ContadorTempo[9]  ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.283      ;
-; -3.370 ; ControladorPrincipal:inst|ContadorTempo[9]  ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.283      ;
-; -3.370 ; ControladorPrincipal:inst|ContadorTempo[9]  ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.283      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[6]  ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[7]  ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[8]  ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[9]  ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[10] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[11] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[12] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[13] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.296 ; ControladorPrincipal:inst|ContadorTempo[24] ; ControladorPrincipal:inst|ContadorTempo[15] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.790      ;
-; -3.280 ; ControladorPrincipal:inst|ContadorTempo[20] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.769      ;
-; -3.280 ; ControladorPrincipal:inst|ContadorTempo[20] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.769      ;
-; -3.280 ; ControladorPrincipal:inst|ContadorTempo[20] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.769      ;
-; -3.280 ; ControladorPrincipal:inst|ContadorTempo[20] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.769      ;
-; -3.280 ; ControladorPrincipal:inst|ContadorTempo[20] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.769      ;
-; -3.266 ; ControladorPrincipal:inst|ContadorTempo[28] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.755      ;
-; -3.266 ; ControladorPrincipal:inst|ContadorTempo[28] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.755      ;
-; -3.266 ; ControladorPrincipal:inst|ContadorTempo[28] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.755      ;
-; -3.266 ; ControladorPrincipal:inst|ContadorTempo[28] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.755      ;
-; -3.266 ; ControladorPrincipal:inst|ContadorTempo[28] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.755      ;
-; -3.252 ; ControladorPrincipal:inst|ContadorTempo[27] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.171      ;
-; -3.252 ; ControladorPrincipal:inst|ContadorTempo[27] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.171      ;
-; -3.252 ; ControladorPrincipal:inst|ContadorTempo[27] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.171      ;
-; -3.252 ; ControladorPrincipal:inst|ContadorTempo[27] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.171      ;
-; -3.252 ; ControladorPrincipal:inst|ContadorTempo[27] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.171      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[6]  ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[7]  ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[8]  ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[9]  ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[10] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[11] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[12] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[13] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.249 ; ControladorPrincipal:inst|ContadorTempo[26] ; ControladorPrincipal:inst|ContadorTempo[15] ; clock        ; clock       ; 1.000        ; -0.504     ; 3.743      ;
-; -3.220 ; ControladorPrincipal:inst|ContadorTempo[30] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.139      ;
-; -3.220 ; ControladorPrincipal:inst|ContadorTempo[30] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.139      ;
-; -3.220 ; ControladorPrincipal:inst|ContadorTempo[30] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.139      ;
-; -3.220 ; ControladorPrincipal:inst|ContadorTempo[30] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.139      ;
-; -3.220 ; ControladorPrincipal:inst|ContadorTempo[30] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.139      ;
-; -3.218 ; ControladorPrincipal:inst|ContadorTempo[18] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.707      ;
-; -3.218 ; ControladorPrincipal:inst|ContadorTempo[18] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.707      ;
-; -3.218 ; ControladorPrincipal:inst|ContadorTempo[18] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.707      ;
-; -3.218 ; ControladorPrincipal:inst|ContadorTempo[18] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.707      ;
-; -3.218 ; ControladorPrincipal:inst|ContadorTempo[18] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.509     ; 3.707      ;
-; -3.199 ; ControladorPrincipal:inst|ContadorTempo[23] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.118      ;
-; -3.199 ; ControladorPrincipal:inst|ContadorTempo[23] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.118      ;
-; -3.199 ; ControladorPrincipal:inst|ContadorTempo[23] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.118      ;
-; -3.199 ; ControladorPrincipal:inst|ContadorTempo[23] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.118      ;
-; -3.199 ; ControladorPrincipal:inst|ContadorTempo[23] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.118      ;
-; -3.191 ; ControladorPrincipal:inst|ContadorTempo[15] ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.104      ;
-; -3.191 ; ControladorPrincipal:inst|ContadorTempo[15] ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.104      ;
-; -3.191 ; ControladorPrincipal:inst|ContadorTempo[15] ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.104      ;
-; -3.191 ; ControladorPrincipal:inst|ContadorTempo[15] ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.104      ;
-; -3.191 ; ControladorPrincipal:inst|ContadorTempo[15] ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.104      ;
-; -3.190 ; ControladorPrincipal:inst|ContadorTempo[7]  ; ControladorPrincipal:inst|ContadorTempo[17] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.103      ;
-; -3.190 ; ControladorPrincipal:inst|ContadorTempo[7]  ; ControladorPrincipal:inst|ContadorTempo[23] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.103      ;
-; -3.190 ; ControladorPrincipal:inst|ContadorTempo[7]  ; ControladorPrincipal:inst|ContadorTempo[25] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.103      ;
-; -3.190 ; ControladorPrincipal:inst|ContadorTempo[7]  ; ControladorPrincipal:inst|ContadorTempo[27] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.103      ;
-; -3.190 ; ControladorPrincipal:inst|ContadorTempo[7]  ; ControladorPrincipal:inst|ContadorTempo[30] ; clock        ; clock       ; 1.000        ; -0.085     ; 4.103      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[17]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[19]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[31]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[24]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[25]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[26]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[28]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[29]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.186 ; ControladorPrincipal:inst|i[16]             ; ControladorPrincipal:inst|i[30]             ; clock        ; clock       ; 1.000        ; -0.512     ; 3.672      ;
-; -3.180 ; ControladorPrincipal:inst|ContadorTempo[12] ; ControladorPrincipal:inst|ContadorTempo[6]  ; clock        ; clock       ; 1.000        ; -0.080     ; 4.098      ;
-; -3.180 ; ControladorPrincipal:inst|ContadorTempo[12] ; ControladorPrincipal:inst|ContadorTempo[7]  ; clock        ; clock       ; 1.000        ; -0.080     ; 4.098      ;
-; -3.180 ; ControladorPrincipal:inst|ContadorTempo[12] ; ControladorPrincipal:inst|ContadorTempo[8]  ; clock        ; clock       ; 1.000        ; -0.080     ; 4.098      ;
-+--------+---------------------------------------------+---------------------------------------------+--------------+-------------+--------------+------------+------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Setup: 'clock'                                                                                                                                                   ;
++--------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                               ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[0]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[1]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[2]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[3]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[4]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[5]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[6]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[7]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[8]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[9]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[10] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.247 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[11] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.166      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[0]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[1]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[2]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[3]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[4]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[5]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[6]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[7]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[8]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[9]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[10] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.245 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[11] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.164      ;
+; -3.239 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|indice_chunk[5]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.150      ;
+; -3.239 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|indice_chunk[4]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.150      ;
+; -3.239 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|indice_chunk[0]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.150      ;
+; -3.239 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|indice_chunk[1]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.150      ;
+; -3.239 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|indice_chunk[2]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.150      ;
+; -3.239 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|indice_chunk[3]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.150      ;
+; -3.237 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|indice_chunk[5]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.148      ;
+; -3.237 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|indice_chunk[4]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.148      ;
+; -3.237 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|indice_chunk[0]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.148      ;
+; -3.237 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|indice_chunk[1]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.148      ;
+; -3.237 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|indice_chunk[2]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.148      ;
+; -3.237 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|indice_chunk[3]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.148      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[0]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[1]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[2]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[3]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[4]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[5]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[6]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[7]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[8]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[9]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[10] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.236 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[11] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.155      ;
+; -3.228 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|indice_chunk[5]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.139      ;
+; -3.228 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|indice_chunk[4]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.139      ;
+; -3.228 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|indice_chunk[0]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.139      ;
+; -3.228 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|indice_chunk[1]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.139      ;
+; -3.228 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|indice_chunk[2]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.139      ;
+; -3.228 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|indice_chunk[3]    ; clock        ; clock       ; 1.000        ; -0.087     ; 4.139      ;
+; -3.153 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[25] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.065      ;
+; -3.153 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[24] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.065      ;
+; -3.153 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[23] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.065      ;
+; -3.153 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[22] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.065      ;
+; -3.153 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[21] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.065      ;
+; -3.153 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[20] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.065      ;
+; -3.153 ; GameStatusSend:inst3|contador_delay[1]  ; GameStatusSend:inst3|contador_delay[19] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.065      ;
+; -3.151 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[25] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.063      ;
+; -3.151 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[24] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.063      ;
+; -3.151 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[23] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.063      ;
+; -3.151 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[22] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.063      ;
+; -3.151 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[21] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.063      ;
+; -3.151 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[20] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.063      ;
+; -3.151 ; GameStatusSend:inst3|contador_delay[2]  ; GameStatusSend:inst3|contador_delay[19] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.063      ;
+; -3.142 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[25] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.054      ;
+; -3.142 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[24] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.054      ;
+; -3.142 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[23] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.054      ;
+; -3.142 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[22] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.054      ;
+; -3.142 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[21] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.054      ;
+; -3.142 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[20] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.054      ;
+; -3.142 ; GameStatusSend:inst3|contador_delay[0]  ; GameStatusSend:inst3|contador_delay[19] ; clock        ; clock       ; 1.000        ; -0.086     ; 4.054      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[0]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[1]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[2]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[3]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[4]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[5]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[6]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[7]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[8]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[9]  ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[10] ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.108 ; GameStatusSend:inst3|contador_delay[16] ; GameStatusSend:inst3|contador_delay[11] ; clock        ; clock       ; 1.000        ; -0.073     ; 4.033      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[0]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[1]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[2]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[3]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[4]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[5]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[6]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[7]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[8]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[9]  ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[10] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.096 ; GameStatusSend:inst3|contador_delay[8]  ; GameStatusSend:inst3|contador_delay[11] ; clock        ; clock       ; 1.000        ; -0.079     ; 4.015      ;
+; -3.073 ; GameStatusSend:inst3|contador_delay[4]  ; GameStatusSend:inst3|contador_delay[0]  ; clock        ; clock       ; 1.000        ; -0.079     ; 3.992      ;
++--------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Hold: 'clock'                                                                                                                                                                                 ;
-+-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; Slack ; From Node                                              ; To Node                                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
-+-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
-; 0.386 ; ControladorPrincipal:inst|estado_atual.Aguardar_Tempo  ; ControladorPrincipal:inst|estado_atual.Aguardar_Tempo  ; clock        ; clock       ; 0.000        ; 0.097      ; 0.669      ;
-; 0.386 ; ControladorPrincipal:inst|estado_atual.Aguardar_TX     ; ControladorPrincipal:inst|estado_atual.Aguardar_TX     ; clock        ; clock       ; 0.000        ; 0.097      ; 0.669      ;
-; 0.404 ; UART:inst1|tx                                          ; UART:inst1|tx                                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; UART:inst1|tx_busy                                     ; UART:inst1|tx_busy                                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; UART:inst1|tx_bit_cnt[1]                               ; UART:inst1|tx_bit_cnt[1]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
-; 0.404 ; UART:inst1|tx_bit_cnt[2]                               ; UART:inst1|tx_bit_cnt[2]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
-; 0.409 ; UART:inst1|tx_bit_cnt[0]                               ; UART:inst1|tx_bit_cnt[0]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.674      ;
-; 0.431 ; UART:inst1|tx_shift[3]                                 ; UART:inst1|tx_shift[2]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.696      ;
-; 0.538 ; UART:inst1|tx_busy                                     ; UART:inst1|tx_shift[7]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.803      ;
-; 0.540 ; UART:inst1|tx_busy                                     ; UART:inst1|tx_shift[5]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.805      ;
-; 0.542 ; ControladorPrincipal:inst|i[17]                        ; ControladorPrincipal:inst|i[18]                        ; clock        ; clock       ; 0.000        ; 0.512      ; 1.240      ;
-; 0.542 ; ControladorPrincipal:inst|i[19]                        ; ControladorPrincipal:inst|i[20]                        ; clock        ; clock       ; 0.000        ; 0.512      ; 1.240      ;
-; 0.543 ; ControladorPrincipal:inst|ContadorTempo[13]            ; ControladorPrincipal:inst|ContadorTempo[14]            ; clock        ; clock       ; 0.000        ; 0.510      ; 1.239      ;
-; 0.544 ; UART:inst1|tx_busy                                     ; UART:inst1|tx_shift[3]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.809      ;
-; 0.545 ; UART:inst1|tx_busy                                     ; UART:inst1|tx_shift[0]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.810      ;
-; 0.545 ; ControladorPrincipal:inst|ContadorTempo[17]            ; ControladorPrincipal:inst|ContadorTempo[18]            ; clock        ; clock       ; 0.000        ; 0.509      ; 1.240      ;
-; 0.546 ; ControladorPrincipal:inst|ContadorTempo[27]            ; ControladorPrincipal:inst|ContadorTempo[28]            ; clock        ; clock       ; 0.000        ; 0.509      ; 1.241      ;
-; 0.547 ; ControladorPrincipal:inst|ContadorTempo[23]            ; ControladorPrincipal:inst|ContadorTempo[24]            ; clock        ; clock       ; 0.000        ; 0.509      ; 1.242      ;
-; 0.547 ; ControladorPrincipal:inst|ContadorTempo[25]            ; ControladorPrincipal:inst|ContadorTempo[26]            ; clock        ; clock       ; 0.000        ; 0.509      ; 1.242      ;
-; 0.549 ; ControladorPrincipal:inst|i[15]                        ; ControladorPrincipal:inst|i[16]                        ; clock        ; clock       ; 0.000        ; 0.504      ; 1.239      ;
-; 0.549 ; ControladorPrincipal:inst|ContadorTempo[15]            ; ControladorPrincipal:inst|ContadorTempo[16]            ; clock        ; clock       ; 0.000        ; 0.504      ; 1.239      ;
-; 0.554 ; UART:inst1|tx_shift[1]                                 ; UART:inst1|tx_shift[0]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.819      ;
-; 0.554 ; UART:inst1|tx_shift[4]                                 ; UART:inst1|tx_shift[3]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.819      ;
-; 0.554 ; UART:inst1|tx_busy                                     ; UART:inst1|tx_shift[6]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.819      ;
-; 0.555 ; UART:inst1|tx_shift[2]                                 ; UART:inst1|tx_shift[1]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.820      ;
-; 0.555 ; UART:inst1|tx_busy                                     ; UART:inst1|tx_shift[4]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.820      ;
-; 0.555 ; UART:inst1|tx_shift[6]                                 ; UART:inst1|tx_shift[5]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.820      ;
-; 0.556 ; UART:inst1|tx_shift[7]                                 ; UART:inst1|tx_shift[6]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.821      ;
-; 0.557 ; ControladorPrincipal:inst|i[26]                        ; ControladorPrincipal:inst|i[27]                        ; clock        ; clock       ; 0.000        ; 0.512      ; 1.255      ;
-; 0.558 ; ControladorPrincipal:inst|i[2]                         ; ControladorPrincipal:inst|i[3]                         ; clock        ; clock       ; 0.000        ; 0.509      ; 1.253      ;
-; 0.560 ; ControladorPrincipal:inst|ContadorTempo[30]            ; ControladorPrincipal:inst|ContadorTempo[31]            ; clock        ; clock       ; 0.000        ; 0.509      ; 1.255      ;
-; 0.563 ; ControladorPrincipal:inst|ContadorTempo[12]            ; ControladorPrincipal:inst|ContadorTempo[14]            ; clock        ; clock       ; 0.000        ; 0.510      ; 1.259      ;
-; 0.568 ; ControladorPrincipal:inst|i[14]                        ; ControladorPrincipal:inst|i[16]                        ; clock        ; clock       ; 0.000        ; 0.504      ; 1.258      ;
-; 0.607 ; ControladorPrincipal:inst|estado_atual.Transmitir_UART ; ControladorPrincipal:inst|estado_atual.Incrementar_i   ; clock        ; clock       ; 0.000        ; 0.079      ; 0.872      ;
-; 0.617 ; ControladorPrincipal:inst|ContadorTempo[3]             ; ControladorPrincipal:inst|ContadorTempo[3]             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.899      ;
-; 0.618 ; ControladorPrincipal:inst|ContadorTempo[5]             ; ControladorPrincipal:inst|ContadorTempo[5]             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.900      ;
-; 0.619 ; ControladorPrincipal:inst|ContadorTempo[1]             ; ControladorPrincipal:inst|ContadorTempo[1]             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.901      ;
-; 0.622 ; ControladorPrincipal:inst|ContadorTempo[2]             ; ControladorPrincipal:inst|ContadorTempo[2]             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.904      ;
-; 0.623 ; ControladorPrincipal:inst|ContadorTempo[4]             ; ControladorPrincipal:inst|ContadorTempo[4]             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.905      ;
-; 0.639 ; ControladorPrincipal:inst|i[3]                         ; ControladorPrincipal:inst|i[3]                         ; clock        ; clock       ; 0.000        ; 0.096      ; 0.921      ;
-; 0.640 ; ControladorPrincipal:inst|i[21]                        ; ControladorPrincipal:inst|i[21]                        ; clock        ; clock       ; 0.000        ; 0.096      ; 0.922      ;
-; 0.640 ; ControladorPrincipal:inst|ContadorTempo[29]            ; ControladorPrincipal:inst|ContadorTempo[29]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.922      ;
-; 0.640 ; ControladorPrincipal:inst|ContadorTempo[19]            ; ControladorPrincipal:inst|ContadorTempo[19]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.922      ;
-; 0.640 ; ControladorPrincipal:inst|ContadorTempo[21]            ; ControladorPrincipal:inst|ContadorTempo[21]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.922      ;
-; 0.640 ; UART:inst1|tx_shift[5]                                 ; UART:inst1|tx_shift[4]                                 ; clock        ; clock       ; 0.000        ; 0.079      ; 0.905      ;
-; 0.641 ; ControladorPrincipal:inst|i[27]                        ; ControladorPrincipal:inst|i[27]                        ; clock        ; clock       ; 0.000        ; 0.096      ; 0.923      ;
-; 0.642 ; ControladorPrincipal:inst|i[22]                        ; ControladorPrincipal:inst|i[22]                        ; clock        ; clock       ; 0.000        ; 0.096      ; 0.924      ;
-; 0.642 ; ControladorPrincipal:inst|estado_atual.Ler_RAM         ; ControladorPrincipal:inst|estado_atual.Transmitir_UART ; clock        ; clock       ; 0.000        ; 0.079      ; 0.907      ;
-; 0.642 ; ControladorPrincipal:inst|ContadorTempo[22]            ; ControladorPrincipal:inst|ContadorTempo[22]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.924      ;
-; 0.642 ; ControladorPrincipal:inst|ContadorTempo[31]            ; ControladorPrincipal:inst|ContadorTempo[31]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.924      ;
-; 0.643 ; ControladorPrincipal:inst|i[23]                        ; ControladorPrincipal:inst|i[23]                        ; clock        ; clock       ; 0.000        ; 0.096      ; 0.925      ;
-; 0.644 ; ControladorPrincipal:inst|ContadorTempo[0]             ; ControladorPrincipal:inst|ContadorTempo[0]             ; clock        ; clock       ; 0.000        ; 0.096      ; 0.926      ;
-; 0.644 ; ControladorPrincipal:inst|ContadorTempo[14]            ; ControladorPrincipal:inst|ContadorTempo[14]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.926      ;
-; 0.644 ; ControladorPrincipal:inst|i[16]                        ; ControladorPrincipal:inst|i[16]                        ; clock        ; clock       ; 0.000        ; 0.096      ; 0.926      ;
-; 0.644 ; ControladorPrincipal:inst|ContadorTempo[16]            ; ControladorPrincipal:inst|ContadorTempo[16]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.926      ;
-; 0.645 ; ControladorPrincipal:inst|ContadorTempo[20]            ; ControladorPrincipal:inst|ContadorTempo[20]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.927      ;
-; 0.645 ; ControladorPrincipal:inst|i[18]                        ; ControladorPrincipal:inst|i[18]                        ; clock        ; clock       ; 0.000        ; 0.096      ; 0.927      ;
-; 0.645 ; ControladorPrincipal:inst|i[20]                        ; ControladorPrincipal:inst|i[20]                        ; clock        ; clock       ; 0.000        ; 0.096      ; 0.927      ;
-; 0.645 ; ControladorPrincipal:inst|ContadorTempo[18]            ; ControladorPrincipal:inst|ContadorTempo[18]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.927      ;
-; 0.646 ; ControladorPrincipal:inst|ContadorTempo[28]            ; ControladorPrincipal:inst|ContadorTempo[28]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.928      ;
-; 0.646 ; ControladorPrincipal:inst|ContadorTempo[24]            ; ControladorPrincipal:inst|ContadorTempo[24]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.928      ;
-; 0.646 ; ControladorPrincipal:inst|ContadorTempo[26]            ; ControladorPrincipal:inst|ContadorTempo[26]            ; clock        ; clock       ; 0.000        ; 0.096      ; 0.928      ;
-; 0.655 ; ControladorPrincipal:inst|ContadorTempo[13]            ; ControladorPrincipal:inst|ContadorTempo[13]            ; clock        ; clock       ; 0.000        ; 0.080      ; 0.921      ;
-; 0.655 ; ControladorPrincipal:inst|ContadorTempo[15]            ; ControladorPrincipal:inst|ContadorTempo[15]            ; clock        ; clock       ; 0.000        ; 0.080      ; 0.921      ;
-; 0.656 ; ControladorPrincipal:inst|i[5]                         ; ControladorPrincipal:inst|i[5]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.921      ;
-; 0.656 ; ControladorPrincipal:inst|i[13]                        ; ControladorPrincipal:inst|i[13]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.921      ;
-; 0.656 ; ControladorPrincipal:inst|i[15]                        ; ControladorPrincipal:inst|i[15]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.921      ;
-; 0.656 ; ControladorPrincipal:inst|ContadorTempo[11]            ; ControladorPrincipal:inst|ContadorTempo[11]            ; clock        ; clock       ; 0.000        ; 0.080      ; 0.922      ;
-; 0.657 ; UART:inst1|tx_clk_cnt[3]                               ; UART:inst1|tx_clk_cnt[3]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
-; 0.657 ; UART:inst1|tx_clk_cnt[13]                              ; UART:inst1|tx_clk_cnt[13]                              ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
-; 0.657 ; UART:inst1|tx_clk_cnt[5]                               ; UART:inst1|tx_clk_cnt[5]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
-; 0.657 ; ControladorPrincipal:inst|i[1]                         ; ControladorPrincipal:inst|i[1]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
-; 0.657 ; ControladorPrincipal:inst|i[11]                        ; ControladorPrincipal:inst|i[11]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
-; 0.657 ; ControladorPrincipal:inst|i[19]                        ; ControladorPrincipal:inst|i[19]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
-; 0.657 ; ControladorPrincipal:inst|i[29]                        ; ControladorPrincipal:inst|i[29]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
-; 0.658 ; UART:inst1|tx_clk_cnt[11]                              ; UART:inst1|tx_clk_cnt[11]                              ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
-; 0.658 ; UART:inst1|tx_clk_cnt[1]                               ; UART:inst1|tx_clk_cnt[1]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
-; 0.658 ; ControladorPrincipal:inst|i[17]                        ; ControladorPrincipal:inst|i[17]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
-; 0.658 ; ControladorPrincipal:inst|ContadorTempo[6]             ; ControladorPrincipal:inst|ContadorTempo[6]             ; clock        ; clock       ; 0.000        ; 0.080      ; 0.924      ;
-; 0.658 ; ControladorPrincipal:inst|ContadorTempo[7]             ; ControladorPrincipal:inst|ContadorTempo[7]             ; clock        ; clock       ; 0.000        ; 0.080      ; 0.924      ;
-; 0.658 ; ControladorPrincipal:inst|ContadorTempo[9]             ; ControladorPrincipal:inst|ContadorTempo[9]             ; clock        ; clock       ; 0.000        ; 0.080      ; 0.924      ;
-; 0.658 ; ControladorPrincipal:inst|ContadorTempo[17]            ; ControladorPrincipal:inst|ContadorTempo[17]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
-; 0.658 ; ControladorPrincipal:inst|ContadorTempo[27]            ; ControladorPrincipal:inst|ContadorTempo[27]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
-; 0.659 ; UART:inst1|tx_clk_cnt[6]                               ; UART:inst1|tx_clk_cnt[6]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
-; 0.659 ; UART:inst1|tx_clk_cnt[15]                              ; UART:inst1|tx_clk_cnt[15]                              ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
-; 0.659 ; ControladorPrincipal:inst|i[6]                         ; ControladorPrincipal:inst|i[6]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
-; 0.659 ; ControladorPrincipal:inst|i[7]                         ; ControladorPrincipal:inst|i[7]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
-; 0.659 ; ControladorPrincipal:inst|i[9]                         ; ControladorPrincipal:inst|i[9]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
-; 0.659 ; ControladorPrincipal:inst|i[31]                        ; ControladorPrincipal:inst|i[31]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
-; 0.660 ; UART:inst1|tx_clk_cnt[7]                               ; UART:inst1|tx_clk_cnt[7]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
-; 0.660 ; UART:inst1|tx_clk_cnt[9]                               ; UART:inst1|tx_clk_cnt[9]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
-; 0.660 ; ControladorPrincipal:inst|i[25]                        ; ControladorPrincipal:inst|i[25]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
-; 0.660 ; ControladorPrincipal:inst|ContadorTempo[23]            ; ControladorPrincipal:inst|ContadorTempo[23]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
-; 0.660 ; ControladorPrincipal:inst|ContadorTempo[25]            ; ControladorPrincipal:inst|ContadorTempo[25]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
-; 0.661 ; ControladorPrincipal:inst|i[2]                         ; ControladorPrincipal:inst|i[2]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.926      ;
-; 0.661 ; ControladorPrincipal:inst|i[14]                        ; ControladorPrincipal:inst|i[14]                        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.926      ;
-; 0.661 ; ControladorPrincipal:inst|ContadorTempo[8]             ; ControladorPrincipal:inst|ContadorTempo[8]             ; clock        ; clock       ; 0.000        ; 0.080      ; 0.927      ;
-; 0.661 ; ControladorPrincipal:inst|ContadorTempo[10]            ; ControladorPrincipal:inst|ContadorTempo[10]            ; clock        ; clock       ; 0.000        ; 0.080      ; 0.927      ;
-; 0.661 ; ControladorPrincipal:inst|ContadorTempo[12]            ; ControladorPrincipal:inst|ContadorTempo[12]            ; clock        ; clock       ; 0.000        ; 0.080      ; 0.927      ;
-; 0.662 ; UART:inst1|tx_clk_cnt[2]                               ; UART:inst1|tx_clk_cnt[2]                               ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
-+-------+--------------------------------------------------------+--------------------------------------------------------+--------------+-------------+--------------+------------+------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Hold: 'clock'                                                                                                                                                                       ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                         ; To Node                                           ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.387 ; GameStatusSend:inst3|estado_atual.S_PAUSA_PACOTE  ; GameStatusSend:inst3|estado_atual.S_PAUSA_PACOTE  ; clock        ; clock       ; 0.000        ; 0.096      ; 0.669      ;
+; 0.404 ; UART:inst1|tx                                     ; UART:inst1|tx                                     ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; UART:inst1|tx_bit_cnt[1]                          ; UART:inst1|tx_bit_cnt[1]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; UART:inst1|tx_bit_cnt[2]                          ; UART:inst1|tx_bit_cnt[2]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; UART:inst1|tx_busy                                ; UART:inst1|tx_busy                                ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; ControladorUART:inst|estado_atual.OCIOSO          ; ControladorUART:inst|estado_atual.OCIOSO          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; ControladorUART:inst|estado_atual.AGUARDAR        ; ControladorUART:inst|estado_atual.AGUARDAR        ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; GameStatusSend:inst3|estado_atual.S_ESPERA_FIM    ; GameStatusSend:inst3|estado_atual.S_ESPERA_FIM    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
+; 0.404 ; GameStatusSend:inst3|iniciar_envio                ; GameStatusSend:inst3|iniciar_envio                ; clock        ; clock       ; 0.000        ; 0.079      ; 0.669      ;
+; 0.405 ; ControladorUART:inst|data_reg[0]                  ; ControladorUART:inst|data_reg[0]                  ; clock        ; clock       ; 0.000        ; 0.078      ; 0.669      ;
+; 0.405 ; GameStatusSend:inst3|dado_saida[0]                ; GameStatusSend:inst3|dado_saida[0]                ; clock        ; clock       ; 0.000        ; 0.078      ; 0.669      ;
+; 0.409 ; UART:inst1|tx_bit_cnt[0]                          ; UART:inst1|tx_bit_cnt[0]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.674      ;
+; 0.431 ; UART:inst1|tx_shift[4]                            ; UART:inst1|tx_shift[3]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.696      ;
+; 0.431 ; UART:inst1|tx_shift[5]                            ; UART:inst1|tx_shift[4]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.696      ;
+; 0.432 ; UART:inst1|tx_shift[2]                            ; UART:inst1|tx_shift[1]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.697      ;
+; 0.432 ; UART:inst1|tx_shift[7]                            ; UART:inst1|tx_shift[6]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.697      ;
+; 0.436 ; GameStatusSend:inst3|indice_chunk[5]              ; GameStatusSend:inst3|indice_chunk[5]              ; clock        ; clock       ; 0.000        ; 0.078      ; 0.700      ;
+; 0.474 ; GameStatusSend:inst3|contador_delay[25]           ; GameStatusSend:inst3|contador_delay[25]           ; clock        ; clock       ; 0.000        ; 0.078      ; 0.738      ;
+; 0.574 ; GameStatusSend:inst3|estado_atual.S_ESPERA_FIM    ; GameStatusSend:inst3|estado_atual.S_INICIA_ENVIO  ; clock        ; clock       ; 0.000        ; 0.079      ; 0.839      ;
+; 0.591 ; UART:inst1|tx_shift[8]                            ; UART:inst1|tx_shift[7]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.856      ;
+; 0.613 ; ControladorUART:inst|estado_atual.AGUARDAR        ; ControladorUART:inst|estado_atual.OCIOSO          ; clock        ; clock       ; 0.000        ; 0.078      ; 0.877      ;
+; 0.624 ; ControladorUART:inst|estado_atual.OCIOSO          ; ControladorUART:inst|data_reg[0]                  ; clock        ; clock       ; 0.000        ; 0.078      ; 0.888      ;
+; 0.634 ; GameStatusSend:inst3|estado_atual.S_INICIA_ENVIO  ; GameStatusSend:inst3|estado_atual.S_PREPARA_CHUNK ; clock        ; clock       ; 0.000        ; 0.509      ; 1.329      ;
+; 0.638 ; GameStatusSend:inst3|iniciar_envio                ; ControladorUART:inst|estado_atual.TRANSMITIR      ; clock        ; clock       ; 0.000        ; 0.078      ; 0.902      ;
+; 0.643 ; GameStatusSend:inst3|contador_delay[3]            ; GameStatusSend:inst3|contador_delay[3]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.908      ;
+; 0.644 ; UART:inst1|tx_shift[3]                            ; UART:inst1|tx_shift[2]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.909      ;
+; 0.645 ; GameStatusSend:inst3|contador_delay[1]            ; GameStatusSend:inst3|contador_delay[1]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.910      ;
+; 0.645 ; GameStatusSend:inst3|contador_delay[2]            ; GameStatusSend:inst3|contador_delay[2]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.910      ;
+; 0.648 ; GameStatusSend:inst3|contador_delay[6]            ; GameStatusSend:inst3|contador_delay[6]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.913      ;
+; 0.654 ; UART:inst1|tx_busy                                ; UART:inst1|tx_shift[1]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.919      ;
+; 0.654 ; UART:inst1|tx_busy                                ; UART:inst1|tx_shift[7]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.919      ;
+; 0.655 ; GameStatusSend:inst3|indice_chunk[4]              ; GameStatusSend:inst3|indice_chunk[4]              ; clock        ; clock       ; 0.000        ; 0.078      ; 0.919      ;
+; 0.655 ; GameStatusSend:inst3|indice_chunk[1]              ; GameStatusSend:inst3|indice_chunk[1]              ; clock        ; clock       ; 0.000        ; 0.078      ; 0.919      ;
+; 0.656 ; UART:inst1|tx_busy                                ; UART:inst1|tx_shift[4]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.921      ;
+; 0.657 ; UART:inst1|tx_clk_cnt[3]                          ; UART:inst1|tx_clk_cnt[3]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; UART:inst1|tx_clk_cnt[5]                          ; UART:inst1|tx_clk_cnt[5]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; UART:inst1|tx_clk_cnt[13]                         ; UART:inst1|tx_clk_cnt[13]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.657 ; UART:inst1|tx_busy                                ; UART:inst1|tx_shift[3]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.922      ;
+; 0.658 ; UART:inst1|tx_clk_cnt[11]                         ; UART:inst1|tx_clk_cnt[11]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.658 ; UART:inst1|tx_clk_cnt[1]                          ; UART:inst1|tx_clk_cnt[1]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.658 ; GameStatusSend:inst3|indice_chunk[2]              ; GameStatusSend:inst3|indice_chunk[2]              ; clock        ; clock       ; 0.000        ; 0.078      ; 0.922      ;
+; 0.658 ; GameStatusSend:inst3|contador_delay[10]           ; GameStatusSend:inst3|contador_delay[10]           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.658 ; GameStatusSend:inst3|contador_delay[11]           ; GameStatusSend:inst3|contador_delay[11]           ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.658 ; UART:inst1|tx_busy                                ; UART:inst1|tx_shift[6]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.923      ;
+; 0.659 ; UART:inst1|tx_clk_cnt[6]                          ; UART:inst1|tx_clk_cnt[6]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; UART:inst1|tx_clk_cnt[15]                         ; UART:inst1|tx_clk_cnt[15]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; GameStatusSend:inst3|contador_delay[19]           ; GameStatusSend:inst3|contador_delay[19]           ; clock        ; clock       ; 0.000        ; 0.078      ; 0.923      ;
+; 0.659 ; GameStatusSend:inst3|contador_delay[5]            ; GameStatusSend:inst3|contador_delay[5]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; GameStatusSend:inst3|contador_delay[7]            ; GameStatusSend:inst3|contador_delay[7]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; GameStatusSend:inst3|contador_delay[8]            ; GameStatusSend:inst3|contador_delay[8]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.659 ; GameStatusSend:inst3|contador_delay[9]            ; GameStatusSend:inst3|contador_delay[9]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.924      ;
+; 0.660 ; UART:inst1|tx_busy                                ; UART:inst1|tx_shift[2]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
+; 0.660 ; UART:inst1|tx_clk_cnt[7]                          ; UART:inst1|tx_clk_cnt[7]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
+; 0.660 ; UART:inst1|tx_clk_cnt[9]                          ; UART:inst1|tx_clk_cnt[9]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.925      ;
+; 0.661 ; GameStatusSend:inst3|contador_delay[24]           ; GameStatusSend:inst3|contador_delay[24]           ; clock        ; clock       ; 0.000        ; 0.078      ; 0.925      ;
+; 0.662 ; UART:inst1|tx_clk_cnt[2]                          ; UART:inst1|tx_clk_cnt[2]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.662 ; UART:inst1|tx_clk_cnt[4]                          ; UART:inst1|tx_clk_cnt[4]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.662 ; GameStatusSend:inst3|contador_delay[23]           ; GameStatusSend:inst3|contador_delay[23]           ; clock        ; clock       ; 0.000        ; 0.078      ; 0.926      ;
+; 0.662 ; GameStatusSend:inst3|contador_delay[21]           ; GameStatusSend:inst3|contador_delay[21]           ; clock        ; clock       ; 0.000        ; 0.078      ; 0.926      ;
+; 0.662 ; GameStatusSend:inst3|contador_delay[4]            ; GameStatusSend:inst3|contador_delay[4]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.927      ;
+; 0.663 ; UART:inst1|tx_clk_cnt[8]                          ; UART:inst1|tx_clk_cnt[8]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.928      ;
+; 0.663 ; UART:inst1|tx_clk_cnt[10]                         ; UART:inst1|tx_clk_cnt[10]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.928      ;
+; 0.663 ; UART:inst1|tx_clk_cnt[14]                         ; UART:inst1|tx_clk_cnt[14]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.928      ;
+; 0.663 ; UART:inst1|tx_clk_cnt[12]                         ; UART:inst1|tx_clk_cnt[12]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 0.928      ;
+; 0.664 ; GameStatusSend:inst3|contador_delay[22]           ; GameStatusSend:inst3|contador_delay[22]           ; clock        ; clock       ; 0.000        ; 0.078      ; 0.928      ;
+; 0.664 ; GameStatusSend:inst3|contador_delay[20]           ; GameStatusSend:inst3|contador_delay[20]           ; clock        ; clock       ; 0.000        ; 0.078      ; 0.928      ;
+; 0.665 ; GameStatusSend:inst3|estado_atual.S_INICIA_ENVIO  ; GameStatusSend:inst3|estado_atual.S_ESPERA_FIM    ; clock        ; clock       ; 0.000        ; 0.079      ; 0.930      ;
+; 0.667 ; GameStatusSend:inst3|estado_atual.S_INICIA_ENVIO  ; GameStatusSend:inst3|iniciar_envio                ; clock        ; clock       ; 0.000        ; 0.079      ; 0.932      ;
+; 0.669 ; GameStatusSend:inst3|indice_chunk[3]              ; GameStatusSend:inst3|indice_chunk[3]              ; clock        ; clock       ; 0.000        ; 0.078      ; 0.933      ;
+; 0.677 ; GameStatusSend:inst3|contador_delay[0]            ; GameStatusSend:inst3|contador_delay[0]            ; clock        ; clock       ; 0.000        ; 0.079      ; 0.942      ;
+; 0.682 ; GameStatusSend:inst3|indice_chunk[0]              ; GameStatusSend:inst3|indice_chunk[0]              ; clock        ; clock       ; 0.000        ; 0.078      ; 0.946      ;
+; 0.684 ; UART:inst1|tx_clk_cnt[0]                          ; UART:inst1|tx_clk_cnt[0]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.949      ;
+; 0.712 ; UART:inst1|tx_busy                                ; UART:inst1|tx_bit_cnt[1]                          ; clock        ; clock       ; 0.000        ; 0.078      ; 0.976      ;
+; 0.712 ; UART:inst1|tx_busy                                ; UART:inst1|tx_bit_cnt[0]                          ; clock        ; clock       ; 0.000        ; 0.078      ; 0.976      ;
+; 0.713 ; UART:inst1|tx_busy                                ; UART:inst1|tx_bit_cnt[3]                          ; clock        ; clock       ; 0.000        ; 0.078      ; 0.977      ;
+; 0.729 ; UART:inst1|tx_bit_cnt[0]                          ; UART:inst1|tx_bit_cnt[2]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 0.994      ;
+; 0.780 ; UART:inst1|tx_busy                                ; UART:inst1|tx_shift[8]                            ; clock        ; clock       ; 0.000        ; 0.079      ; 1.045      ;
+; 0.797 ; GameStatusSend:inst3|indice_chunk[3]              ; GameStatusSend:inst3|dado_saida[0]                ; clock        ; clock       ; 0.000        ; 0.078      ; 1.061      ;
+; 0.832 ; UART:inst1|tx_busy                                ; UART:inst1|tx                                     ; clock        ; clock       ; 0.000        ; 0.079      ; 1.097      ;
+; 0.873 ; UART:inst1|tx_bit_cnt[1]                          ; UART:inst1|tx_bit_cnt[2]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 1.138      ;
+; 0.880 ; GameStatusSend:inst3|estado_atual.S_PREPARA_CHUNK ; GameStatusSend:inst3|iniciar_envio                ; clock        ; clock       ; 0.000        ; -0.334     ; 0.732      ;
+; 0.883 ; ControladorUART:inst|estado_atual.OCIOSO          ; ControladorUART:inst|estado_atual.TRANSMITIR      ; clock        ; clock       ; 0.000        ; 0.078      ; 1.147      ;
+; 0.889 ; GameStatusSend:inst3|indice_chunk[4]              ; GameStatusSend:inst3|estado_atual.S_PREPARA_CHUNK ; clock        ; clock       ; 0.000        ; 0.510      ; 1.585      ;
+; 0.903 ; GameStatusSend:inst3|indice_chunk[0]              ; GameStatusSend:inst3|dado_saida[0]                ; clock        ; clock       ; 0.000        ; 0.078      ; 1.167      ;
+; 0.920 ; GameStatusSend:inst3|iniciar_envio                ; ControladorUART:inst|data_reg[0]                  ; clock        ; clock       ; 0.000        ; 0.078      ; 1.184      ;
+; 0.961 ; GameStatusSend:inst3|contador_delay[3]            ; GameStatusSend:inst3|contador_delay[4]            ; clock        ; clock       ; 0.000        ; 0.079      ; 1.226      ;
+; 0.962 ; GameStatusSend:inst3|contador_delay[1]            ; GameStatusSend:inst3|contador_delay[2]            ; clock        ; clock       ; 0.000        ; 0.079      ; 1.227      ;
+; 0.972 ; GameStatusSend:inst3|indice_chunk[1]              ; GameStatusSend:inst3|indice_chunk[2]              ; clock        ; clock       ; 0.000        ; 0.078      ; 1.236      ;
+; 0.972 ; GameStatusSend:inst3|contador_delay[2]            ; GameStatusSend:inst3|contador_delay[3]            ; clock        ; clock       ; 0.000        ; 0.079      ; 1.237      ;
+; 0.975 ; UART:inst1|tx_clk_cnt[5]                          ; UART:inst1|tx_clk_cnt[6]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 1.240      ;
+; 0.975 ; UART:inst1|tx_clk_cnt[1]                          ; UART:inst1|tx_clk_cnt[2]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 1.240      ;
+; 0.975 ; UART:inst1|tx_clk_cnt[3]                          ; UART:inst1|tx_clk_cnt[4]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 1.240      ;
+; 0.975 ; UART:inst1|tx_clk_cnt[13]                         ; UART:inst1|tx_clk_cnt[14]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 1.240      ;
+; 0.975 ; GameStatusSend:inst3|contador_delay[6]            ; GameStatusSend:inst3|contador_delay[7]            ; clock        ; clock       ; 0.000        ; 0.079      ; 1.240      ;
+; 0.976 ; GameStatusSend:inst3|contador_delay[5]            ; GameStatusSend:inst3|contador_delay[6]            ; clock        ; clock       ; 0.000        ; 0.079      ; 1.241      ;
+; 0.976 ; GameStatusSend:inst3|contador_delay[9]            ; GameStatusSend:inst3|contador_delay[10]           ; clock        ; clock       ; 0.000        ; 0.079      ; 1.241      ;
+; 0.976 ; GameStatusSend:inst3|contador_delay[7]            ; GameStatusSend:inst3|contador_delay[8]            ; clock        ; clock       ; 0.000        ; 0.079      ; 1.241      ;
+; 0.976 ; UART:inst1|tx_clk_cnt[11]                         ; UART:inst1|tx_clk_cnt[12]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 1.241      ;
+; 0.977 ; UART:inst1|tx_clk_cnt[7]                          ; UART:inst1|tx_clk_cnt[8]                          ; clock        ; clock       ; 0.000        ; 0.079      ; 1.242      ;
+; 0.977 ; UART:inst1|tx_clk_cnt[9]                          ; UART:inst1|tx_clk_cnt[10]                         ; clock        ; clock       ; 0.000        ; 0.079      ; 1.242      ;
++-------+---------------------------------------------------+---------------------------------------------------+--------------+-------------+--------------+------------+------------+
 
 
 -------------------------
@@ -399,7 +399,6 @@ No synchronizer chains to report.
 ; Pin                     ; I/O Standard ; 10-90 Rise Time ; 90-10 Fall Time ;
 +-------------------------+--------------+-----------------+-----------------+
 ; rx                      ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
-; start                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; clock                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; reset                   ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
 ; ~ALTERA_ASDO_DATA1~     ; 2.5 V        ; 2000 ps         ; 2000 ps         ;
@@ -414,14 +413,14 @@ No synchronizer chains to report.
 ; Pin           ; I/O Standard ; Board Delay on Rise ; Board Delay on Fall ; Steady State Voh at FPGA Pin ; Steady State Vol at FPGA Pin ; Voh Max at FPGA Pin ; Vol Min at FPGA Pin ; Ringback Voltage on Rise at FPGA Pin ; Ringback Voltage on Fall at FPGA Pin ; 10-90 Rise Time at FPGA Pin ; 90-10 Fall Time at FPGA Pin ; Monotonic Rise at FPGA Pin ; Monotonic Fall at FPGA Pin ; Steady State Voh at Far-end ; Steady State Vol at Far-end ; Voh Max at Far-end ; Vol Min at Far-end ; Ringback Voltage on Rise at Far-end ; Ringback Voltage on Fall at Far-end ; 10-90 Rise Time at Far-end ; 90-10 Fall Time at Far-end ; Monotonic Rise at Far-end ; Monotonic Fall at Far-end ;
 +---------------+--------------+---------------------+---------------------+------------------------------+------------------------------+---------------------+---------------------+--------------------------------------+--------------------------------------+-----------------------------+-----------------------------+----------------------------+----------------------------+-----------------------------+-----------------------------+--------------------+--------------------+-------------------------------------+-------------------------------------+----------------------------+----------------------------+---------------------------+---------------------------+
 ; tx            ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
-; rx_ready      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; rx_ready      ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.36 V              ; -0.00552 V          ; 0.11 V                               ; 0.007 V                              ; 4.54e-10 s                  ; 4.35e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.36 V             ; -0.00552 V         ; 0.11 V                              ; 0.007 V                             ; 4.54e-10 s                 ; 4.35e-10 s                 ; Yes                       ; Yes                       ;
 ; rx_data[7]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
 ; rx_data[6]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
 ; rx_data[5]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
-; rx_data[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.33 V              ; -0.00265 V          ; 0.133 V                              ; 0.056 V                              ; 3.55e-09 s                  ; 3.31e-09 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.33 V             ; -0.00265 V         ; 0.133 V                             ; 0.056 V                             ; 3.55e-09 s                 ; 3.31e-09 s                 ; Yes                       ; Yes                       ;
-; rx_data[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[4]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[3]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
 ; rx_data[2]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
-; rx_data[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
+; rx_data[1]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 4.67e-07 V                   ; 2.35 V              ; -0.00942 V          ; 0.116 V                              ; 0.033 V                              ; 6.66e-10 s                  ; 6.27e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 4.67e-07 V                  ; 2.35 V             ; -0.00942 V         ; 0.116 V                             ; 0.033 V                             ; 6.66e-10 s                 ; 6.27e-10 s                 ; Yes                       ; Yes                       ;
 ; rx_data[0]    ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.92e-07 V                   ; 2.35 V              ; -0.00996 V          ; 0.121 V                              ; 0.03 V                               ; 4.64e-10 s                  ; 4.47e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 6.92e-07 V                  ; 2.35 V             ; -0.00996 V         ; 0.121 V                             ; 0.03 V                              ; 4.64e-10 s                 ; 4.47e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_DCLK~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 3.75e-07 V                   ; 2.35 V              ; -0.0109 V           ; 0.084 V                              ; 0.027 V                              ; 4.31e-10 s                  ; 3.61e-10 s                  ; Yes                        ; Yes                        ; 2.32 V                      ; 3.75e-07 V                  ; 2.35 V             ; -0.0109 V          ; 0.084 V                             ; 0.027 V                             ; 4.31e-10 s                 ; 3.61e-10 s                 ; Yes                       ; Yes                       ;
 ; ~ALTERA_nCEO~ ; 2.5 V        ; 0 s                 ; 0 s                 ; 2.32 V                       ; 6.15e-07 V                   ; 2.35 V              ; -0.00712 V          ; 0.093 V                              ; 0.02 V                               ; 6.21e-10 s                  ; 7.9e-10 s                   ; Yes                        ; Yes                        ; 2.32 V                      ; 6.15e-07 V                  ; 2.35 V             ; -0.00712 V         ; 0.093 V                             ; 0.02 V                              ; 6.21e-10 s                 ; 7.9e-10 s                  ; Yes                       ; Yes                       ;
@@ -433,7 +432,7 @@ No synchronizer chains to report.
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clock      ; clock    ; 4258     ; 0        ; 0        ; 0        ;
+; clock      ; clock    ; 2292     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -443,7 +442,7 @@ Entries labeled "false path" only account for clock-to-clock false paths and not
 +------------+----------+----------+----------+----------+----------+
 ; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
 +------------+----------+----------+----------+----------+----------+
-; clock      ; clock    ; 4258     ; 0        ; 0        ; 0        ;
+; clock      ; clock    ; 2292     ; 0        ; 0        ; 0        ;
 +------------+----------+----------+----------+----------+----------+
 Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
 
@@ -468,7 +467,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 0     ; 0    ;
 ; Unconstrained Input Ports       ; 1     ; 1    ;
-; Unconstrained Input Port Paths  ; 102   ; 102  ;
+; Unconstrained Input Port Paths  ; 75    ; 75   ;
 ; Unconstrained Output Ports      ; 1     ; 1    ;
 ; Unconstrained Output Port Paths ; 1     ; 1    ;
 +---------------------------------+-------+------+
@@ -525,7 +524,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus Prime Timing Analyzer
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jul 11 18:24:50 2025
+    Info: Processing started: Mon Jul 14 17:58:50 2025
 Info: Command: quartus_sta UART_Memoria -c UART_Memoria
 Info: qsta_default_script.tcl version: #1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
@@ -541,26 +540,26 @@ Info (332123): Deriving Clock Uncertainty. Please refer to report_sdc in the Tim
 Info: Found TIMING_ANALYZER_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
 Critical Warning (332148): Timing requirements not met
     Info (11105): For recommendations on closing timing, run Report Timing Closure Recommendations in the Timing Analyzer.
-Info (332146): Worst-case setup slack is -3.515
+Info (332146): Worst-case setup slack is -3.247
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.515            -281.536 clock 
-Info (332146): Worst-case hold slack is 0.386
+    Info (332119):    -3.247            -193.191 clock 
+Info (332146): Worst-case hold slack is 0.387
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):     0.386               0.000 clock 
+    Info (332119):     0.387               0.000 clock 
 Info (332140): No Recovery paths to report
 Info (332140): No Removal paths to report
 Info (332146): Worst-case minimum pulse width slack is -3.000
     Info (332119):     Slack       End Point TNS Clock 
     Info (332119): ========= =================== =====================
-    Info (332119):    -3.000            -134.070 clock 
+    Info (332119):    -3.000             -99.375 clock 
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime Timing Analyzer was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 481 megabytes
-    Info: Processing ended: Fri Jul 11 18:24:51 2025
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 484 megabytes
+    Info: Processing ended: Mon Jul 14 17:58:50 2025
+    Info: Elapsed time: 00:00:00
     Info: Total CPU time (on all processors): 00:00:01
 
 

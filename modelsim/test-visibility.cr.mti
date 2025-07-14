@@ -1,0 +1,15 @@
+/home/fontana/dev/ufba/lab-1/sudoku/modelsim/design.v {1 {vlog -work work -stats=none /home/fontana/dev/ufba/lab-1/sudoku/modelsim/design.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module NibblePackerSerializer
+
+Top level modules:
+	NibblePackerSerializer
+
+} {} {}} /home/fontana/dev/ufba/lab-1/sudoku/modelsim/testbench.v {1 {vlog -work work -stats=none /home/fontana/dev/ufba/lab-1/sudoku/modelsim/testbench.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_NibblePackerSerializer
+
+Top level modules:
+	tb_NibblePackerSerializer
+
+} {} {}}

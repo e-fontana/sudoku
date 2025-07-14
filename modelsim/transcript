@@ -1,20 +1,17 @@
+# Compile of design.v was successful.
+# Compile of testbench.v failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
 # Compile of design.v failed with 1 errors.
-# Compile of testbench.v was successful.
+# Compile of testbench.v failed with 3 errors.
+# 2 compiles, 2 failed with 4 errors.
+# Error opening /home/fontana/dev/ufba/lab-1/sudoku/modelsim/(vlog-13038) /home/fontana/dev/ufba/lab-1/sudoku/modelsim/design.v
+# Path name '/home/fontana/dev/ufba/lab-1/sudoku/modelsim/(vlog-13038) /home/fontana/dev/ufba/lab-1/sudoku/modelsim/design.v' doesn't exist.
+# Compile of design.v failed with 1 errors.
+# Compile of testbench.v failed with 3 errors.
+# 2 compiles, 2 failed with 4 errors.
 # Compile of design.v was successful.
-# 3 compiles, 1 failed with 1 error.
-# Error opening /home/fontana/dev/ufba/lab-1/sudoku/modelsim/(vlog-13069) /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v
-# Path name '/home/fontana/dev/ufba/lab-1/sudoku/modelsim/(vlog-13069) /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v' doesn't exist.
-# Error opening /home/fontana/dev/ufba/lab-1/sudoku/modelsim/(vlog-13069) /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v
-# Path name '/home/fontana/dev/ufba/lab-1/sudoku/modelsim/(vlog-13069) /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/design.v' doesn't exist.
-# Compile of design.v failed with 8 errors.
-# Compile of testbench.v was successful.
-# Compile of design.v was successful.
-# 3 compiles, 1 failed with 8 errors.
-# Compile of design.v failed with 8 errors.
-# Compile of testbench.v was successful.
-# Compile of design.v was successful.
-# 3 compiles, 1 failed with 8 errors.
+# Compile of testbench.v failed with 3 errors.
+# 2 compiles, 1 failed with 3 errors.
 # Compile of design.v was successful.
 # Compile of testbench.v was successful.
-# Compile of design.v was successful.
-# 3 compiles, 0 failed with no errors.
+# 2 compiles, 0 failed with no errors.

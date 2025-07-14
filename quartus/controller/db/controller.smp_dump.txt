@@ -1,4 +1,88 @@
 
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[11].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[10].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[9].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[8].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[7].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[6].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[5].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[4].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[3].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[2].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[1].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst1|button_debouncer:debounce_blocks[0].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
 State Machine - |top|controller_reader:inst|state
 Name state.STATE_SIX state.STATE_FIVE state.STATE_FOUR state.STATE_THREE state.STATE_TWO state.STATE_ONE state.STATE_ZERO state.STATE_IDLE state.STATE_SEVEN 
 state.STATE_IDLE 0 0 0 0 0 0 0 0 0 
