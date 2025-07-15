@@ -44,6 +44,9 @@ class SerialReader:
                     case 0xAC:  # Mapa completo
                         print("Mapa completo recebido.")
                         full_map_bytes = ser.read(41)
+                        full_map_data = full_map.decode_full_map(full_map_bytes)
+
+                        print(full_map_data)
                         
                         if len(full_map_bytes) != 41:
                             print("Pacote incompleto após cabeçalho. Descartando.")
@@ -66,13 +69,12 @@ class SerialReader:
             
             except KeyboardInterrupt:
                 print("Interrompido pelo usuário.")
+                ser.close()
                 break
             except Exception as e:
                 print(f"Ocorreu um erro: {e}")
-                break
-            finally:
                 ser.close()
-    
+                break
 # Exemplo de como usar a classe
 if __name__ == '__main__':
     model = Modelo()

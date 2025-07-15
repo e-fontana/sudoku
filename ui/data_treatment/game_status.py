@@ -1,10 +1,9 @@
-from colors import Color
+from data_treatment.colors import Color
 
 def decode_status(payload_bytes):
     """
     Recebe os dados do jogo e retorna um dicionário com o status atual.
     """
-
     payload_int = int.from_bytes(payload_bytes, 'big')
 
     shift_cores = 184 - 162
@@ -24,10 +23,9 @@ def decode_status(payload_bytes):
     mask_numero = 0x0F # Máscara de 4 bits (2^4 - 1)
     numero_selecionado = (payload_int >> shift_numero) & mask_numero
 
-    colors = [Color[i] for i in decodificar_cores(cores_int=cores)]
     
     return {
-        "colors": colors,
+        "colors": cores,
         "position": (pos_x, pos_y),
         "errors": erros,
         "selected_number": numero_selecionado
