@@ -66,12 +66,12 @@ class SerialReader:
             
             except KeyboardInterrupt:
                 print("Interrompido pelo usuário.")
-                ser.close()
                 break
             except Exception as e:
                 print(f"Ocorreu um erro: {e}")
-                ser.close()
                 break
+            finally:
+                ser.close()
     
 # Exemplo de como usar a classe
 if __name__ == '__main__':
