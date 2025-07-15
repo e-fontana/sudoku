@@ -26,12 +26,11 @@ class Game:
     font_path = "assets/fonts/PressStart2P-Regular.ttf"
 
 
-    def __init__(self):
+    def __init__(self, modelo: Modelo):
         pygame.init()
-    
+        self.modelo = modelo
         REFRESH = pygame.USEREVENT + 1
         pygame.time.set_timer(REFRESH, 30)
-        self.modelo = Modelo(self)
 
         self.screen = pygame.display.set_mode((self.WIDTH, self.HEIGHT))
         pygame.display.set_caption(self.TITLE)

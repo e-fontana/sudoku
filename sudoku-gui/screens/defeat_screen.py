@@ -5,7 +5,7 @@ from screens.base_screen import BaseScreen
 class DefeatScreen(BaseScreen):
     BACKGROUND_IMAGE_PATH = "assets/images/defeat_bg.png"
 
-    INSTRUCTION = "press START to return"
+    INSTRUCTION = "press Z to return"
 
     PULSE_COLOR_SPEED = 3
     PULSE_MIN_BRIGHTNESS = 150
@@ -39,11 +39,11 @@ class DefeatScreen(BaseScreen):
         self.current_pulse_scale_value = scale_offset + scale_amplitude * math.sin(self.pulse_timer * self.PULSE_SCALE_SPEED * 2 * math.pi)
         self.current_pulse_scale_value = max(self.PULSE_MIN_SCALE, min(self.current_pulse_scale_value, self.PULSE_MAX_SCALE))
 
-    def handle_event(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                self.game.set_state(self.game.STATE_MENU)
-                print("Voltando para Menu Principal")
+    # def handle_event(self, event):
+    #     if event.type == pygame.KEYDOWN:
+    #         if event.key == pygame.K_ESCAPE:
+    #             self.game.set_state(self.game.STATE_MENU)
+    #             print("Voltando para Menu Principal")
     
     def draw(self, screen):
         screen.blit(self.background_image, (0, 0))

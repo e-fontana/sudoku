@@ -1,3 +1,4 @@
+from data_treatment.colors import Color
 import pygame
 from .base_screen import BaseScreen
 
@@ -44,15 +45,15 @@ class GameScreen(BaseScreen):
         self.position = self.game.modelo.positions # CASA SELECIONADA
         self.selectedNumber = self.game.modelo.selectedNumber
         self.endgame = self.game.modelo.endgame
-        self.positionColor = self.visibility[self.position[0]][self.position[1]][1]
+        self.finishGame = self.game.modelo.finishGame
+        self.positionColor = self.colors[self.position[0]][self.position[1]]
+        self.colors = self.game.modelo.colors
 
-        # Posição inicial do cursor
+        # Posição inicial do cursorvalue[9*i:9*i+8
         self.current_row = 4
         self.current_col = 4
         
         self.sudoku_board = self.game.modelo.map # MAPA
-        self.visibility = self.game.modelo.visibility # MATRIZ DE DICT {VISIBILITY, COLORS}
-
         
         self.start_ticks = pygame.time.get_ticks()
 
@@ -106,9 +107,9 @@ class GameScreen(BaseScreen):
                 cell_fill_color = self.CELL_BG_COLOR # Cor padrão
 
                 if row == self.current_row and col == self.current_col:
-                    if self.positionColor == 'red':
+                    if self.positionColor == Color.VERMELHO:
                         cell_fill_color = self.WRONG_CELL_COLOR
-                    elif self.positionColor == 'yellow':
+                    elif self.positionColor == Color.AMARELO:
                         cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR
                     else: # Cor para a célula selecionada
                         cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
@@ -144,7 +145,7 @@ class GameScreen(BaseScreen):
         for r in range(self.GRID_DIMENSION):
             for c in range(self.GRID_DIMENSION):
                 num = self.sudoku_board[r][c] # Pega o número do seu tabuleiro
-                if self.visibility[r][c][0]: # Se for para mostar a célula
+                if self.colors[r][c] == Color.BRANCO: # Se for para mostar a célula
                     num_surface = self.font_numbers.render(str(num), True, self.PURE_WHITE) # Texto em branco puro
                     num_rect = num_surface.get_rect(center=(self.GRID_START_X + c * self.CELL_SIZE + self.CELL_SIZE // 2,
                                                              self.GRID_START_Y + r * self.CELL_SIZE + self.CELL_SIZE // 2))
@@ -159,10 +160,10 @@ class GameScreen(BaseScreen):
             # Escolhe a cor de fundo da célula (normal ou selecionada)
             cell_fill_color = self.CELL_BG_COLOR # Cor padrão
             if col == self.selectedNumber - 1:
-                if self.positionColor == 'yellow':
-                    cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
-                else:
+                if self.positionColor == Color.AMARELO or self.positionColor == Color.VERMELHO:
                     cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
+                else:
+                    cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR # Cor para a célula deselecionada
 
             # Desenha o fundo opaco da célula com cantos arredondados (se CELL_BORDER_RADIUS > 0)
             cell_surface = pygame.Surface(cell_rect.size, pygame.SRCALPHA)

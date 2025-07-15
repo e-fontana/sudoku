@@ -14,11 +14,11 @@ class DifficultySelectionScreen(BaseScreen):
         self.background_image = pygame.transform.scale(self.background_image, (game.WIDTH, game.HEIGHT))
     
     def handle_event(self, event):
-        if self.game.modelo.difficulty :
+        if self.game.modelo.difficulty:
             self.selected_index = 1
         else:
             self.selected_index = 0
-        if self.game.modelo.receivedAnswerKey():
+        if self.game.modelo.map:
                 chosen_difficulty = self.options[self.selected_index]
                 print(f"Dificuldade escolhida: {chosen_difficulty}")
                 self.game.set_state(self.game.STATE_GAME)

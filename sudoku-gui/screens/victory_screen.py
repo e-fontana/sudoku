@@ -38,11 +38,11 @@ class VictoryScreen(BaseScreen):
         self.background_image = pygame.image.load(self.BACKGROUND_IMAGE_PATH)
         self.background_image = pygame.transform.scale(self.background_image, (game.WIDTH, game.HEIGHT))
     
-    def handle_event(self, event):
-        if event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                self.game.set_state(self.game.STATE_MENU)
-                print("Voltando para Menu Principal")
+    # def handle_event(self, event):
+    #     if event.type == pygame.KEYDOWN:
+    #         if event.key == pygame.K_ESCAPE:
+    #             self.game.set_state(self.game.STATE_MENU)
+    #             print("Voltando para Menu Principal")
 
     def update(self, dt):
         self.pulse_timer += dt
