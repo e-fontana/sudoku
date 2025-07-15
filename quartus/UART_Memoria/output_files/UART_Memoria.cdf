@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP4CE115F29) Path("/home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/output_files/") File("UART_Memoria.sof") MfrSpec(OpMask(1));
+		Device PartName(EP4CE115F29) Path("/home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/output_files/") File("UART_Memoria.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

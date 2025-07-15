@@ -1,5 +1,11 @@
 
-State Machine - |UART_Memoria|FullMapSendController:inst7|estado_atual
+State Machine - |UART_Memoria|MainController:inst10|arb_state
+Name arb_state.S_IDLE arb_state.S_SEND_STATUS arb_state.S_SEND_MAP 
+arb_state.S_IDLE 0 0 0 
+arb_state.S_SEND_MAP 1 0 1 
+arb_state.S_SEND_STATUS 1 1 0 
+
+State Machine - |UART_Memoria|MainController:inst10|GameStatusSend:status_sender|estado_atual
 Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
 estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
 estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
@@ -7,7 +13,7 @@ estado_atual.S_INICIA_ENVIO 0 1 0 1 0
 estado_atual.S_ESPERA_FIM 1 0 0 1 0 
 estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
 
-State Machine - |UART_Memoria|GameStatusSend:inst3|estado_atual
+State Machine - |UART_Memoria|MainController:inst10|FullMapSendController:map_sender|estado_atual
 Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
 estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
 estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 

@@ -15,7 +15,7 @@ module FullMapSendController #(parameter EVENT_CODE = 8'hAC) (
     localparam S_ESPERA_FIM     = 3'b011;
     localparam S_PROXIMO_CHUNK  = 3'b100;
     localparam QTD_CHUNKS = 42;
-    localparam DELAY_PACOTE = 50_000_000;
+    localparam DELAY_PACOTE = 1;
 
     reg [327:0] full_map_data = 328'd0;
 
@@ -125,7 +125,7 @@ module FullMapSendController #(parameter EVENT_CODE = 8'hAC) (
         estado_futuro = estado_atual;
         full_map_data = {
             4'h0,
-            full_map_input,
+            full_map_input
         };
         case (estado_atual)
             S_PAUSA_PACOTE:

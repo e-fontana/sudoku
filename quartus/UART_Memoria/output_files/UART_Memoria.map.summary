@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Failed - Mon Jul 14 19:52:53 2025
+Analysis & Synthesis Status : Successful - Tue Jul 15 16:22:35 2025
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : UART_Memoria
 Top-level Entity Name : UART_Memoria
 Family : Cyclone IV E
-Total logic elements : N/A until Partition Merge
-    Total combinational functions : N/A until Partition Merge
-    Dedicated logic registers : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total memory bits : N/A until Partition Merge
-Embedded Multiplier 9-bit elements : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
+Total logic elements : 211
+    Total combinational functions : 211
+    Dedicated logic registers : 115
+Total registers : 115
+Total pins : 14
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 0

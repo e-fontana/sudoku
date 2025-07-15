@@ -48,86 +48,86 @@ on the Quartus Prime software download page.
 	(port
 		(pt 0 80)
 		(input)
-		(text "game_started" (rect 0 0 55 12)(font "Arial" ))
-		(text "game_started" (rect 21 75 76 87)(font "Arial" ))
+		(text "game_dificulty" (rect 0 0 57 12)(font "Arial" ))
+		(text "game_dificulty" (rect 21 75 78 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80)(line_width 1))
 	)
 	(port
 		(pt 0 96)
 		(input)
-		(text "game_dificulty" (rect 0 0 57 12)(font "Arial" ))
-		(text "game_dificulty" (rect 21 91 78 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 1))
+		(text "full_board[323..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "full_board[323..0]" (rect 21 91 89 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
 		(pt 0 112)
 		(input)
-		(text "full_board[323..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "full_board[323..0]" (rect 21 107 89 119)(font "Arial" ))
+		(text "colors[161..0]" (rect 0 0 50 12)(font "Arial" ))
+		(text "colors[161..0]" (rect 21 107 71 119)(font "Arial" ))
 		(line (pt 0 112)(pt 16 112)(line_width 3))
 	)
 	(port
 		(pt 0 128)
 		(input)
-		(text "colors[161..0]" (rect 0 0 50 12)(font "Arial" ))
-		(text "colors[161..0]" (rect 21 123 71 135)(font "Arial" ))
+		(text "position[7..0]" (rect 0 0 48 12)(font "Arial" ))
+		(text "position[7..0]" (rect 21 123 69 135)(font "Arial" ))
 		(line (pt 0 128)(pt 16 128)(line_width 3))
 	)
 	(port
 		(pt 0 144)
 		(input)
-		(text "position_x[3..0]" (rect 0 0 59 12)(font "Arial" ))
-		(text "position_x[3..0]" (rect 21 139 80 151)(font "Arial" ))
+		(text "errors[1..0]" (rect 0 0 43 12)(font "Arial" ))
+		(text "errors[1..0]" (rect 21 139 64 151)(font "Arial" ))
 		(line (pt 0 144)(pt 16 144)(line_width 3))
 	)
 	(port
 		(pt 0 160)
 		(input)
-		(text "position_y[3..0]" (rect 0 0 60 12)(font "Arial" ))
-		(text "position_y[3..0]" (rect 21 155 81 167)(font "Arial" ))
+		(text "selected_number[3..0]" (rect 0 0 88 12)(font "Arial" ))
+		(text "selected_number[3..0]" (rect 21 155 109 167)(font "Arial" ))
 		(line (pt 0 160)(pt 16 160)(line_width 3))
 	)
 	(port
 		(pt 0 176)
 		(input)
-		(text "errors[1..0]" (rect 0 0 43 12)(font "Arial" ))
-		(text "errors[1..0]" (rect 21 171 64 183)(font "Arial" ))
-		(line (pt 0 176)(pt 16 176)(line_width 3))
+		(text "victory_condition" (rect 0 0 67 12)(font "Arial" ))
+		(text "victory_condition" (rect 21 171 88 183)(font "Arial" ))
+		(line (pt 0 176)(pt 16 176)(line_width 1))
 	)
 	(port
 		(pt 0 192)
 		(input)
-		(text "selected_number[3..0]" (rect 0 0 88 12)(font "Arial" ))
-		(text "selected_number[3..0]" (rect 21 187 109 199)(font "Arial" ))
+		(text "score[6..0]" (rect 0 0 42 12)(font "Arial" ))
+		(text "score[6..0]" (rect 21 187 63 199)(font "Arial" ))
 		(line (pt 0 192)(pt 16 192)(line_width 3))
 	)
 	(port
 		(pt 0 208)
 		(input)
-		(text "victory_condition" (rect 0 0 67 12)(font "Arial" ))
-		(text "victory_condition" (rect 21 203 88 215)(font "Arial" ))
-		(line (pt 0 208)(pt 16 208)(line_width 1))
+		(text "time_in_seconds[10..0]" (rect 0 0 90 12)(font "Arial" ))
+		(text "time_in_seconds[10..0]" (rect 21 203 111 215)(font "Arial" ))
+		(line (pt 0 208)(pt 16 208)(line_width 3))
 	)
 	(port
 		(pt 0 224)
 		(input)
-		(text "score[6..0]" (rect 0 0 42 12)(font "Arial" ))
-		(text "score[6..0]" (rect 21 219 63 231)(font "Arial" ))
-		(line (pt 0 224)(pt 16 224)(line_width 3))
-	)
-	(port
-		(pt 0 240)
-		(input)
-		(text "time_in_seconds[10..0]" (rect 0 0 90 12)(font "Arial" ))
-		(text "time_in_seconds[10..0]" (rect 21 235 111 247)(font "Arial" ))
-		(line (pt 0 240)(pt 16 240)(line_width 3))
+		(text "uart_busy" (rect 0 0 41 12)(font "Arial" ))
+		(text "uart_busy" (rect 21 219 62 231)(font "Arial" ))
+		(line (pt 0 224)(pt 16 224)(line_width 1))
 	)
 	(port
 		(pt 240 32)
 		(output)
+		(text "tx_start" (rect 0 0 30 12)(font "Arial" ))
+		(text "tx_start" (rect 189 27 219 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 1))
+	)
+	(port
+		(pt 240 48)
+		(output)
 		(text "tx_data[7..0]" (rect 0 0 49 12)(font "Arial" ))
-		(text "tx_data[7..0]" (rect 170 27 219 39)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32)(line_width 3))
+		(text "tx_data[7..0]" (rect 170 43 219 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 3))
 	)
 	(parameter
 		"INICIAR_JOGO"
@@ -147,11 +147,6 @@ on the Quartus Prime software download page.
 	(parameter
 		"CORRENDO_MAPA"
 		"011"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"PERCORRENDO_NUMEROS"
-		"100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)
 	(parameter
