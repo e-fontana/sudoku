@@ -1,13 +1,10 @@
-module GameStatusSend #(parameter EVENT_CODE = 8'hAD) (
+module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QTD = 41) (
     input  wire         clock,
     input  wire         reset,
     input  wire         habilitar_envio,    // pulso de ativação externo
     input  wire         uart_ocupado,
 
-    input wire [161:0] colors,
-    input wire [7:0] position,         // 8 bits: Posição (x, y)
-    input wire [1:0] errors,
-    input wire [3:0] selected_number,  // 4 bits: Número selecionado;
+    input wire [SEND_BYTES_QTD*8-1:0] buffer_envio,
 
     output reg          iniciar_envio,
     output reg [7:0]    dado_saida,
@@ -22,8 +19,6 @@ module GameStatusSend #(parameter EVENT_CODE = 8'hAD) (
     localparam QTD_CHUNKS = 24;
     localparam DELAY_PACOTE = 100;
 	 
-    reg [199:0] buffer_envio;
-
     reg [2:0]  estado_atual;
     reg [5:0]  indice_chunk;
     reg [25:0] contador_delay;
@@ -124,13 +119,6 @@ module GameStatusSend #(parameter EVENT_CODE = 8'hAD) (
     reg [2:0] estado_futuro;
     always @(*) begin
         estado_futuro = estado_atual;
-		          buffer_envio = {
-						  colors,         // 162 bits: Dados das cores
-						  position,       // 8 bits: Posição (x, y)
-						  errors,         // 2 bits: Quantidade de erros
-						  selected_number,    // 4 bits: Número selecionado
-						  8'b00000000            // 8 bits: Padding para fechar 200 bits
-					 };
         case (estado_atual)
             S_PAUSA_PACOTE:
                 if (habilitacao_reg && contador_delay >= DELAY_PACOTE - 1)

@@ -22,7 +22,7 @@ on the Quartus Prime software download page.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 424 368 592 384)
+	(rect 384 416 552 432)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "clock" (rect 5 0 29 11)(font "Arial" ))
 	(pt 168 8)
@@ -35,11 +35,11 @@ on the Quartus Prime software download page.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 368 368 424 392))
+	(annotation_block (location)(rect 328 408 384 432))
 )
 (pin
 	(input)
-	(rect 440 384 608 400)
+	(rect 384 432 552 448)
 	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
 	(text "reset" (rect 5 0 28 11)(font "Arial" ))
 	(pt 168 8)
@@ -52,7 +52,7 @@ on the Quartus Prime software download page.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 352 400 416 424))
+	(annotation_block (location)(rect 320 432 384 456))
 )
 (pin
 	(input)
@@ -72,23 +72,6 @@ on the Quartus Prime software download page.
 	(annotation_block (location)(rect 1304 432 1368 456))
 )
 (pin
-	(input)
-	(rect 184 8 352 24)
-	(text "INPUT" (rect 125 0 153 9)(font "Arial" (font_size 6)))
-	(text "test" (rect 5 0 22 11)(font "Arial" ))
-	(pt 168 8)
-	(drawing
-		(line (pt 84 12)(pt 109 12))
-		(line (pt 84 4)(pt 109 4))
-		(line (pt 113 8)(pt 168 8))
-		(line (pt 84 12)(pt 84 4))
-		(line (pt 109 4)(pt 113 8))
-		(line (pt 109 12)(pt 113 8))
-	)
-	(text "VCC" (rect 128 7 148 16)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect 112 24 184 40))
-)
-(pin
 	(output)
 	(rect 1704 408 1880 424)
 	(text "OUTPUT" (rect 1 0 39 9)(font "Arial" (font_size 6)))
@@ -103,7 +86,7 @@ on the Quartus Prime software download page.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 1888 352 1944 376))
+	(annotation_block (location)(rect 1880 408 1936 432))
 )
 (pin
 	(output)
@@ -220,7 +203,7 @@ on the Quartus Prime software download page.
 	(annotation_block (parameter)(rect 1704 320 1904 384))
 )
 (symbol
-	(rect 1000 392 1224 536)
+	(rect 1016 392 1240 536)
 	(text "ControladorUART" (rect 5 0 89 11)(font "Arial" ))
 	(text "inst" (rect 8 128 24 139)(font "Arial" ))
 	(port
@@ -290,156 +273,12 @@ on the Quartus Prime software download page.
 	(drawing
 		(rectangle (rect 16 16 208 128))
 	)
-	(annotation_block (parameter)(rect 1224 328 1424 392))
+	(annotation_block (parameter)(rect 1240 328 1440 392))
 )
 (symbol
-	(rect 736 -48 976 224)
-	(text "MainController" (rect 5 0 74 11)(font "Arial" ))
-	(text "inst10" (rect 8 256 38 268)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clock" (rect 0 0 24 11)(font "Arial" ))
-		(text "clock" (rect 21 27 45 38)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "reset" (rect 0 0 23 11)(font "Arial" ))
-		(text "reset" (rect 21 43 44 54)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "current_state[2..0]" (rect 0 0 86 11)(font "Arial" ))
-		(text "current_state[2..0]" (rect 21 59 107 70)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "game_dificulty" (rect 0 0 68 11)(font "Arial" ))
-		(text "game_dificulty" (rect 21 75 89 86)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 0 96)
-		(input)
-		(text "full_board[323..0]" (rect 0 0 82 11)(font "Arial" ))
-		(text "full_board[323..0]" (rect 21 91 103 102)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
-	)
-	(port
-		(pt 0 112)
-		(input)
-		(text "colors[161..0]" (rect 0 0 63 11)(font "Arial" ))
-		(text "colors[161..0]" (rect 21 107 84 118)(font "Arial" ))
-		(line (pt 0 112)(pt 16 112)(line_width 3))
-	)
-	(port
-		(pt 0 128)
-		(input)
-		(text "position[7..0]" (rect 0 0 60 11)(font "Arial" ))
-		(text "position[7..0]" (rect 21 123 81 134)(font "Arial" ))
-		(line (pt 0 128)(pt 16 128)(line_width 3))
-	)
-	(port
-		(pt 0 144)
-		(input)
-		(text "errors[1..0]" (rect 0 0 51 11)(font "Arial" ))
-		(text "errors[1..0]" (rect 21 139 72 150)(font "Arial" ))
-		(line (pt 0 144)(pt 16 144)(line_width 3))
-	)
-	(port
-		(pt 0 160)
-		(input)
-		(text "selected_number[3..0]" (rect 0 0 105 11)(font "Arial" ))
-		(text "selected_number[3..0]" (rect 21 155 126 166)(font "Arial" ))
-		(line (pt 0 160)(pt 16 160)(line_width 3))
-	)
-	(port
-		(pt 0 176)
-		(input)
-		(text "victory_condition" (rect 0 0 79 11)(font "Arial" ))
-		(text "victory_condition" (rect 21 171 100 182)(font "Arial" ))
-		(line (pt 0 176)(pt 16 176))
-	)
-	(port
-		(pt 0 192)
-		(input)
-		(text "score[6..0]" (rect 0 0 49 11)(font "Arial" ))
-		(text "score[6..0]" (rect 21 187 70 198)(font "Arial" ))
-		(line (pt 0 192)(pt 16 192)(line_width 3))
-	)
-	(port
-		(pt 0 208)
-		(input)
-		(text "time_in_seconds[10..0]" (rect 0 0 109 11)(font "Arial" ))
-		(text "time_in_seconds[10..0]" (rect 21 203 130 214)(font "Arial" ))
-		(line (pt 0 208)(pt 16 208)(line_width 3))
-	)
-	(port
-		(pt 0 224)
-		(input)
-		(text "uart_busy" (rect 0 0 47 11)(font "Arial" ))
-		(text "uart_busy" (rect 21 219 68 230)(font "Arial" ))
-		(line (pt 0 224)(pt 16 224))
-	)
-	(port
-		(pt 240 32)
-		(output)
-		(text "tx_start" (rect 0 0 35 11)(font "Arial" ))
-		(text "tx_start" (rect 190 27 225 38)(font "Arial" ))
-		(line (pt 240 32)(pt 224 32))
-	)
-	(port
-		(pt 240 48)
-		(output)
-		(text "tx_data[7..0]" (rect 0 0 59 11)(font "Arial" ))
-		(text "tx_data[7..0]" (rect 170 43 229 54)(font "Arial" ))
-		(line (pt 240 48)(pt 224 48)(line_width 3))
-	)
-	(parameter
-		"INICIAR_JOGO"
-		"000"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"SELECIONAR_DIFICULDADE"
-		"001"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"CARREGANDO"
-		"010"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"CORRENDO_MAPA"
-		"011"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"VITORIA"
-		"101"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(parameter
-		"DERROTA"
-		"110"
-		""
-		(type "PARAMETER_UNSIGNED_BIN")	)
-	(drawing
-		(rectangle (rect 16 16 224 256))
-	)
-	(annotation_block (parameter)(rect 976 -160 1248 -48))
-)
-(symbol
-	(rect 352 -16 560 192)
+	(rect 216 184 424 392)
 	(text "test_defs" (rect 5 0 48 11)(font "Arial" ))
-	(text "inst12" (rect 8 192 38 204)(font "Intel Clear" ))
+	(text "inst2" (rect 8 192 32 204)(font "Intel Clear" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -521,17 +360,90 @@ on the Quartus Prime software download page.
 		(rectangle (rect 16 16 192 192))
 	)
 )
-(connector
-	(pt 1728 464)
-	(pt 1704 464)
+(symbol
+	(rect 600 96 632 112)
+	(text "VCC" (rect 7 0 27 9)(font "Arial" (font_size 6)))
+	(text "inst4" (rect 3 5 27 17)(font "Intel Clear" )(invisible))
+	(port
+		(pt 16 16)
+		(output)
+		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
+		(text "1" (rect 19 7 27 18)(font "Courier New" (bold))(invisible))
+		(line (pt 16 16)(pt 16 8))
+	)
+	(drawing
+		(line (pt 8 8)(pt 24 8))
+	)
 )
-(connector
-	(pt 1728 464)
-	(pt 1728 552)
-)
-(connector
-	(pt 1288 280)
-	(pt 1288 432)
+(symbol
+	(rect 656 168 912 312)
+	(text "FullMapSendController" (rect 5 0 113 11)(font "Arial" ))
+	(text "inst10" (rect 8 128 36 139)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clock" (rect 0 0 24 11)(font "Arial" ))
+		(text "clock" (rect 21 27 45 38)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 23 11)(font "Arial" ))
+		(text "reset" (rect 21 43 44 54)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "habilitar_envio" (rect 0 0 68 11)(font "Arial" ))
+		(text "habilitar_envio" (rect 21 59 89 70)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "uart_ocupado" (rect 0 0 64 11)(font "Arial" ))
+		(text "uart_ocupado" (rect 21 75 85 86)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "full_map_input[323..0]" (rect 0 0 105 11)(font "Arial" ))
+		(text "full_map_input[323..0]" (rect 21 91 126 102)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 256 32)
+		(output)
+		(text "iniciar_envio" (rect 0 0 59 11)(font "Arial" ))
+		(text "iniciar_envio" (rect 186 27 235 38)(font "Arial" ))
+		(line (pt 256 32)(pt 240 32))
+	)
+	(port
+		(pt 256 48)
+		(output)
+		(text "dado_saida[7..0]" (rect 0 0 79 11)(font "Arial" ))
+		(text "dado_saida[7..0]" (rect 169 43 235 54)(font "Arial" ))
+		(line (pt 256 48)(pt 240 48)(line_width 3))
+	)
+	(port
+		(pt 256 64)
+		(output)
+		(text "envio_concluido" (rect 0 0 76 11)(font "Arial" ))
+		(text "envio_concluido" (rect 171 59 235 70)(font "Arial" ))
+		(line (pt 256 64)(pt 240 64))
+	)
+	(parameter
+		"EVENT_CODE"
+		"10101100"
+		""
+		(type "PARAMETER_UNSIGNED_BIN")	)
+	(drawing
+		(rectangle (rect 16 16 240 128))
+	)
+	(annotation_block (parameter)(rect 912 136 1136 168))
 )
 (connector
 	(pt 1304 416)
@@ -542,47 +454,9 @@ on the Quartus Prime software download page.
 	(pt 1504 432)
 )
 (connector
-	(pt 1304 416)
-	(pt 1304 264)
-)
-(connector
-	(pt 592 424)
-	(pt 1000 424)
-)
-(connector
-	(pt 608 440)
-	(pt 1000 440)
-)
-(connector
-	(pt 592 376)
-	(pt 592 424)
-)
-(connector
-	(pt 608 392)
-	(pt 608 440)
-)
-(connector
-	(pt 1224 440)
-	(pt 1280 440)
-	(bus)
-)
-(connector
-	(pt 1280 440)
-	(pt 1280 464)
-	(bus)
-)
-(connector
 	(pt 1280 464)
 	(pt 1504 464)
 	(bus)
-)
-(connector
-	(pt 1256 424)
-	(pt 1224 424)
-)
-(connector
-	(pt 1256 424)
-	(pt 1256 480)
 )
 (connector
 	(pt 1256 480)
@@ -593,134 +467,172 @@ on the Quartus Prime software download page.
 	(pt 1512 480)
 )
 (connector
-	(pt 984 472)
-	(pt 1000 472)
+	(pt 1704 464)
+	(pt 1720 464)
 )
 (connector
-	(pt 1000 456)
-	(pt 992 456)
+	(pt 1720 464)
+	(pt 1720 576)
 )
 (connector
-	(pt 992 552)
-	(pt 992 456)
+	(pt 928 424)
+	(pt 928 376)
 )
 (connector
-	(pt 664 552)
-	(pt 992 552)
+	(pt 1304 376)
+	(pt 1304 416)
 )
 (connector
-	(pt 992 552)
-	(pt 1728 552)
+	(pt 936 440)
+	(pt 936 384)
 )
 (connector
-	(pt 608 280)
-	(pt 1288 280)
+	(pt 936 384)
+	(pt 1288 384)
 )
 (connector
-	(pt 592 264)
-	(pt 1304 264)
+	(pt 1288 384)
+	(pt 1288 432)
 )
 (connector
-	(pt 664 176)
-	(pt 664 552)
+	(pt 928 376)
+	(pt 1304 376)
 )
 (connector
-	(pt 664 176)
-	(pt 736 176)
+	(pt 584 200)
+	(pt 584 424)
 )
 (connector
-	(pt 608 0)
-	(pt 608 280)
+	(pt 592 216)
+	(pt 592 440)
 )
 (connector
-	(pt 608 280)
-	(pt 608 392)
+	(pt 592 440)
+	(pt 552 440)
 )
 (connector
-	(pt 608 0)
-	(pt 736 0)
+	(pt 616 112)
+	(pt 616 232)
 )
 (connector
-	(pt 592 -16)
-	(pt 592 264)
+	(pt 640 248)
+	(pt 640 576)
 )
 (connector
-	(pt 592 264)
-	(pt 592 376)
-)
-(connector
-	(pt 736 -16)
-	(pt 592 -16)
-)
-(connector
-	(pt 736 16)
-	(pt 560 16)
+	(pt 1280 440)
+	(pt 1240 440)
 	(bus)
 )
 (connector
-	(pt 736 32)
-	(pt 560 32)
-)
-(connector
-	(pt 736 48)
-	(pt 560 48)
+	(pt 1280 464)
+	(pt 1280 440)
 	(bus)
 )
 (connector
-	(pt 736 64)
-	(pt 560 64)
+	(pt 1256 424)
+	(pt 1240 424)
+)
+(connector
+	(pt 1256 480)
+	(pt 1256 424)
+)
+(connector
+	(pt 976 576)
+	(pt 976 456)
+)
+(connector
+	(pt 640 576)
+	(pt 976 576)
+)
+(connector
+	(pt 976 576)
+	(pt 1720 576)
+)
+(connector
+	(pt 592 440)
+	(pt 936 440)
+)
+(connector
+	(pt 936 440)
+	(pt 1016 440)
+)
+(connector
+	(pt 976 456)
+	(pt 1016 456)
+)
+(connector
+	(pt 1008 216)
+	(pt 1008 488)
 	(bus)
 )
 (connector
-	(pt 736 80)
-	(pt 560 80)
+	(pt 1008 488)
+	(pt 1016 488)
 	(bus)
 )
 (connector
-	(pt 736 96)
-	(pt 560 96)
+	(pt 1016 472)
+	(pt 992 472)
+)
+(connector
+	(pt 992 472)
+	(pt 992 200)
+)
+(connector
+	(pt 656 200)
+	(pt 584 200)
+)
+(connector
+	(pt 656 216)
+	(pt 592 216)
+)
+(connector
+	(pt 656 232)
+	(pt 616 232)
+)
+(connector
+	(pt 656 248)
+	(pt 640 248)
+)
+(connector
+	(pt 912 216)
+	(pt 1008 216)
 	(bus)
 )
 (connector
-	(pt 736 112)
-	(pt 560 112)
+	(pt 912 200)
+	(pt 992 200)
+)
+(connector
+	(pt 552 424)
+	(pt 584 424)
+)
+(connector
+	(pt 584 424)
+	(pt 928 424)
+)
+(connector
+	(pt 928 424)
+	(pt 1016 424)
+)
+(connector
+	(pt 424 248)
+	(pt 448 248)
 	(bus)
 )
 (connector
-	(pt 736 128)
-	(pt 560 128)
-)
-(connector
-	(pt 736 144)
-	(pt 560 144)
+	(pt 448 248)
+	(pt 448 264)
 	(bus)
 )
 (connector
-	(pt 736 160)
-	(pt 560 160)
+	(pt 448 264)
+	(pt 656 264)
 	(bus)
 )
-(connector
-	(pt 1000 488)
-	(pt 976 488)
-	(bus)
-)
-(connector
-	(pt 976 488)
-	(pt 976 0)
-	(bus)
-)
-(connector
-	(pt 984 -16)
-	(pt 984 472)
-)
-(connector
-	(pt 984 -16)
-	(pt 976 -16)
-)
-(junction (pt 592 376))
-(junction (pt 608 392))
 (junction (pt 1504 480))
-(junction (pt 992 552))
-(junction (pt 608 280))
-(junction (pt 592 264))
+(junction (pt 928 424))
+(junction (pt 936 440))
+(junction (pt 584 424))
+(junction (pt 592 440))
+(junction (pt 976 576))

@@ -14,10 +14,6 @@
 				{
 					"name" : "reset",
 					"strict" : false
-				},
-				{
-					"name" : "test",
-					"strict" : false
 				}
 			]
 		}

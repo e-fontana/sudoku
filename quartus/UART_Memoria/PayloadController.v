@@ -1,13 +1,10 @@
-module GameStatusSend #(parameter EVENT_CODE = 8'hAD) (
+module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QTD = 41, parameter MSB_FIRST = 1) (
     input  wire         clock,
     input  wire         reset,
     input  wire         habilitar_envio,    // pulso de ativação externo
     input  wire         uart_ocupado,
 
-    input wire [161:0] colors,
-    input wire [7:0] position,         // 8 bits: Posição (x, y)
-    input wire [1:0] errors,
-    input wire [3:0] selected_number,  // 4 bits: Número selecionado;
+    input wire [SEND_BYTES_QTD*8-1:0] buffer_envio,
 
     output reg          iniciar_envio,
     output reg [7:0]    dado_saida,
@@ -22,8 +19,6 @@ module GameStatusSend #(parameter EVENT_CODE = 8'hAD) (
     localparam QTD_CHUNKS = 24;
     localparam DELAY_PACOTE = 100;
 	 
-    reg [199:0] buffer_envio;
-
     reg [2:0]  estado_atual;
     reg [5:0]  indice_chunk;
     reg [25:0] contador_delay;
@@ -86,7 +81,15 @@ module GameStatusSend #(parameter EVENT_CODE = 8'hAD) (
                     if (indice_chunk == 0) begin
                         dado_saida <= 8'hAD;
                 end else begin
-                    dado_saida <= (buffer_envio >> ((QTD_CHUNKS - 1 - indice_chunk) * 8));
+							  if (MSB_FIRST) begin
+									 // Envio MSB-first (como em SendGameStatus)
+                            // O índice do byte no payload é (indice_chunk - 1)
+                            // A quantidade de shift é (total de bytes - 1 - índice do byte) * 8
+                            dado_saida <= buffer_envio >> ((SEND_BYTES_QTD - indice_chunk) * 8);
+                        end else begin
+                            // Envio LSB-first
+                            dado_saida <= buffer_envio >> ((indice_chunk - 1) * 8);
+                        end
                 end
                     if (!uart_ocupado)
                         estado_atual <= S_INICIA_ENVIO;
@@ -124,13 +127,6 @@ module GameStatusSend #(parameter EVENT_CODE = 8'hAD) (
     reg [2:0] estado_futuro;
     always @(*) begin
         estado_futuro = estado_atual;
-		          buffer_envio = {
-						  colors,         // 162 bits: Dados das cores
-						  position,       // 8 bits: Posição (x, y)
-						  errors,         // 2 bits: Quantidade de erros
-						  selected_number,    // 4 bits: Número selecionado
-						  8'b00000000            // 8 bits: Padding para fechar 200 bits
-					 };
         case (estado_atual)
             S_PAUSA_PACOTE:
                 if (habilitacao_reg && contador_delay >= DELAY_PACOTE - 1)

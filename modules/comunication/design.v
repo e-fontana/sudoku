@@ -129,6 +129,7 @@ module MainController #(
         .clock(clock),
         .reset(reset),
         .start(start_enable_send),
+        
         .game_started(current_state == INICIAR_JOGO),
 
         .tx_busy(uart_busy),
@@ -140,6 +141,14 @@ module MainController #(
     SendGameDificulty send_game_dificulty (
         .clock(clock),
         .reset(reset),
+        .start(dificulty_enable_send),
+        
+        .dificuldade(game_dificulty),
+
+        .tx_busy(uart_busy),
+        .tx_start(dificult_tx_start),
+        .tx_data(dificulty_tx_data),
+        .data_sent(dificult_data_sent)
     );
 
     SendFullMap map_sender (
