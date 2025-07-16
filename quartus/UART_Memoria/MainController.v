@@ -1,11 +1,11 @@
 module MainController #(
-    parameter INICIAR_JOGO          = 3'b000,
-    parameter SELECIONAR_DIFICULDADE = 3'b001,
-    parameter CARREGANDO            = 3'b010,
-    parameter CORRENDO_MAPA         = 3'b011,
-    parameter PERCORRER_NUMEROS     = 3'b100,
-    parameter VITORIA               = 3'b101,
-    parameter DERROTA               = 3'b110
+    parameter INICIAR_JOGO              = 3'b000,
+    parameter SELECIONAR_DIFICULDADE    = 3'b001,
+    parameter CARREGANDO                = 3'b010,
+    parameter CORRENDO_MAPA             = 3'b011,
+    parameter PERCORRER_NUMEROS         = 3'b100,
+    parameter VITORIA                   = 3'b101,
+    parameter DERROTA                   = 3'b110
 ) (
     input clock,
     input reset,
@@ -20,21 +20,28 @@ module MainController #(
     input         victory_condition,
     input [6:0]   score,
     input [10:0]  time_in_seconds,
+    input         uart_busy,
 
-    input             uart_busy,
     output reg        tx_start,
     output reg [7:0]  tx_data
 );
-    localparam S_IDLE        = 2'b00;
-    localparam S_SEND_MAP    = 2'b01;
-    localparam S_SEND_STATUS = 2'b10;
+    localparam S_IDLE           		= 3'b111;
+    localparam S_SEND_START_GAME    = 3'b000;
+    localparam S_SEND_DIFICULTY 		= 3'b001;
+    localparam S_SEND_MAP       		= 3'b010;
+    localparam S_SEND_STATUS    		= 3'b011;
+    localparam S_SEND_END_GAME  		= 3'b101;
 
-    reg [1:0] arb_state, next_arb_state;
-    reg board_enable_send, status_enable_send;
+    reg [2:0] arb_state, next_arb_state;
+    reg start_game_enable_send, dificulty_enable_send, board_enable_send, status_enable_send, end_game_enable_send;
+	
+    wire start_game_tx_start, start_game_data_sent;
+    wire dificulty_tx_start, dificulty_data_sent;
+    wire board_data_sent, board_tx_start;
+    wire status_data_sent, status_tx_start;
+    wire end_game_tx_start, end_game_data_sent;
 
-    wire board_data_sent, status_data_sent;
-    wire board_tx_start, status_tx_start;
-    wire [7:0] board_tx_data, status_tx_data;
+    wire [7:0] board_tx_data, status_tx_data, start_game_tx_data, dificulty_tx_data, end_game_tx_data;
 
     always @(posedge clock or posedge reset) begin
         if (reset) begin
@@ -46,67 +53,140 @@ module MainController #(
 
     always @(*) begin
         next_arb_state = arb_state;
+        start_game_enable_send = 1'b0;
+        dificulty_enable_send = 1'b0;
         board_enable_send = 1'b0;
         status_enable_send = 1'b0;
+        end_game_enable_send = 1'b0;
         tx_start = 1'b0;
         tx_data = 8'b0;
 
         case (arb_state)
             S_IDLE: begin
                 case (current_state)
+                    INICIAR_JOGO: begin
+                        next_arb_state = S_SEND_START_GAME;
+                    end
+                    SELECIONAR_DIFICULDADE: begin
+                        next_arb_state = S_SEND_DIFICULTY;
+                    end
                     CARREGANDO: begin
-                    
                         next_arb_state = S_SEND_MAP;
                     end
                     CORRENDO_MAPA, PERCORRER_NUMEROS: begin
-                    
                         next_arb_state = S_SEND_STATUS;
                     end
+                    VITORIA, DERROTA: begin
+                        next_arb_state = S_SEND_END_GAME;
+                    end
+                    default: begin
+                        next_arb_state = S_IDLE;
+                    end
                 endcase
+            end
+            S_SEND_START_GAME: begin
+                start_game_enable_send = 1'b1;
+                tx_start = start_game_tx_start;
+                tx_data = start_game_tx_data;
+
+                if (start_game_data_sent) next_arb_state = S_IDLE;
+            end
+            S_SEND_DIFICULTY: begin
+                dificulty_enable_send = 1'b1;
+                tx_start = dificulty_tx_start;
+                tx_data = dificulty_tx_data;
+
+                if (dificulty_data_sent) next_arb_state = S_IDLE;
             end
             S_SEND_MAP: begin
                 board_enable_send = 1'b1;
                 tx_start = board_tx_start;
                 tx_data = board_tx_data;
 
-                if (board_data_sent) begin
-                    next_arb_state = S_IDLE;
-                end
+                if (board_data_sent) next_arb_state = S_IDLE;
             end
             S_SEND_STATUS: begin
                 status_enable_send = 1'b1;
                 tx_start = status_tx_start;
                 tx_data = status_tx_data;
 
-                if (status_data_sent) begin
-                    next_arb_state = S_IDLE;
-                end
+                if (status_data_sent) next_arb_state = S_IDLE;
+            end
+            S_SEND_END_GAME: begin
+                end_game_enable_send = 1'b1;
+                tx_start = end_game_tx_start;
+                tx_data = end_game_tx_data;
+
+                if (end_game_data_sent) next_arb_state = S_IDLE;
+            end
+            default: begin
+                next_arb_state = S_IDLE;
             end
         endcase
     end
 
-    FullMapSendController map_sender (
+    SendStartGame send_start_game (
+        .clock(clock),
+        .reset(reset),
+        .habilitar_envio(start_game_enable_send),
+        .uart_ocupado(uart_busy),
+
+        .iniciar_envio(start_game_tx_start),
+        .dado_saida(start_game_tx_data),
+        .envio_concluido(start_game_data_sent)
+    );
+
+    SendGameDificulty send_game_dificulty (
+        .clock(clock),
+        .reset(reset),
+        .habilitar_envio(dificulty_enable_send),
+        .uart_ocupado(uart_busy),
+        .game_dificulty(game_dificulty),
+
+        .iniciar_envio(dificulty_tx_start),
+        .dado_saida(dificulty_tx_data),
+        .envio_concluido(dificulty_data_sent)
+    );
+
+    SendFullMap map_sender (
         .clock(clock),
         .reset(reset),
         .habilitar_envio(board_enable_send),
         .uart_ocupado(uart_busy),
         .full_map_input(full_board),
+
         .iniciar_envio(board_tx_start),
         .dado_saida(board_tx_data),
         .envio_concluido(board_data_sent)
     );
 
-    GameStatusSend status_sender (
+    SendGameStatus status_sender (
         .clock(clock),
         .reset(reset),
         .habilitar_envio(status_enable_send),
         .uart_ocupado(uart_busy),
+        
         .colors(colors),
         .position(position),
         .errors(errors),
         .selected_number(selected_number),
+        
         .iniciar_envio(status_tx_start),
         .dado_saida(status_tx_data),
         .envio_concluido(status_data_sent)
+    );
+
+    SendEndGame send_eng_game (
+        .clock(clock),
+        .reset(reset),
+        .habilitar_envio(end_game_enable_send),
+        .uart_ocupado(uart_busy),
+        
+        .points(current_state == VITORIA ? score : 7'd0),
+        .victory_condition(current_state == VITORIA),
+        
+        .iniciar_envio(end_game_tx_start),
+        .dado_saida(end_game_tx_data),
+        .envio_concluido(end_game_data_sent)
     );
 endmodule

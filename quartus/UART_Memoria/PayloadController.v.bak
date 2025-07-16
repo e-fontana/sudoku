@@ -1,0 +1,149 @@
+module PayloadController #(
+    parameter PAYLOAD_BYTES  = 41,          // <-- NOVO: Defina o tamanho do payload em bytes aqui
+    parameter EVENT_CODE     = 8'hAA,
+    parameter DELAY_PACOTE   = 50_000_000
+) (
+    input  wire                       clock,
+    input  wire                       reset,
+    input  wire                       start_tx,         // Renomeado de habilitar_envio para clareza
+    input  wire                       uart_ocupado,
+    input  wire [PAYLOAD_BYTES*8-1:0] payload,          // <-- ALTERADO: Tamanho do payload dinâmico
+
+    output reg                        iniciar_envio,
+    output reg [7:0]                  dado_saida,
+    output wire                       envio_concluido   // Pulso de 1 ciclo ao final
+);
+    // Estados da FSM (sem alteração)
+    localparam S_PAUSA_PACOTE   = 3'b000;
+    localparam S_PREPARA_CHUNK  = 3'b001;
+    localparam S_INICIA_ENVIO   = 3'b010;
+    localparam S_ESPERA_FIM     = 3'b011;
+    localparam S_PROXIMO_CHUNK  = 3'b100;
+
+    localparam QTD_CHUNKS = PAYLOAD_BYTES + 1;
+    localparam CHUNK_INDEX_WIDTH = $clog2(QTD_CHUNKS);
+
+    // --- Registradores Internos ---
+    reg [2:0]                 estado_atual;
+    reg [CHUNK_INDEX_WIDTH-1:0] indice_chunk;   // <-- ALTERADO: Largura dinâmica
+    reg [25:0]                contador_delay;   // Assumindo que 26 bits são suficientes para o delay
+
+    // Controle de envio único
+    reg habilitacao_reg;
+    always @(posedge clock or posedge reset) begin
+        if (reset)
+            habilitacao_reg <= 1'b0;
+        else if (start_tx)
+            habilitacao_reg <= 1'b1;
+        else if (estado_atual == S_PAUSA_PACOTE && estado_futuro == S_PAUSA_PACOTE)
+            habilitacao_reg <= 1'b0;  // Limpa após envio completo
+    end
+
+    // Pulso de envio concluído
+    reg envio_concluido_reg;
+    assign envio_concluido = envio_concluido_reg;
+
+    always @(posedge clock or posedge reset) begin
+        if (reset)
+            envio_concluido_reg <= 1'b0;
+        // O pulso ocorre quando o último chunk está prestes a ser processado
+        else if (estado_atual == S_ESPERA_FIM && !uart_ocupado && (indice_chunk == QTD_CHUNKS - 1))
+            envio_concluido_reg <= 1'b1;
+        else
+            envio_concluido_reg <= 1'b0;
+    end
+
+    // Lógica principal da Máquina de Estados
+    always @(posedge clock or posedge reset) begin
+        if (reset) begin
+            estado_atual   <= S_PAUSA_PACOTE;
+            contador_delay <= 0;
+            indice_chunk   <= 0;
+            iniciar_envio  <= 1'b0;
+            dado_saida     <= 8'h00;
+        end else begin
+            // Resets de pulso por padrão
+            iniciar_envio <= 1'b0;
+
+            case (estado_atual)
+                S_PAUSA_PACOTE: begin
+                    if (!habilitacao_reg) begin
+                        contador_delay <= 0;
+                        indice_chunk   <= 0;
+                    end else if (contador_delay >= DELAY_PACOTE - 1) begin
+                        estado_atual   <= S_PREPARA_CHUNK;
+                        contador_delay <= 0;
+                        indice_chunk   <= 0;
+                    end else begin
+                        contador_delay <= contador_delay + 1;
+                    end
+                end
+
+                S_PREPARA_CHUNK: begin
+                    reg [7:0] byte_original;
+                    if (indice_chunk == 0) begin
+                        dado_saida <= EVENT_CODE;
+                    end else begin
+                        byte_original = payload >> ((indice_chunk - 1) * 8);
+                        dado_saida <= {byte_original[3:0], byte_original[7:4]};
+                    end
+                    if (!uart_ocupado) begin
+                        estado_atual <= S_INICIA_ENVIO;
+                    end
+                end
+
+                S_INICIA_ENVIO: begin
+                    iniciar_envio <= 1'b1;
+                    estado_atual  <= S_ESPERA_FIM;
+                end
+
+                S_ESPERA_FIM: begin
+                    if (!uart_ocupado) begin
+                        // Verifica se o último chunk já foi enviado
+                        if (indice_chunk < QTD_CHUNKS - 1) begin
+                            estado_atual <= S_PROXIMO_CHUNK;
+                        end else begin
+                            estado_atual <= S_PAUSA_PACOTE;
+                        end
+                    end
+                end
+
+                S_PROXIMO_CHUNK: begin
+                    indice_chunk <= indice_chunk + 1;
+                    estado_atual <= S_PREPARA_CHUNK;
+                end
+
+                default:
+                    estado_atual <= S_PAUSA_PACOTE;
+            endcase
+        end
+    end
+
+    // Lógica do estado futuro (usada para o controle de `habilitacao_reg`)
+    // Este bloco é combinacional
+    reg [2:0] estado_futuro;
+    always @(*) begin
+        estado_futuro = estado_atual;
+        case (estado_atual)
+            S_PAUSA_PACOTE:
+                if (habilitacao_reg && contador_delay >= DELAY_PACOTE - 1)
+                    estado_futuro = S_PREPARA_CHUNK;
+                else
+                    estado_futuro = S_PAUSA_PACOTE;
+
+            S_PREPARA_CHUNK: if (!uart_ocupado) estado_futuro = S_INICIA_ENVIO;
+
+            S_INICIA_ENVIO:   estado_futuro = S_ESPERA_FIM;
+
+            S_ESPERA_FIM:
+                if (!uart_ocupado)
+                    if (indice_chunk < QTD_CHUNKS - 1)
+                        estado_futuro = S_PROXIMO_CHUNK;
+                    else
+                        estado_futuro = S_PAUSA_PACOTE;
+
+            S_PROXIMO_CHUNK: estado_futuro = S_PREPARA_CHUNK;
+        endcase
+    end
+
+endmodule

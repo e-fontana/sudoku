@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue Jul 15 16:22:35 2025
+Analysis & Synthesis Status : Successful - Wed Jul 16 19:40:44 2025
 Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 Revision Name : UART_Memoria
 Top-level Entity Name : UART_Memoria
 Family : Cyclone IV E
-Total logic elements : 211
-    Total combinational functions : 211
-    Dedicated logic registers : 115
-Total registers : 115
+Total logic elements : 128
+    Total combinational functions : 128
+    Dedicated logic registers : 94
+Total registers : 94
 Total pins : 14
 Total virtual pins : 0
 Total memory bits : 0

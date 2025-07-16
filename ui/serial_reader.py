@@ -39,21 +39,31 @@ class SerialReader:
                 match (byte[0]):
                     case 0xAA:  # Início do jogo
                         print("Início do jogo detectado.")
+                    
                     case 0xAB:  # Dificuldade
                         print("Dificuldade detectada.")
+                        payload_bytes = ser.read(1)
+                        if len(payload_bytes) != 1:
+                            print("Pacote incompleto após cabeçalho. Descartando.")
+                            continue
+                        print(f"\n--- Pacote Completo Recebido ---")
+                        print(f"Payload: {payload_bytes.hex()}")
+                        game_difficulty = payload_bytes[0]
+                        self.model.difficulty = bool(game_difficulty)
+                        print(f"Dificuldade do jogo: {self.model.difficulty}")
                     case 0xAC:  # Mapa completo
                         print("Mapa completo recebido.")
                         full_map_bytes = ser.read(41)
-                        full_map_data = full_map.decode_full_map(full_map_bytes)
 
-                        print(full_map_data)
-                        
+                        print(len(full_map_bytes))
+
                         if len(full_map_bytes) != 41:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
                         
                         correct_map = full_map.decode_full_map(full_map_bytes)
                         self.model.map = correct_map
+                        print(self.model.map)
                     
                     case 0xAD:  # Visibilidade
                         print("Visibilidade recebida.")
@@ -63,9 +73,26 @@ class SerialReader:
                             continue
                         print(f"\n--- Pacote Completo Recebido ---")
                         status = game_status.decode_status(payload_bytes)
-                        print(status)
+                        print(f"Status do jogo: {status}")
                     case 0xAE:  # Fim do jogo
                         print("Fim do jogo detectado.")
+                        payload_bytes = ser.read(1)
+                        if len(payload_bytes) != 1:
+                            print("Pacote incompleto após cabeçalho. Descartando.")
+                            continue
+                        print(f"\n--- Pacote Completo Recebido ---")
+                        print(f"Payload: {payload_bytes}")
+                        # transform to bits
+                        print(f''.join(format(byte, '08b') for byte in payload_bytes))
+                        valor = payload_bytes[0]
+                        # Extrair o MSB (bit 7)
+                        msb = bool((valor >> 7) & 0x1)
+
+                        # Extrair os 7 bits restantes
+                        decimal_7bits = valor & 0x7F  # 0b01111111
+
+                        print(f"MSB (booleano): {msb}")
+                        print(f"7 bits restantes (decimal): {decimal_7bits}")
             
             except KeyboardInterrupt:
                 print("Interrompido pelo usuário.")

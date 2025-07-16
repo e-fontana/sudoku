@@ -19,7 +19,6 @@ module ControladorUART (
     // É importante para garantir que o dado não mude no meio da transmissão
     reg [7:0] data_reg;
 
-
     //==================================================================
     // Lógica Sequencial: Atualização de Estados e Registradores
     //==================================================================
