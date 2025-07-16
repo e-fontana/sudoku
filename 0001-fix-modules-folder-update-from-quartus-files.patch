@@ -1,0 +1,283 @@
+From f9109d0498997963cf6d26b2f60e9be3b8bb0674 Mon Sep 17 00:00:00 2001
+From: Eduardo Lazarini Fontana <contato@eduardofontana.dev>
+Date: Wed, 16 Jul 2025 19:54:55 -0300
+Subject: [PATCH] fix: modules folder update from quartus files
+
+---
+ modules/comunication/design.v                 | 31 +++++++++----------
+ modules/comunication/dificulty/design.v       |  8 ++---
+ modules/comunication/end_game/design.v        |  6 ++--
+ modules/comunication/full_map_send/design.v   | 31 +++++++++----------
+ modules/comunication/game_status/design.v     |  6 ++--
+ .../comunication/payload_controller/design.v  | 16 +++++++---
+ modules/comunication/start_game/design.v      | 13 ++++----
+ 7 files changed, 57 insertions(+), 54 deletions(-)
+
+diff --git a/modules/comunication/design.v b/modules/comunication/design.v
+index 9c4983e..b640b32 100644
+--- a/modules/comunication/design.v
++++ b/modules/comunication/design.v
+@@ -25,16 +25,16 @@ module MainController #(
+     output reg        tx_start,
+     output reg [7:0]  tx_data
+ );
+-    localparam S_IDLE           		= 3'b000;
+-    localparam S_SEND_START_GAME    = 3'b001;
+-    localparam S_SEND_DIFICULTY 		= 3'b010;
+-    localparam S_SEND_MAP       		= 3'b011;
+-    localparam S_SEND_STATUS    		= 3'b100;
++    localparam S_IDLE           		= 3'b111;
++    localparam S_SEND_START_GAME    = 3'b000;
++    localparam S_SEND_DIFICULTY 		= 3'b001;
++    localparam S_SEND_MAP       		= 3'b010;
++    localparam S_SEND_STATUS    		= 3'b011;
+     localparam S_SEND_END_GAME  		= 3'b101;
+ 
+     reg [2:0] arb_state, next_arb_state;
+     reg start_game_enable_send, dificulty_enable_send, board_enable_send, status_enable_send, end_game_enable_send;
+-
++	
+     wire start_game_tx_start, start_game_data_sent;
+     wire dificulty_tx_start, dificulty_data_sent;
+     wire board_data_sent, board_tx_start;
+@@ -94,7 +94,7 @@ module MainController #(
+             S_SEND_DIFICULTY: begin
+                 dificulty_enable_send = 1'b1;
+                 tx_start = dificulty_tx_start;
+-                tx_data = dificult_tx_data;
++                tx_data = dificulty_tx_data;
+ 
+                 if (dificulty_data_sent) next_arb_state = S_IDLE;
+             end
+@@ -130,9 +130,8 @@ module MainController #(
+         .reset(reset),
+         .habilitar_envio(start_game_enable_send),
+         .uart_ocupado(uart_busy),
+-        .game_started(current_state == INICIAR_JOGO),
+ 
+-        .iniciar_envio(tx_start),
++        .iniciar_envio(start_game_tx_start),
+         .dado_saida(start_game_tx_data),
+         .envio_concluido(start_game_data_sent)
+     );
+@@ -144,9 +143,9 @@ module MainController #(
+         .uart_ocupado(uart_busy),
+         .game_dificulty(game_dificulty),
+ 
+-        .iniciar_envio(tx_start),
++        .iniciar_envio(dificulty_tx_start),
+         .dado_saida(dificulty_tx_data),
+-        .envio_concluido(dificult_data_sent)
++        .envio_concluido(dificulty_data_sent)
+     );
+ 
+     SendFullMap map_sender (
+@@ -156,9 +155,9 @@ module MainController #(
+         .uart_ocupado(uart_busy),
+         .full_map_input(full_board),
+ 
+-        .iniciar_envio(tx_start),
+-        .dado_saida(dificulty_tx_data),
+-        .envio_concluido(dificult_data_sent)
++        .iniciar_envio(board_tx_start),
++        .dado_saida(board_tx_data),
++        .envio_concluido(board_data_sent)
+     );
+ 
+     SendGameStatus status_sender (
+@@ -183,8 +182,8 @@ module MainController #(
+         .habilitar_envio(end_game_enable_send),
+         .uart_ocupado(uart_busy),
+         
+-        .points(score),
+-        .victory_condition(victory_condition),
++        .points(current_state == VITORIA ? score : 7'd0),
++        .victory_condition(current_state == VITORIA),
+         
+         .iniciar_envio(end_game_tx_start),
+         .dado_saida(end_game_tx_data),
+diff --git a/modules/comunication/dificulty/design.v b/modules/comunication/dificulty/design.v
+index e712ec8..c7d71b3 100644
+--- a/modules/comunication/dificulty/design.v
++++ b/modules/comunication/dificulty/design.v
+@@ -3,10 +3,10 @@ module SendGameDificulty #(parameter EVENT_CODE = 8'hAB) (
+     input  wire         reset,
+     input  wire         habilitar_envio,
+     input  wire         uart_ocupado,
+-    input  wire [323:0] game_dificulty,
++    input  wire		   game_dificulty,
+ 
+-    output reg         iniciar_envio,
+-    output reg [7:0]   dado_saida,
++    output wire         iniciar_envio,
++    output wire [7:0]   dado_saida,
+     output wire         envio_concluido
+ );
+     wire [7:0] payload = { 7'b0000000, game_dificulty };
+@@ -15,7 +15,7 @@ module SendGameDificulty #(parameter EVENT_CODE = 8'hAB) (
+         .EVENT_CODE(EVENT_CODE),
+         .SEND_BYTES_QTD(1)
+     ) payload_controller (
+-        .clock(clk),
++        .clock(clock),
+         .reset(reset),
+         .habilitar_envio(habilitar_envio),
+         .uart_ocupado(uart_ocupado),
+diff --git a/modules/comunication/end_game/design.v b/modules/comunication/end_game/design.v
+index 84e4e8c..9735e1e 100644
+--- a/modules/comunication/end_game/design.v
++++ b/modules/comunication/end_game/design.v
+@@ -6,8 +6,8 @@ module SendEndGame #(parameter EVENT_CODE = 8'hAE) (
+     input  wire [6:0]   points,
+     input  wire         victory_condition,
+ 
+-    output reg         iniciar_envio,
+-    output reg [7:0]   dado_saida,
++    output wire         iniciar_envio,
++    output wire [7:0]   dado_saida,
+     output wire         envio_concluido
+ );
+     wire [7:0] payload = {victory_condition, points};
+@@ -16,7 +16,7 @@ module SendEndGame #(parameter EVENT_CODE = 8'hAE) (
+         .EVENT_CODE(EVENT_CODE),
+         .SEND_BYTES_QTD(1)
+     ) payload_controller (
+-        .clock(clk),
++        .clock(clock),
+         .reset(reset),
+         .habilitar_envio(habilitar_envio),
+         .uart_ocupado(uart_ocupado),
+diff --git a/modules/comunication/full_map_send/design.v b/modules/comunication/full_map_send/design.v
+index b59ad7d..1efe1bf 100644
+--- a/modules/comunication/full_map_send/design.v
++++ b/modules/comunication/full_map_send/design.v
+@@ -12,26 +12,23 @@ module SendFullMap #(
+     output wire         envio_concluido
+ );
+ 
+-    localparam MAP_SIZE_BYTES = 42;
+-    localparam MAP_SIZE_BITS  = MAP_SIZE_BYTES * 8;
+-
+     wire [327:0] payload_data = { 4'h00, full_map_input };
+ 
+-		PayloadController #(
+-			.EVENT_CODE(8'hAC),
+-			.SEND_BYTES_QTD(23),
+-			.MSB_FIRST(0)
+-		) payload_controller  (
+-			.clock(clock),
+-			.reset(reset),
+-			.habilitar_envio(habilitar_envio),
+-			.uart_ocupado(uart_ocupado),
++	PayloadController #(
++		.EVENT_CODE(8'hAC),
++		.SEND_BYTES_QTD(41),
++		.MSB_FIRST(0)
++	) payload_controller  (
++		.clock(clock),
++		.reset(reset),
++		.habilitar_envio(habilitar_envio),
++		.uart_ocupado(uart_ocupado),
+ 
+-			.buffer_envio(payload_data),
++		.buffer_envio(payload_data),
+ 
+-			.iniciar_envio(iniciar_envio),
+-			.dado_saida(dado_saida),
+-			.envio_concluido(envio_concluido)
+-		);
++		.iniciar_envio(iniciar_envio),
++		.dado_saida(dado_saida),
++		.envio_concluido(envio_concluido)
++	);
+ 
+ endmodule
+diff --git a/modules/comunication/game_status/design.v b/modules/comunication/game_status/design.v
+index 2eca369..5e9e184 100644
+--- a/modules/comunication/game_status/design.v
++++ b/modules/comunication/game_status/design.v
+@@ -9,9 +9,9 @@
+ 		 input wire [1:0] errors,
+ 		 input wire [3:0] selected_number,  // 4 bits: Número selecionado;
+ 
+-		 output wire          iniciar_envio,
+-		 output wire [7:0]    dado_saida,
+-		 output wire         envio_concluido     // pulso de 1 ciclo ao final
++		 output 				iniciar_envio,
++		 output [7:0]    dado_saida,
++		 output         envio_concluido     // pulso de 1 ciclo ao final
+ 	);
+ 		wire [327:0] buffer_envio = {
+ 							  colors,         // 162 bits: Dados das cores
+diff --git a/modules/comunication/payload_controller/design.v b/modules/comunication/payload_controller/design.v
+index db013df..06c272f 100644
+--- a/modules/comunication/payload_controller/design.v
++++ b/modules/comunication/payload_controller/design.v
+@@ -1,4 +1,4 @@
+-module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QTD = 41) (
++module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QTD = 41, parameter MSB_FIRST = 1) (
+     input  wire         clock,
+     input  wire         reset,
+     input  wire         habilitar_envio,    // pulso de ativação externo
+@@ -16,7 +16,7 @@ module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QT
+     localparam S_ESPERA_FIM     = 3'b011;
+     localparam S_PROXIMO_CHUNK  = 3'b100;
+ 
+-    localparam QTD_CHUNKS = 24;
++    localparam QTD_CHUNKS = SEND_BYTES_QTD + 1;
+     localparam DELAY_PACOTE = 100;
+ 	 
+     reg [2:0]  estado_atual;
+@@ -79,9 +79,17 @@ module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QT
+                 begin
+                     reg [7:0] byte_original;
+                     if (indice_chunk == 0) begin
+-                        dado_saida <= 8'hAD;
++                        dado_saida <= EVENT_CODE;
+                 end else begin
+-                    dado_saida <= (buffer_envio >> ((QTD_CHUNKS - 1 - indice_chunk) * 8));
++							  if (MSB_FIRST) begin
++									 // Envio MSB-first (como em SendGameStatus)
++                            // O índice do byte no payload é (indice_chunk - 1)
++                            // A quantidade de shift é (total de bytes - 1 - índice do byte) * 8
++                            dado_saida <= buffer_envio >> ((SEND_BYTES_QTD - indice_chunk) * 8);
++                        end else begin
++                            // Envio LSB-first
++                            dado_saida <= buffer_envio >> ((indice_chunk - 1) * 8);
++                        end
+                 end
+                     if (!uart_ocupado)
+                         estado_atual <= S_INICIA_ENVIO;
+diff --git a/modules/comunication/start_game/design.v b/modules/comunication/start_game/design.v
+index 71a072b..83667e5 100644
+--- a/modules/comunication/start_game/design.v
++++ b/modules/comunication/start_game/design.v
+@@ -3,19 +3,18 @@ module SendStartGame #(parameter EVENT_CODE = 8'hAA) (
+     input  wire         reset,
+     input  wire         habilitar_envio,
+     input  wire         uart_ocupado,
+-    input  wire [323:0] game_started,
+ 
+-    output reg         iniciar_envio,
+-    output reg [7:0]   dado_saida,
+-    output wire         envio_concluido
++    output		         iniciar_envio,
++    output [7:0]   dado_saida,
++    output         envio_concluido
+ );
+-    wire [7:0] payload = { 7'b0000000, game_started };
++	wire [7:0] payload = 8'd0;
+ 
+     PayloadController #(
+         .EVENT_CODE(EVENT_CODE),
+-        .SEND_BYTES_QTD(1)
++        .SEND_BYTES_QTD(0)
+     ) payload_controller (
+-        .clock(clk),
++        .clock(clock),
+         .reset(reset),
+         .habilitar_envio(habilitar_envio),
+         .uart_ocupado(uart_ocupado),
+-- 
+2.50.0
+
