@@ -20,6 +20,12 @@ module controller(
                 .btn_in(controller_input[i]),
                 .btn_out(debounced_output[i])
             );
+            led_on_pulse led_module (
+                .clk(clk),
+                .reset(reset),
+                .pulse_in(controller_output[i]),
+                .led_out(LEDR[i])
+            );
         end
     endgenerate
 
