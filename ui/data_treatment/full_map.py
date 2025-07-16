@@ -1,3 +1,5 @@
+import numpy as np
+
 def decode_full_map(payload_bytes):
     """
     Recebe os dados do mapa completo e retorna uma lista de nibbles (0-15).
@@ -9,4 +11,9 @@ def decode_full_map(payload_bytes):
         nibbles.extend([high, low])
 
     # Pega apenas os 81 primeiros nibbles
-    return nibbles[:81]
+
+    nibbles = nibbles[:81]
+
+    full_map = np.array(nibbles, dtype=np.uint8).reshape((9, 9))
+    
+    return full_map

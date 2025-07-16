@@ -1,4 +1,5 @@
 from data_treatment.colors import Color
+import numpy as np
 
 def decode_status(payload_bytes):
     """
@@ -38,8 +39,12 @@ def decode_status(payload_bytes):
     mask_numero = 0x0F # Máscara de 4 bits (2^4 - 1)
     numero_selecionado = (payload_int >> shift_numero) & mask_numero
 
+    colors_array = [Color(i) for i in indices]
+
+    colors = np.array(colors_array, dtype=Color).reshape((9, 9))
+
     return {
-        "colors": [Color(i) for i in indices],
+        "colors": colors,
         "position": (pos_x, pos_y),
         "errors": erros,
         "selected_number": numero_selecionado
