@@ -1,70 +1,29 @@
-module SendGameDificulty  #(parameter EVENT_CODE = 8'hAB) (
-    input wire clk,
-    input wire reset,
-    input wire start,
-    input wire tx_busy,
-    input wire tx_start,
-    input wire dificuldade,    
+module SendGameDificulty #(parameter EVENT_CODE = 8'hAB) (
+    input  wire         clock,
+    input  wire         reset,
+    input  wire         habilitar_envio,
+    input  wire         uart_ocupado,
+    input  wire [323:0] game_dificulty,
 
-    output reg [7:0] tx_data,
-    output reg data_sent
+    output reg         iniciar_envio,
+    output reg [7:0]   dado_saida,
+    output wire         envio_concluido
 );
+    wire [7:0] payload = { 7'b0000000, game_dificulty };
 
-    localparam IDLE             = 2'b00;
-    localparam BUILDING_PAYLOAD = 2'b01;
-    localparam SENDING_DATA     = 2'b10;
-    localparam DATA_SENT_STATE  = 2'b11;
+    PayloadController #(
+        .EVENT_CODE(EVENT_CODE),
+        .SEND_BYTES_QTD(1)
+    ) payload_controller (
+        .clock(clk),
+        .reset(reset),
+        .habilitar_envio(habilitar_envio),
+        .uart_ocupado(uart_ocupado),
 
-    wire [7:0] payload = { 7'b0000000, nivel_dificuldade };
+        .buffer_envio(payload),
 
-    reg [1:0] state;
-    reg [1:0] byte_index;
-
-    always @(posedge clk or posedge reset) begin
-        if (reset) begin
-            state <= IDLE;
-            data_sent <= 0;
-            tx_data <= 8'd0;
-            byte_index <= 0;
-        end else begin
-            case (state)
-                IDLE: begin
-                    data_sent <= 0;
-                    if (data_valid) begin
-                        state <= BUILDING_PAYLOAD;
-                    end
-                end
-
-                BUILDING_PAYLOAD: begin
-                    build_payload <= 1;
-                    if (tx_start) begin
-                        byte_index <= 0;
-                        state <= SENDING_DATA;
-                    end
-                end
-
-                SENDING_DATA: begin
-                    if (!tx_busy) begin
-                        case (byte_index)
-                            0: tx_data <= EVENT_CODE;
-                            1: tx_data <= payload;
-                        endcase
-                        byte_index <= byte_index + 1;
-                    end
-						  
-                    if (byte_index == 2 && !tx_busy)
-                        state <= DATA_SENT_STATE;
-                end
-
-                DATA_SENT_STATE: begin
-                    data_sent <= 1;
-                    state <= IDLE;
-                    byte_index <= 0;
-                end
-
-                default: state <= IDLE;
-            endcase
-        end
-    end
-
+        .iniciar_envio(iniciar_envio),
+        .dado_saida(dado_saida),
+        .envio_concluido(envio_concluido)
+    );    
 endmodule

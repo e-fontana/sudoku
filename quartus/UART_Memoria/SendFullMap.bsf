@@ -81,7 +81,7 @@ on the Quartus Prime software download page.
 		(line (pt 256 64)(pt 240 64)(line_width 1))
 	)
 	(parameter
-		"EVENTO_CODE"
+		"EVENT_CODE"
 		"10101100"
 		""
 		(type "PARAMETER_UNSIGNED_BIN")	)

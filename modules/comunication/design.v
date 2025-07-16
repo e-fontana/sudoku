@@ -25,18 +25,18 @@ module MainController #(
     output reg        tx_start,
     output reg [7:0]  tx_data
 );
-    localparam S_IDLE           = 3'b000;
-    localparam S_START_GAME     = 3'b001;
-    localparam S_SEND_DIFICULTY = 3'b010;
-    localparam S_SEND_MAP       = 3'b011;
-    localparam S_SEND_STATUS    = 3'b100;
-    localparam S_SEND_END_GAME  = 3'b101;
+    localparam S_IDLE           		= 3'b000;
+    localparam S_SEND_START_GAME    = 3'b001;
+    localparam S_SEND_DIFICULTY 		= 3'b010;
+    localparam S_SEND_MAP       		= 3'b011;
+    localparam S_SEND_STATUS    		= 3'b100;
+    localparam S_SEND_END_GAME  		= 3'b101;
 
     reg [2:0] arb_state, next_arb_state;
     reg start_game_enable_send, dificulty_enable_send, board_enable_send, status_enable_send, end_game_enable_send;
 
     wire start_game_tx_start, start_game_data_sent;
-    wire dificult_tx_start, dificult_data_sent;
+    wire dificulty_tx_start, dificulty_data_sent;
     wire board_data_sent, board_tx_start;
     wire status_data_sent, status_tx_start;
     wire end_game_tx_start, end_game_data_sent;
@@ -53,8 +53,8 @@ module MainController #(
 
     always @(*) begin
         next_arb_state = arb_state;
-        start_enable_send = 1'b0;
-        dificult_enable_send = 1'b0;
+        start_game_enable_send = 1'b0;
+        dificulty_enable_send = 1'b0;
         board_enable_send = 1'b0;
         status_enable_send = 1'b0;
         end_game_enable_send = 1'b0;
@@ -85,18 +85,18 @@ module MainController #(
                 endcase
             end
             S_SEND_START_GAME: begin
-                start_enable_send = 1'b1;
-                tx_start = start_tx_start;
+                start_game_enable_send = 1'b1;
+                tx_start = start_game_tx_start;
                 tx_data = start_game_tx_data;
 
                 if (start_game_data_sent) next_arb_state = S_IDLE;
             end
             S_SEND_DIFICULTY: begin
                 dificulty_enable_send = 1'b1;
-                tx_start = dificult_tx_start;
+                tx_start = dificulty_tx_start;
                 tx_data = dificult_tx_data;
 
-                if (dificult_data_sent) next_arb_state = S_IDLE;
+                if (dificulty_data_sent) next_arb_state = S_IDLE;
             end
             S_SEND_MAP: begin
                 board_enable_send = 1'b1;
@@ -128,27 +128,25 @@ module MainController #(
     SendStartGame send_start_game (
         .clock(clock),
         .reset(reset),
-        .start(start_enable_send),
-        
+        .habilitar_envio(start_game_enable_send),
+        .uart_ocupado(uart_busy),
         .game_started(current_state == INICIAR_JOGO),
 
-        .tx_busy(uart_busy),
-        .tx_start(start_game_tx_start),
-        .tx_data(start_game_tx_data),
-        .data_sent(start_game_data_sent)
+        .iniciar_envio(tx_start),
+        .dado_saida(start_game_tx_data),
+        .envio_concluido(start_game_data_sent)
     );
 
     SendGameDificulty send_game_dificulty (
         .clock(clock),
         .reset(reset),
-        .start(dificulty_enable_send),
-        
-        .dificuldade(game_dificulty),
+        .habilitar_envio(dificulty_enable_send),
+        .uart_ocupado(uart_busy),
+        .game_dificulty(game_dificulty),
 
-        .tx_busy(uart_busy),
-        .tx_start(dificult_tx_start),
-        .tx_data(dificulty_tx_data),
-        .data_sent(dificult_data_sent)
+        .iniciar_envio(tx_start),
+        .dado_saida(dificulty_tx_data),
+        .envio_concluido(dificult_data_sent)
     );
 
     SendFullMap map_sender (
@@ -157,9 +155,10 @@ module MainController #(
         .habilitar_envio(board_enable_send),
         .uart_ocupado(uart_busy),
         .full_map_input(full_board),
-        .iniciar_envio(board_tx_start),
-        .dado_saida(board_tx_data),
-        .envio_concluido(board_data_sent)
+
+        .iniciar_envio(tx_start),
+        .dado_saida(dificulty_tx_data),
+        .envio_concluido(dificult_data_sent)
     );
 
     SendGameStatus status_sender (
@@ -167,10 +166,12 @@ module MainController #(
         .reset(reset),
         .habilitar_envio(status_enable_send),
         .uart_ocupado(uart_busy),
+        
         .colors(colors),
         .position(position),
         .errors(errors),
         .selected_number(selected_number),
+        
         .iniciar_envio(status_tx_start),
         .dado_saida(status_tx_data),
         .envio_concluido(status_data_sent)
@@ -179,5 +180,14 @@ module MainController #(
     SendEndGame send_eng_game (
         .clock(clock),
         .reset(reset),
+        .habilitar_envio(end_game_enable_send),
+        .uart_ocupado(uart_busy),
+        
+        .points(score),
+        .victory_condition(victory_condition),
+        
+        .iniciar_envio(end_game_tx_start),
+        .dado_saida(end_game_tx_data),
+        .envio_concluido(end_game_data_sent)
     );
 endmodule

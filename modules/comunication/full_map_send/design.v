@@ -1,5 +1,5 @@
 module SendFullMap #(
-    parameter [7:0] EVENTO_CODE = 8'hAC
+    parameter [7:0] EVENT_CODE = 8'hAC
 )(
     input  wire         clock,
     input  wire         reset,
@@ -15,22 +15,23 @@ module SendFullMap #(
     localparam MAP_SIZE_BYTES = 42;
     localparam MAP_SIZE_BITS  = MAP_SIZE_BYTES * 8;
 
-    wire [MAP_SIZE_BITS-1:0] payload_data;
+    wire [327:0] payload_data = { 4'h00, full_map_input };
 
-    assign payload_data = { {(MAP_SIZE_BITS-324){1'b0}}, full_map_input };
+		PayloadController #(
+			.EVENT_CODE(8'hAC),
+			.SEND_BYTES_QTD(23),
+			.MSB_FIRST(0)
+		) payload_controller  (
+			.clock(clock),
+			.reset(reset),
+			.habilitar_envio(habilitar_envio),
+			.uart_ocupado(uart_ocupado),
 
-    PayloadController #(
-        .EVENTO_CODE(EVENTO_CODE)
-    ) send_generic (
-        .clock(clock),
-        .reset(reset),
-        .habilitar_envio(habilitar_envio),
-        .uart_ocupado(uart_ocupado),
-        .quantidade_bytes(MAP_SIZE_BYTES),
-        .payload_data(payload_data),
-        .iniciar_envio(iniciar_envio),
-        .dado_saida(dado_saida),
-        .envio_concluido(envio_concluido)
-    );
+			.buffer_envio(payload_data),
+
+			.iniciar_envio(iniciar_envio),
+			.dado_saida(dado_saida),
+			.envio_concluido(envio_concluido)
+		);
 
 endmodule

@@ -16,14 +16,14 @@ module test_defs(
     localparam ERRORS_TEST = 2'd2;
     localparam SELECTED_NUMBER_TEST = 4'd3;
 
-    assign current_state = test ? 3'b010 : 3'b011;
+    assign current_state = test ? 3'b101 : 3'b110;
     assign game_dificulty = 1'b1;
     assign full_board = 324'h019638095430796528016975308406351927104860395726183049260187435962370481092635170;
     assign colors = CORES_TEST;
     assign position = POSITION_TEST;
     assign errors = ERRORS_TEST;
     assign selected_number = SELECTED_NUMBER_TEST;
-    assign victory_condition = 1'b0;
-    assign score = 7'h00;
+    assign victory_condition = 1'b1;
+    assign score = 7'd100;
     assign time_in_seconds = 11'h000;
 endmodule

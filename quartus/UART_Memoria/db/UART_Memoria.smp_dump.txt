@@ -1,5 +1,46 @@
 
-State Machine - |UART_Memoria|FullMapSendController:inst10|PayloadController:payload_controller|estado_atual
+State Machine - |UART_Memoria|MainController:inst5|arb_state
+Name arb_state.S_SEND_START_GAME arb_state.S_SEND_END_GAME arb_state.S_SEND_STATUS arb_state.S_SEND_MAP arb_state.S_SEND_DIFICULTY arb_state.S_IDLE 
+arb_state.S_IDLE 0 0 0 0 0 0 
+arb_state.S_SEND_DIFICULTY 0 0 0 0 1 1 
+arb_state.S_SEND_MAP 0 0 0 1 0 1 
+arb_state.S_SEND_STATUS 0 0 1 0 0 1 
+arb_state.S_SEND_END_GAME 0 1 0 0 0 1 
+arb_state.S_SEND_START_GAME 1 0 0 0 0 1 
+
+State Machine - |UART_Memoria|MainController:inst5|SendEndGame:send_eng_game|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |UART_Memoria|MainController:inst5|SendGameStatus:status_sender|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |UART_Memoria|MainController:inst5|SendFullMap:map_sender|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |UART_Memoria|MainController:inst5|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |UART_Memoria|MainController:inst5|SendStartGame:send_start_game|PayloadController:payload_controller|estado_atual
 Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
 estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
 estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
