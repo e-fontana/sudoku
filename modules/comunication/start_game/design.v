@@ -3,19 +3,18 @@ module SendStartGame #(parameter EVENT_CODE = 8'hAA) (
     input  wire         reset,
     input  wire         habilitar_envio,
     input  wire         uart_ocupado,
-    input  wire [323:0] game_started,
 
-    output reg         iniciar_envio,
-    output reg [7:0]   dado_saida,
-    output wire         envio_concluido
+    output		         iniciar_envio,
+    output [7:0]   dado_saida,
+    output         envio_concluido
 );
-    wire [7:0] payload = { 7'b0000000, game_started };
+	wire [7:0] payload = 8'd0;
 
     PayloadController #(
         .EVENT_CODE(EVENT_CODE),
-        .SEND_BYTES_QTD(1)
+        .SEND_BYTES_QTD(0)
     ) payload_controller (
-        .clock(clk),
+        .clock(clock),
         .reset(reset),
         .habilitar_envio(habilitar_envio),
         .uart_ocupado(uart_ocupado),
