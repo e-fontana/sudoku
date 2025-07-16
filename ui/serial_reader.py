@@ -39,6 +39,16 @@ class SerialReader:
                 match (byte[0]):
                     case 0xAA:  # Início do jogo
                         print("Início do jogo detectado.")
+                        payload_bytes = ser.read(1)
+
+                        if len(payload_bytes) != 1:
+                            print("Pacote incompleto após cabeçalho. Descartando.")
+                            continue
+                        print(f"\n--- Pacote Completo Recebido ---")
+                        print(f"Payload: {payload_bytes.hex()}")
+                        game_difficulty = payload_bytes[0]
+                        print(f"Dificuldade do jogo: {['Fácil' if not game_difficulty else 'Difícil'][game_difficulty]}")
+                    
                     case 0xAB:  # Dificuldade
                         print("Dificuldade detectada.")
                     case 0xAC:  # Mapa completo
