@@ -1,5 +1,5 @@
 Analysis & Synthesis report for UART_Memoria
-Tue Jul 15 16:22:35 2025
+Tue Jul 15 21:12:49 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -56,7 +56,7 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jul 15 16:22:35 2025           ;
+; Analysis & Synthesis Status        ; Successful - Tue Jul 15 21:12:49 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; UART_Memoria                                    ;
 ; Top-level Entity Name              ; UART_Memoria                                    ;
@@ -165,31 +165,30 @@ on the Quartus Prime software download page.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 16          ;
-; Maximum allowed            ; 10          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 10          ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processors 3-10        ;   0.0%      ;
+;     Processors 2-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                           ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------+---------+
-; test_defs.v                      ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/test_defs.v             ;         ;
-; FullMapSendController.v          ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/FullMapSendController.v ;         ;
-; UART_Memoria.bdf                 ; yes             ; User Block Diagram/Schematic File  ; /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART_Memoria.bdf        ;         ;
-; ControladorPrincipal.v           ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/ControladorPrincipal.v  ;         ;
-; UART.v                           ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v                  ;         ;
-; GameStatus.v                     ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/GameStatus.v            ;         ;
-; MainController.v                 ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/MainController.v        ;         ;
-+----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                     ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
+; test_defs.v                      ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/test_defs.v             ;         ;
+; FullMapSendController.v          ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/FullMapSendController.v ;         ;
+; UART_Memoria.bdf                 ; yes             ; User Block Diagram/Schematic File  ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART_Memoria.bdf        ;         ;
+; ControladorPrincipal.v           ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v  ;         ;
+; UART.v                           ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v                  ;         ;
+; GameStatus.v                     ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v            ;         ;
+; MainController.v                 ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/MainController.v        ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -242,13 +241,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Encoding Type:  One-Hot
 +---------------------------------------------------------------------------------------------+
 ; State Machine - |UART_Memoria|MainController:inst10|arb_state                               ;
-+-------------------------+------------------+-------------------------+----------------------+
-; Name                    ; arb_state.S_IDLE ; arb_state.S_SEND_STATUS ; arb_state.S_SEND_MAP ;
-+-------------------------+------------------+-------------------------+----------------------+
-; arb_state.S_IDLE        ; 0                ; 0                       ; 0                    ;
-; arb_state.S_SEND_MAP    ; 1                ; 0                       ; 1                    ;
-; arb_state.S_SEND_STATUS ; 1                ; 1                       ; 0                    ;
-+-------------------------+------------------+-------------------------+----------------------+
++-------------------------+----------------------+------------------+-------------------------+
+; Name                    ; arb_state.S_SEND_MAP ; arb_state.S_IDLE ; arb_state.S_SEND_STATUS ;
++-------------------------+----------------------+------------------+-------------------------+
+; arb_state.S_IDLE        ; 0                    ; 0                ; 0                       ;
+; arb_state.S_SEND_MAP    ; 1                    ; 1                ; 0                       ;
+; arb_state.S_SEND_STATUS ; 0                    ; 1                ; 1                       ;
++-------------------------+----------------------+------------------+-------------------------+
 
 
 Encoding Type:  One-Hot
@@ -460,54 +459,54 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Tue Jul 15 16:22:30 2025
+    Info: Processing started: Tue Jul 15 21:12:44 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off UART_Memoria -c UART_Memoria
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file test_defs.v
-    Info (12023): Found entity 1: test_defs File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/test_defs.v Line: 1
+    Info (12023): Found entity 1: test_defs File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/test_defs.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file FullMapSendController.v
-    Info (12023): Found entity 1: FullMapSendController File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 1
+    Info (12023): Found entity 1: FullMapSendController File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file UART_Memoria.bdf
     Info (12023): Found entity 1: UART_Memoria
 Info (12021): Found 1 design units, including 1 entities, in source file ControladorPrincipal.v
-    Info (12023): Found entity 1: ControladorUART File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 1
+    Info (12023): Found entity 1: ControladorUART File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file UART.v
-    Info (12023): Found entity 1: UART File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 1
+    Info (12023): Found entity 1: UART File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file GameStatus.v
-    Info (12023): Found entity 1: GameStatusSend File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/GameStatus.v Line: 1
+    Info (12023): Found entity 1: GameStatusSend File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file SendStart.v
-    Info (12023): Found entity 1: SendStart File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/SendStart.v Line: 1
+    Info (12023): Found entity 1: SendStart File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/SendStart.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file SendEndGame.v
-    Info (12023): Found entity 1: end_game_tx File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/SendEndGame.v Line: 1
+    Info (12023): Found entity 1: end_game_tx File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/SendEndGame.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file SendDificulty.v
-    Info (12023): Found entity 1: dificuldade_fsm File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/SendDificulty.v Line: 1
+    Info (12023): Found entity 1: dificuldade_fsm File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/SendDificulty.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file MainController.v
-    Info (12023): Found entity 1: MainController File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/MainController.v Line: 7
+    Info (12023): Found entity 1: MainController File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/MainController.v Line: 1
 Info (12127): Elaborating entity "UART_Memoria" for the top level hierarchy
 Info (12128): Elaborating entity "UART" for hierarchy "UART:inst1"
-Warning (10230): Verilog HDL assignment warning at UART.v(41): truncated value with size 32 to match size of target (16) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 41
-Warning (10230): Verilog HDL assignment warning at UART.v(50): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 50
-Warning (10230): Verilog HDL assignment warning at UART.v(53): truncated value with size 32 to match size of target (1) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 53
-Warning (10230): Verilog HDL assignment warning at UART.v(58): truncated value with size 32 to match size of target (16) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 58
-Warning (10199): Verilog HDL Case Statement warning at UART.v(61): case item expression never matches the case expression File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 61
-Warning (10230): Verilog HDL assignment warning at UART.v(101): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 101
-Warning (10230): Verilog HDL assignment warning at UART.v(110): truncated value with size 32 to match size of target (16) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 110
-Warning (10034): Output port "rx_data" at UART.v(6) has no driver File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 6
+Warning (10230): Verilog HDL assignment warning at UART.v(41): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 41
+Warning (10230): Verilog HDL assignment warning at UART.v(50): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 50
+Warning (10230): Verilog HDL assignment warning at UART.v(53): truncated value with size 32 to match size of target (1) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 53
+Warning (10230): Verilog HDL assignment warning at UART.v(58): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 58
+Warning (10199): Verilog HDL Case Statement warning at UART.v(61): case item expression never matches the case expression File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 61
+Warning (10230): Verilog HDL assignment warning at UART.v(101): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 101
+Warning (10230): Verilog HDL assignment warning at UART.v(110): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 110
+Warning (10034): Output port "rx_data" at UART.v(6) has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 6
 Info (12128): Elaborating entity "ControladorUART" for hierarchy "ControladorUART:inst"
-Warning (10270): Verilog HDL Case Statement warning at ControladorPrincipal.v(92): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 92
+Warning (10270): Verilog HDL Case Statement warning at ControladorPrincipal.v(91): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/ControladorPrincipal.v Line: 91
 Info (12128): Elaborating entity "MainController" for hierarchy "MainController:inst10"
-Warning (10270): Verilog HDL Case Statement warning at MainController.v(75): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/MainController.v Line: 75
-Info (12128): Elaborating entity "FullMapSendController" for hierarchy "MainController:inst10|FullMapSendController:map_sender" File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/MainController.v Line: 135
-Warning (10230): Verilog HDL assignment warning at FullMapSendController.v(76): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 76
-Warning (10230): Verilog HDL assignment warning at FullMapSendController.v(86): truncated value with size 328 to match size of target (8) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 86
-Warning (10230): Verilog HDL assignment warning at FullMapSendController.v(109): truncated value with size 32 to match size of target (6) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 109
-Info (12128): Elaborating entity "GameStatusSend" for hierarchy "MainController:inst10|GameStatusSend:status_sender" File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/MainController.v Line: 149
-Warning (10230): Verilog HDL assignment warning at GameStatus.v(79): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/GameStatus.v Line: 79
-Warning (10230): Verilog HDL assignment warning at GameStatus.v(89): truncated value with size 200 to match size of target (8) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/GameStatus.v Line: 89
-Warning (10230): Verilog HDL assignment warning at GameStatus.v(111): truncated value with size 32 to match size of target (6) File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/GameStatus.v Line: 111
+Warning (10270): Verilog HDL Case Statement warning at MainController.v(58): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/MainController.v Line: 58
+Info (12128): Elaborating entity "FullMapSendController" for hierarchy "MainController:inst10|FullMapSendController:map_sender" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/MainController.v Line: 97
+Warning (10230): Verilog HDL assignment warning at FullMapSendController.v(76): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 76
+Warning (10230): Verilog HDL assignment warning at FullMapSendController.v(86): truncated value with size 328 to match size of target (8) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 86
+Warning (10230): Verilog HDL assignment warning at FullMapSendController.v(109): truncated value with size 32 to match size of target (6) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/FullMapSendController.v Line: 109
+Info (12128): Elaborating entity "GameStatusSend" for hierarchy "MainController:inst10|GameStatusSend:status_sender" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/MainController.v Line: 111
+Warning (10230): Verilog HDL assignment warning at GameStatus.v(79): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v Line: 79
+Warning (10230): Verilog HDL assignment warning at GameStatus.v(89): truncated value with size 200 to match size of target (8) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v Line: 89
+Warning (10230): Verilog HDL assignment warning at GameStatus.v(111): truncated value with size 32 to match size of target (6) File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/GameStatus.v Line: 111
 Info (12128): Elaborating entity "test_defs" for hierarchy "test_defs:inst12"
-Info (13000): Registers with preset signals will power-up high File: /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/UART.v Line: 5
+Info (13000): Registers with preset signals will power-up high File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/UART.v Line: 5
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rx_ready" is stuck at GND
@@ -521,7 +520,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rx_data[0]" is stuck at GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 4 registers lost all their fanouts during netlist optimizations.
-Info (144001): Generated suppressed messages file /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/output_files/UART_Memoria.map.smsg
+Info (144001): Generated suppressed messages file /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/output_files/UART_Memoria.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
@@ -531,15 +530,15 @@ Info (21057): Implemented 226 device resources after synthesis - the final resou
     Info (21059): Implemented 10 output pins
     Info (21061): Implemented 212 logic cells
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 29 warnings
-    Info: Peak virtual memory: 487 megabytes
-    Info: Processing ended: Tue Jul 15 16:22:35 2025
+    Info: Peak virtual memory: 502 megabytes
+    Info: Processing ended: Tue Jul 15 21:12:49 2025
     Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:12
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in /home/andreojr/dev/edu/engg52/controller/sudoku/quartus/UART_Memoria/output_files/UART_Memoria.map.smsg.
+The suppressed messages can be found in /home/fontana/dev/ufba/lab-1/sudoku/quartus/UART_Memoria/output_files/UART_Memoria.map.smsg.
 
 

@@ -1,4 +1,4 @@
-module GameStatusSend #(parameter EVENT_CODE = 8'hAD) (
+module SendGameStatus #(parameter EVENT_CODE = 8'hAD) (
     input  wire         clock,
     input  wire         reset,
     input  wire         habilitar_envio,    // pulso de ativação externo

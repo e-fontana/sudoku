@@ -1,9 +1,9 @@
 
 State Machine - |UART_Memoria|MainController:inst10|arb_state
-Name arb_state.S_IDLE arb_state.S_SEND_STATUS arb_state.S_SEND_MAP 
+Name arb_state.S_SEND_MAP arb_state.S_IDLE arb_state.S_SEND_STATUS 
 arb_state.S_IDLE 0 0 0 
-arb_state.S_SEND_MAP 1 0 1 
-arb_state.S_SEND_STATUS 1 1 0 
+arb_state.S_SEND_MAP 1 1 0 
+arb_state.S_SEND_STATUS 0 1 1 
 
 State Machine - |UART_Memoria|MainController:inst10|GameStatusSend:status_sender|estado_atual
 Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 

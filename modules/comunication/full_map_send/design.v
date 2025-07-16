@@ -1,4 +1,4 @@
-module FullMapSendController #(parameter EVENT_CODE = 8'hAC) (
+module SendFullMap #(parameter EVENT_CODE = 8'hAC) (
     input  wire         clock,
     input  wire         reset,
     input  wire         habilitar_envio,    // pulso de ativação externo

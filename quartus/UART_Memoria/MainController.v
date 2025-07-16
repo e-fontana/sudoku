@@ -26,8 +26,10 @@ module MainController #(
     output reg [7:0]  tx_data
 );
     localparam S_IDLE        = 2'b00;
-    localparam S_SEND_MAP    = 2'b01;
-    localparam S_SEND_STATUS = 2'b10;
+
+	 localparam S_START_GAME  = 2'b01;
+    localparam S_SEND_MAP    = 2'b10;
+    localparam S_SEND_STATUS = 2'b11;
 
     reg [1:0] arb_state, next_arb_state;
     reg board_enable_send, status_enable_send;
@@ -55,11 +57,9 @@ module MainController #(
             S_IDLE: begin
                 case (current_state)
                     CARREGANDO: begin
-                    
                         next_arb_state = S_SEND_MAP;
                     end
                     CORRENDO_MAPA, PERCORRER_NUMEROS: begin
-                    
                         next_arb_state = S_SEND_STATUS;
                     end
                 endcase

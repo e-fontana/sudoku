@@ -1,4 +1,4 @@
-module end_game_tx #(parameter EVENT_CODE = 8'hAE) (
+module SendEndGame #(parameter EVENT_CODE = 8'hAE) (
     input wire clk,
     input wire reset,
     input wire block,

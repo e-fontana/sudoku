@@ -1,60 +1,42 @@
-module start_tx #(parameter EVENT_CODE = 8'hAA) (
+module SendStartGame #(parameter EVENT_CODE = 8'hAA) (
     input wire clk,
     input wire reset,
-    input wire start,            
-    input wire block,
-
+    input wire start,     
     input wire game_stated,
     input wire tx_busy,
-    input wire payload_ready,
-    input wire data_sent,
-
+    input wire tx_start,
+    
     output reg [7:0] tx_data,
-    output reg send,
-    output reg build_payload
+    output reg data_sent
 );
-
     localparam IDLE             = 2'b00;
     localparam BUILDING_PAYLOAD = 2'b01;
     localparam SENDING_DATA     = 2'b10;
+    localparam DATA_SENT_STATE  = 2'b11;
 
     reg [1:0] state;
     reg [1:0] byte_index;
 
-    reg [7:0] payload = {
-        7'b0000000,
-        game_stated
-    }
-
-    always @(*) begin
-        payload = {
-            7'd0,
-            game_stated
-        }
-    end
+    wire [7:0] payload = { 7'b0000000, game_stated };
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             state <= IDLE;
             tx_data <= 8'd0;
             send <= 0;
-            build_payload <= 0;
             byte_index <= 0;
+            data_sent <= 0;
         end else begin
-            send <= 0;
-            build_payload <= 0;
-
+            data_sent <= 0;
             case (state)
                 IDLE: begin
-                    if (start && !block) begin
-                        build_payload <= 1;
+                    if (start) begin
                         state <= BUILDING_PAYLOAD;
                     end
                 end
 
                 BUILDING_PAYLOAD: begin
-                    build_payload <= 1;
-                    if (payload_ready) begin
+                    if (tx_start) begin
                         byte_index <= 0;
                         state <= SENDING_DATA;
                     end
@@ -62,7 +44,6 @@ module start_tx #(parameter EVENT_CODE = 8'hAA) (
 
                 SENDING_DATA: begin
                     if (!tx_busy) begin
-                        send <= 1;
                         if (byte_index == 0) begin
                             tx_data <= EVENT_CODE;
                             byte_index <= 1;
@@ -71,11 +52,14 @@ module start_tx #(parameter EVENT_CODE = 8'hAA) (
                             byte_index <= 2;
                         end
                     end
+                    if (byte_index == 2 && !tx_busy)
+                        state <= DATA_SENT_STATE;
+                end
 
-                    if (byte_index == 2 && data_sent && !tx_busy) begin
-                        state <= IDLE;
-                        byte_index <= 0;
-                    end
+                DATA_SENT_STATE: begin
+                    data_sent <= 1;
+                    state <= IDLE;
+                    byte_index <= 0;
                 end
 
                 default: state <= IDLE;

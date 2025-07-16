@@ -1,4 +1,4 @@
-module dificuldade_fsm  #(parameter EVENT_CODE = 8'hAB) (
+module SendGameDificulty  #(parameter EVENT_CODE = 8'hAB) (
     input wire clk,
     input wire reset,
     input wire data_valid,
