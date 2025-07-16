@@ -1,4 +1,4 @@
-module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QTD = 41) (
+module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QTD = 41, parameter MSB_FIRST = 1) (
     input  wire         clock,
     input  wire         reset,
     input  wire         habilitar_envio,    // pulso de ativação externo
@@ -16,7 +16,7 @@ module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QT
     localparam S_ESPERA_FIM     = 3'b011;
     localparam S_PROXIMO_CHUNK  = 3'b100;
 
-    localparam QTD_CHUNKS = 24;
+    localparam QTD_CHUNKS = SEND_BYTES_QTD + 1;
     localparam DELAY_PACOTE = 100;
 	 
     reg [2:0]  estado_atual;
@@ -79,9 +79,17 @@ module PayloadController #(parameter EVENT_CODE = 8'hAD, parameter SEND_BYTES_QT
                 begin
                     reg [7:0] byte_original;
                     if (indice_chunk == 0) begin
-                        dado_saida <= 8'hAD;
+                        dado_saida <= EVENT_CODE;
                 end else begin
-                    dado_saida <= (buffer_envio >> ((QTD_CHUNKS - 1 - indice_chunk) * 8));
+							  if (MSB_FIRST) begin
+									 // Envio MSB-first (como em SendGameStatus)
+                            // O índice do byte no payload é (indice_chunk - 1)
+                            // A quantidade de shift é (total de bytes - 1 - índice do byte) * 8
+                            dado_saida <= buffer_envio >> ((SEND_BYTES_QTD - indice_chunk) * 8);
+                        end else begin
+                            // Envio LSB-first
+                            dado_saida <= buffer_envio >> ((indice_chunk - 1) * 8);
+                        end
                 end
                     if (!uart_ocupado)
                         estado_atual <= S_INICIA_ENVIO;

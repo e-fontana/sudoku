@@ -9,9 +9,9 @@
 		 input wire [1:0] errors,
 		 input wire [3:0] selected_number,  // 4 bits: Número selecionado;
 
-		 output wire          iniciar_envio,
-		 output wire [7:0]    dado_saida,
-		 output wire         envio_concluido     // pulso de 1 ciclo ao final
+		 output 				iniciar_envio,
+		 output [7:0]    dado_saida,
+		 output         envio_concluido     // pulso de 1 ciclo ao final
 	);
 		wire [327:0] buffer_envio = {
 							  colors,         // 162 bits: Dados das cores

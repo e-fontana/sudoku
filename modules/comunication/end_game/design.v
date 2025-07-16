@@ -6,8 +6,8 @@ module SendEndGame #(parameter EVENT_CODE = 8'hAE) (
     input  wire [6:0]   points,
     input  wire         victory_condition,
 
-    output reg         iniciar_envio,
-    output reg [7:0]   dado_saida,
+    output wire         iniciar_envio,
+    output wire [7:0]   dado_saida,
     output wire         envio_concluido
 );
     wire [7:0] payload = {victory_condition, points};
@@ -16,7 +16,7 @@ module SendEndGame #(parameter EVENT_CODE = 8'hAE) (
         .EVENT_CODE(EVENT_CODE),
         .SEND_BYTES_QTD(1)
     ) payload_controller (
-        .clock(clk),
+        .clock(clock),
         .reset(reset),
         .habilitar_envio(habilitar_envio),
         .uart_ocupado(uart_ocupado),
