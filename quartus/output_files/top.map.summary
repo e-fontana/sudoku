@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Jul 16 20:17:26 2025
+Quartus Prime Version : 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
+Revision Name : top
+Top-level Entity Name : top
+Family : Cyclone IV E
+Total logic elements : 2,104
+    Total combinational functions : 2,103
+    Dedicated logic registers : 530
+Total registers : 530
+Total pins : 85
+Total virtual pins : 0
+Total memory bits : 0
+Embedded Multiplier 9-bit elements : 4
+Total PLLs : 0

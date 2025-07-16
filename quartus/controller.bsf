@@ -1,0 +1,170 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2025  Altera Corporation. All rights reserved.
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, the Altera Quartus Prime License Agreement,
+the Altera IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Altera and sold by Altera or its authorized distributors.  Please
+refer to the Altera Software License Subscription Agreements 
+on the Quartus Prime software download page.
+*/
+(header "symbol" (version "1.1"))
+(symbol
+	(rect 16 16 296 256)
+	(text "controller" (rect 5 0 40 12)(font "Arial" ))
+	(text "inst" (rect 8 224 20 236)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 10 12)(font "Arial" ))
+		(text "clk" (rect 21 27 31 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 1))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "reset" (rect 0 0 20 12)(font "Arial" ))
+		(text "reset" (rect 21 43 41 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 1))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "PIN_UP_Z" (rect 0 0 47 12)(font "Arial" ))
+		(text "PIN_UP_Z" (rect 21 59 68 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "PIN_DOWN_Y" (rect 0 0 66 12)(font "Arial" ))
+		(text "PIN_DOWN_Y" (rect 21 75 87 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 1))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "PIN_LEFT_X" (rect 0 0 57 12)(font "Arial" ))
+		(text "PIN_LEFT_X" (rect 21 91 78 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "PIN_RIGHT_MODE" (rect 0 0 87 12)(font "Arial" ))
+		(text "PIN_RIGHT_MODE" (rect 21 107 108 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "PIN_A_B" (rect 0 0 41 12)(font "Arial" ))
+		(text "PIN_A_B" (rect 21 123 62 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128)(line_width 1))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "PIN_START_C" (rect 0 0 68 12)(font "Arial" ))
+		(text "PIN_START_C" (rect 21 139 89 151)(font "Arial" ))
+		(line (pt 0 144)(pt 16 144)(line_width 1))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "game_state[2..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "game_state[2..0]" (rect 21 155 88 167)(font "Arial" ))
+		(line (pt 0 160)(pt 16 160)(line_width 3))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "select" (rect 0 0 22 12)(font "Arial" ))
+		(text "select" (rect 237 27 259 39)(font "Arial" ))
+		(line (pt 280 32)(pt 264 32)(line_width 1))
+	)
+	(port
+		(pt 280 48)
+		(output)
+		(text "LEDR[11..0]" (rect 0 0 50 12)(font "Arial" ))
+		(text "LEDR[11..0]" (rect 209 43 259 55)(font "Arial" ))
+		(line (pt 280 48)(pt 264 48)(line_width 3))
+	)
+	(port
+		(pt 280 64)
+		(output)
+		(text "controller_output[11..0]" (rect 0 0 87 12)(font "Arial" ))
+		(text "controller_output[11..0]" (rect 172 59 259 71)(font "Arial" ))
+		(line (pt 280 64)(pt 264 64)(line_width 3))
+	)
+	(port
+		(pt 280 80)
+		(output)
+		(text "up_button" (rect 0 0 38 12)(font "Arial" ))
+		(text "up_button" (rect 221 75 259 87)(font "Arial" ))
+		(line (pt 280 80)(pt 264 80)(line_width 1))
+	)
+	(port
+		(pt 280 96)
+		(output)
+		(text "down_button" (rect 0 0 49 12)(font "Arial" ))
+		(text "down_button" (rect 210 91 259 103)(font "Arial" ))
+		(line (pt 280 96)(pt 264 96)(line_width 1))
+	)
+	(port
+		(pt 280 112)
+		(output)
+		(text "left_button" (rect 0 0 41 12)(font "Arial" ))
+		(text "left_button" (rect 218 107 259 119)(font "Arial" ))
+		(line (pt 280 112)(pt 264 112)(line_width 1))
+	)
+	(port
+		(pt 280 128)
+		(output)
+		(text "right_button" (rect 0 0 46 12)(font "Arial" ))
+		(text "right_button" (rect 213 123 259 135)(font "Arial" ))
+		(line (pt 280 128)(pt 264 128)(line_width 1))
+	)
+	(port
+		(pt 280 144)
+		(output)
+		(text "a_button" (rect 0 0 34 12)(font "Arial" ))
+		(text "a_button" (rect 225 139 259 151)(font "Arial" ))
+		(line (pt 280 144)(pt 264 144)(line_width 1))
+	)
+	(port
+		(pt 280 160)
+		(output)
+		(text "b_button" (rect 0 0 34 12)(font "Arial" ))
+		(text "b_button" (rect 225 155 259 167)(font "Arial" ))
+		(line (pt 280 160)(pt 264 160)(line_width 1))
+	)
+	(port
+		(pt 280 176)
+		(output)
+		(text "start_button" (rect 0 0 47 12)(font "Arial" ))
+		(text "start_button" (rect 212 171 259 183)(font "Arial" ))
+		(line (pt 280 176)(pt 264 176)(line_width 1))
+	)
+	(port
+		(pt 280 192)
+		(output)
+		(text "z_button" (rect 0 0 33 12)(font "Arial" ))
+		(text "z_button" (rect 226 187 259 199)(font "Arial" ))
+		(line (pt 280 192)(pt 264 192)(line_width 1))
+	)
+	(drawing
+		(rectangle (rect 16 16 264 224)(line_width 1))
+	)
+)
