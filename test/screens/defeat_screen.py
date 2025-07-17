@@ -3,7 +3,7 @@ import math
 from screens.base_screen import BaseScreen
 
 class DefeatScreen(BaseScreen):
-    BACKGROUND_IMAGE_PATH = "sudoku-gui/assets/images/defeat_bg.png"
+    BACKGROUND_IMAGE_PATH = "test/assets/images/defeat_bg.png"
 
     INSTRUCTION = "press Z to return"
 
@@ -38,9 +38,6 @@ class DefeatScreen(BaseScreen):
         scale_offset = self.PULSE_MIN_SCALE + scale_amplitude
         self.current_pulse_scale_value = scale_offset + scale_amplitude * math.sin(self.pulse_timer * self.PULSE_SCALE_SPEED * 2 * math.pi)
         self.current_pulse_scale_value = max(self.PULSE_MIN_SCALE, min(self.current_pulse_scale_value, self.PULSE_MAX_SCALE))
-
-    def handle_event(self, event):
-        print('você perdeu, tente novamente')
     
     def draw(self, screen):
         screen.blit(self.background_image, (0, 0))

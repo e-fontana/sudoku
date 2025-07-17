@@ -1,11 +1,10 @@
 from screens import Modelo
-from serial_reader import SerialReader
+from game import Game
+
 
 modelo = Modelo()
-serialReader = SerialReader(modelo)
-serialReader.read_serial()
-    # game = Game(modelo)
-    # game.run()
+game = Game(modelo=modelo)
+game.run()
 
 # from game import Game
 # import time

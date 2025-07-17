@@ -46,13 +46,7 @@ class GameScreen(BaseScreen):
 
     def handle_event(self, event):
         # ACABOU O JOGO
-        if self.game.modelo.finishGame:
-            # Transição para telas de vitória/derrota (para teste)
-            if self.game.modelo.endgame[1]:
-                
-                self.game.set_state(self.game.STATE_VICTORY)
-            else:
-                self.game.set_state(self.game.STATE_DEFEAT)
+        pass
 
                                
 
@@ -99,11 +93,10 @@ class GameScreen(BaseScreen):
 
                 # Escolhe a cor de fundo da célula (normal ou selecionada)
                 cell_fill_color = self.CELL_BG_COLOR # Cor padrão
-
-                if row == self.position[0] and col == self.position[1]:
-                    if self.colors[self.position[0]][self.position[1]] == Color.VERMELHO:
+                if row == self.game.modelo.position[0] and col == self.game.modelo.position[1]:
+                    if self.game.modelo.colors[row][col] == Color.VERMELHO:
                         cell_fill_color = self.WRONG_CELL_COLOR
-                    elif self.colors[self.position[0]][self.position[1]] == Color.AMARELO:
+                    elif self.game.modelo.colors[row][col] == Color.AMARELO:
                         cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR
                     else: # Cor para a célula selecionada
                         cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada

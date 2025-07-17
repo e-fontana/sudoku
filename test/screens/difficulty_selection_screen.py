@@ -2,7 +2,7 @@ import pygame
 from screens.base_screen import BaseScreen
 
 class DifficultySelectionScreen(BaseScreen):
-    BACKGROUND_IMAGE_PATH = "sudoku-gui/assets/images/difficulty_selection_bg.png"
+    BACKGROUND_IMAGE_PATH = "test/assets/images/difficulty_selection_bg.png"
 
     def __init__(self, game):
         super().__init__(game)
@@ -21,7 +21,6 @@ class DifficultySelectionScreen(BaseScreen):
         if self.game.modelo.map:
                 chosen_difficulty = self.options[self.selected_index]
                 print(f"Dificuldade escolhida: {chosen_difficulty}")
-                self.game.set_state(self.game.STATE_GAME)
                 print("Iniciando jogo...")
     
     def draw(self, screen):

@@ -15,6 +15,7 @@ class SerialReader:
         self.port = port
         self.baudrate = baudrate
         self.model = model
+        self.current_state = None
 
     def read_serial(self):
         """
@@ -35,74 +36,55 @@ class SerialReader:
                 if not byte:
                     continue
 
-                print(byte)
-                
                 match (byte[0]):
                     case 0xAA:  # Início do jogo
-                        print("Início do jogo detectado.")
-                        self.model.start = True
+                        self.current_state = "START"
                     
                     case 0xAB:  # Dificuldade
-                        print("Dificuldade detectada.")
+                        self.current_state = "DIFICULTY"
                         payload_bytes = ser.read(1)
                         if len(payload_bytes) != 1:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
-                        print(f"\n--- Pacote Completo Recebido ---")
-                        print(f"Payload: {payload_bytes.hex()}")
                         game_difficulty = payload_bytes[0]
                         self.model.difficulty = bool(game_difficulty)
-                        print(f"Dificuldade do jogo: {self.model.difficulty}")
                     case 0xAC:  # Mapa completo
-                        print("Mapa completo recebido.")
+                        self.current_state = "BOARD"
                         full_map_bytes = ser.read(41)
-
-                        print(len(full_map_bytes))
-
                         if len(full_map_bytes) != 41:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
-                        
+
                         correct_map = full_map.decode_full_map(full_map_bytes)
                         self.model.map = correct_map
-                        print(self.model.map)
-                    
+                        print("MAP SERIAL", correct_map)
+
                     case 0xAD:  # Visibilidade
-                        print("Visibilidade recebida.")
                         payload_bytes = ser.read(23)
                         if len(payload_bytes) != 23:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
-                        print(f"\n--- Pacote Completo Recebido ---")
                         
                         status = game_status.decode_status(payload_bytes)
                         self.model.colors = status["colors"]
                         self.model.strikes = status["errors"]
                         self.model.position = status["position"]
                         self.model.selectedNumber = status["selected_number"]
-                        
-                        print(f"Status do jogo: {status}")
+                        self.current_state = "GAME"
+
                     case 0xAE:  # Fim do jogo
-                        print("Fim do jogo detectado.")
                         payload_bytes = ser.read(1)
                         if len(payload_bytes) != 1:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
-                        print(f"\n--- Pacote Completo Recebido ---")
-                        print(f"Payload: {payload_bytes}")
-                        # transform to bits
-                        print(f''.join(format(byte, '08b') for byte in payload_bytes))
                         valor = payload_bytes[0]
                         # Extrair o MSB (bit 7)
                         msb = bool((valor >> 7) & 0x1)
 
                         # Extrair os 7 bits restantes
                         decimal_7bits = valor & 0x7F  # 0b01111111
-
+                        self.current_state = "VICTORY" if msb else "DEFEAT"
                         self.model.endgame = [decimal_7bits, msb]
-
-                        print(f"MSB (booleano): {msb}")
-                        print(f"7 bits restantes (decimal): {decimal_7bits}")
             
             except KeyboardInterrupt:
                 print("Interrompido pelo usuário.")

@@ -1,6 +1,9 @@
 import pygame
 from screens.colors import Color
 from screens import MenuScreen, DifficultySelectionScreen, GameScreen, VictoryScreen, DefeatScreen, Modelo
+import threading
+from serial_reader import SerialReader
+
 
 class Game:
     WIDTH = 800
@@ -24,12 +27,13 @@ class Game:
     }
 
     # FONTES
-    font_path = "sudoku-gui/assets/fonts/PressStart2P-Regular.ttf"
+    font_path = "test/assets/fonts/PressStart2P-Regular.ttf"
 
 
     def __init__(self, modelo: Modelo):
         pygame.init()
         self.modelo = modelo
+        self.serial_reader = SerialReader(self.modelo)
         REFRESH = pygame.USEREVENT + 1
         pygame.time.set_timer(REFRESH, 30)
 
@@ -37,6 +41,7 @@ class Game:
         pygame.display.set_caption(self.TITLE)
 
         self.current_state = self.STATE_MENU
+        
         self.screens = {
             self.STATE_MENU: MenuScreen(self),
             self.STATE_DIFFICULTY_SELECTION: DifficultySelectionScreen(self),
@@ -44,11 +49,13 @@ class Game:
             self.STATE_VICTORY: VictoryScreen(self),
             self.STATE_DEFEAT: DefeatScreen(self)
         }
+        self.t = threading.Thread(target=self.serial_reader.read_serial)
+        self.t.start()
         self.running = True
         self.clock = pygame.time.Clock()
     
     def set_state(self, new_state):
-        self.current_state = new_state
+        pass
     
     def get_font(self, size):
         return pygame.font.Font(self.font_path, size)
@@ -116,6 +123,19 @@ class Game:
             #     self.modelo.finishGame = True
             #     self.modelo.endgame = [69420, False]
             
+            match (self.serial_reader.current_state):
+                case "START":
+                    self.current_state = self.STATE_MENU
+                case "DIFICULTY":
+                    self.current_state = self.STATE_DIFFICULTY_SELECTION
+                case "BOARD":
+                    self.current_state = self.STATE_GAME
+                case "GAME":
+                    self.current_state = self.STATE_GAME
+                case "VICTORY":
+                    self.current_state = self.STATE_VICTORY
+                case "DEFEAT":
+                    self.current_state = self.STATE_DEFEAT
 
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
@@ -131,4 +151,5 @@ class Game:
             # i += 1
 
         pygame.quit()
+        self.t.join()
         print("Jogo finalizado.")

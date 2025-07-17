@@ -6,7 +6,7 @@ class MenuScreen(BaseScreen):
     START_BUTTON = "START"
     INSTRUCTION = f"press {START_BUTTON} to begin"
 
-    BACKGROUND_IMAGE_PATH = "sudoku-gui/assets/images/main_menu_bg.png"
+    BACKGROUND_IMAGE_PATH = "test/assets/images/main_menu_bg.png"
 
     PULSE_COLOR_SPEED = 3
     PULSE_MIN_BRIGHTNESS = 150

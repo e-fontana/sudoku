@@ -1,14 +1,20 @@
-
+from screens.base_screen import BaseScreen
+from screens.colors import Color
+from screens.defeat_screen import DefeatScreen
+from screens.difficulty_selection_screen import DifficultySelectionScreen
+from screens.game_screen import GameScreen
+from screens.menu_screen import MenuScreen
+from screens.victory_screen import VictoryScreen
 class Modelo:
     def __init__(self):
-        self.start = None
-        self.difficulty = None
+        self.start = False
+        self.difficulty = False
         self.map = None
-        self.colors = []
-        self.position = []
+        self.colors = [[Color(2)] * 9 for _ in range(9)]
+        self.position = [4,4]
         self.strikes = 0
-        self.selectedNumber = None
-        self.endgame = None
+        self.selectedNumber = 1
+        self.endgame = False
         self.finishGame = False
 
     def setStart(self, value):
