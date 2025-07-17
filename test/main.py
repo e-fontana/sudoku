@@ -3,6 +3,8 @@ from game import Game
 
 
 modelo = Modelo()
+# serial_reader = SerialReader('/dev/pts/12', 9600, modelo)
+# serial_reader.read_serial()
 game = Game(modelo=modelo)
 game.run()
 

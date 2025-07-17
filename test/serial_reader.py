@@ -1,6 +1,5 @@
 import serial
 from data_treatment import game_status, full_map
-from screens import Modelo
 
 EVENT_LIST = {
     0xAA: "start",
@@ -11,10 +10,10 @@ EVENT_LIST = {
 }
 
 class SerialReader:
-    def __init__(self, model: Modelo, port = '/dev/ttyUSB0', baudrate = 115200):
+    def __init__(self, game, port = '/dev/ttyUSB0', baudrate = 115200):
         self.port = port
         self.baudrate = baudrate
-        self.model = model
+        self.game = game
         self.current_state = None
 
     def read_serial(self):
@@ -23,7 +22,7 @@ class SerialReader:
         e desempacota o payload de 192 bits.
         """
         try:
-            ser = serial.Serial(self.port, self.baudrate, timeout=1)
+            ser = serial.Serial(self.port, self.baudrate)
             print(f"Ouvindo a porta serial {self.port} em {self.baudrate} bps...")
         except serial.SerialException as e:
             print(f"Erro ao abrir a porta serial: {e}")
@@ -38,26 +37,31 @@ class SerialReader:
 
                 match (byte[0]):
                     case 0xAA:  # Início do jogo
-                        self.current_state = "START"
+                        self.game.handleStateChange("DIFICULTY")
+                        print("Início do jogo detectado.")
                     
                     case 0xAB:  # Dificuldade
-                        self.current_state = "DIFICULTY"
+                        self.game.handleStateChange("DIFICULTY")
                         payload_bytes = ser.read(1)
                         if len(payload_bytes) != 1:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
+                        print(f"\n--- Pacote Completo Recebido ---")
+                        
+                        print(f"Payload: {payload_bytes.hex()}")
                         game_difficulty = payload_bytes[0]
-                        self.model.difficulty = bool(game_difficulty)
+                        self.game.modelo.difficulty = bool(game_difficulty)
+                        
+                        print(f"Dificuldade do jogo: {bool(game_difficulty)}")
                     case 0xAC:  # Mapa completo
-                        self.current_state = "BOARD"
                         full_map_bytes = ser.read(41)
                         if len(full_map_bytes) != 41:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
 
                         correct_map = full_map.decode_full_map(full_map_bytes)
-                        self.model.map = correct_map
-                        print("MAP SERIAL", correct_map)
+                        self.game.modelo.map = correct_map
+                        print("MAP SERIAL", self.game.modelo.map)
 
                     case 0xAD:  # Visibilidade
                         payload_bytes = ser.read(23)
@@ -66,11 +70,11 @@ class SerialReader:
                             continue
                         
                         status = game_status.decode_status(payload_bytes)
-                        self.model.colors = status["colors"]
-                        self.model.strikes = status["errors"]
-                        self.model.position = status["position"]
-                        self.model.selectedNumber = status["selected_number"]
-                        self.current_state = "GAME"
+                        self.game.modelo.colors = status["colors"]
+                        self.game.modelo.strikes = status["errors"]
+                        self.game.modelo.position = status["position"]
+                        self.game.modelo.selectedNumber = status["selected_number"]
+                        self.game.handleStateChange("GAME")
 
                     case 0xAE:  # Fim do jogo
                         payload_bytes = ser.read(1)
@@ -83,8 +87,8 @@ class SerialReader:
 
                         # Extrair os 7 bits restantes
                         decimal_7bits = valor & 0x7F  # 0b01111111
-                        self.current_state = "VICTORY" if msb else "DEFEAT"
-                        self.model.endgame = [decimal_7bits, msb]
+                        self.game.handleStateChange("VICTORY" if msb else "DEFEAT")
+                        self.game.modelo.endgame = [decimal_7bits, msb]
             
             except KeyboardInterrupt:
                 print("Interrompido pelo usuário.")
@@ -97,5 +101,5 @@ class SerialReader:
 # Exemplo de como usar a classe
 if __name__ == '__main__':
     model = Modelo()
-    leitor = SerialReader(port='/dev/ttyUSB0', baudrate=115200, model=model)
+    leitor = SerialReader(port='/dev/pts/12', baudrate=9600, model=model)
     leitor.read_serial()

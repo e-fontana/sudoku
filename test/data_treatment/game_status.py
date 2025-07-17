@@ -13,7 +13,7 @@ def decode_status(payload_bytes):
     numero_int = int(cores)
 
     # Converte para binário (string) sem o '0b'
-    binario_str = bin(numero_int)[2:]
+    binario_str = bin(numero_int)[2:].zfill(162)
 
     # Ajusta para múltiplo de 2 bits (com padding zeros à esquerda)
     if len(binario_str) % 2 != 0:
@@ -41,7 +41,7 @@ def decode_status(payload_bytes):
 
     colors_array = [Color(i) for i in indices]
 
-    colors = np.array(colors_array, dtype=Color).reshape((9, 9))
+    colors = np.array(colors_array, dtype=Color).reshape((9, 9)).tolist()
 
     return {
         "colors": colors,

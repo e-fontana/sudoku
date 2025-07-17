@@ -26,6 +26,9 @@ class DefeatScreen(BaseScreen):
         self.current_pulse_scale_value = self.PULSE_MIN_SCALE
         self.pulse_timer = 0.0
 
+    def handle_event(self, event):
+        pass
+
     def update(self, dt):
         self.pulse_timer += dt
         

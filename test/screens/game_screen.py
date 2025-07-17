@@ -1,4 +1,4 @@
-from screens.colors import Color
+from data_treatment.colors import Color
 import pygame
 from .base_screen import BaseScreen
 
@@ -87,6 +87,7 @@ class GameScreen(BaseScreen):
         # --- DESENHO DO GRID DO SUDOKU ---
         for row in range(self.GRID_DIMENSION):
             for col in range(self.GRID_DIMENSION):
+                
                 x = self.GRID_START_X + col * self.CELL_SIZE
                 y = self.GRID_START_Y + row * self.CELL_SIZE
                 cell_rect = pygame.Rect(x, y, self.CELL_SIZE, self.CELL_SIZE)
@@ -94,9 +95,9 @@ class GameScreen(BaseScreen):
                 # Escolhe a cor de fundo da célula (normal ou selecionada)
                 cell_fill_color = self.CELL_BG_COLOR # Cor padrão
                 if row == self.game.modelo.position[0] and col == self.game.modelo.position[1]:
-                    if self.game.modelo.colors[row][col] == Color.VERMELHO:
+                    if self.game.modelo.colors[row][col].value == Color.VERMELHO.value:
                         cell_fill_color = self.WRONG_CELL_COLOR
-                    elif self.game.modelo.colors[row][col] == Color.AMARELO:
+                    elif self.game.modelo.colors[row][col].value == Color.AMARELO.value:
                         cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR
                     else: # Cor para a célula selecionada
                         cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
@@ -131,8 +132,9 @@ class GameScreen(BaseScreen):
         # --- Desenho dos Números do Sudoku (exemplo) ---
         for r in range(self.GRID_DIMENSION):
             for c in range(self.GRID_DIMENSION):
+
                 num = self.game.modelo.map[r][c] # Pega o número do seu tabuleiro
-                if self.colors[r][c] == Color.BRANCO: # Se for para mostar a célula
+                if self.colors[r][c].value == Color.BRANCO.value: # Se for para mostar a célula
                     num_surface = self.font_numbers.render(str(num), True, self.PURE_WHITE) # Texto em branco puro
                     num_rect = num_surface.get_rect(center=(self.GRID_START_X + c * self.CELL_SIZE + self.CELL_SIZE // 2,
                                                              self.GRID_START_Y + r * self.CELL_SIZE + self.CELL_SIZE // 2))
@@ -147,7 +149,7 @@ class GameScreen(BaseScreen):
             # Escolhe a cor de fundo da célula (normal ou selecionada)
             cell_fill_color = self.CELL_BG_COLOR # Cor padrão
             if col == self.selectedNumber - 1:
-                if self.colors[self.position[0]][self.position[1]] == Color.AMARELO or self.colors[self.position[0]][self.position[1]] == Color.VERMELHO:
+                if self.colors[self.position[0]][self.position[1]].value == Color.AMARELO.value or self.colors[self.position[0]][self.position[1]].value == Color.VERMELHO.value:
                     cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
                 else:
                     cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR # Cor para a célula deselecionada

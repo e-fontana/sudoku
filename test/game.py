@@ -33,7 +33,7 @@ class Game:
     def __init__(self, modelo: Modelo):
         pygame.init()
         self.modelo = modelo
-        self.serial_reader = SerialReader(self.modelo)
+        self.serial_reader = SerialReader(self, '/dev/pts/12', 9600)
         REFRESH = pygame.USEREVENT + 1
         pygame.time.set_timer(REFRESH, 30)
 
@@ -56,6 +56,21 @@ class Game:
     
     def set_state(self, new_state):
         pass
+
+    def handleStateChange(self, new_state):
+        match (new_state):
+            case "START":
+                self.current_state = self.STATE_MENU
+            case "DIFICULTY":
+                self.current_state = self.STATE_DIFFICULTY_SELECTION
+            case "BOARD":
+                self.current_state = self.STATE_GAME
+            case "GAME":
+                self.current_state = self.STATE_GAME
+            case "VICTORY":
+                self.current_state = self.STATE_VICTORY
+            case "DEFEAT":
+                self.current_state = self.STATE_DEFEAT
     
     def get_font(self, size):
         return pygame.font.Font(self.font_path, size)
@@ -123,20 +138,6 @@ class Game:
             #     self.modelo.finishGame = True
             #     self.modelo.endgame = [69420, False]
             
-            match (self.serial_reader.current_state):
-                case "START":
-                    self.current_state = self.STATE_MENU
-                case "DIFICULTY":
-                    self.current_state = self.STATE_DIFFICULTY_SELECTION
-                case "BOARD":
-                    self.current_state = self.STATE_GAME
-                case "GAME":
-                    self.current_state = self.STATE_GAME
-                case "VICTORY":
-                    self.current_state = self.STATE_VICTORY
-                case "DEFEAT":
-                    self.current_state = self.STATE_DEFEAT
-
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
