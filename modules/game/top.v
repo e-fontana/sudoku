@@ -40,7 +40,7 @@ module game(
     assign position = {pos_i, pos_j};
 
     parameter GAME_FREQ = (50_000_000 - 1) / 8;
-    parameter TIME_LIMIT_MINUTES = 5;
+    parameter TIME_LIMIT_MINUTES = 10;
 
     frequency #(
         .COUNTER_LIMIT(GAME_FREQ)
