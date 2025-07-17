@@ -23,7 +23,7 @@ class Game:
     }
 
     # FONTES
-    font_path = "assets/fonts/PressStart2P-Regular.ttf"
+    font_path = "sudoku-gui/assets/fonts/PressStart2P-Regular.ttf"
 
 
     def __init__(self, modelo: Modelo):

@@ -6,7 +6,7 @@ class MenuScreen(BaseScreen):
     START_BUTTON = "START"
     INSTRUCTION = f"press {START_BUTTON} to begin"
 
-    BACKGROUND_IMAGE_PATH = "assets/images/main_menu_bg.png"
+    BACKGROUND_IMAGE_PATH = "sudoku-gui/assets/images/main_menu_bg.png"
 
     PULSE_COLOR_SPEED = 3
     PULSE_MIN_BRIGHTNESS = 150
@@ -19,7 +19,7 @@ class MenuScreen(BaseScreen):
     def __init__(self, game):
         super().__init__(game)
         self.font_title = game.get_font(74)
-        self.font_instruction = game.get_font(18)
+        self.font_instruction = game.get_font(18)   
 
         self.text_title = self.font_title.render(self.game.TITLE, True, game.COLORS['BLUE'])
         self.rect_title = self.text_title.get_rect(center=(game.WIDTH // 2, game.HEIGHT // 2 - 40))
@@ -32,7 +32,7 @@ class MenuScreen(BaseScreen):
         self.background_image = pygame.transform.scale(self.background_image, (game.WIDTH, game.HEIGHT))
 
     def handle_event(self, event):
-        if self.game.modelo.start:
+        if event and self.game.modelo.start:
             self.game.set_state(self.game.STATE_DIFFICULTY_SELECTION)
             print("Mudando para Seleção de Dificuldade")
     

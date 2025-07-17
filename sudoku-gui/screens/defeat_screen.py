@@ -3,7 +3,7 @@ import math
 from screens.base_screen import BaseScreen
 
 class DefeatScreen(BaseScreen):
-    BACKGROUND_IMAGE_PATH = "assets/images/defeat_bg.png"
+    BACKGROUND_IMAGE_PATH = "sudoku-gui/assets/images/defeat_bg.png"
 
     INSTRUCTION = "press Z to return"
 

@@ -3,7 +3,7 @@ import pygame
 from screens.base_screen import BaseScreen
 
 class VictoryScreen(BaseScreen):
-    BACKGROUND_IMAGE_PATH = "assets/images/victory_bg.png"
+    BACKGROUND_IMAGE_PATH = "sudoku-gui/assets/images/victory_bg.png"
 
     POINTS = 500
     INSTRUCTION = "press START to return"

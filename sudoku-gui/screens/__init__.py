@@ -4,6 +4,7 @@ from .game_screen import GameScreen
 from .victory_screen import VictoryScreen
 from .defeat_screen import DefeatScreen
 
+
 class Modelo:
     def __init__(self):
         self.start = None

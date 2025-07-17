@@ -1,4 +1,4 @@
-from data_treatment.colors import Color
+from screens.colors import Color
 import pygame
 from .base_screen import BaseScreen
 
@@ -41,20 +41,8 @@ class GameScreen(BaseScreen):
     def __init__(self, game):
         super().__init__(game)
         self.font_timer = self.game.get_font(24) 
-        self.font_numbers = self.game.get_font(36)
-        self.position = self.game.modelo.positions # CASA SELECIONADA
-        self.selectedNumber = self.game.modelo.selectedNumber
-        self.endgame = self.game.modelo.endgame
-        self.finishGame = self.game.modelo.finishGame
-        self.positionColor = self.colors[self.position[0]][self.position[1]]
-        self.colors = self.game.modelo.colors
-
-        # Posição inicial do cursorvalue[9*i:9*i+8
-        self.current_row = 4
-        self.current_col = 4
-        
+        self.font_numbers = self.game.get_font(36)        
         self.sudoku_board = self.game.modelo.map # MAPA
-        
         self.start_ticks = pygame.time.get_ticks()
 
     def handle_event(self, event):
@@ -73,6 +61,15 @@ class GameScreen(BaseScreen):
         self.game.elapsed_time = (pygame.time.get_ticks() - self.start_ticks) // 1000
 
     def draw(self, screen):
+
+        self.colors = self.game.modelo.colors
+        self.position = self.game.modelo.position # CASA SELECIONADA
+        print(self.position)
+        print(self.colors)
+        self.selectedNumber = self.game.modelo.selectedNumber
+        self.endgame = self.game.modelo.endgame
+        self.finishGame = self.game.modelo.finishGame
+
         screen.fill((0, 0, 0))
 
         # --- Desenho do Placeholder do Cronômetro ---
@@ -106,10 +103,10 @@ class GameScreen(BaseScreen):
                 # Escolhe a cor de fundo da célula (normal ou selecionada)
                 cell_fill_color = self.CELL_BG_COLOR # Cor padrão
 
-                if row == self.current_row and col == self.current_col:
-                    if self.positionColor == Color.VERMELHO:
+                if row == self.position[0] and col == self.position[1]:
+                    if self.colors[self.position[0]] == Color.VERMELHO:
                         cell_fill_color = self.WRONG_CELL_COLOR
-                    elif self.positionColor == Color.AMARELO:
+                    elif self.colors[self.position[0]] == Color.AMARELO:
                         cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR
                     else: # Cor para a célula selecionada
                         cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
@@ -160,7 +157,7 @@ class GameScreen(BaseScreen):
             # Escolhe a cor de fundo da célula (normal ou selecionada)
             cell_fill_color = self.CELL_BG_COLOR # Cor padrão
             if col == self.selectedNumber - 1:
-                if self.positionColor == Color.AMARELO or self.positionColor == Color.VERMELHO:
+                if self.colors[self.position[0]] == Color.AMARELO or self.colors[self.position[0]] == Color.VERMELHO:
                     cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
                 else:
                     cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR # Cor para a célula deselecionada

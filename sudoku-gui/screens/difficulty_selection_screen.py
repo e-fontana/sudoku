@@ -2,7 +2,7 @@ import pygame
 from screens.base_screen import BaseScreen
 
 class DifficultySelectionScreen(BaseScreen):
-    BACKGROUND_IMAGE_PATH = "assets/images/difficulty_selection_bg.png"
+    BACKGROUND_IMAGE_PATH = "sudoku-gui/assets/images/difficulty_selection_bg.png"
 
     def __init__(self, game):
         super().__init__(game)
