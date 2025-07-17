@@ -8,8 +8,8 @@ module button_handler (
     output left_button,
     output right_button
 );
-    assign up_button = !original_up_button;
-    assign down_button = !original_down_button;
-    assign left_button = !original_left_button;
-    assign right_button = !original_right_button;
+    assign up_button = original_up_button;
+    assign down_button = original_down_button;
+    assign left_button = original_left_button;
+    assign right_button = original_right_button;
 endmodule

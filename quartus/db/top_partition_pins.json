@@ -16,6 +16,58 @@
 					"strict" : false
 				},
 				{
+					"name" : "select",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[11]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[10]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[9]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[8]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[7]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[6]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[5]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[4]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[3]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[2]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[1]",
+					"strict" : false
+				},
+				{
+					"name" : "controller_output[0]",
+					"strict" : false
+				},
+				{
 					"name" : "d0[6]",
 					"strict" : false
 				},
@@ -236,6 +288,54 @@
 					"strict" : false
 				},
 				{
+					"name" : "LEDR[11]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[10]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[9]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LEDR[0]",
+					"strict" : false
+				},
+				{
 					"name" : "states[6]",
 					"strict" : false
 				},
@@ -264,19 +364,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "a_button",
-					"strict" : false
-				},
-				{
-					"name" : "original_up_button",
-					"strict" : false
-				},
-				{
-					"name" : "original_down_button",
-					"strict" : false
-				},
-				{
-					"name" : "b_button",
+					"name" : "clk",
 					"strict" : false
 				},
 				{
@@ -284,19 +372,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "clk",
+					"name" : "PIN_UP_Z",
 					"strict" : false
 				},
 				{
-					"name" : "start_button",
+					"name" : "PIN_DOWN_Y",
 					"strict" : false
 				},
 				{
-					"name" : "original_right_button",
+					"name" : "PIN_LEFT_X",
 					"strict" : false
 				},
 				{
-					"name" : "original_left_button",
+					"name" : "PIN_RIGHT_MODE",
+					"strict" : false
+				},
+				{
+					"name" : "PIN_A_B",
+					"strict" : false
+				},
+				{
+					"name" : "PIN_START_C",
 					"strict" : false
 				}
 			]
