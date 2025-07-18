@@ -1,6 +1,7 @@
 module map_selector (
     input clk,
     input reset,
+    input difficulty,
     output [161:0] selected_visibility,
     output [323:0] selected_map
 );

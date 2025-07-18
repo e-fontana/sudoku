@@ -19,19 +19,24 @@ class Formatter:
     bits = []
     sudokus = []
 
-    def define(self, clues=79):
-        for _ in range(15):
-            sudoku = Sudoku(clues=clues)
-            self.sudokus.append(sudoku)
-            for i, row in enumerate(sudoku.solution):
-                for j, cell in enumerate(row):
-                    self.visibilities.append('00' if sudoku.board[i][j] == 0 else '11')
-                    self.bits.append(self.ENCODER[cell-1])
+    def generate_sudoku(self, void_cells):
+        sudoku = Sudoku(clues=81-void_cells)
+        self.sudokus.append(sudoku)
+        for i, row in enumerate(sudoku.solution):
+            for j, cell in enumerate(row):
+                self.visibilities.append('00' if sudoku.board[i][j] == 0 else '11')
+                self.bits.append(self.ENCODER[cell-1])
+
+    def define(self, void_cells_easy=2, void_cells_hard=4):
+        for _ in range(5):
+            self.generate_sudoku(void_cells_easy)
+        for _ in range(10):
+            self.generate_sudoku(void_cells_hard)
         self.visibilities.reverse()
         self.bits.reverse()
 
-    def __init__(self, void_cells=2, output_file='output.v'):
-        self.define(81-void_cells)
+    def __init__(self, void_cells_easy=2, void_cells_hard=4, output_file='output.v'):
+        self.define(void_cells_easy, void_cells_hard)
 
         output_file = f"{os.getcwd()}/../modules/game/{output_file}"
         with open(f"{os.getcwd()}/maps-viewer.txt", 'w') as f:

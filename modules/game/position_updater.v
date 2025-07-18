@@ -32,17 +32,17 @@ module position_updater #(
 
         case (current_state)
             CORRENDO_MAPA: begin
-                if (up_button && pos_i > 0) begin
-                    next_pos_i = pos_i - 4'd1;
+                if (up_button) begin
+                    next_pos_i = (pos_i == 0) ? 4'd8 : pos_i - 1;
                 end
-                if (down_button && pos_i < 8) begin
-                    next_pos_i = pos_i + 4'd1;
+                if (down_button) begin
+                    next_pos_i = (pos_i == 8) ? 4'd0 : pos_i + 1;
                 end
-                if (left_button && pos_j > 0) begin
-                    next_pos_j = pos_j - 4'd1;
+                if (left_button) begin
+                    next_pos_j = (pos_j == 0) ? 4'd8 : pos_j - 1;
                 end
-                if (right_button && pos_j < 8) begin
-                    next_pos_j = pos_j + 4'd1;
+                if (right_button) begin
+                    next_pos_j = (pos_j == 8) ? 4'd0 : pos_j + 1;
                 end
             end
         endcase

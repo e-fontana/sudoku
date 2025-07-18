@@ -164,7 +164,7 @@ module state_machine #(
                 end
             end
             CARREGANDO: begin
-                if (|visibilities) begin
+                if (|visibilities & |board) begin
                     next_state = CORRENDO_MAPA;
                 end
             end

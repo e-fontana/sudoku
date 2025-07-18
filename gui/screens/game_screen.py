@@ -17,7 +17,7 @@ class GameScreen(BaseScreen):
     THIN_BORDER_COLOR = (200, 200, 200, 80) # Cinza claro semi-transparente para bordas finas
     THICK_BORDER_COLOR = (255, 100, 200) # Rosa para bordas grossas (cor única)
     ACTIVE_SELECTED_CELL_COLOR = (122, 105, 9) # Branco mais claro e opaco para célula selecionada
-    INACTIVE_SELECTED_CELL_COLOR = (255, 255, 255, 60) # Branco mais escuro e opaco para célula selecionada
+    INACTIVE_SELECTED_CELL_COLOR = (255, 255, 255, 80) # Branco mais escuro e opaco para célula selecionada
     WRONG_CELL_COLOR =  (255, 7, 0, 100)
 
     # Larguras de Borda
