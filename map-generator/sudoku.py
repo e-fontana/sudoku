@@ -88,7 +88,7 @@ class Sudoku:
         for i in range(9):
             row = "║"
             for j in range(9):
-                row += f" {self.format_cell(self.board[i][j])}"
+                row += f" {self.format_cell(self.solution[i][j])}"
                 if (j + 1) % 3 == 0:
                     row += " ║"
             string += f"{row}\n"
