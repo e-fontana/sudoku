@@ -1,0 +1,151 @@
+
+State Machine - |top|communicator:inst1|arb_state
+Name arb_state.S_SEND_START_GAME arb_state.S_SEND_END_GAME arb_state.S_SEND_STATUS arb_state.S_SEND_MAP arb_state.S_SEND_DIFICULTY arb_state.S_IDLE 
+arb_state.S_IDLE 0 0 0 0 0 0 
+arb_state.S_SEND_DIFICULTY 0 0 0 0 1 1 
+arb_state.S_SEND_MAP 0 0 0 1 0 1 
+arb_state.S_SEND_STATUS 0 0 1 0 0 1 
+arb_state.S_SEND_END_GAME 0 1 0 0 0 1 
+arb_state.S_SEND_START_GAME 1 0 0 0 0 1 
+
+State Machine - |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|estado_atual
+Name estado_atual.S_ESPERA_FIM estado_atual.S_INICIA_ENVIO estado_atual.S_PREPARA_CHUNK estado_atual.S_PAUSA_PACOTE estado_atual.S_PROXIMO_CHUNK 
+estado_atual.S_PAUSA_PACOTE 0 0 0 0 0 
+estado_atual.S_PREPARA_CHUNK 0 0 1 1 0 
+estado_atual.S_INICIA_ENVIO 0 1 0 1 0 
+estado_atual.S_ESPERA_FIM 1 0 0 1 0 
+estado_atual.S_PROXIMO_CHUNK 0 0 0 1 1 
+
+State Machine - |top|ControladorUART:inst3|estado_atual
+Name estado_atual.OCIOSO estado_atual.AGUARDAR estado_atual.TRANSMITIR 
+estado_atual.OCIOSO 0 0 0 
+estado_atual.TRANSMITIR 1 0 1 
+estado_atual.AGUARDAR 1 1 0 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|state
+Name state.S_WAIT_RELEASE state.S_PULSE state.S_COUNT state.S_IDLE 
+state.S_IDLE 0 0 0 0 
+state.S_COUNT 0 0 1 1 
+state.S_PULSE 0 1 0 1 
+state.S_WAIT_RELEASE 1 0 0 1 
+
+State Machine - |top|controller:inst2|controller_reader:reader|state
+Name state.STATE_SIX state.STATE_FIVE state.STATE_FOUR state.STATE_THREE state.STATE_TWO state.STATE_ONE state.STATE_ZERO state.STATE_IDLE state.STATE_SEVEN 
+state.STATE_IDLE 0 0 0 0 0 0 0 0 0 
+state.STATE_ZERO 0 0 0 0 0 0 1 1 0 
+state.STATE_ONE 0 0 0 0 0 1 0 1 0 
+state.STATE_TWO 0 0 0 0 1 0 0 1 0 
+state.STATE_THREE 0 0 0 1 0 0 0 1 0 
+state.STATE_FOUR 0 0 1 0 0 0 0 1 0 
+state.STATE_FIVE 0 1 0 0 0 0 0 1 0 
+state.STATE_SIX 1 0 0 0 0 0 0 1 0 
+state.STATE_SEVEN 0 0 0 0 0 0 0 1 1 
