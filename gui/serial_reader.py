@@ -73,6 +73,7 @@ class SerialReader:
                         self.game.modelo.strikes = status["errors"]
                         self.game.modelo.position = status["position"]
                         self.game.modelo.selectedNumber = status["selected_number"]
+                        self.game.modelo.stopwatch = status["stopwatch"]
                         self.game.handleStateChange("GAME")
 
                     case 0xAE:  # Fim do jogo

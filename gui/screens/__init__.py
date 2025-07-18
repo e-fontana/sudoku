@@ -12,6 +12,10 @@ class Modelo:
         self.map = [[0] * 9 for _ in range(9)]
         self.colors = [[Color(2)] * 9 for _ in range(9)]
         self.position = [4,4]
+        self.stopwatch = {
+            'minutes': 0,
+            'seconds': 0
+        }
         self.strikes = 0
         self.selectedNumber = 1
         self.endgame = False

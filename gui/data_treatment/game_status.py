@@ -64,7 +64,7 @@ def decode_status(payload_bytes) -> dict:
         'position': [position_x, position_y],
         'errors': errors,
         'selected_number': selected_number,
-        'time': {
+        'stopwatch': {
             'minutes': time_minutes,
             'seconds': time_seconds
         },

@@ -16,7 +16,7 @@ class GameScreen(BaseScreen):
     CELL_BG_COLOR = (255, 255, 255, 30) # Branco semi-transparente para o fundo da célula
     THIN_BORDER_COLOR = (200, 200, 200, 80) # Cinza claro semi-transparente para bordas finas
     THICK_BORDER_COLOR = (255, 100, 200) # Rosa para bordas grossas (cor única)
-    ACTIVE_SELECTED_CELL_COLOR = (255, 255, 255, 85) # Branco mais claro e opaco para célula selecionada
+    ACTIVE_SELECTED_CELL_COLOR = (122, 105, 9) # Branco mais claro e opaco para célula selecionada
     INACTIVE_SELECTED_CELL_COLOR = (255, 255, 255, 60) # Branco mais escuro e opaco para célula selecionada
     WRONG_CELL_COLOR =  (255, 7, 0, 100)
 
@@ -75,19 +75,13 @@ class GameScreen(BaseScreen):
         pygame.draw.rect(screen, self.NEON_BLUE, timer_rect, 2, border_radius=5)
 
         # --- Desenho do Texto do Cronômetro (MM:SS) ---
-        minutes = self.game.elapsed_time // 60
-        seconds = self.game.elapsed_time % 60
+        minutes = self.game.modelo.stopwatch['minutes']
+        seconds = self.game.modelo.stopwatch['seconds']
         timer_text = f"{minutes:02d}:{seconds:02d}"
 
         timer_surface_text = self.font_timer.render(timer_text, True, self.PURE_WHITE) # Texto em branco puro
         timer_text_rect = timer_surface_text.get_rect(center=timer_rect.center)
         screen.blit(timer_surface_text, timer_text_rect)
-
-        # --- Desenho do Número de Erros (Apenas no modo dificil)---
-        if self.game.modelo.difficulty:
-            strikes_text = self.font_strikes.render(f"STRIKES {self.strikes}", True, self.RED) # Texto em branco puro
-            strikes_text_rect = strikes_text.get_rect(center=(self.game.WIDTH // 2, 85)) # Posição no canto superior
-            screen.blit(strikes_text, strikes_text_rect)
 
         # --- DESENHO DO GRID DO SUDOKU ---
         for row in range(self.GRID_DIMENSION):
@@ -100,7 +94,7 @@ class GameScreen(BaseScreen):
                 # Escolhe a cor de fundo da célula (normal ou selecionada)
                 cell_fill_color = self.CELL_BG_COLOR # Cor padrão
                 if row == self.game.modelo.position[0] and col == self.game.modelo.position[1]:
-                    if self.game.modelo.colors[row][col].value == Color.AMARELO.value:
+                    if self.game.modelo.colors[row][col].value in [Color.AMARELO.value, Color.VERMELHO.value]:
                         cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR
                     else: # Cor para a célula selecionada
                         cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
@@ -187,3 +181,9 @@ class GameScreen(BaseScreen):
             num_rect = num_surface.get_rect(center=(self.NS_GRID_START_X + i * self.CELL_SIZE + self.CELL_SIZE // 2,
                                                         self.NS_GRID_START_Y + self.CELL_SIZE // 2))
             screen.blit(num_surface, num_rect)
+        
+        # --- Desenho do Número de Erros (Apenas no modo dificil)---
+        if self.game.modelo.difficulty:
+            strikes_text = self.font_strikes.render(f"STRIKES {self.strikes}", True, self.RED) # Texto em branco puro
+            strikes_text_rect = strikes_text.get_rect(center=(self.game.WIDTH // 2, 85)) # Posição no canto superior
+            screen.blit(strikes_text, strikes_text_rect)
