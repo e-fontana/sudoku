@@ -5,8 +5,8 @@ module board_updater #(
     input clk,
     input reset,
     
-    input up_button,
-    input down_button,
+    input left_button,
+    input right_button,
     input a_button,
     input b_button,
 
@@ -65,17 +65,17 @@ module board_updater #(
                     next_visibilities[index +: 2] = 2'b01; // Mark the cell as visited
                 end
 
-                if (up_button | down_button | a_button | b_button) begin
+                if (left_button | right_button | a_button | b_button) begin
                     next_error = 1'b0;
                 end
                 
-                if (up_button) begin
+                if (right_button) begin
                     if (selected_number < 9) begin
                         next_selected_number = selected_number + 4'd1;
                     end else begin
                         next_selected_number = 4'd1;
                     end
-                end else if (down_button) begin
+                end else if (left_button) begin
                     if (selected_number > 1) begin
                         next_selected_number = selected_number - 4'd1;
                     end else begin
