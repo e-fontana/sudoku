@@ -58,12 +58,12 @@ test_map = [1, 2, 3, 4, 5, 6, 7, 8, 9] * 9
 colors = [3] * 81  # 81 elementos
 pos_x = 4
 pos_y = 4
-errors = 1
+errors = 2
 selected_number = 1
 
 colors[9*4+4] = 0
 
-ser = serial.Serial('/dev/pts/11', 9600)
+ser = serial.Serial('/dev/pts/4', 9600)
 
 print("Conectado à porta serial.")
 

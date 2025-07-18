@@ -1,8 +1,8 @@
+import os
 import pygame
-from screens.colors import Color
-from screens import MenuScreen, DifficultySelectionScreen, GameScreen, VictoryScreen, DefeatScreen, Modelo
 import threading
 from serial_reader import SerialReader
+from screens import MenuScreen, DifficultySelectionScreen, GameScreen, VictoryScreen, DefeatScreen, Modelo
 
 
 class Game:
@@ -27,13 +27,13 @@ class Game:
     }
 
     # FONTES
-    font_path = "test/assets/fonts/PressStart2P-Regular.ttf"
+    font_path = f"{os.getcwd()}/assets/fonts/PressStart2P-Regular.ttf"
 
 
     def __init__(self, modelo: Modelo):
         pygame.init()
         self.modelo = modelo
-        self.serial_reader = SerialReader(self, '/dev/pts/12', 9600)
+        self.serial_reader = SerialReader(self, '/dev/pts/2', 9600)
         REFRESH = pygame.USEREVENT + 1
         pygame.time.set_timer(REFRESH, 30)
 

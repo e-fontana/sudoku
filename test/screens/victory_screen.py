@@ -1,11 +1,12 @@
+import os
 import math
 import pygame
 from screens.base_screen import BaseScreen
 
 class VictoryScreen(BaseScreen):
-    BACKGROUND_IMAGE_PATH = "test/assets/images/victory_bg.png"
+    BACKGROUND_IMAGE_PATH = f"{os.getcwd()}/assets/images/victory_bg.png"
 
-    INSTRUCTION = "press START to return"
+    INSTRUCTION = "press Z to return"
     PONTUATION_TITLE = "points:"
 
     PULSE_COLOR_SPEED = 3
@@ -23,7 +24,7 @@ class VictoryScreen(BaseScreen):
         
     
     def handle_event(self, event):
-        print('Parabéns, você ganhou')
+        print('Parabéns, você ganhou!')
 
     def update(self, dt):
         self.pulse_timer += dt

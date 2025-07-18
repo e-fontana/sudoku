@@ -6,12 +6,11 @@ class GameScreen(BaseScreen):
     GRID_DIMENSION = 9
     CELL_SIZE = 50
     GRID_START_X = 175
-    GRID_START_Y = 100
+    GRID_START_Y = 110
 
     NS_GRID_DIMENSION = 9
     NS_GRID_START_X = GRID_START_X
     NS_GRID_START_Y = 600
-
 
     # Cores
     CELL_BG_COLOR = (255, 255, 255, 30) # Branco semi-transparente para o fundo da célula
@@ -28,6 +27,7 @@ class GameScreen(BaseScreen):
 
     # Cores de Neon (usadas no placeholder do timer e possivelmente nos números)
     NEON_BLUE = (0, 255, 255) # Ciano vibrante
+    RED = (255, 0, 0) # Vermelho vibrante
     PURE_WHITE = (255, 255, 255) # Branco puro (para texto do timer e números)
     
     # Constantes para o Placeholder do Timer
@@ -41,22 +41,21 @@ class GameScreen(BaseScreen):
     def __init__(self, game):
         super().__init__(game)
         self.font_timer = self.game.get_font(24) 
-        self.font_numbers = self.game.get_font(36)        
+        self.font_numbers = self.game.get_font(36)
+        self.font_strikes = self.game.get_font(12)
         self.start_ticks = pygame.time.get_ticks()
 
     def handle_event(self, event):
         # ACABOU O JOGO
         pass
 
-                               
-
-    
     def update(self, _):
         self.game.elapsed_time = (pygame.time.get_ticks() - self.start_ticks) // 1000
 
     def draw(self, screen):
         self.colors = self.game.modelo.colors
         self.position = self.game.modelo.position # CASA SELECIONADA
+        self.strikes = self.game.modelo.strikes
         self.selectedNumber = self.game.modelo.selectedNumber
         self.endgame = self.game.modelo.endgame
         self.finishGame = self.game.modelo.finishGame
@@ -83,6 +82,11 @@ class GameScreen(BaseScreen):
         timer_surface_text = self.font_timer.render(timer_text, True, self.PURE_WHITE) # Texto em branco puro
         timer_text_rect = timer_surface_text.get_rect(center=timer_rect.center)
         screen.blit(timer_surface_text, timer_text_rect)
+
+        # --- Desenho do Número de Erros ---
+        strikes_text = self.font_strikes.render(f"STRIKES {self.strikes}", True, self.RED) # Texto em branco puro
+        strikes_text_rect = strikes_text.get_rect(center=(self.game.WIDTH // 2, 85)) # Posição no canto superior
+        screen.blit(strikes_text, strikes_text_rect)
 
         # --- DESENHO DO GRID DO SUDOKU ---
         for row in range(self.GRID_DIMENSION):

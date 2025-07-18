@@ -1,9 +1,10 @@
-import pygame
+import os
 import math
+import pygame
 from screens.base_screen import BaseScreen
 
 class DefeatScreen(BaseScreen):
-    BACKGROUND_IMAGE_PATH = "test/assets/images/defeat_bg.png"
+    BACKGROUND_IMAGE_PATH = f"{os.getcwd()}/assets/images/defeat_bg.png"
 
     INSTRUCTION = "press Z to return"
 

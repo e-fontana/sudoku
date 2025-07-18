@@ -37,7 +37,7 @@ class SerialReader:
 
                 match (byte[0]):
                     case 0xAA:  # Início do jogo
-                        self.game.handleStateChange("DIFICULTY")
+                        self.game.handleStateChange("START")
                         print("Início do jogo detectado.")
                     
                     case 0xAB:  # Dificuldade

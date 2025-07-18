@@ -1,8 +1,10 @@
+
+import os
 import pygame
 from screens.base_screen import BaseScreen
 
 class DifficultySelectionScreen(BaseScreen):
-    BACKGROUND_IMAGE_PATH = "test/assets/images/difficulty_selection_bg.png"
+    BACKGROUND_IMAGE_PATH = f"{os.getcwd()}/assets/images/difficulty_selection_bg.png"
 
     def __init__(self, game):
         super().__init__(game)
