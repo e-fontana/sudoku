@@ -3,7 +3,7 @@ module score (
     input [10:0] timer,
     output reg [6:0] score
 );
-    localparam TIME_LIMIT = 120;
+    localparam TIME_LIMIT = 600;
     localparam MAX_SCORE = 100;
 
     always @(posedge clk or posedge reset) begin

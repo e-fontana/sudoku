@@ -29,7 +29,7 @@ module map_selector (
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             selected_visibility <= 162'd0;
-            selected_map        <= 162'd0;
+            selected_map        <= 324'd0;
         end else begin
             if (difficulty) begin
                 selected_visibility <= visibilities_hard[(map_index * 162) +: 162];
