@@ -21,9 +21,9 @@ on the Quartus Prime software download page.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 288 352)
+	(rect 16 16 288 384)
 	(text "game" (rect 5 0 27 12)(font "Arial" ))
-	(text "inst" (rect 8 320 20 332)(font "Arial" ))
+	(text "inst" (rect 8 352 20 364)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -213,6 +213,13 @@ on the Quartus Prime software download page.
 		(text "score[6..0]" (rect 209 299 251 311)(font "Arial" ))
 		(line (pt 272 304)(pt 256 304)(line_width 3))
 	)
+	(port
+		(pt 272 320)
+		(output)
+		(text "stopwatch[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "stopwatch[10..0]" (rect 189 315 251 327)(font "Arial" ))
+		(line (pt 272 320)(pt 256 320)(line_width 3))
+	)
 	(parameter
 		"GAME_FREQ"
 		"6249999"
@@ -220,11 +227,11 @@ on the Quartus Prime software download page.
 		(type "PARAMETER_SIGNED_DEC")	)
 	(parameter
 		"TIME_LIMIT_MINUTES"
-		"5"
+		"10"
 		""
 		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
-		(rectangle (rect 16 16 256 320)(line_width 1))
+		(rectangle (rect 16 16 256 352)(line_width 1))
 	)
 	(annotation_block (parameter)(rect 288 -64 388 16))
 )

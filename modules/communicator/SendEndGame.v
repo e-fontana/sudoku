@@ -14,7 +14,8 @@ module SendEndGame #(parameter EVENT_CODE = 8'hAE) (
 
     PayloadController #(
         .EVENT_CODE(EVENT_CODE),
-        .SEND_BYTES_QTD(1)
+        .SEND_BYTES_QTD(1),
+		  .MSB_FIRST(0)
     ) payload_controller (
         .clock(clock),
         .reset(reset),

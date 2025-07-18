@@ -21,7 +21,8 @@ module game(
     output [7:0] position,
     output [1:0] strikes,
     output [3:0] selected_number,
-    output [6:0] score
+    output [6:0] score,
+	output [10:0] stopwatch
 );
     wire [3:0] n0, n1, n2, n3, n4, n5, n6, n7;
     wire [161:0] selected_visibility;
@@ -34,13 +35,12 @@ module game(
     wire [4:0] minutes;
     wire [3:0] pos_i, pos_j;
 
-
+	 assign stopwatch = {minutes, seconds};
     assign n6 = pos_j;
     assign n7 = pos_i;
     assign position = {pos_i, pos_j};
 
     parameter GAME_FREQ = (50_000_000 - 1) / 8;
-    parameter TIME_LIMIT_MINUTES = 10;
 
     frequency #(
         .COUNTER_LIMIT(GAME_FREQ)
@@ -68,9 +68,7 @@ module game(
         .d4(d4), .d5(d5), .d6(d6), .d7(d7)
     );
 
-    stopwatch #(
-        .TIME_LIMIT_MINUTES(TIME_LIMIT_MINUTES)
-    ) sw (
+    stopwatch sw (
         .clk(clk),
         .reset(reset),
         .playing_condition(playing_condition),
@@ -79,9 +77,7 @@ module game(
         .minutes(minutes)
     );
 
-    score #(
-        .TIME_LIMIT_MINUTES(TIME_LIMIT_MINUTES)
-    ) sc (
+    score sc (
         .clk(clk),
         .reset(reset),
         .timer(timer),
@@ -99,9 +95,7 @@ module game(
 
     // game
 
-    state_machine #(
-        .TIME_LIMIT_MINUTES(TIME_LIMIT_MINUTES)
-    ) sm (
+    state_machine sm (
         .clk(game_clk),
         .reset(reset),
         .timer(timer),

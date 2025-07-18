@@ -134,9 +134,7 @@ module state_machine #(
         .victory_condition(victory_condition)
     );
 
-    defeat #(
-        .TIME_LIMIT_MINUTES(TIME_LIMIT_MINUTES)
-    ) d (
+    defeat d (
         .timer(timer),
         .strikes(strikes),
         .difficulty(difficulty),

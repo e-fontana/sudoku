@@ -8,22 +8,24 @@
 		 input wire [7:0] position,         // 8 bits: Posição (x, y)
 		 input wire [1:0] errors,
 		 input wire [3:0] selected_number,  // 4 bits: Número selecionado;
+		 input wire [10:0] time_in_seconds,
 
 		 output 				iniciar_envio,
 		 output [7:0]    dado_saida,
 		 output         envio_concluido     // pulso de 1 ciclo ao final
 	);
-		wire [327:0] buffer_envio = {
+		wire [191:0] buffer_envio = {
 							  colors,         // 162 bits: Dados das cores
 							  position,       // 8 bits: Posição (x, y)
 							  errors,         // 2 bits: Quantidade de erros
 							  selected_number,    // 4 bits: Número selecionado
-							  8'b00000000            // 8 bits: Padding para fechar 200 bits
+							  time_in_seconds,     // 11 bits: cronometro do jogo
+							  5'h00
 						 };
 
 		PayloadController #(
 			.EVENT_CODE(8'hAD),
-			.SEND_BYTES_QTD(23)
+			.SEND_BYTES_QTD(24)
 		) payload_controller  (
 			.clock(clock),
 			.reset(reset),

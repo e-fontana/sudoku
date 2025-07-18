@@ -51,6 +51,7 @@ module board_updater #(
         next_strikes = strikes;
         next_visibilities = visibilities;
         next_board = board;
+        next_error = error;
         next_selected_number = selected_number;
 
         case (current_state)
@@ -59,14 +60,18 @@ module board_updater #(
                 next_board = selected_map;
             end
             PERCORRER_NUMEROS: begin
-                if (error) begin
-                    next_visibilities[index +: 2] = 2'b10; // Mark the cell as visited with error
-                end else begin
-                    next_visibilities[index +: 2] = 2'b01; // Mark the cell as visited
+                if (~error) begin
+                    next_visibilities[index +: 2] = 2'b01;
                 end
 
-                if (left_button | right_button | a_button | b_button) begin
+                if (b_button) begin
                     next_error = 1'b0;
+                    next_visibilities[index +: 2] = 2'b00;
+                end
+
+                if (left_button | right_button) begin
+                    next_error = 1'b0;
+                    next_visibilities[index +: 2] = 2'b01;
                 end
                 
                 if (right_button) begin

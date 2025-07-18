@@ -169,6 +169,7 @@ module communicator #(
         .position(position),
         .errors(errors),
         .selected_number(selected_number),
+		  .time_in_seconds(time_in_seconds),
         
         .iniciar_envio(status_tx_start),
         .dado_saida(status_tx_data),

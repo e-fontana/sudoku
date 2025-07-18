@@ -1,6 +1,4 @@
-module stopwatch #(
-    parameter TIME_LIMIT_MINUTES = 30
-) (
+module stopwatch (
     input clk,
     input reset,
     input playing_condition,
@@ -26,7 +24,7 @@ module stopwatch #(
             seconds <= 6'd0;
             minutes <= 5'd0;
         end else begin
-            if (playing_condition && minutes < TIME_LIMIT_MINUTES) begin
+            if (playing_condition) begin
                 if (seconds == 6'd59) begin
                     seconds <= 6'd0;
                     minutes <= minutes + 5'd1;
