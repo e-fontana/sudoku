@@ -86,8 +86,8 @@ module state_machine #(
     ) b_up (
         .clk(clk),
         .reset(reset),
-        .up_button(up_button),
-        .down_button(down_button),
+        .left_button(left_button),
+        .right_button(right_button),
         .a_button(a_button),
         .b_button(b_button),
         .index(visibilities_index),
