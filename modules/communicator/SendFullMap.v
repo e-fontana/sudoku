@@ -17,7 +17,7 @@ module SendFullMap #(
 	PayloadController #(
 		.EVENT_CODE(8'hAC),
 		.SEND_BYTES_QTD(41),
-		.MSB_FIRST(0)
+		.MSB_FIRST(1)
 	) payload_controller  (
 		.clock(clock),
 		.reset(reset),
