@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Fri Jul 18 18:55:35 2025
+Fri Jul 18 19:57:22 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -35,54 +35,56 @@ Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
  27. State Machine - |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|state
  28. State Machine - |top|controller:inst2|controller_reader:reader|state
  29. Registers Removed During Synthesis
- 30. General Register Statistics
- 31. Inverted Register Statistics
- 32. Multiplexer Restructuring Statistics (Restructuring Performed)
- 33. Parameter Settings for User Entity Instance: game:inst
- 34. Parameter Settings for User Entity Instance: game:inst|frequency:game_frequency
- 35. Parameter Settings for User Entity Instance: game:inst|display:d
- 36. Parameter Settings for User Entity Instance: game:inst|stopwatch:sw
- 37. Parameter Settings for User Entity Instance: game:inst|stopwatch:sw|frequency:fd
- 38. Parameter Settings for User Entity Instance: game:inst|state_machine:sm
- 39. Parameter Settings for User Entity Instance: game:inst|state_machine:sm|board_updater:b_up
- 40. Parameter Settings for User Entity Instance: game:inst|state_machine:sm|position_updater:pos_up
- 41. Parameter Settings for User Entity Instance: game:inst|state_machine:sm|difficulty_selector:d_sel
- 42. Parameter Settings for User Entity Instance: controller:inst2|controller_reader:reader
- 43. Parameter Settings for User Entity Instance: UART:inst4
- 44. Parameter Settings for User Entity Instance: ControladorUART:inst3
- 45. Parameter Settings for User Entity Instance: communicator:inst1
- 46. Parameter Settings for User Entity Instance: communicator:inst1|SendStartGame:send_start_game
- 47. Parameter Settings for User Entity Instance: communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller
- 48. Parameter Settings for User Entity Instance: communicator:inst1|SendGameDificulty:send_game_dificulty
- 49. Parameter Settings for User Entity Instance: communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller
- 50. Parameter Settings for User Entity Instance: communicator:inst1|SendFullMap:map_sender
- 51. Parameter Settings for User Entity Instance: communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller
- 52. Parameter Settings for User Entity Instance: communicator:inst1|SendGameStatus:status_sender
- 53. Parameter Settings for User Entity Instance: communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller
- 54. Parameter Settings for User Entity Instance: communicator:inst1|SendEndGame:send_eng_game
- 55. Parameter Settings for User Entity Instance: communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller
- 56. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Mod0
- 57. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Mod1
- 58. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Div0
- 59. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Div1
- 60. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Mod2
- 61. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Mod3
- 62. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Div2
- 63. Parameter Settings for Inferred Entity Instance: game:inst|score:sc|lpm_mult:Mult0
- 64. Parameter Settings for Inferred Entity Instance: game:inst|score:sc|lpm_divide:Div0
- 65. Parameter Settings for Inferred Entity Instance: game:inst|map_selector:ms|lpm_mult:Mult1
- 66. Parameter Settings for Inferred Entity Instance: game:inst|map_selector:ms|lpm_mult:Mult0
- 67. lpm_mult Parameter Settings by Entity Instance
- 68. Port Connectivity Checks: "communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller"
- 69. Port Connectivity Checks: "communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller"
- 70. Port Connectivity Checks: "communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller"
- 71. Port Connectivity Checks: "communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller"
- 72. Port Connectivity Checks: "controller:inst2|controller_handler:handler"
- 73. Port Connectivity Checks: "controller:inst2|controller_reader:reader"
- 74. Port Connectivity Checks: "game:inst|state_machine:sm|board_updater:b_up"
- 75. Post-Synthesis Netlist Statistics for Top Partition
- 76. Elapsed Time Per Partition
- 77. Analysis & Synthesis Messages
+ 30. Removed Registers Triggering Further Register Optimizations
+ 31. General Register Statistics
+ 32. Inverted Register Statistics
+ 33. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 34. Parameter Settings for User Entity Instance: game:inst
+ 35. Parameter Settings for User Entity Instance: game:inst|frequency:game_frequency
+ 36. Parameter Settings for User Entity Instance: game:inst|display:d
+ 37. Parameter Settings for User Entity Instance: game:inst|stopwatch:sw
+ 38. Parameter Settings for User Entity Instance: game:inst|stopwatch:sw|frequency:fd
+ 39. Parameter Settings for User Entity Instance: game:inst|state_machine:sm
+ 40. Parameter Settings for User Entity Instance: game:inst|state_machine:sm|board_updater:b_up
+ 41. Parameter Settings for User Entity Instance: game:inst|state_machine:sm|position_updater:pos_up
+ 42. Parameter Settings for User Entity Instance: game:inst|state_machine:sm|difficulty_selector:d_sel
+ 43. Parameter Settings for User Entity Instance: controller:inst2|controller_reader:reader
+ 44. Parameter Settings for User Entity Instance: UART:inst4
+ 45. Parameter Settings for User Entity Instance: ControladorUART:inst3
+ 46. Parameter Settings for User Entity Instance: communicator:inst1
+ 47. Parameter Settings for User Entity Instance: communicator:inst1|SendStartGame:send_start_game
+ 48. Parameter Settings for User Entity Instance: communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller
+ 49. Parameter Settings for User Entity Instance: communicator:inst1|SendGameDificulty:send_game_dificulty
+ 50. Parameter Settings for User Entity Instance: communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller
+ 51. Parameter Settings for User Entity Instance: communicator:inst1|SendFullMap:map_sender
+ 52. Parameter Settings for User Entity Instance: communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller
+ 53. Parameter Settings for User Entity Instance: communicator:inst1|SendGameStatus:status_sender
+ 54. Parameter Settings for User Entity Instance: communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller
+ 55. Parameter Settings for User Entity Instance: communicator:inst1|SendEndGame:send_eng_game
+ 56. Parameter Settings for User Entity Instance: communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller
+ 57. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Mod0
+ 58. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Mod1
+ 59. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Div0
+ 60. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Div1
+ 61. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Mod2
+ 62. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Mod3
+ 63. Parameter Settings for Inferred Entity Instance: game:inst|state_machine:sm|lpm_divide:Div2
+ 64. Parameter Settings for Inferred Entity Instance: game:inst|score:sc|lpm_mult:Mult0
+ 65. Parameter Settings for Inferred Entity Instance: game:inst|score:sc|lpm_divide:Div0
+ 66. Parameter Settings for Inferred Entity Instance: game:inst|map_selector:ms|lpm_mult:Mult1
+ 67. Parameter Settings for Inferred Entity Instance: game:inst|map_selector:ms|lpm_mult:Mult0
+ 68. lpm_mult Parameter Settings by Entity Instance
+ 69. Port Connectivity Checks: "communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller"
+ 70. Port Connectivity Checks: "communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller"
+ 71. Port Connectivity Checks: "communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller"
+ 72. Port Connectivity Checks: "communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller"
+ 73. Port Connectivity Checks: "controller:inst2|controller_handler:handler"
+ 74. Port Connectivity Checks: "controller:inst2|controller_reader:reader"
+ 75. Port Connectivity Checks: "game:inst|state_machine:sm|board_updater:b_up"
+ 76. Port Connectivity Checks: "game:inst|map_selector:ms|define_maps:dm"
+ 77. Post-Synthesis Netlist Statistics for Top Partition
+ 78. Elapsed Time Per Partition
+ 79. Analysis & Synthesis Messages
 
 
 
@@ -109,15 +111,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 18 18:55:35 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 18 19:57:22 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top                                             ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 4,606                                           ;
-;     Total combinational functions  ; 4,593                                           ;
-;     Dedicated logic registers      ; 1,578                                           ;
-; Total registers                    ; 1578                                            ;
+; Total logic elements               ; 4,648                                           ;
+;     Total combinational functions  ; 4,320                                           ;
+;     Dedicated logic registers      ; 1,978                                           ;
+; Total registers                    ; 1978                                            ;
 ; Total pins                         ; 112                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -232,8 +234,7 @@ on the Quartus Prime software download page.
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
 ;     Processor 8            ;   0.0%      ;
-;     Processor 9            ;   0.0%      ;
-;     Processor 10           ;   0.0%      ;
+;     Processors 9-10        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -320,20 +321,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 4,606     ;
+; Estimated Total logic elements              ; 4,648     ;
 ;                                             ;           ;
-; Total combinational functions               ; 4593      ;
+; Total combinational functions               ; 4320      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2364      ;
-;     -- 3 input functions                    ; 603       ;
-;     -- <=2 input functions                  ; 1626      ;
+;     -- 4 input functions                    ; 2281      ;
+;     -- 3 input functions                    ; 425       ;
+;     -- <=2 input functions                  ; 1614      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3547      ;
+;     -- normal mode                          ; 3274      ;
 ;     -- arithmetic mode                      ; 1046      ;
 ;                                             ;           ;
-; Total registers                             ; 1578      ;
-;     -- Dedicated logic registers            ; 1578      ;
+; Total registers                             ; 1978      ;
+;     -- Dedicated logic registers            ; 1978      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 112       ;
@@ -341,9 +342,9 @@ on the Quartus Prime software download page.
 ; Embedded Multiplier 9-bit elements          ; 4         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1052      ;
-; Total fan-out                               ; 21769     ;
-; Average fan-out                             ; 3.40      ;
+; Maximum fan-out                             ; 1453      ;
+; Total fan-out                               ; 22078     ;
+; Average fan-out                             ; 3.38      ;
 +---------------------------------------------+-----------+
 
 
@@ -352,18 +353,18 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                             ; Entity Name         ; Library Name ;
 +--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top                                                   ; 4593 (1)            ; 1578 (0)                  ; 0           ; 4            ; 0       ; 2         ; 112  ; 0            ; |top                                                                                                                            ; top                 ; work         ;
+; |top                                                   ; 4320 (1)            ; 1978 (0)                  ; 0           ; 4            ; 0       ; 2         ; 112  ; 0            ; |top                                                                                                                            ; top                 ; work         ;
 ;    |ControladorUART:inst3|                             ; 3 (3)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ControladorUART:inst3                                                                                                      ; ControladorUART     ; work         ;
 ;    |UART:inst4|                                        ; 45 (45)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|UART:inst4                                                                                                                 ; UART                ; work         ;
-;    |communicator:inst1|                                ; 688 (31)            ; 227 (6)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1                                                                                                         ; communicator        ; work         ;
+;    |communicator:inst1|                                ; 690 (31)            ; 227 (6)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1                                                                                                         ; communicator        ; work         ;
 ;       |SendEndGame:send_eng_game|                      ; 67 (0)              ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game                                                                               ; SendEndGame         ; work         ;
 ;          |PayloadController:payload_controller|        ; 67 (67)             ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller                                          ; PayloadController   ; work         ;
 ;       |SendFullMap:map_sender|                         ; 288 (0)             ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendFullMap:map_sender                                                                                  ; SendFullMap         ; work         ;
 ;          |PayloadController:payload_controller|        ; 288 (288)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller                                             ; PayloadController   ; work         ;
 ;       |SendGameDificulty:send_game_dificulty|          ; 56 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty                                                                   ; SendGameDificulty   ; work         ;
 ;          |PayloadController:payload_controller|        ; 56 (56)             ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller                              ; PayloadController   ; work         ;
-;       |SendGameStatus:status_sender|                   ; 199 (0)             ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameStatus:status_sender                                                                            ; SendGameStatus      ; work         ;
-;          |PayloadController:payload_controller|        ; 199 (199)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller                                       ; PayloadController   ; work         ;
+;       |SendGameStatus:status_sender|                   ; 201 (0)             ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameStatus:status_sender                                                                            ; SendGameStatus      ; work         ;
+;          |PayloadController:payload_controller|        ; 201 (201)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller                                       ; PayloadController   ; work         ;
 ;       |SendStartGame:send_start_game|                  ; 47 (0)              ; 35 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendStartGame:send_start_game                                                                           ; SendStartGame       ; work         ;
 ;          |PayloadController:payload_controller|        ; 47 (47)             ; 35 (35)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller                                      ; PayloadController   ; work         ;
 ;    |controller:inst2|                                  ; 1426 (0)            ; 718 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2                                                                                                           ; controller          ; work         ;
@@ -393,23 +394,21 @@ on the Quartus Prime software download page.
 ;          |led_on_pulse:debounce_blocks[8].led_module|  ; 39 (39)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[8].led_module                                     ; led_on_pulse        ; work         ;
 ;          |led_on_pulse:debounce_blocks[9].led_module|  ; 38 (38)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[9].led_module                                     ; led_on_pulse        ; work         ;
 ;       |controller_reader:reader|                       ; 57 (57)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_reader:reader                                                                                  ; controller_reader   ; work         ;
-;    |game:inst|                                         ; 2430 (0)            ; 591 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst                                                                                                                  ; game                ; work         ;
+;    |game:inst|                                         ; 2155 (0)            ; 991 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst                                                                                                                  ; game                ; work         ;
 ;       |display:d|                                      ; 90 (90)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|display:d                                                                                                        ; display             ; work         ;
 ;       |frequency:game_frequency|                       ; 48 (48)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|frequency:game_frequency                                                                                         ; frequency           ; work         ;
-;       |map_selector:ms|                                ; 432 (428)           ; 8 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms                                                                                                  ; map_selector        ; work         ;
-;          |lpm_mult:Mult1|                              ; 1 (0)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms|lpm_mult:Mult1                                                                                   ; lpm_mult            ; work         ;
-;             |multcore:mult_core|                       ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms|lpm_mult:Mult1|multcore:mult_core                                                                ; multcore            ; work         ;
-;          |random:r|                                    ; 3 (3)               ; 8 (8)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms|random:r                                                                                         ; random              ; work         ;
-;       |score:sc|                                       ; 464 (29)            ; 7 (7)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst|score:sc                                                                                                         ; score               ; work         ;
-;          |lpm_divide:Div0|                             ; 421 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0                                                                                         ; lpm_divide          ; work         ;
-;             |lpm_divide_2jm:auto_generated|            ; 421 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_2jm:auto_generated                                                           ; lpm_divide_2jm      ; work         ;
-;                |sign_div_unsign_qlh:divider|           ; 421 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider                               ; sign_div_unsign_qlh ; work         ;
-;                   |alt_u_div_87f:divider|              ; 421 (421)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider         ; alt_u_div_87f       ; work         ;
+;       |map_selector:ms|                                ; 404 (401)           ; 409 (403)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms                                                                                                  ; map_selector        ; work         ;
+;          |random:r|                                    ; 3 (3)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms|random:r                                                                                         ; random              ; work         ;
+;       |score:sc|                                       ; 465 (29)            ; 7 (7)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst|score:sc                                                                                                         ; score               ; work         ;
+;          |lpm_divide:Div0|                             ; 422 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0                                                                                         ; lpm_divide          ; work         ;
+;             |lpm_divide_2jm:auto_generated|            ; 422 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_2jm:auto_generated                                                           ; lpm_divide_2jm      ; work         ;
+;                |sign_div_unsign_qlh:divider|           ; 422 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider                               ; sign_div_unsign_qlh ; work         ;
+;                   |alt_u_div_87f:divider|              ; 422 (422)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider         ; alt_u_div_87f       ; work         ;
 ;          |lpm_mult:Mult0|                              ; 14 (0)              ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_mult:Mult0                                                                                          ; lpm_mult            ; work         ;
 ;             |mult_fft:auto_generated|                  ; 14 (14)             ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_mult:Mult0|mult_fft:auto_generated                                                                  ; mult_fft            ; work         ;
-;       |state_machine:sm|                               ; 1322 (532)          ; 504 (3)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm                                                                                                 ; state_machine       ; work         ;
-;          |board_updater:b_up|                          ; 525 (525)           ; 492 (492)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|board_updater:b_up                                                                              ; board_updater       ; work         ;
-;          |defeat:d|                                    ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|defeat:d                                                                                        ; defeat              ; work         ;
+;       |state_machine:sm|                               ; 1074 (530)          ; 503 (3)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm                                                                                                 ; state_machine       ; work         ;
+;          |board_updater:b_up|                          ; 280 (280)           ; 491 (491)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|board_updater:b_up                                                                              ; board_updater       ; work         ;
+;          |defeat:d|                                    ; 6 (6)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|defeat:d                                                                                        ; defeat              ; work         ;
 ;          |difficulty_selector:d_sel|                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|difficulty_selector:d_sel                                                                       ; difficulty_selector ; work         ;
 ;          |lpm_divide:Div0|                             ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|lpm_divide:Div0                                                                                 ; lpm_divide          ; work         ;
 ;             |lpm_divide_hhm:auto_generated|            ; 30 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|lpm_divide:Div0|lpm_divide_hhm:auto_generated                                                   ; lpm_divide_hhm      ; work         ;
@@ -801,14 +800,110 @@ Encoding Type:  One-Hot
 ; controller:inst2|controller_reader:reader|state~13                                                              ; Lost fanout                                                                                                             ;
 ; controller:inst2|controller_reader:reader|state~14                                                              ; Lost fanout                                                                                                             ;
 ; controller:inst2|controller_reader:reader|state~15                                                              ; Lost fanout                                                                                                             ;
+; game:inst|map_selector:ms|selected_visibility[1]                                                                ; Merged with game:inst|map_selector:ms|selected_visibility[0]                                                            ;
+; game:inst|map_selector:ms|selected_visibility[3]                                                                ; Merged with game:inst|map_selector:ms|selected_visibility[2]                                                            ;
+; game:inst|map_selector:ms|selected_visibility[5]                                                                ; Merged with game:inst|map_selector:ms|selected_visibility[4]                                                            ;
+; game:inst|map_selector:ms|selected_visibility[7]                                                                ; Merged with game:inst|map_selector:ms|selected_visibility[6]                                                            ;
+; game:inst|map_selector:ms|selected_visibility[9]                                                                ; Merged with game:inst|map_selector:ms|selected_visibility[8]                                                            ;
+; game:inst|map_selector:ms|selected_visibility[11]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[10]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[13]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[12]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[15]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[14]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[17]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[16]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[19]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[18]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[21]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[20]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[23]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[22]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[25]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[24]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[27]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[26]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[29]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[28]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[31]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[30]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[33]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[32]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[35]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[34]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[37]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[36]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[39]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[38]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[41]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[40]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[43]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[42]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[45]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[44]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[47]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[46]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[49]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[48]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[51]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[50]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[53]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[52]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[55]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[54]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[57]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[56]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[59]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[58]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[61]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[60]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[63]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[62]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[65]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[64]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[67]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[66]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[69]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[68]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[71]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[70]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[73]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[72]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[75]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[74]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[77]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[76]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[79]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[78]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[81]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[80]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[83]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[82]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[85]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[84]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[87]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[86]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[89]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[88]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[91]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[90]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[93]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[92]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[95]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[94]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[97]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[96]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[99]                                                               ; Merged with game:inst|map_selector:ms|selected_visibility[98]                                                           ;
+; game:inst|map_selector:ms|selected_visibility[101]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[100]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[103]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[102]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[105]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[104]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[107]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[106]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[109]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[108]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[111]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[110]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[113]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[112]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[115]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[114]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[117]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[116]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[119]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[118]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[121]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[120]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[123]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[122]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[125]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[124]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[127]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[126]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[129]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[128]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[131]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[130]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[133]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[132]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[135]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[134]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[137]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[136]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[139]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[138]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[141]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[140]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[143]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[142]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[145]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[144]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[147]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[146]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[149]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[148]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[151]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[150]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[153]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[152]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[155]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[154]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[157]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[156]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[159]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[158]                                                          ;
+; game:inst|map_selector:ms|selected_visibility[161]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[160]                                                          ;
 ; communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|dado_saida[3,5,7] ; Merged with communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|dado_saida[1] ;
 ; game:inst|stopwatch:sw|frequency:fd|counter[0]                                                                  ; Merged with game:inst|frequency:game_frequency|counter[0]                                                               ;
 ; game:inst|stopwatch:sw|frequency:fd|counter[1]                                                                  ; Merged with game:inst|frequency:game_frequency|counter[1]                                                               ;
 ; game:inst|stopwatch:sw|frequency:fd|counter[2]                                                                  ; Merged with game:inst|frequency:game_frequency|counter[2]                                                               ;
 ; game:inst|stopwatch:sw|frequency:fd|counter[3]                                                                  ; Merged with game:inst|frequency:game_frequency|counter[3]                                                               ;
-; game:inst|state_machine:sm|board_updater:b_up|board[51]                                                         ; Stuck at GND due to stuck port data_in                                                                                  ;
-; Total Number of Removed Registers = 66                                                                          ;                                                                                                                         ;
+; game:inst|map_selector:ms|selected_map[159]                                                                     ; Stuck at GND due to stuck port data_in                                                                                  ;
+; game:inst|state_machine:sm|board_updater:b_up|board[159]                                                        ; Stuck at GND due to stuck port data_in                                                                                  ;
+; game:inst|map_selector:ms|selected_map[67]                                                                      ; Stuck at GND due to stuck port data_in                                                                                  ;
+; game:inst|state_machine:sm|board_updater:b_up|board[67]                                                         ; Stuck at GND due to stuck port data_in                                                                                  ;
+; Total Number of Removed Registers = 150                                                                         ;                                                                                                                         ;
 +-----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                        ;
++---------------------------------------------+---------------------------+----------------------------------------------------------+
+; Register name                               ; Reason for Removal        ; Registers Removed due to This Register                   ;
++---------------------------------------------+---------------------------+----------------------------------------------------------+
+; game:inst|map_selector:ms|selected_map[159] ; Stuck at GND              ; game:inst|state_machine:sm|board_updater:b_up|board[159] ;
+;                                             ; due to stuck port data_in ;                                                          ;
+; game:inst|map_selector:ms|selected_map[67]  ; Stuck at GND              ; game:inst|state_machine:sm|board_updater:b_up|board[67]  ;
+;                                             ; due to stuck port data_in ;                                                          ;
++---------------------------------------------+---------------------------+----------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -816,12 +911,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1578  ;
+; Total registers                              ; 1978  ;
 ; Number of registers using Synchronous Clear  ; 194   ;
 ; Number of registers using Synchronous Load   ; 480   ;
-; Number of registers using Asynchronous Clear ; 1553  ;
+; Number of registers using Asynchronous Clear ; 1954  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1327  ;
+; Number of registers using Clock Enable       ; 1326  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -838,8 +933,8 @@ Encoding Type:  One-Hot
 ; game:inst|state_machine:sm|position_updater:pos_up|pos_j[2]      ; 13      ;
 ; UART:inst4|tx_shift[0]                                           ; 2       ;
 ; UART:inst4|tx_shift[1]                                           ; 1       ;
-; game:inst|map_selector:ms|random:r|seed[0]                       ; 2       ;
 ; UART:inst4|tx_shift[2]                                           ; 1       ;
+; game:inst|map_selector:ms|random:r|seed[0]                       ; 3       ;
 ; UART:inst4|tx_shift[3]                                           ; 1       ;
 ; UART:inst4|tx_shift[4]                                           ; 1       ;
 ; UART:inst4|tx_shift[5]                                           ; 1       ;
@@ -850,177 +945,177 @@ Encoding Type:  One-Hot
 +------------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|UART:inst4|tx_bit_cnt[0]                                                                                         ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|contador_delay[23]             ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|contador_delay[13]          ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|contador_delay[18]                ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|contador_delay[21] ;
-; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|contador_delay[15]         ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top|game:inst|score:sc|score[4]                                                                                      ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|dado_saida[1]                  ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|dado_saida[4]                  ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|UART:inst4|tx_clk_cnt[2]                                                                                         ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[11].led_module|counter[12]              ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[10].led_module|counter[24]              ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[9].led_module|counter[7]                ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[8].led_module|counter[0]                ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[7].led_module|counter[24]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[6].led_module|counter[11]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[5].led_module|counter[21]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[4].led_module|counter[16]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[3].led_module|counter[2]                ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[2].led_module|counter[24]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[1].led_module|counter[25]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[0].led_module|counter[0]                ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|position_updater:pos_up|pos_j[3]                                                      ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|position_updater:pos_up|pos_i[3]                                                      ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|selected_number[3]                                                 ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|ControladorUART:inst3|data_reg[2]                                                                                ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|ControladorUART:inst3|data_reg[7]                                                                                ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[2]                                                    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[4]                                                    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[6]                                                    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[8]                                                    ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[10]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[12]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[14]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[16]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[18]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[20]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[22]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[24]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[26]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[28]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[31]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[33]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[34]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[36]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[38]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[41]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[43]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[45]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[47]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[48]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[51]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[52]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[54]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[57]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[59]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[60]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[62]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[65]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[67]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[69]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[71]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[73]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[75]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[76]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[78]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[81]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[83]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[85]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[86]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[88]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[90]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[92]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[94]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[96]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[99]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[101]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[103]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[105]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[107]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[109]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[111]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[113]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[115]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[117]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[119]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[121]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[123]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[125]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[127]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[128]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[131]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[133]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[135]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[137]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[138]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[141]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[143]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[145]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[147]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[149]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[151]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[152]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[154]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[156]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[158]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[160]                                                  ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|indice_chunk[4]             ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|indice_chunk[5]                   ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|indice_chunk[1]                ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|indice_chunk[5]    ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|game:inst|state_machine:sm|current_state[1]                                                                      ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|counter[1]                   ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|counter[8]                   ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|counter[8]                    ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|counter[19]                   ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|counter[11]                   ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|counter[1]                    ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|counter[4]                    ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|counter[7]                    ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|counter[3]                    ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|counter[3]                    ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|counter[15]                   ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|counter[9]                    ;
-; 27:1               ; 3 bits    ; 54 LEs        ; 48 LEs               ; 6 LEs                  ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|dado_saida[0]               ;
-; 27:1               ; 2 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|dado_saida[7]               ;
-; 27:1               ; 2 bits    ; 36 LEs        ; 32 LEs               ; 4 LEs                  ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|dado_saida[1]               ;
-; 44:1               ; 2 bits    ; 58 LEs        ; 56 LEs               ; 2 LEs                  ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|dado_saida[5]                     ;
-; 44:1               ; 2 bits    ; 58 LEs        ; 54 LEs               ; 4 LEs                  ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|dado_saida[4]                     ;
-; 47:1               ; 2 bits    ; 62 LEs        ; 56 LEs               ; 6 LEs                  ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|dado_saida[3]                     ;
-; 47:1               ; 2 bits    ; 62 LEs        ; 56 LEs               ; 6 LEs                  ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|dado_saida[1]                     ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|UART:inst4|tx_shift[2]                                                                                           ;
-; 128:1              ; 6 bits    ; 510 LEs       ; 330 LEs              ; 180 LEs                ; No         ; |top|game:inst|state_machine:sm|Mux0                                                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|Selector10                 ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|Selector9                      ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|Selector11                  ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|Selector9                         ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|Selector9          ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|Selector9                  ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|Selector26                   ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|Selector26                   ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|Selector26                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|Selector26                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|Selector26                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|Selector24                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|Selector26                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|Selector26                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|Selector26                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|Selector26                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|Selector26                    ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|Selector24                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|Selector28                   ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|Selector28                   ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|Selector27                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|Selector28                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|Selector28                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|Selector28                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|Selector27                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|Selector27                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|Selector27                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|Selector27                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|Selector27                    ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|Selector27                    ;
-; 11:1               ; 5 bits    ; 35 LEs        ; 10 LEs               ; 25 LEs                 ; No         ; |top|communicator:inst1|Selector1                                                                                     ;
-; 17:1               ; 9 bits    ; 99 LEs        ; 54 LEs               ; 45 LEs                 ; No         ; |top|controller:inst2|controller_reader:reader|Selector12                                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|UART:inst4|tx_bit_cnt[3]                                                                                        ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|contador_delay[15]            ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|contador_delay[19]         ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|contador_delay[5]                ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|contador_delay[0] ;
+; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|contador_delay[11]        ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top|game:inst|score:sc|score[6]                                                                                     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|dado_saida[5]                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|dado_saida[0]                 ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|UART:inst4|tx_clk_cnt[5]                                                                                        ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[11].led_module|counter[12]             ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[10].led_module|counter[2]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[9].led_module|counter[18]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[8].led_module|counter[5]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[7].led_module|counter[11]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[6].led_module|counter[25]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[5].led_module|counter[8]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[4].led_module|counter[9]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[3].led_module|counter[16]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[2].led_module|counter[3]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[1].led_module|counter[25]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[0].led_module|counter[10]              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|position_updater:pos_up|pos_j[3]                                                     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|position_updater:pos_up|pos_i[3]                                                     ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|selected_number[3]                                                ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|ControladorUART:inst3|data_reg[4]                                                                               ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|ControladorUART:inst3|data_reg[7]                                                                               ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[2]                                                   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[4]                                                   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[6]                                                   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[8]                                                   ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[10]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[13]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[14]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[17]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[19]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[20]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[22]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[24]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[26]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[29]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[31]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[33]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[35]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[37]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[38]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[41]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[43]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[45]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[47]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[49]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[51]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[52]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[54]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[56]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[58]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[61]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[63]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[65]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[67]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[69]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[71]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[72]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[74]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[76]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[78]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[80]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[82]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[84]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[86]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[88]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[90]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[92]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[95]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[97]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[99]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[101]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[103]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[105]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[107]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[109]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[111]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[113]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[115]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[116]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[119]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[121]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[123]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[124]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[126]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[128]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[131]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[132]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[134]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[136]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[139]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[140]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[143]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[145]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[147]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[148]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[150]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[153]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[155]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[157]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[159]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[161]                                                 ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|indice_chunk[1]            ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|indice_chunk[0]                  ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|indice_chunk[2]               ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|indice_chunk[0]   ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|game:inst|state_machine:sm|current_state[2]                                                                     ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|counter[2]                  ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|counter[14]                 ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|counter[20]                  ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|counter[1]                   ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|counter[2]                   ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|counter[1]                   ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|counter[22]                  ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|counter[11]                  ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|counter[10]                  ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|counter[1]                   ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|counter[4]                   ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|counter[22]                  ;
+; 27:1               ; 3 bits    ; 54 LEs        ; 48 LEs               ; 6 LEs                  ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|dado_saida[2]              ;
+; 27:1               ; 2 bits    ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|dado_saida[7]              ;
+; 27:1               ; 2 bits    ; 36 LEs        ; 32 LEs               ; 4 LEs                  ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|dado_saida[4]              ;
+; 44:1               ; 2 bits    ; 58 LEs        ; 56 LEs               ; 2 LEs                  ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|dado_saida[7]                    ;
+; 44:1               ; 2 bits    ; 58 LEs        ; 54 LEs               ; 4 LEs                  ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|dado_saida[6]                    ;
+; 47:1               ; 2 bits    ; 62 LEs        ; 56 LEs               ; 6 LEs                  ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|dado_saida[3]                    ;
+; 47:1               ; 2 bits    ; 62 LEs        ; 56 LEs               ; 6 LEs                  ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|dado_saida[1]                    ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |top|UART:inst4|tx_shift[6]                                                                                          ;
+; 128:1              ; 6 bits    ; 510 LEs       ; 330 LEs              ; 180 LEs                ; No         ; |top|game:inst|state_machine:sm|Mux0                                                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|Selector10                ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|Selector9                     ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|Selector11                 ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|Selector9                        ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|Selector9         ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|Selector9                 ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|Selector26                  ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|Selector26                  ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|Selector26                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|Selector26                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|Selector26                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|Selector24                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|Selector26                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|Selector26                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|Selector26                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|Selector26                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|Selector26                   ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|Selector24                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|Selector28                  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|Selector28                  ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|Selector27                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|Selector28                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|Selector28                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|Selector28                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|Selector27                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|Selector27                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|Selector27                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|Selector27                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|Selector27                   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|Selector27                   ;
+; 11:1               ; 5 bits    ; 35 LEs        ; 10 LEs               ; 25 LEs                 ; No         ; |top|communicator:inst1|Selector1                                                                                    ;
+; 17:1               ; 9 bits    ; 99 LEs        ; 54 LEs               ; 45 LEs                 ; No         ; |top|controller:inst2|controller_reader:reader|Selector12                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------+
@@ -1503,10 +1598,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY              ;
 ; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE              ;
 ; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE            ;
-; LPM_WIDTHA                                     ; 4            ; Untyped                   ;
+; LPM_WIDTHA                                     ; 3            ; Untyped                   ;
 ; LPM_WIDTHB                                     ; 9            ; Untyped                   ;
-; LPM_WIDTHP                                     ; 13           ; Untyped                   ;
-; LPM_WIDTHR                                     ; 13           ; Untyped                   ;
+; LPM_WIDTHP                                     ; 12           ; Untyped                   ;
+; LPM_WIDTHR                                     ; 12           ; Untyped                   ;
 ; LPM_WIDTHS                                     ; 1            ; Untyped                   ;
 ; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                   ;
 ; LPM_PIPELINE                                   ; 0            ; Untyped                   ;
@@ -1538,10 +1633,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; IGNORE_CARRY_BUFFERS                           ; OFF          ; IGNORE_CARRY              ;
 ; AUTO_CASCADE_CHAINS                            ; ON           ; AUTO_CASCADE              ;
 ; IGNORE_CASCADE_BUFFERS                         ; OFF          ; IGNORE_CASCADE            ;
-; LPM_WIDTHA                                     ; 4            ; Untyped                   ;
+; LPM_WIDTHA                                     ; 3            ; Untyped                   ;
 ; LPM_WIDTHB                                     ; 8            ; Untyped                   ;
-; LPM_WIDTHP                                     ; 12           ; Untyped                   ;
-; LPM_WIDTHR                                     ; 12           ; Untyped                   ;
+; LPM_WIDTHP                                     ; 11           ; Untyped                   ;
+; LPM_WIDTHR                                     ; 11           ; Untyped                   ;
 ; LPM_WIDTHS                                     ; 1            ; Untyped                   ;
 ; LPM_REPRESENTATION                             ; UNSIGNED     ; Untyped                   ;
 ; LPM_PIPELINE                                   ; 0            ; Untyped                   ;
@@ -1582,9 +1677,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                                       ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                                       ;
 ; Entity Instance                       ; game:inst|map_selector:ms|lpm_mult:Mult1 ;
-;     -- LPM_WIDTHA                     ; 4                                        ;
+;     -- LPM_WIDTHA                     ; 3                                        ;
 ;     -- LPM_WIDTHB                     ; 9                                        ;
-;     -- LPM_WIDTHP                     ; 13                                       ;
+;     -- LPM_WIDTHP                     ; 12                                       ;
 ;     -- LPM_REPRESENTATION             ; UNSIGNED                                 ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                                       ;
 ;     -- INPUT_B_IS_CONSTANT            ; YES                                      ;
@@ -1593,9 +1688,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- INPUT_A_FIXED_VALUE            ; Bx                                       ;
 ;     -- INPUT_B_FIXED_VALUE            ; Bx                                       ;
 ; Entity Instance                       ; game:inst|map_selector:ms|lpm_mult:Mult0 ;
-;     -- LPM_WIDTHA                     ; 4                                        ;
+;     -- LPM_WIDTHA                     ; 3                                        ;
 ;     -- LPM_WIDTHB                     ; 8                                        ;
-;     -- LPM_WIDTHP                     ; 12                                       ;
+;     -- LPM_WIDTHP                     ; 11                                       ;
 ;     -- LPM_REPRESENTATION             ; UNSIGNED                                 ;
 ;     -- INPUT_A_IS_CONSTANT            ; NO                                       ;
 ;     -- INPUT_B_IS_CONSTANT            ; YES                                      ;
@@ -1671,37 +1766,49 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+---------------------------------------------+
 
 
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "game:inst|map_selector:ms|define_maps:dm"                                                                                                                                                   ;
++-------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port              ; Type   ; Severity ; Details                                                                                                                                                                        ;
++-------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; visibilities_easy ; Output ; Warning  ; Output or bidir port (1296 bits) is smaller than the port expression (2430 bits) it drives.  The 1134 most-significant bit(s) in the port expression will be connected to GND. ;
+; visibilities_hard ; Output ; Warning  ; Output or bidir port (1296 bits) is smaller than the port expression (2430 bits) it drives.  The 1134 most-significant bit(s) in the port expression will be connected to GND. ;
+; maps_easy         ; Output ; Warning  ; Output or bidir port (2592 bits) is smaller than the port expression (4860 bits) it drives.  The 2268 most-significant bit(s) in the port expression will be connected to GND. ;
+; maps_hard         ; Output ; Warning  ; Output or bidir port (2592 bits) is smaller than the port expression (4860 bits) it drives.  The 2268 most-significant bit(s) in the port expression will be connected to GND. ;
++-------------------+--------+----------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 112                         ;
-; cycloneiii_ff         ; 1578                        ;
-;     CLR               ; 220                         ;
+; cycloneiii_ff         ; 1978                        ;
+;     CLR               ; 622                         ;
 ;     CLR SCLR          ; 24                          ;
 ;     CLR SLD           ; 2                           ;
 ;     ENA               ; 20                          ;
-;     ENA CLR           ; 659                         ;
+;     ENA CLR           ; 658                         ;
 ;     ENA CLR SCLR      ; 170                         ;
 ;     ENA CLR SLD       ; 478                         ;
-;     plain             ; 5                           ;
-; cycloneiii_lcell_comb ; 4602                        ;
+;     plain             ; 4                           ;
+; cycloneiii_lcell_comb ; 4329                        ;
 ;     arith             ; 1046                        ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 849                         ;
 ;         3 data inputs ; 196                         ;
-;     normal            ; 3556                        ;
+;     normal            ; 3283                        ;
 ;         0 data inputs ; 47                          ;
-;         1 data inputs ; 68                          ;
-;         2 data inputs ; 670                         ;
-;         3 data inputs ; 407                         ;
-;         4 data inputs ; 2364                        ;
+;         1 data inputs ; 69                          ;
+;         2 data inputs ; 657                         ;
+;         3 data inputs ; 229                         ;
+;         4 data inputs ; 2281                        ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 71.00                       ;
-; Average LUT depth     ; 10.85                       ;
+; Average LUT depth     ; 10.59                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1710,7 +1817,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:16     ;
+; Top            ; 00:00:27     ;
 +----------------+--------------+
 
 
@@ -1720,7 +1827,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jul 18 18:54:13 2025
+    Info: Processing started: Fri Jul 18 19:56:49 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sudoku -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -1808,8 +1915,8 @@ Info (12128): Elaborating entity "score" for hierarchy "game:inst|score:sc" File
 Warning (10230): Verilog HDL assignment warning at score.v(14): truncated value with size 32 to match size of target (7) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 14
 Warning (10230): Verilog HDL assignment warning at score.v(18): truncated value with size 32 to match size of target (7) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
 Info (12128): Elaborating entity "map_selector" for hierarchy "game:inst|map_selector:ms" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 95
-Info (12128): Elaborating entity "define_maps" for hierarchy "game:inst|map_selector:ms|define_maps:dm" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 15
-Info (12128): Elaborating entity "random" for hierarchy "game:inst|map_selector:ms|random:r" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 21
+Info (12128): Elaborating entity "define_maps" for hierarchy "game:inst|map_selector:ms|define_maps:dm" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 20
+Info (12128): Elaborating entity "random" for hierarchy "game:inst|map_selector:ms|random:r" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 27
 Info (12128): Elaborating entity "state_machine" for hierarchy "game:inst|state_machine:sm" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 135
 Warning (10230): Verilog HDL assignment warning at state_machine.v(56): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 56
 Warning (10230): Verilog HDL assignment warning at state_machine.v(57): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 57
@@ -1883,8 +1990,8 @@ Info (278001): Inferred 11 megafunctions from design logic
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Div2" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 58
     Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|score:sc|Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|score:sc|Div0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|map_selector:ms|Mult1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 25
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|map_selector:ms|Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 24
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|map_selector:ms|Mult1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 39
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|map_selector:ms|Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 38
 Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Mod0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 56
 Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Mod0" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 56
     Info (12134): Parameter "LPM_WIDTHN" = "6"
@@ -1978,12 +2085,12 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/sign
     Info (12023): Found entity 1: sign_div_unsign_qlh File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_qlh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_87f.tdf
     Info (12023): Found entity 1: alt_u_div_87f File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_87f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 25
-Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult1" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 25
-    Info (12134): Parameter "LPM_WIDTHA" = "4"
+Info (12130): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 39
+Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult1" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 39
+    Info (12134): Parameter "LPM_WIDTHA" = "3"
     Info (12134): Parameter "LPM_WIDTHB" = "9"
-    Info (12134): Parameter "LPM_WIDTHP" = "13"
-    Info (12134): Parameter "LPM_WIDTHR" = "13"
+    Info (12134): Parameter "LPM_WIDTHP" = "12"
+    Info (12134): Parameter "LPM_WIDTHR" = "12"
     Info (12134): Parameter "LPM_WIDTHS" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
@@ -1992,12 +2099,12 @@ Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult
 Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
 Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
 Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Info (12130): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 24
-Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult0" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 24
-    Info (12134): Parameter "LPM_WIDTHA" = "4"
+Info (12130): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 38
+Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult0" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 38
+    Info (12134): Parameter "LPM_WIDTHA" = "3"
     Info (12134): Parameter "LPM_WIDTHB" = "8"
-    Info (12134): Parameter "LPM_WIDTHP" = "12"
-    Info (12134): Parameter "LPM_WIDTHR" = "12"
+    Info (12134): Parameter "LPM_WIDTHP" = "11"
+    Info (12134): Parameter "LPM_WIDTHR" = "11"
     Info (12134): Parameter "LPM_WIDTHS" = "1"
     Info (12134): Parameter "LPM_REPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
@@ -2006,7 +2113,7 @@ Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult
 Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
 Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
 Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 35 buffer(s)
     Info (13019): Ignored 35 SOFT buffer(s)
 Info (13000): Registers with preset signals will power-up high File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 5
@@ -2026,6 +2133,7 @@ Info (286030): Timing-Driven Synthesis is running
 Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
     Info (17048): Logic cell "game:inst|state_machine:sm|lpm_divide:Mod2|lpm_divide_l9m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|add_sub_6_result_int[0]~0" File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_84f.tdf Line: 57
+    Info (17048): Logic cell "game:inst|score:sc|lpm_divide:Div0|lpm_divide_2jm:auto_generated|sign_div_unsign_qlh:divider|alt_u_div_87f:divider|add_sub_27_result_int[0]~12" File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_87f.tdf Line: 127
 Warning (20013): Ignored 24 assignments for entity "UART_Memoria" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity UART_Memoria -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity UART_Memoria -section_id Top was ignored
@@ -2058,15 +2166,15 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "game_state[1]"
     Warning (15610): No output dependent on input pin "game_state[0]"
     Warning (15610): No output dependent on input pin "rx"
-Info (21057): Implemented 4825 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4781 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 100 output pins
-    Info (21061): Implemented 4709 logic cells
+    Info (21061): Implemented 4665 logic cells
     Info (21062): Implemented 4 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 676 megabytes
-    Info: Processing ended: Fri Jul 18 18:55:35 2025
-    Info: Elapsed time: 00:01:22
-    Info: Total CPU time (on all processors): 00:01:30
+    Info: Peak virtual memory: 723 megabytes
+    Info: Processing ended: Fri Jul 18 19:57:22 2025
+    Info: Elapsed time: 00:00:33
+    Info: Total CPU time (on all processors): 00:00:42
 
 
