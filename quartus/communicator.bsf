@@ -97,8 +97,8 @@ on the Quartus Prime software download page.
 	(port
 		(pt 0 192)
 		(input)
-		(text "time_in_seconds[10..0]" (rect 0 0 90 12)(font "Arial" ))
-		(text "time_in_seconds[10..0]" (rect 21 187 111 199)(font "Arial" ))
+		(text "stopwatch[10..0]" (rect 0 0 62 12)(font "Arial" ))
+		(text "stopwatch[10..0]" (rect 21 187 83 199)(font "Arial" ))
 		(line (pt 0 192)(pt 16 192)(line_width 3))
 	)
 	(port

@@ -18,7 +18,7 @@ module communicator #(
     input [1:0]   errors,
     input [3:0]   selected_number,
     input [6:0]   score,
-    input [10:0]  time_in_seconds,
+    input [10:0]  stopwatch,
     input         uart_busy,
 
     output reg        tx_start,

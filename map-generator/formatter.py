@@ -19,19 +19,24 @@ class Formatter:
     bits = []
     sudokus = []
 
-    def define(self, clues=79):
+    def write_map(self, clues):
+        sudoku = Sudoku(clues=clues)
+        self.sudokus.append(sudoku)
+        for i, row in enumerate(sudoku.solution):
+            for j, cell in enumerate(row):
+                self.visibilities.append('00' if sudoku.board[i][j] == 0 else '11')
+                self.bits.append(self.ENCODER[cell-1])
+
+    def define(self, void_cells_easy=2, void_cells_hard=10):
         for _ in range(15):
-            sudoku = Sudoku(clues=clues)
-            self.sudokus.append(sudoku)
-            for i, row in enumerate(sudoku.solution):
-                for j, cell in enumerate(row):
-                    self.visibilities.append('00' if sudoku.board[i][j] == 0 else '11')
-                    self.bits.append(self.ENCODER[cell-1])
+            self.write_map(81-void_cells_easy)
+        for _ in range(15):
+            self.write_map(81-void_cells_hard)
         self.visibilities.reverse()
         self.bits.reverse()
 
-    def __init__(self, void_cells=2, output_file='output.v'):
-        self.define(81-void_cells)
+    def __init__(self, void_cells_easy=2, void_cells_hard=10, output_file='output.v'):
+        self.define(void_cells_easy, void_cells_hard)
 
         output_file = f"{os.getcwd()}/../modules/game/{output_file}"
         with open(f"{os.getcwd()}/maps-viewer.txt", 'w') as f:
@@ -40,9 +45,9 @@ class Formatter:
 
         with open(output_file, 'w') as f:
             f.write("module define_maps(\n")
-            f.write(f"\toutput [{81*2*15 - 1}:0] visibilities,\n")
-            f.write(f"\toutput [{81*4*15 - 1}:0] maps\n")
+            f.write(f"\toutput [{81*2*30 - 1}:0] visibilities,\n")
+            f.write(f"\toutput [{81*4*30 - 1}:0] maps\n")
             f.write(");\n")
-            f.write(f"\tassign visibilities = {81*2*15}'b{"".join(self.visibilities)};\n")
-            f.write(f"\tassign maps = {81*4*15}'b{"".join(self.bits)};\n")
+            f.write(f"\tassign visibilities = {81*2*30}'b{"".join(self.visibilities)};\n")
+            f.write(f"\tassign maps = {81*4*30}'b{"".join(self.bits)};\n")
             f.write("endmodule\n")

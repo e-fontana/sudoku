@@ -21,7 +21,8 @@ module game(
     output [7:0] position,
     output [1:0] strikes,
     output [3:0] selected_number,
-    output [6:0] score
+    output [6:0] score,
+    output [10:0] stopwatch
 );
     wire [3:0] n0, n1, n2, n3, n4, n5, n6, n7;
     wire [161:0] selected_visibility;
@@ -34,7 +35,7 @@ module game(
     wire [4:0] minutes;
     wire [3:0] pos_i, pos_j;
 
-
+    assign stopwatch = {minutes, seconds};
     assign n6 = pos_j;
     assign n7 = pos_i;
     assign position = {pos_i, pos_j};
@@ -93,6 +94,7 @@ module game(
     map_selector ms (
         .clk(clk),
         .reset(reset),
+        .difficulty(difficulty),
         .selected_visibility(selected_visibility),
         .selected_map(selected_map)
     );
