@@ -83,10 +83,11 @@ class GameScreen(BaseScreen):
         timer_text_rect = timer_surface_text.get_rect(center=timer_rect.center)
         screen.blit(timer_surface_text, timer_text_rect)
 
-        # --- Desenho do Número de Erros ---
-        strikes_text = self.font_strikes.render(f"STRIKES {self.strikes}", True, self.RED) # Texto em branco puro
-        strikes_text_rect = strikes_text.get_rect(center=(self.game.WIDTH // 2, 85)) # Posição no canto superior
-        screen.blit(strikes_text, strikes_text_rect)
+        # --- Desenho do Número de Erros (Apenas no modo dificil)---
+        if self.game.modelo.difficulty:
+            strikes_text = self.font_strikes.render(f"STRIKES {self.strikes}", True, self.RED) # Texto em branco puro
+            strikes_text_rect = strikes_text.get_rect(center=(self.game.WIDTH // 2, 85)) # Posição no canto superior
+            screen.blit(strikes_text, strikes_text_rect)
 
         # --- DESENHO DO GRID DO SUDOKU ---
         for row in range(self.GRID_DIMENSION):
@@ -99,9 +100,7 @@ class GameScreen(BaseScreen):
                 # Escolhe a cor de fundo da célula (normal ou selecionada)
                 cell_fill_color = self.CELL_BG_COLOR # Cor padrão
                 if row == self.game.modelo.position[0] and col == self.game.modelo.position[1]:
-                    if self.game.modelo.colors[row][col].value == Color.VERMELHO.value:
-                        cell_fill_color = self.WRONG_CELL_COLOR
-                    elif self.game.modelo.colors[row][col].value == Color.AMARELO.value:
+                    if self.game.modelo.colors[row][col].value == Color.AMARELO.value:
                         cell_fill_color = self.INACTIVE_SELECTED_CELL_COLOR
                     else: # Cor para a célula selecionada
                         cell_fill_color = self.ACTIVE_SELECTED_CELL_COLOR # Cor para a célula selecionada
@@ -140,6 +139,11 @@ class GameScreen(BaseScreen):
                 num = self.game.modelo.map[r][c] # Pega o número do seu tabuleiro
                 if self.colors[r][c].value == Color.BRANCO.value: # Se for para mostar a célula
                     num_surface = self.font_numbers.render(str(num), True, self.PURE_WHITE) # Texto em branco puro
+                    num_rect = num_surface.get_rect(center=(self.GRID_START_X + c * self.CELL_SIZE + self.CELL_SIZE // 2,
+                                                             self.GRID_START_Y + r * self.CELL_SIZE + self.CELL_SIZE // 2))
+                    screen.blit(num_surface, num_rect)
+                elif self.colors[r][c].value == Color.VERMELHO.value: # Se a célula estiver errada
+                    num_surface = self.font_numbers.render(str(self.selectedNumber), True, self.WRONG_CELL_COLOR) # Texto em branco puro
                     num_rect = num_surface.get_rect(center=(self.GRID_START_X + c * self.CELL_SIZE + self.CELL_SIZE // 2,
                                                              self.GRID_START_Y + r * self.CELL_SIZE + self.CELL_SIZE // 2))
                     screen.blit(num_surface, num_rect)

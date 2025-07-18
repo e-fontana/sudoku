@@ -63,8 +63,8 @@ class SerialReader:
                         print("MAP SERIAL", self.game.modelo.map)
 
                     case 0xAD:  # Visibilidade
-                        payload_bytes = ser.read(23)
-                        if len(payload_bytes) != 23:
+                        payload_bytes = ser.read(24)
+                        if len(payload_bytes) != 24:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
                         

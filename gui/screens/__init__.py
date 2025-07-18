@@ -9,7 +9,7 @@ class Modelo:
     def __init__(self):
         self.start = False
         self.difficulty = False
-        self.map = None
+        self.map = [[0] * 9 for _ in range(9)]
         self.colors = [[Color(2)] * 9 for _ in range(9)]
         self.position = [4,4]
         self.strikes = 0
