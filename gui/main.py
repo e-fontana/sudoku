@@ -3,5 +3,5 @@ from game import Game
 
 
 modelo = Modelo()
-game = Game(modelo=modelo, port='/dev/pts/7')  # Adjust the port as needed
+game = Game(modelo=modelo)  # Adjust the port as needed
 game.run()

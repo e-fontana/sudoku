@@ -10,9 +10,13 @@ def decode_full_map(payload_bytes):
         low = byte & 0x0F          # bits menos significativos
         nibbles.extend([high, low])
 
+
     # Pega apenas os 81 primeiros nibbles
-    nibbles = nibbles[1:82]
+    nibbles = nibbles[1:82][::-1]
+
+    print(nibbles)
 
     full_map = np.array(nibbles, dtype=np.uint8).reshape((9, 9)).tolist()
 
     return full_map
+

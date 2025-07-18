@@ -41,7 +41,7 @@ class SerialReader:
                         print("Início do jogo detectado.")
                     
                     case 0xAB:  # Dificuldade
-                        self.game.handleStateChange("DIFICULTY")
+                        self.game.handleStateChange("DIFFICULTY")
                         payload_bytes = ser.read(1)
                         if len(payload_bytes) != 1:
                             print("Pacote incompleto após cabeçalho. Descartando.")
@@ -58,7 +58,6 @@ class SerialReader:
                         if len(full_map_bytes) != 41:
                             print("Pacote incompleto após cabeçalho. Descartando.")
                             continue
-
                         correct_map = full_map.decode_full_map(full_map_bytes)
                         self.game.modelo.map = correct_map
                         print("MAP SERIAL", self.game.modelo.map)

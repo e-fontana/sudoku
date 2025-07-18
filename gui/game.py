@@ -33,7 +33,7 @@ class Game:
     def __init__(self, modelo: Modelo, port='/dev/ttyUSB0'):
         pygame.init()
         self.modelo = modelo
-        self.serial_reader = SerialReader(self, port, 9600)
+        self.serial_reader = SerialReader(self, port, 115200)
         REFRESH = pygame.USEREVENT + 1
         pygame.time.set_timer(REFRESH, 30)
 
@@ -61,7 +61,7 @@ class Game:
         match (new_state):
             case "START":
                 self.current_state = self.STATE_MENU
-            case "DIFICULTY":
+            case "DIFFICULTY":
                 self.current_state = self.STATE_DIFFICULTY_SELECTION
             case "BOARD":
                 self.current_state = self.STATE_GAME

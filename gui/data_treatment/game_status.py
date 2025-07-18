@@ -39,7 +39,7 @@ def decode_status(payload_bytes):
     mask_numero = 0x0F # Máscara de 4 bits (2^4 - 1)
     numero_selecionado = (payload_int >> shift_numero) & mask_numero
 
-    colors_array = [Color(i) for i in indices]
+    colors_array = [Color(i) for i in indices][::-1]
 
     colors = np.array(colors_array, dtype=Color).reshape((9, 9)).tolist()
 
