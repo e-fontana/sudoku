@@ -13,7 +13,7 @@ module random(
         end
     end
 
-    always @(posedge clk) begin
-        random_number <= seed;
+    always @(*) begin
+        random_number = seed;
     end
 endmodule

@@ -87,7 +87,7 @@ module game(
     // map
 
     map_selector ms (
-        .clk(clk),
+        .clk(game_clk),
         .reset(reset),
         .difficulty(difficulty),
         .selected_visibility(selected_visibility),

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Fri Jul 18 20:10:20 2025
+Fri Jul 18 20:28:14 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -111,15 +111,15 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 18 20:10:20 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 18 20:28:14 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top                                             ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 4,854                                           ;
+; Total logic elements               ; 4,852                                           ;
 ;     Total combinational functions  ; 4,526                                           ;
-;     Dedicated logic registers      ; 1,978                                           ;
-; Total registers                    ; 1978                                            ;
+;     Dedicated logic registers      ; 1,975                                           ;
+; Total registers                    ; 1975                                            ;
 ; Total pins                         ; 112                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -321,20 +321,20 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 4,854     ;
+; Estimated Total logic elements              ; 4,852     ;
 ;                                             ;           ;
 ; Total combinational functions               ; 4526      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2359      ;
-;     -- 3 input functions                    ; 490       ;
-;     -- <=2 input functions                  ; 1677      ;
+;     -- 4 input functions                    ; 2358      ;
+;     -- 3 input functions                    ; 489       ;
+;     -- <=2 input functions                  ; 1679      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
 ;     -- normal mode                          ; 3408      ;
 ;     -- arithmetic mode                      ; 1118      ;
 ;                                             ;           ;
-; Total registers                             ; 1978      ;
-;     -- Dedicated logic registers            ; 1978      ;
+; Total registers                             ; 1975      ;
+;     -- Dedicated logic registers            ; 1975      ;
 ;     -- I/O registers                        ; 0         ;
 ;                                             ;           ;
 ; I/O pins                                    ; 112       ;
@@ -342,9 +342,9 @@ on the Quartus Prime software download page.
 ; Embedded Multiplier 9-bit elements          ; 4         ;
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1453      ;
-; Total fan-out                               ; 22719     ;
-; Average fan-out                             ; 3.37      ;
+; Maximum fan-out                             ; 1044      ;
+; Total fan-out                               ; 22711     ;
+; Average fan-out                             ; 3.38      ;
 +---------------------------------------------+-----------+
 
 
@@ -353,12 +353,12 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                             ; Entity Name         ; Library Name ;
 +--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top                                                   ; 4526 (1)            ; 1978 (0)                  ; 0           ; 4            ; 0       ; 2         ; 112  ; 0            ; |top                                                                                                                            ; top                 ; work         ;
+; |top                                                   ; 4526 (1)            ; 1975 (0)                  ; 0           ; 4            ; 0       ; 2         ; 112  ; 0            ; |top                                                                                                                            ; top                 ; work         ;
 ;    |ControladorUART:inst3|                             ; 3 (3)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ControladorUART:inst3                                                                                                      ; ControladorUART     ; work         ;
 ;    |UART:inst4|                                        ; 45 (45)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|UART:inst4                                                                                                                 ; UART                ; work         ;
-;    |communicator:inst1|                                ; 689 (31)            ; 227 (6)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1                                                                                                         ; communicator        ; work         ;
-;       |SendEndGame:send_eng_game|                      ; 67 (0)              ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game                                                                               ; SendEndGame         ; work         ;
-;          |PayloadController:payload_controller|        ; 67 (67)             ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller                                          ; PayloadController   ; work         ;
+;    |communicator:inst1|                                ; 690 (31)            ; 227 (6)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1                                                                                                         ; communicator        ; work         ;
+;       |SendEndGame:send_eng_game|                      ; 68 (0)              ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game                                                                               ; SendEndGame         ; work         ;
+;          |PayloadController:payload_controller|        ; 68 (68)             ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller                                          ; PayloadController   ; work         ;
 ;       |SendFullMap:map_sender|                         ; 288 (0)             ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendFullMap:map_sender                                                                                  ; SendFullMap         ; work         ;
 ;          |PayloadController:payload_controller|        ; 288 (288)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller                                             ; PayloadController   ; work         ;
 ;       |SendGameDificulty:send_game_dificulty|          ; 56 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty                                                                   ; SendGameDificulty   ; work         ;
@@ -394,11 +394,11 @@ on the Quartus Prime software download page.
 ;          |led_on_pulse:debounce_blocks[8].led_module|  ; 39 (39)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[8].led_module                                     ; led_on_pulse        ; work         ;
 ;          |led_on_pulse:debounce_blocks[9].led_module|  ; 38 (38)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[9].led_module                                     ; led_on_pulse        ; work         ;
 ;       |controller_reader:reader|                       ; 57 (57)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_reader:reader                                                                                  ; controller_reader   ; work         ;
-;    |game:inst|                                         ; 2362 (0)            ; 991 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst                                                                                                                  ; game                ; work         ;
+;    |game:inst|                                         ; 2361 (0)            ; 988 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst                                                                                                                  ; game                ; work         ;
 ;       |display:d|                                      ; 90 (90)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|display:d                                                                                                        ; display             ; work         ;
 ;       |frequency:game_frequency|                       ; 48 (48)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|frequency:game_frequency                                                                                         ; frequency           ; work         ;
-;       |map_selector:ms|                                ; 404 (401)           ; 409 (403)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms                                                                                                  ; map_selector        ; work         ;
-;          |random:r|                                    ; 3 (3)               ; 6 (6)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms|random:r                                                                                         ; random              ; work         ;
+;       |map_selector:ms|                                ; 403 (402)           ; 406 (403)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms                                                                                                  ; map_selector        ; work         ;
+;          |random:r|                                    ; 1 (1)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms|random:r                                                                                         ; random              ; work         ;
 ;       |score:sc|                                       ; 672 (32)            ; 7 (7)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst|score:sc                                                                                                         ; score               ; work         ;
 ;          |lpm_divide:Div0|                             ; 626 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0                                                                                         ; lpm_divide          ; work         ;
 ;             |lpm_divide_dkm:auto_generated|            ; 626 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_dkm:auto_generated                                                           ; lpm_divide_dkm      ; work         ;
@@ -760,46 +760,6 @@ Encoding Type:  One-Hot
 ; communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|dado_saida[3]             ; Merged with communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|dado_saida[5]         ;
 ; communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|dado_saida[5]             ; Merged with communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|dado_saida[7]         ;
 ; UART:inst4|tx_shift[9]                                                                                          ; Stuck at VCC due to stuck port data_in                                                                                  ;
-; communicator:inst1|arb_state~4                                                                                  ; Lost fanout                                                                                                             ;
-; communicator:inst1|arb_state~5                                                                                  ; Lost fanout                                                                                                             ;
-; communicator:inst1|arb_state~6                                                                                  ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|estado_atual~7                ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|estado_atual~8                ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|estado_atual~7             ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|estado_atual~8             ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|estado_atual~7                   ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|estado_atual~8                   ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|estado_atual~7    ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|estado_atual~8    ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|estado_atual~7            ; Lost fanout                                                                                                             ;
-; communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|estado_atual~8            ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|state~9                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|state~10                    ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|state~9                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|state~10                    ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|state~9                      ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|state~10                     ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_reader:reader|state~13                                                              ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_reader:reader|state~14                                                              ; Lost fanout                                                                                                             ;
-; controller:inst2|controller_reader:reader|state~15                                                              ; Lost fanout                                                                                                             ;
 ; game:inst|map_selector:ms|selected_visibility[1]                                                                ; Merged with game:inst|map_selector:ms|selected_visibility[0]                                                            ;
 ; game:inst|map_selector:ms|selected_visibility[3]                                                                ; Merged with game:inst|map_selector:ms|selected_visibility[2]                                                            ;
 ; game:inst|map_selector:ms|selected_visibility[5]                                                                ; Merged with game:inst|map_selector:ms|selected_visibility[4]                                                            ;
@@ -881,6 +841,46 @@ Encoding Type:  One-Hot
 ; game:inst|map_selector:ms|selected_visibility[157]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[156]                                                          ;
 ; game:inst|map_selector:ms|selected_visibility[159]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[158]                                                          ;
 ; game:inst|map_selector:ms|selected_visibility[161]                                                              ; Merged with game:inst|map_selector:ms|selected_visibility[160]                                                          ;
+; communicator:inst1|arb_state~4                                                                                  ; Lost fanout                                                                                                             ;
+; communicator:inst1|arb_state~5                                                                                  ; Lost fanout                                                                                                             ;
+; communicator:inst1|arb_state~6                                                                                  ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|estado_atual~7                ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|estado_atual~8                ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|estado_atual~7             ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|estado_atual~8             ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|estado_atual~7                   ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|estado_atual~8                   ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|estado_atual~7    ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|estado_atual~8    ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|estado_atual~7            ; Lost fanout                                                                                                             ;
+; communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|estado_atual~8            ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|state~9                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|state~10                    ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|state~9                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|state~10                    ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|state~9                      ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db|state~10                     ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_reader:reader|state~13                                                              ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_reader:reader|state~14                                                              ; Lost fanout                                                                                                             ;
+; controller:inst2|controller_reader:reader|state~15                                                              ; Lost fanout                                                                                                             ;
 ; communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|dado_saida[3,5,7] ; Merged with communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|dado_saida[1] ;
 ; game:inst|stopwatch:sw|frequency:fd|counter[0]                                                                  ; Merged with game:inst|frequency:game_frequency|counter[0]                                                               ;
 ; game:inst|stopwatch:sw|frequency:fd|counter[1]                                                                  ; Merged with game:inst|frequency:game_frequency|counter[1]                                                               ;
@@ -911,7 +911,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1978  ;
+; Total registers                              ; 1975  ;
 ; Number of registers using Synchronous Clear  ; 194   ;
 ; Number of registers using Synchronous Load   ; 480   ;
 ; Number of registers using Asynchronous Clear ; 1954  ;
@@ -933,8 +933,8 @@ Encoding Type:  One-Hot
 ; game:inst|state_machine:sm|position_updater:pos_up|pos_j[2]      ; 13      ;
 ; UART:inst4|tx_shift[0]                                           ; 2       ;
 ; UART:inst4|tx_shift[1]                                           ; 1       ;
+; game:inst|map_selector:ms|random:r|seed[0]                       ; 400     ;
 ; UART:inst4|tx_shift[2]                                           ; 1       ;
-; game:inst|map_selector:ms|random:r|seed[0]                       ; 3       ;
 ; UART:inst4|tx_shift[3]                                           ; 1       ;
 ; UART:inst4|tx_shift[4]                                           ; 1       ;
 ; UART:inst4|tx_shift[5]                                           ; 1       ;
@@ -1784,7 +1784,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 112                         ;
-; cycloneiii_ff         ; 1978                        ;
+; cycloneiii_ff         ; 1975                        ;
 ;     CLR               ; 622                         ;
 ;     CLR SCLR          ; 24                          ;
 ;     CLR SLD           ; 2                           ;
@@ -1792,7 +1792,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA CLR           ; 658                         ;
 ;     ENA CLR SCLR      ; 170                         ;
 ;     ENA CLR SLD       ; 478                         ;
-;     plain             ; 4                           ;
+;     plain             ; 1                           ;
 ; cycloneiii_lcell_comb ; 4535                        ;
 ;     arith             ; 1118                        ;
 ;         1 data inputs ; 1                           ;
@@ -1800,15 +1800,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 264                         ;
 ;     normal            ; 3417                        ;
 ;         0 data inputs ; 43                          ;
-;         1 data inputs ; 69                          ;
-;         2 data inputs ; 720                         ;
-;         3 data inputs ; 226                         ;
-;         4 data inputs ; 2359                        ;
+;         1 data inputs ; 68                          ;
+;         2 data inputs ; 723                         ;
+;         3 data inputs ; 225                         ;
+;         4 data inputs ; 2358                        ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 69.80                       ;
-; Average LUT depth     ; 12.61                       ;
+; Average LUT depth     ; 12.62                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1817,7 +1817,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:29     ;
+; Top            ; 00:00:28     ;
 +----------------+--------------+
 
 
@@ -1827,7 +1827,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jul 18 20:09:42 2025
+    Info: Processing started: Fri Jul 18 20:27:36 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sudoku -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
@@ -2166,15 +2166,15 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "game_state[1]"
     Warning (15610): No output dependent on input pin "game_state[0]"
     Warning (15610): No output dependent on input pin "rx"
-Info (21057): Implemented 4987 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4985 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 100 output pins
-    Info (21061): Implemented 4871 logic cells
+    Info (21061): Implemented 4869 logic cells
     Info (21062): Implemented 4 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 822 megabytes
-    Info: Processing ended: Fri Jul 18 20:10:20 2025
+    Info: Peak virtual memory: 848 megabytes
+    Info: Processing ended: Fri Jul 18 20:28:14 2025
     Info: Elapsed time: 00:00:38
-    Info: Total CPU time (on all processors): 00:00:47
+    Info: Total CPU time (on all processors): 00:00:46
 
 

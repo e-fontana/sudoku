@@ -19,7 +19,12 @@ module map_selector (
         .maps_hard(maps_hard)
     );
 
-    assign map_index = 4'b0001;
+    // Instanciando o novo gerador de índice
+    random r (
+        .clk(clk),
+        .reset(reset),
+        .random_number(map_index) // Conecta a saída do gerador ao nosso wire
+    );
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
