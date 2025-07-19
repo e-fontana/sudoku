@@ -38,9 +38,9 @@ class Formatter:
                 self.bits_hard.append(self.ENCODER[cell-1])
 
     def define(self, void_cells_easy=2, void_cells_hard=4):
-        for _ in range(1):
+        for _ in range(8):
             self.generate_sudoku_easy()
-        for _ in range(1):
+        for _ in range(8):
             self.generate_sudoku_hard()
         self.visibilities_easy.reverse()
         self.visibilities_hard.reverse()
@@ -57,13 +57,13 @@ class Formatter:
 
         with open(output_file, 'w') as f:
             f.write("module define_maps(\n")
-            f.write(f"\toutput [{81*2 - 1}:0] visibilities_easy,\n")
-            f.write(f"\toutput [{81*2 - 1}:0] visibilities_hard,\n")
-            f.write(f"\toutput [{81*4 - 1}:0] maps_easy,\n")
-            f.write(f"\toutput [{81*4 - 1}:0] maps_hard\n")
+            f.write(f"\toutput [{81*2*8 - 1}:0] visibilities_easy,\n")
+            f.write(f"\toutput [{81*2*8 - 1}:0] visibilities_hard,\n")
+            f.write(f"\toutput [{81*4*8 - 1}:0] maps_easy,\n")
+            f.write(f"\toutput [{81*4*8 - 1}:0] maps_hard\n")
             f.write(");\n")
-            f.write(f"\tassign visibilities_easy = {81*2}'b{"".join(self.visibilities_easy)};\n")
-            f.write(f"\tassign visibilities_hard = {81*2}'b{"".join(self.visibilities_hard)};\n")
-            f.write(f"\tassign maps_easy = {81*4}'b{"".join(self.bits_easy)};\n")
-            f.write(f"\tassign maps_hard = {81*4}'b{"".join(self.bits_hard)};\n")
+            f.write(f"\tassign visibilities_easy = {81*2*8}'b{"".join(self.visibilities_easy)};\n")
+            f.write(f"\tassign visibilities_hard = {81*2*8}'b{"".join(self.visibilities_hard)};\n")
+            f.write(f"\tassign maps_easy = {81*4*8}'b{"".join(self.bits_easy)};\n")
+            f.write(f"\tassign maps_hard = {81*4*8}'b{"".join(self.bits_hard)};\n")
             f.write("endmodule\n")

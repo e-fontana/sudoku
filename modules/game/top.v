@@ -34,8 +34,9 @@ module game(
     wire [5:0] seconds;
     wire [4:0] minutes;
     wire [3:0] pos_i, pos_j;
+    wire map_loaded;
 
-	 assign stopwatch = {minutes, seconds};
+    assign stopwatch = {minutes, seconds};
     assign n6 = pos_j;
     assign n7 = pos_i;
     assign position = {pos_i, pos_j};
@@ -87,9 +88,10 @@ module game(
     // map
 
     map_selector ms (
-        .clk(game_clk),
+        .clk(clk),
         .reset(reset),
         .difficulty(difficulty),
+        .map_loaded(map_loaded),
         .selected_visibility(selected_visibility),
         .selected_map(selected_map)
     );
@@ -108,6 +110,7 @@ module game(
         .start_button(start_button),
         .a_button(a_button),
         .b_button(b_button),
+        .map_loaded(map_loaded),
 
         .selected_visibility(selected_visibility),
         .selected_map(selected_map),

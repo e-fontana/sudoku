@@ -31,6 +31,8 @@ module state_machine #(
 
     output reg[2:0] current_state,
 
+    output reg map_loaded,
+
     output [3:0] n0, n1, n2, n3, n4, n5
 );
     reg [2:0] next_state;
@@ -43,6 +45,8 @@ module state_machine #(
 
     wire victory_condition, defeat_condition;
     wire [3:0] visible_cell_value;
+
+    reg next_map_loaded;
     
     parameter [2:0] 
         INICIAR_JOGO        		 = 3'b000,
@@ -144,26 +148,32 @@ module state_machine #(
     always @(posedge clk or posedge reset) begin
         if (reset) begin
             current_state <= INICIAR_JOGO;
+            map_loaded <= 1'b0;
         end else begin
             current_state <= next_state;
+            map_loaded <= next_map_loaded;
         end
     end
     
     always @(*) begin
         next_state = current_state;
+        next_map_loaded = map_loaded;
 
         case (current_state)
             INICIAR_JOGO: begin
+                next_map_loaded <= 1'b0;
                 if (start_button) begin
                     next_state = SELECIONAR_DIFICULDADE;
                 end
             end
             SELECIONAR_DIFICULDADE: begin
+                next_map_loaded <= 1'b0;
                 if (a_button) begin
                     next_state = CARREGANDO;
                 end
             end
             CARREGANDO: begin
+                next_map_loaded <= 1'b1;
                 if (|visibilities & |board) begin
                     next_state = CORRENDO_MAPA;
                 end
