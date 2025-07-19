@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at state_machine.v(159): always construct contains both blocking and non-blocking assignments File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 159
+Warning (10268): Verilog HDL information at state_machine.v(159): always construct contains both blocking and non-blocking assignments File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 159

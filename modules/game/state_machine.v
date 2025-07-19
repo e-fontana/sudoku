@@ -169,12 +169,13 @@ module state_machine #(
             SELECIONAR_DIFICULDADE: begin
                 next_map_loaded <= 1'b0;
                 if (a_button) begin
+                    next_map_loaded <= 1'b1;
                     next_state = CARREGANDO;
                 end
             end
             CARREGANDO: begin
                 next_map_loaded <= 1'b1;
-                if (|visibilities & |board) begin
+                if ((|visibilities & |board) & map_loaded) begin
                     next_state = CORRENDO_MAPA;
                 end
             end

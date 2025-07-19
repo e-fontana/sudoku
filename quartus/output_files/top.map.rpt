@@ -1,5 +1,5 @@
 Analysis & Synthesis report for top
-Fri Jul 18 21:19:19 2025
+Fri Jul 18 21:31:20 2025
 Quartus Prime Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
 
 
@@ -111,13 +111,13 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jul 18 21:19:18 2025           ;
+; Analysis & Synthesis Status        ; Successful - Fri Jul 18 21:31:20 2025           ;
 ; Quartus Prime Version              ; 24.1std.0 Build 1077 03/04/2025 SC Lite Edition ;
 ; Revision Name                      ; top                                             ;
 ; Top-level Entity Name              ; top                                             ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 4,856                                           ;
-;     Total combinational functions  ; 4,531                                           ;
+; Total logic elements               ; 4,866                                           ;
+;     Total combinational functions  ; 4,541                                           ;
 ;     Dedicated logic registers      ; 1,978                                           ;
 ; Total registers                    ; 1978                                            ;
 ; Total pins                         ; 112                                             ;
@@ -220,10 +220,10 @@ on the Quartus Prime software download page.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 16          ;
-; Maximum allowed            ; 10          ;
+; Maximum allowed            ; 16          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 10          ;
+; Maximum used               ; 16          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
@@ -234,86 +234,86 @@ on the Quartus Prime software download page.
 ;     Processor 6            ;   0.0%      ;
 ;     Processor 7            ;   0.0%      ;
 ;     Processor 8            ;   0.0%      ;
-;     Processors 9-10        ;   0.0%      ;
+;     Processors 9-16        ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                 ;
-+------------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path               ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                         ; Library ;
-+------------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
-; ../modules/controller/led_on_pulse.v           ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/controller/led_on_pulse.v               ;         ;
-; ../modules/controller/debouncer.v              ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/controller/debouncer.v                  ;         ;
-; ../modules/controller/controller_reader.v      ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v          ;         ;
-; ../modules/controller/controller_handler.v     ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_handler.v         ;         ;
-; ../modules/controller/controller.v             ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller.v                 ;         ;
-; ../modules/communicator/ControladorPrincipal.v ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/ControladorPrincipal.v     ;         ;
-; ../modules/communicator/MainController.v       ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/MainController.v           ;         ;
-; ../modules/communicator/PayloadController.v    ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v        ;         ;
-; ../modules/communicator/SendDificulty.v        ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendDificulty.v            ;         ;
-; ../modules/communicator/SendEndGame.v          ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendEndGame.v              ;         ;
-; ../modules/communicator/SendFullMap.v          ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendFullMap.v              ;         ;
-; ../modules/communicator/SendGameStatus.v       ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendGameStatus.v           ;         ;
-; ../modules/communicator/SendStart.v            ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendStart.v                ;         ;
-; ../modules/communicator/UART.v                 ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v                     ;         ;
-; top.bdf                                        ; yes             ; User Block Diagram/Schematic File  ; /home/andreojr/dev/edu/engg52/sudoku/quartus/top.bdf                                 ;         ;
-; ../modules/game/victory.v                      ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/victory.v                          ;         ;
-; ../modules/game/top.v                          ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v                              ;         ;
-; ../modules/game/stopwatch.v                    ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/stopwatch.v                        ;         ;
-; ../modules/game/state_machine.v                ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v                    ;         ;
-; ../modules/game/score.v                        ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v                            ;         ;
-; ../modules/game/random.v                       ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/random.v                           ;         ;
-; ../modules/game/position_updater.v             ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v                 ;         ;
-; ../modules/game/map_selector.v                 ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v                     ;         ;
-; ../modules/game/frequency.v                    ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/frequency.v                        ;         ;
-; ../modules/game/display.v                      ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/display.v                          ;         ;
-; ../modules/game/difficulty_selector.v          ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/difficulty_selector.v              ;         ;
-; ../modules/game/define_maps.v                  ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/define_maps.v                      ;         ;
-; ../modules/game/defeat.v                       ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/defeat.v                           ;         ;
-; ../modules/game/button_handler.v               ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/button_handler.v                   ;         ;
-; ../modules/game/board_updater.v                ; yes             ; User Verilog HDL File              ; /home/andreojr/dev/edu/engg52/sudoku/modules/game/board_updater.v                    ;         ;
-; lpm_divide.tdf                                 ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_divide.tdf      ;         ;
-; abs_divider.inc                                ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/abs_divider.inc     ;         ;
-; sign_div_unsign.inc                            ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/sign_div_unsign.inc ;         ;
-; aglobal241.inc                                 ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/aglobal241.inc      ;         ;
-; db/lpm_divide_k9m.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_k9m.tdf                   ;         ;
-; db/sign_div_unsign_9kh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_9kh.tdf              ;         ;
-; db/alt_u_div_64f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_64f.tdf                    ;         ;
-; db/add_sub_7pc.tdf                             ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/add_sub_7pc.tdf                      ;         ;
-; db/add_sub_8pc.tdf                             ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/add_sub_8pc.tdf                      ;         ;
-; db/lpm_divide_l9m.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_l9m.tdf                   ;         ;
-; db/sign_div_unsign_akh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_akh.tdf              ;         ;
-; db/alt_u_div_84f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_84f.tdf                    ;         ;
-; db/lpm_divide_hhm.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_hhm.tdf                   ;         ;
-; db/lpm_divide_ihm.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_ihm.tdf                   ;         ;
-; db/lpm_divide_j9m.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_j9m.tdf                   ;         ;
-; db/sign_div_unsign_8kh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_8kh.tdf              ;         ;
-; db/alt_u_div_44f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_44f.tdf                    ;         ;
-; db/lpm_divide_lhm.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_lhm.tdf                   ;         ;
-; db/sign_div_unsign_dkh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_dkh.tdf              ;         ;
-; db/alt_u_div_e4f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_e4f.tdf                    ;         ;
-; lpm_mult.tdf                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf        ;         ;
-; lpm_add_sub.inc                                ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_add_sub.inc     ;         ;
-; multcore.inc                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/multcore.inc        ;         ;
-; bypassff.inc                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/bypassff.inc        ;         ;
-; altshift.inc                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/altshift.inc        ;         ;
-; db/mult_fft.tdf                                ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/mult_fft.tdf                         ;         ;
-; db/lpm_divide_dkm.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_dkm.tdf                   ;         ;
-; db/sign_div_unsign_5nh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_5nh.tdf              ;         ;
-; db/alt_u_div_u9f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_u9f.tdf                    ;         ;
-; multcore.tdf                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/multcore.tdf        ;         ;
-; csa_add.inc                                    ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/csa_add.inc         ;         ;
-; mpar_add.inc                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/mpar_add.inc        ;         ;
-; muleabz.inc                                    ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/muleabz.inc         ;         ;
-; mul_lfrg.inc                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/mul_lfrg.inc        ;         ;
-; mul_boothc.inc                                 ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/mul_boothc.inc      ;         ;
-; alt_ded_mult.inc                               ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/alt_ded_mult.inc    ;         ;
-; alt_ded_mult_y.inc                             ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/alt_ded_mult_y.inc  ;         ;
-; dffpipe.inc                                    ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/dffpipe.inc         ;         ;
-; mpar_add.tdf                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/mpar_add.tdf        ;         ;
-; altshift.tdf                                   ; yes             ; Megafunction                       ; /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/altshift.tdf        ;         ;
-+------------------------------------------------+-----------------+------------------------------------+--------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                            ;
++------------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path               ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                    ; Library ;
++------------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
+; ../modules/controller/led_on_pulse.v           ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/led_on_pulse.v           ;         ;
+; ../modules/controller/debouncer.v              ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/debouncer.v              ;         ;
+; ../modules/controller/controller_reader.v      ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v      ;         ;
+; ../modules/controller/controller_handler.v     ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_handler.v     ;         ;
+; ../modules/controller/controller.v             ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller.v             ;         ;
+; ../modules/communicator/ControladorPrincipal.v ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/ControladorPrincipal.v ;         ;
+; ../modules/communicator/MainController.v       ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/MainController.v       ;         ;
+; ../modules/communicator/PayloadController.v    ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v    ;         ;
+; ../modules/communicator/SendDificulty.v        ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendDificulty.v        ;         ;
+; ../modules/communicator/SendEndGame.v          ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendEndGame.v          ;         ;
+; ../modules/communicator/SendFullMap.v          ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendFullMap.v          ;         ;
+; ../modules/communicator/SendGameStatus.v       ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendGameStatus.v       ;         ;
+; ../modules/communicator/SendStart.v            ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendStart.v            ;         ;
+; ../modules/communicator/UART.v                 ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v                 ;         ;
+; top.bdf                                        ; yes             ; User Block Diagram/Schematic File  ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/top.bdf                             ;         ;
+; ../modules/game/victory.v                      ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/victory.v                      ;         ;
+; ../modules/game/top.v                          ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v                          ;         ;
+; ../modules/game/stopwatch.v                    ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/stopwatch.v                    ;         ;
+; ../modules/game/state_machine.v                ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v                ;         ;
+; ../modules/game/score.v                        ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v                        ;         ;
+; ../modules/game/random.v                       ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/random.v                       ;         ;
+; ../modules/game/position_updater.v             ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/position_updater.v             ;         ;
+; ../modules/game/map_selector.v                 ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v                 ;         ;
+; ../modules/game/frequency.v                    ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/frequency.v                    ;         ;
+; ../modules/game/display.v                      ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/display.v                      ;         ;
+; ../modules/game/difficulty_selector.v          ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/difficulty_selector.v          ;         ;
+; ../modules/game/define_maps.v                  ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/define_maps.v                  ;         ;
+; ../modules/game/defeat.v                       ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/defeat.v                       ;         ;
+; ../modules/game/button_handler.v               ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/button_handler.v               ;         ;
+; ../modules/game/board_updater.v                ; yes             ; User Verilog HDL File              ; /home/fontana/dev/ufba/lab-1/sudoku/modules/game/board_updater.v                ;         ;
+; lpm_divide.tdf                                 ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/lpm_divide.tdf              ;         ;
+; abs_divider.inc                                ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/abs_divider.inc             ;         ;
+; sign_div_unsign.inc                            ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/sign_div_unsign.inc         ;         ;
+; aglobal241.inc                                 ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/aglobal241.inc              ;         ;
+; db/lpm_divide_k9m.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_k9m.tdf               ;         ;
+; db/sign_div_unsign_9kh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_9kh.tdf          ;         ;
+; db/alt_u_div_64f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_64f.tdf                ;         ;
+; db/add_sub_7pc.tdf                             ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/add_sub_7pc.tdf                  ;         ;
+; db/add_sub_8pc.tdf                             ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/add_sub_8pc.tdf                  ;         ;
+; db/lpm_divide_l9m.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_l9m.tdf               ;         ;
+; db/sign_div_unsign_akh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_akh.tdf          ;         ;
+; db/alt_u_div_84f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_84f.tdf                ;         ;
+; db/lpm_divide_hhm.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_hhm.tdf               ;         ;
+; db/lpm_divide_ihm.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_ihm.tdf               ;         ;
+; db/lpm_divide_j9m.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_j9m.tdf               ;         ;
+; db/sign_div_unsign_8kh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_8kh.tdf          ;         ;
+; db/alt_u_div_44f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_44f.tdf                ;         ;
+; db/lpm_divide_lhm.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_lhm.tdf               ;         ;
+; db/sign_div_unsign_dkh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_dkh.tdf          ;         ;
+; db/alt_u_div_e4f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_e4f.tdf                ;         ;
+; lpm_mult.tdf                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/lpm_mult.tdf                ;         ;
+; lpm_add_sub.inc                                ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/lpm_add_sub.inc             ;         ;
+; multcore.inc                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/multcore.inc                ;         ;
+; bypassff.inc                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/bypassff.inc                ;         ;
+; altshift.inc                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/altshift.inc                ;         ;
+; db/mult_fft.tdf                                ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/mult_fft.tdf                     ;         ;
+; db/lpm_divide_dkm.tdf                          ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_dkm.tdf               ;         ;
+; db/sign_div_unsign_5nh.tdf                     ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_5nh.tdf          ;         ;
+; db/alt_u_div_u9f.tdf                           ; yes             ; Auto-Generated Megafunction        ; /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_u9f.tdf                ;         ;
+; multcore.tdf                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/multcore.tdf                ;         ;
+; csa_add.inc                                    ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/csa_add.inc                 ;         ;
+; mpar_add.inc                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/mpar_add.inc                ;         ;
+; muleabz.inc                                    ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/muleabz.inc                 ;         ;
+; mul_lfrg.inc                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/mul_lfrg.inc                ;         ;
+; mul_boothc.inc                                 ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/mul_boothc.inc              ;         ;
+; alt_ded_mult.inc                               ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/alt_ded_mult.inc            ;         ;
+; alt_ded_mult_y.inc                             ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/alt_ded_mult_y.inc          ;         ;
+; dffpipe.inc                                    ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/dffpipe.inc                 ;         ;
+; mpar_add.tdf                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/mpar_add.tdf                ;         ;
+; altshift.tdf                                   ; yes             ; Megafunction                       ; /opt/intelFPGA/24.1/quartus/libraries/megafunctions/altshift.tdf                ;         ;
++------------------------------------------------+-----------------+------------------------------------+---------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------------------+
@@ -321,16 +321,16 @@ on the Quartus Prime software download page.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 4,856     ;
+; Estimated Total logic elements              ; 4,866     ;
 ;                                             ;           ;
-; Total combinational functions               ; 4531      ;
+; Total combinational functions               ; 4541      ;
 ; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 2357      ;
-;     -- 3 input functions                    ; 500       ;
-;     -- <=2 input functions                  ; 1674      ;
+;     -- 4 input functions                    ; 2354      ;
+;     -- 3 input functions                    ; 499       ;
+;     -- <=2 input functions                  ; 1688      ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 3413      ;
+;     -- normal mode                          ; 3423      ;
 ;     -- arithmetic mode                      ; 1118      ;
 ;                                             ;           ;
 ; Total registers                             ; 1978      ;
@@ -343,8 +343,8 @@ on the Quartus Prime software download page.
 ;                                             ;           ;
 ; Maximum fan-out node                        ; clk~input ;
 ; Maximum fan-out                             ; 1451      ;
-; Total fan-out                               ; 22741     ;
-; Average fan-out                             ; 3.38      ;
+; Total fan-out                               ; 22756     ;
+; Average fan-out                             ; 3.37      ;
 +---------------------------------------------+-----------+
 
 
@@ -353,34 +353,34 @@ on the Quartus Prime software download page.
 +--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                             ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                             ; Entity Name         ; Library Name ;
 +--------------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |top                                                   ; 4531 (1)            ; 1978 (0)                  ; 0           ; 4            ; 0       ; 2         ; 112  ; 0            ; |top                                                                                                                            ; top                 ; work         ;
+; |top                                                   ; 4541 (1)            ; 1978 (0)                  ; 0           ; 4            ; 0       ; 2         ; 112  ; 0            ; |top                                                                                                                            ; top                 ; work         ;
 ;    |ControladorUART:inst3|                             ; 3 (3)               ; 11 (11)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|ControladorUART:inst3                                                                                                      ; ControladorUART     ; work         ;
 ;    |UART:inst4|                                        ; 45 (45)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|UART:inst4                                                                                                                 ; UART                ; work         ;
-;    |communicator:inst1|                                ; 690 (31)            ; 227 (6)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1                                                                                                         ; communicator        ; work         ;
-;       |SendEndGame:send_eng_game|                      ; 67 (0)              ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game                                                                               ; SendEndGame         ; work         ;
-;          |PayloadController:payload_controller|        ; 67 (67)             ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller                                          ; PayloadController   ; work         ;
+;    |communicator:inst1|                                ; 687 (31)            ; 227 (6)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1                                                                                                         ; communicator        ; work         ;
+;       |SendEndGame:send_eng_game|                      ; 66 (0)              ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game                                                                               ; SendEndGame         ; work         ;
+;          |PayloadController:payload_controller|        ; 66 (66)             ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller                                          ; PayloadController   ; work         ;
 ;       |SendFullMap:map_sender|                         ; 288 (0)             ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendFullMap:map_sender                                                                                  ; SendFullMap         ; work         ;
 ;          |PayloadController:payload_controller|        ; 288 (288)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller                                             ; PayloadController   ; work         ;
 ;       |SendGameDificulty:send_game_dificulty|          ; 56 (0)              ; 42 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty                                                                   ; SendGameDificulty   ; work         ;
 ;          |PayloadController:payload_controller|        ; 56 (56)             ; 42 (42)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller                              ; PayloadController   ; work         ;
-;       |SendGameStatus:status_sender|                   ; 201 (0)             ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameStatus:status_sender                                                                            ; SendGameStatus      ; work         ;
-;          |PayloadController:payload_controller|        ; 201 (201)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller                                       ; PayloadController   ; work         ;
+;       |SendGameStatus:status_sender|                   ; 199 (0)             ; 48 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameStatus:status_sender                                                                            ; SendGameStatus      ; work         ;
+;          |PayloadController:payload_controller|        ; 199 (199)           ; 48 (48)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller                                       ; PayloadController   ; work         ;
 ;       |SendStartGame:send_start_game|                  ; 47 (0)              ; 35 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendStartGame:send_start_game                                                                           ; SendStartGame       ; work         ;
 ;          |PayloadController:payload_controller|        ; 47 (47)             ; 35 (35)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller                                      ; PayloadController   ; work         ;
-;    |controller:inst2|                                  ; 1426 (0)            ; 718 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2                                                                                                           ; controller          ; work         ;
-;       |controller_handler:handler|                     ; 1369 (0)            ; 684 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler                                                                                ; controller_handler  ; work         ;
-;          |button_debouncer:debounce_blocks[0].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[10].db|     ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db                                        ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[11].db|     ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db                                        ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[1].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[2].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[3].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[4].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[5].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[6].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[7].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[8].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db                                         ; button_debouncer    ; work         ;
-;          |button_debouncer:debounce_blocks[9].db|      ; 76 (76)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db                                         ; button_debouncer    ; work         ;
+;    |controller:inst2|                                  ; 1438 (0)            ; 718 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2                                                                                                           ; controller          ; work         ;
+;       |controller_handler:handler|                     ; 1381 (0)            ; 684 (0)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler                                                                                ; controller_handler  ; work         ;
+;          |button_debouncer:debounce_blocks[0].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[10].db|     ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db                                        ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[11].db|     ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db                                        ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[1].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[1].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[2].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[2].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[3].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[3].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[4].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[4].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[5].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[5].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[6].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[6].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[7].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[8].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db                                         ; button_debouncer    ; work         ;
+;          |button_debouncer:debounce_blocks[9].db|      ; 77 (77)             ; 29 (29)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db                                         ; button_debouncer    ; work         ;
 ;          |led_on_pulse:debounce_blocks[0].led_module|  ; 38 (38)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[0].led_module                                     ; led_on_pulse        ; work         ;
 ;          |led_on_pulse:debounce_blocks[10].led_module| ; 38 (38)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[10].led_module                                    ; led_on_pulse        ; work         ;
 ;          |led_on_pulse:debounce_blocks[11].led_module| ; 38 (38)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[11].led_module                                    ; led_on_pulse        ; work         ;
@@ -394,11 +394,11 @@ on the Quartus Prime software download page.
 ;          |led_on_pulse:debounce_blocks[8].led_module|  ; 39 (39)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[8].led_module                                     ; led_on_pulse        ; work         ;
 ;          |led_on_pulse:debounce_blocks[9].led_module|  ; 38 (38)             ; 28 (28)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[9].led_module                                     ; led_on_pulse        ; work         ;
 ;       |controller_reader:reader|                       ; 57 (57)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|controller:inst2|controller_reader:reader                                                                                  ; controller_reader   ; work         ;
-;    |game:inst|                                         ; 2366 (0)            ; 991 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst                                                                                                                  ; game                ; work         ;
+;    |game:inst|                                         ; 2367 (0)            ; 991 (0)                   ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst                                                                                                                  ; game                ; work         ;
 ;       |display:d|                                      ; 90 (90)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|display:d                                                                                                        ; display             ; work         ;
 ;       |frequency:game_frequency|                       ; 48 (48)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|frequency:game_frequency                                                                                         ; frequency           ; work         ;
-;       |map_selector:ms|                                ; 406 (403)           ; 407 (404)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms                                                                                                  ; map_selector        ; work         ;
-;          |random:r|                                    ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms|random:r                                                                                         ; random              ; work         ;
+;       |map_selector:ms|                                ; 406 (404)           ; 407 (404)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms                                                                                                  ; map_selector        ; work         ;
+;          |random:r|                                    ; 2 (2)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|map_selector:ms|random:r                                                                                         ; random              ; work         ;
 ;       |score:sc|                                       ; 672 (32)            ; 7 (7)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst|score:sc                                                                                                         ; score               ; work         ;
 ;          |lpm_divide:Div0|                             ; 626 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0                                                                                         ; lpm_divide          ; work         ;
 ;             |lpm_divide_dkm:auto_generated|            ; 626 (0)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_dkm:auto_generated                                                           ; lpm_divide_dkm      ; work         ;
@@ -406,7 +406,7 @@ on the Quartus Prime software download page.
 ;                   |alt_u_div_u9f:divider|              ; 626 (626)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider         ; alt_u_div_u9f       ; work         ;
 ;          |lpm_mult:Mult0|                              ; 14 (0)              ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_mult:Mult0                                                                                          ; lpm_mult            ; work         ;
 ;             |mult_fft:auto_generated|                  ; 14 (14)             ; 0 (0)                     ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |top|game:inst|score:sc|lpm_mult:Mult0|mult_fft:auto_generated                                                                  ; mult_fft            ; work         ;
-;       |state_machine:sm|                               ; 1076 (532)          ; 505 (4)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm                                                                                                 ; state_machine       ; work         ;
+;       |state_machine:sm|                               ; 1077 (533)          ; 505 (4)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm                                                                                                 ; state_machine       ; work         ;
 ;          |board_updater:b_up|                          ; 280 (280)           ; 492 (492)                 ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|board_updater:b_up                                                                              ; board_updater       ; work         ;
 ;          |defeat:d|                                    ; 5 (5)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|defeat:d                                                                                        ; defeat              ; work         ;
 ;          |difficulty_selector:d_sel|                   ; 1 (1)               ; 1 (1)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |top|game:inst|state_machine:sm|difficulty_selector:d_sel                                                                       ; difficulty_selector ; work         ;
@@ -912,7 +912,7 @@ Encoding Type:  One-Hot
 ; Number of registers using Synchronous Load   ; 480   ;
 ; Number of registers using Asynchronous Clear ; 1957  ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1327  ;
+; Number of registers using Clock Enable       ; 1330  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -929,6 +929,7 @@ Encoding Type:  One-Hot
 ; game:inst|state_machine:sm|position_updater:pos_up|pos_j[2]      ; 13      ;
 ; UART:inst4|tx_shift[0]                                           ; 2       ;
 ; UART:inst4|tx_shift[1]                                           ; 1       ;
+; game:inst|map_selector:ms|random:r|random_number[0]              ; 402     ;
 ; UART:inst4|tx_shift[2]                                           ; 1       ;
 ; UART:inst4|tx_shift[3]                                           ; 1       ;
 ; UART:inst4|tx_shift[4]                                           ; 1       ;
@@ -936,7 +937,7 @@ Encoding Type:  One-Hot
 ; UART:inst4|tx_shift[6]                                           ; 1       ;
 ; UART:inst4|tx_shift[7]                                           ; 1       ;
 ; UART:inst4|tx_shift[8]                                           ; 1       ;
-; Total number of inverted registers = 14                          ;         ;
+; Total number of inverted registers = 15                          ;         ;
 +------------------------------------------------------------------+---------+
 
 
@@ -952,113 +953,113 @@ Encoding Type:  One-Hot
 ; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|contador_delay[0] ;
 ; 3:1                ; 26 bits   ; 52 LEs        ; 26 LEs               ; 26 LEs                 ; Yes        ; |top|communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller|contador_delay[11]        ;
 ; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; Yes        ; |top|game:inst|score:sc|score[6]                                                                                     ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|dado_saida[2]                 ;
-; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|dado_saida[4]                 ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|dado_saida[5]                 ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|dado_saida[0]                 ;
 ; 4:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; Yes        ; |top|UART:inst4|tx_clk_cnt[5]                                                                                        ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[11].led_module|counter[10]             ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[10].led_module|counter[13]             ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[9].led_module|counter[16]              ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[8].led_module|counter[21]              ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[7].led_module|counter[9]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[6].led_module|counter[21]              ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[5].led_module|counter[14]              ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[4].led_module|counter[8]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[3].led_module|counter[7]               ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[2].led_module|counter[15]              ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[1].led_module|counter[15]              ;
-; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[0].led_module|counter[3]               ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|position_updater:pos_up|pos_j[0]                                                     ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[11].led_module|counter[12]             ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[10].led_module|counter[3]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[9].led_module|counter[18]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[8].led_module|counter[5]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[7].led_module|counter[11]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[6].led_module|counter[25]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[5].led_module|counter[8]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[4].led_module|counter[7]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[3].led_module|counter[16]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[2].led_module|counter[3]               ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[1].led_module|counter[24]              ;
+; 4:1                ; 26 bits   ; 52 LEs        ; 52 LEs               ; 0 LEs                  ; Yes        ; |top|controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[0].led_module|counter[10]              ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|position_updater:pos_up|pos_j[3]                                                     ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|position_updater:pos_up|pos_i[3]                                                     ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|selected_number[3]                                                ;
-; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|ControladorUART:inst3|data_reg[2]                                                                               ;
-; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|ControladorUART:inst3|data_reg[5]                                                                               ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |top|ControladorUART:inst3|data_reg[4]                                                                               ;
+; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |top|ControladorUART:inst3|data_reg[7]                                                                               ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[2]                                                   ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[4]                                                   ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[6]                                                   ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[8]                                                   ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[11]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[12]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[10]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[13]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[14]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[16]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[17]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[19]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[20]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[22]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[24]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[27]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[28]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[30]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[32]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[34]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[36]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[26]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[29]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[31]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[33]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[35]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[37]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[38]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[40]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[42]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[41]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[43]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[45]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[46]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[47]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[49]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[51]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[53]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[55]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[57]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[59]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[52]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[54]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[56]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[58]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[61]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[63]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[65]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[67]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[68]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[70]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[73]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[69]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[71]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[72]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[74]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[76]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[78]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[80]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[82]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[84]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[87]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[86]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[88]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[91]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[90]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[92]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[94]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[96]                                                  ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[98]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[95]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[97]                                                  ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[99]                                                  ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[101]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[102]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[104]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[103]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[105]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[107]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[109]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[111]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[113]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[114]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[115]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[116]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[119]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[120]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[121]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[123]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[124]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[126]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[128]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[130]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[131]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[132]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[134]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[136]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[139]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[141]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[140]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[143]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[145]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[146]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[147]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[148]                                                 ;
 ; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[150]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[152]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[154]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[156]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[158]                                                 ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[160]                                                 ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|indice_chunk[4]            ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|indice_chunk[5]                  ;
-; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|indice_chunk[5]               ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[153]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[155]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[157]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[159]                                                 ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |top|game:inst|state_machine:sm|board_updater:b_up|visibilities[161]                                                 ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller|indice_chunk[1]            ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller|indice_chunk[0]                  ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller|indice_chunk[2]               ;
 ; 6:1                ; 6 bits    ; 24 LEs        ; 6 LEs                ; 18 LEs                 ; Yes        ; |top|communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller|indice_chunk[0]   ;
-; 13:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|game:inst|state_machine:sm|current_state[0]                                                                     ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|counter[10]                 ;
-; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|counter[1]                  ;
+; 13:1               ; 3 bits    ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; Yes        ; |top|game:inst|state_machine:sm|current_state[2]                                                                     ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[11].db|counter[2]                  ;
+; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[10].db|counter[14]                 ;
 ; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[9].db|counter[19]                  ;
 ; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[8].db|counter[11]                  ;
 ; 10:1               ; 22 bits   ; 132 LEs       ; 22 LEs               ; 110 LEs                ; Yes        ; |top|controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[7].db|counter[10]                  ;
@@ -1768,30 +1769,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; boundary_port         ; 112                         ;
 ; cycloneiii_ff         ; 1978                        ;
-;     CLR               ; 624                         ;
+;     CLR               ; 621                         ;
 ;     CLR SCLR          ; 24                          ;
 ;     CLR SLD           ; 2                           ;
 ;     ENA               ; 20                          ;
-;     ENA CLR           ; 659                         ;
+;     ENA CLR           ; 662                         ;
 ;     ENA CLR SCLR      ; 170                         ;
 ;     ENA CLR SLD       ; 478                         ;
 ;     plain             ; 1                           ;
-; cycloneiii_lcell_comb ; 4540                        ;
+; cycloneiii_lcell_comb ; 4550                        ;
 ;     arith             ; 1118                        ;
 ;         1 data inputs ; 1                           ;
 ;         2 data inputs ; 853                         ;
 ;         3 data inputs ; 264                         ;
-;     normal            ; 3422                        ;
+;     normal            ; 3432                        ;
 ;         0 data inputs ; 43                          ;
-;         1 data inputs ; 67                          ;
-;         2 data inputs ; 719                         ;
-;         3 data inputs ; 236                         ;
-;         4 data inputs ; 2357                        ;
+;         1 data inputs ; 68                          ;
+;         2 data inputs ; 732                         ;
+;         3 data inputs ; 235                         ;
+;         4 data inputs ; 2354                        ;
 ; cycloneiii_mac_mult   ; 2                           ;
 ; cycloneiii_mac_out    ; 2                           ;
 ;                       ;                             ;
 ; Max LUT depth         ; 69.80                       ;
-; Average LUT depth     ; 12.59                       ;
+; Average LUT depth     ; 12.61                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1800,7 +1801,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:35     ;
+; Top            ; 00:00:30     ;
 +----------------+--------------+
 
 
@@ -1810,241 +1811,241 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 24.1std.0 Build 1077 03/04/2025 SC Lite Edition
-    Info: Processing started: Fri Jul 18 21:18:36 2025
+    Info: Processing started: Fri Jul 18 21:30:39 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off sudoku -c top
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 10 of the 10 processors detected
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/controller/led_on_pulse.v
-    Info (12023): Found entity 1: led_on_pulse File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/led_on_pulse.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/controller/debouncer.v
-    Info (12023): Found entity 1: button_debouncer File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/debouncer.v Line: 1
-Warning (10229): Verilog HDL Expression warning at controller_reader.v(2): truncated literal to match 1 bits File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v Line: 2
-Warning (10229): Verilog HDL Expression warning at controller_reader.v(3): truncated literal to match 1 bits File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v Line: 3
-Warning (10229): Verilog HDL Expression warning at controller_reader.v(4): truncated literal to match 1 bits File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v Line: 4
-Warning (10229): Verilog HDL Expression warning at controller_reader.v(93): truncated literal to match 12 bits File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v Line: 93
-Warning (10229): Verilog HDL Expression warning at controller_reader.v(99): truncated literal to match 12 bits File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v Line: 99
-Warning (10229): Verilog HDL Expression warning at controller_reader.v(110): truncated literal to match 12 bits File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v Line: 110
-Warning (10229): Verilog HDL Expression warning at controller_reader.v(116): truncated literal to match 12 bits File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v Line: 116
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v
-    Info (12023): Found entity 1: controller_reader File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_reader.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_handler.v
-    Info (12023): Found entity 1: controller_handler File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_handler.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller.v
-    Info (12023): Found entity 1: controller File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/Controlador.v
-    Info (12023): Found entity 1: Controlador File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/Controlador.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/ControladorPrincipal.v
-    Info (12023): Found entity 1: ControladorUART File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/ControladorPrincipal.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/MainController.v
-    Info (12023): Found entity 1: communicator File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/MainController.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v
-    Info (12023): Found entity 1: PayloadController File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendDificulty.v
-    Info (12023): Found entity 1: SendGameDificulty File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendDificulty.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendEndGame.v
-    Info (12023): Found entity 1: SendEndGame File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendEndGame.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendFullMap.v
-    Info (12023): Found entity 1: SendFullMap File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendFullMap.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendGameStatus.v
-    Info (12023): Found entity 1: SendGameStatus File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendGameStatus.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendStart.v
-    Info (12023): Found entity 1: SendStartGame File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendStart.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v
-    Info (12023): Found entity 1: UART File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 1
+Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/led_on_pulse.v
+    Info (12023): Found entity 1: led_on_pulse File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/led_on_pulse.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/debouncer.v
+    Info (12023): Found entity 1: button_debouncer File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/debouncer.v Line: 1
+Warning (10229): Verilog HDL Expression warning at controller_reader.v(2): truncated literal to match 1 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v Line: 2
+Warning (10229): Verilog HDL Expression warning at controller_reader.v(3): truncated literal to match 1 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v Line: 3
+Warning (10229): Verilog HDL Expression warning at controller_reader.v(4): truncated literal to match 1 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v Line: 4
+Warning (10229): Verilog HDL Expression warning at controller_reader.v(93): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v Line: 93
+Warning (10229): Verilog HDL Expression warning at controller_reader.v(99): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v Line: 99
+Warning (10229): Verilog HDL Expression warning at controller_reader.v(110): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v Line: 110
+Warning (10229): Verilog HDL Expression warning at controller_reader.v(116): truncated literal to match 12 bits File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v Line: 116
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v
+    Info (12023): Found entity 1: controller_reader File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_reader.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_handler.v
+    Info (12023): Found entity 1: controller_handler File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_handler.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller.v
+    Info (12023): Found entity 1: controller File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/Controlador.v
+    Info (12023): Found entity 1: Controlador File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/Controlador.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/ControladorPrincipal.v
+    Info (12023): Found entity 1: ControladorUART File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/ControladorPrincipal.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/MainController.v
+    Info (12023): Found entity 1: communicator File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/MainController.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v
+    Info (12023): Found entity 1: PayloadController File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendDificulty.v
+    Info (12023): Found entity 1: SendGameDificulty File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendDificulty.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendEndGame.v
+    Info (12023): Found entity 1: SendEndGame File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendEndGame.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendFullMap.v
+    Info (12023): Found entity 1: SendFullMap File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendFullMap.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendGameStatus.v
+    Info (12023): Found entity 1: SendGameStatus File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendGameStatus.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendStart.v
+    Info (12023): Found entity 1: SendStartGame File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendStart.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v
+    Info (12023): Found entity 1: UART File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file top.bdf
     Info (12023): Found entity 1: top
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/victory.v
-    Info (12023): Found entity 1: victory File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/victory.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v
-    Info (12023): Found entity 1: game File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/stopwatch.v
-    Info (12023): Found entity 1: stopwatch File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/stopwatch.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v
-    Info (12023): Found entity 1: state_machine File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v
-    Info (12023): Found entity 1: score File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/random.v
-    Info (12023): Found entity 1: random File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/random.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v
-    Info (12023): Found entity 1: position_updater File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v
-    Info (12023): Found entity 1: map_selector File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/frequency.v
-    Info (12023): Found entity 1: frequency File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/frequency.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/display.v
-    Info (12023): Found entity 1: display File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/display.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/difficulty_selector.v
-    Info (12023): Found entity 1: difficulty_selector File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/difficulty_selector.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/define_maps.v
-    Info (12023): Found entity 1: define_maps File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/define_maps.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/defeat.v
-    Info (12023): Found entity 1: defeat File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/defeat.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/button_handler.v
-    Info (12023): Found entity 1: button_handler File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/button_handler.v Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file /home/andreojr/dev/edu/engg52/sudoku/modules/game/board_updater.v
-    Info (12023): Found entity 1: board_updater File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/board_updater.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at top.v(51): created implicit net for "game_clk" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 51
-Warning (10222): Verilog HDL Parameter Declaration warning at state_machine.v(52): Parameter Declaration in module "state_machine" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 52
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/victory.v
+    Info (12023): Found entity 1: victory File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/victory.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v
+    Info (12023): Found entity 1: game File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/stopwatch.v
+    Info (12023): Found entity 1: stopwatch File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/stopwatch.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v
+    Info (12023): Found entity 1: state_machine File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v
+    Info (12023): Found entity 1: score File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/random.v
+    Info (12023): Found entity 1: random File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/random.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/position_updater.v
+    Info (12023): Found entity 1: position_updater File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/position_updater.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v
+    Info (12023): Found entity 1: map_selector File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/frequency.v
+    Info (12023): Found entity 1: frequency File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/frequency.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/display.v
+    Info (12023): Found entity 1: display File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/display.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/difficulty_selector.v
+    Info (12023): Found entity 1: difficulty_selector File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/difficulty_selector.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/define_maps.v
+    Info (12023): Found entity 1: define_maps File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/define_maps.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/defeat.v
+    Info (12023): Found entity 1: defeat File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/defeat.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/button_handler.v
+    Info (12023): Found entity 1: button_handler File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/button_handler.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file /home/fontana/dev/ufba/lab-1/sudoku/modules/game/board_updater.v
+    Info (12023): Found entity 1: board_updater File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/board_updater.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at top.v(51): created implicit net for "game_clk" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 51
+Warning (10222): Verilog HDL Parameter Declaration warning at state_machine.v(52): Parameter Declaration in module "state_machine" behaves as a Local Parameter Declaration because the module has a Module Parameter Port List File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 52
 Info (12127): Elaborating entity "top" for the top level hierarchy
 Info (12128): Elaborating entity "game" for hierarchy "game:inst"
-Info (12128): Elaborating entity "frequency" for hierarchy "game:inst|frequency:game_frequency" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 52
-Warning (10230): Verilog HDL assignment warning at frequency.v(18): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/frequency.v Line: 18
-Info (12128): Elaborating entity "button_handler" for hierarchy "game:inst|button_handler:bh" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 63
-Info (12128): Elaborating entity "display" for hierarchy "game:inst|display:d" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 70
-Info (12128): Elaborating entity "stopwatch" for hierarchy "game:inst|stopwatch:sw" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 79
-Info (12128): Elaborating entity "frequency" for hierarchy "game:inst|stopwatch:sw|frequency:fd" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/stopwatch.v Line: 19
-Warning (10230): Verilog HDL assignment warning at frequency.v(18): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/frequency.v Line: 18
-Info (12128): Elaborating entity "score" for hierarchy "game:inst|score:sc" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 86
-Warning (10230): Verilog HDL assignment warning at score.v(14): truncated value with size 32 to match size of target (7) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 14
-Warning (10230): Verilog HDL assignment warning at score.v(18): truncated value with size 32 to match size of target (7) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
-Info (12128): Elaborating entity "map_selector" for hierarchy "game:inst|map_selector:ms" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 97
-Info (12128): Elaborating entity "define_maps" for hierarchy "game:inst|map_selector:ms|define_maps:dm" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 21
-Info (12128): Elaborating entity "random" for hierarchy "game:inst|map_selector:ms|random:r" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 29
-Info (12128): Elaborating entity "state_machine" for hierarchy "game:inst|state_machine:sm" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/top.v Line: 138
-Warning (10230): Verilog HDL assignment warning at state_machine.v(60): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 60
-Warning (10230): Verilog HDL assignment warning at state_machine.v(61): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 61
-Warning (10230): Verilog HDL assignment warning at state_machine.v(62): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 62
-Warning (10230): Verilog HDL assignment warning at state_machine.v(68): truncated value with size 32 to match size of target (7) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 68
-Warning (10230): Verilog HDL assignment warning at state_machine.v(69): truncated value with size 32 to match size of target (8) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 69
-Warning (10230): Verilog HDL assignment warning at state_machine.v(70): truncated value with size 32 to match size of target (9) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 70
-Warning (10270): Verilog HDL Case Statement warning at state_machine.v(162): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 162
-Info (12128): Elaborating entity "board_updater" for hierarchy "game:inst|state_machine:sm|board_updater:b_up" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 109
-Warning (10270): Verilog HDL Case Statement warning at board_updater.v(57): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/board_updater.v Line: 57
-Info (10264): Verilog HDL Case Statement information at board_updater.v(57): all case item expressions in this case statement are onehot File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/board_updater.v Line: 57
-Info (12128): Elaborating entity "position_updater" for hierarchy "game:inst|state_machine:sm|position_updater:pos_up" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 123
-Warning (10230): Verilog HDL assignment warning at position_updater.v(36): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v Line: 36
-Warning (10230): Verilog HDL assignment warning at position_updater.v(39): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v Line: 39
-Warning (10230): Verilog HDL assignment warning at position_updater.v(42): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v Line: 42
-Warning (10230): Verilog HDL assignment warning at position_updater.v(45): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v Line: 45
-Warning (10270): Verilog HDL Case Statement warning at position_updater.v(33): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/position_updater.v Line: 33
-Info (12128): Elaborating entity "difficulty_selector" for hierarchy "game:inst|state_machine:sm|difficulty_selector:d_sel" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 134
-Info (12128): Elaborating entity "victory" for hierarchy "game:inst|state_machine:sm|victory:v" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 139
-Info (12128): Elaborating entity "defeat" for hierarchy "game:inst|state_machine:sm|defeat:d" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 146
+Info (12128): Elaborating entity "frequency" for hierarchy "game:inst|frequency:game_frequency" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 52
+Warning (10230): Verilog HDL assignment warning at frequency.v(18): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/frequency.v Line: 18
+Info (12128): Elaborating entity "button_handler" for hierarchy "game:inst|button_handler:bh" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 63
+Info (12128): Elaborating entity "display" for hierarchy "game:inst|display:d" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 70
+Info (12128): Elaborating entity "stopwatch" for hierarchy "game:inst|stopwatch:sw" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 79
+Info (12128): Elaborating entity "frequency" for hierarchy "game:inst|stopwatch:sw|frequency:fd" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/stopwatch.v Line: 19
+Warning (10230): Verilog HDL assignment warning at frequency.v(18): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/frequency.v Line: 18
+Info (12128): Elaborating entity "score" for hierarchy "game:inst|score:sc" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 86
+Warning (10230): Verilog HDL assignment warning at score.v(14): truncated value with size 32 to match size of target (7) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 14
+Warning (10230): Verilog HDL assignment warning at score.v(18): truncated value with size 32 to match size of target (7) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 18
+Info (12128): Elaborating entity "map_selector" for hierarchy "game:inst|map_selector:ms" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 97
+Info (12128): Elaborating entity "define_maps" for hierarchy "game:inst|map_selector:ms|define_maps:dm" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 21
+Info (12128): Elaborating entity "random" for hierarchy "game:inst|map_selector:ms|random:r" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 29
+Info (12128): Elaborating entity "state_machine" for hierarchy "game:inst|state_machine:sm" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/top.v Line: 138
+Warning (10230): Verilog HDL assignment warning at state_machine.v(60): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 60
+Warning (10230): Verilog HDL assignment warning at state_machine.v(61): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 61
+Warning (10230): Verilog HDL assignment warning at state_machine.v(62): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 62
+Warning (10230): Verilog HDL assignment warning at state_machine.v(68): truncated value with size 32 to match size of target (7) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 68
+Warning (10230): Verilog HDL assignment warning at state_machine.v(69): truncated value with size 32 to match size of target (8) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 69
+Warning (10230): Verilog HDL assignment warning at state_machine.v(70): truncated value with size 32 to match size of target (9) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 70
+Warning (10270): Verilog HDL Case Statement warning at state_machine.v(162): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 162
+Info (12128): Elaborating entity "board_updater" for hierarchy "game:inst|state_machine:sm|board_updater:b_up" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 109
+Warning (10270): Verilog HDL Case Statement warning at board_updater.v(57): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/board_updater.v Line: 57
+Info (10264): Verilog HDL Case Statement information at board_updater.v(57): all case item expressions in this case statement are onehot File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/board_updater.v Line: 57
+Info (12128): Elaborating entity "position_updater" for hierarchy "game:inst|state_machine:sm|position_updater:pos_up" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 123
+Warning (10230): Verilog HDL assignment warning at position_updater.v(36): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/position_updater.v Line: 36
+Warning (10230): Verilog HDL assignment warning at position_updater.v(39): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/position_updater.v Line: 39
+Warning (10230): Verilog HDL assignment warning at position_updater.v(42): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/position_updater.v Line: 42
+Warning (10230): Verilog HDL assignment warning at position_updater.v(45): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/position_updater.v Line: 45
+Warning (10270): Verilog HDL Case Statement warning at position_updater.v(33): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/position_updater.v Line: 33
+Info (12128): Elaborating entity "difficulty_selector" for hierarchy "game:inst|state_machine:sm|difficulty_selector:d_sel" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 134
+Info (12128): Elaborating entity "victory" for hierarchy "game:inst|state_machine:sm|victory:v" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 139
+Info (12128): Elaborating entity "defeat" for hierarchy "game:inst|state_machine:sm|defeat:d" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 146
 Info (12128): Elaborating entity "controller" for hierarchy "controller:inst2"
-Info (12128): Elaborating entity "controller_reader" for hierarchy "controller:inst2|controller_reader:reader" File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller.v Line: 40
-Info (12128): Elaborating entity "controller_handler" for hierarchy "controller:inst2|controller_handler:handler" File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller.v Line: 49
-Info (12128): Elaborating entity "button_debouncer" for hierarchy "controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db" File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_handler.v Line: 21
-Warning (10230): Verilog HDL assignment warning at debouncer.v(45): truncated value with size 32 to match size of target (23) File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/debouncer.v Line: 45
-Warning (10230): Verilog HDL assignment warning at debouncer.v(68): truncated value with size 32 to match size of target (23) File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/debouncer.v Line: 68
-Warning (10230): Verilog HDL assignment warning at debouncer.v(80): truncated value with size 32 to match size of target (23) File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/debouncer.v Line: 80
-Info (12128): Elaborating entity "led_on_pulse" for hierarchy "controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[0].led_module" File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/controller_handler.v Line: 27
-Warning (10230): Verilog HDL assignment warning at led_on_pulse.v(29): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modules/controller/led_on_pulse.v Line: 29
+Info (12128): Elaborating entity "controller_reader" for hierarchy "controller:inst2|controller_reader:reader" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller.v Line: 40
+Info (12128): Elaborating entity "controller_handler" for hierarchy "controller:inst2|controller_handler:handler" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller.v Line: 49
+Info (12128): Elaborating entity "button_debouncer" for hierarchy "controller:inst2|controller_handler:handler|button_debouncer:debounce_blocks[0].db" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_handler.v Line: 21
+Warning (10230): Verilog HDL assignment warning at debouncer.v(45): truncated value with size 32 to match size of target (23) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/debouncer.v Line: 45
+Warning (10230): Verilog HDL assignment warning at debouncer.v(68): truncated value with size 32 to match size of target (23) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/debouncer.v Line: 68
+Warning (10230): Verilog HDL assignment warning at debouncer.v(80): truncated value with size 32 to match size of target (23) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/debouncer.v Line: 80
+Info (12128): Elaborating entity "led_on_pulse" for hierarchy "controller:inst2|controller_handler:handler|led_on_pulse:debounce_blocks[0].led_module" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/controller_handler.v Line: 27
+Warning (10230): Verilog HDL assignment warning at led_on_pulse.v(29): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/controller/led_on_pulse.v Line: 29
 Info (12128): Elaborating entity "UART" for hierarchy "UART:inst4"
-Warning (10230): Verilog HDL assignment warning at UART.v(41): truncated value with size 32 to match size of target (16) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 41
-Warning (10230): Verilog HDL assignment warning at UART.v(50): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 50
-Warning (10230): Verilog HDL assignment warning at UART.v(53): truncated value with size 32 to match size of target (1) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 53
-Warning (10230): Verilog HDL assignment warning at UART.v(58): truncated value with size 32 to match size of target (16) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 58
-Warning (10199): Verilog HDL Case Statement warning at UART.v(61): case item expression never matches the case expression File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 61
-Warning (10230): Verilog HDL assignment warning at UART.v(101): truncated value with size 32 to match size of target (4) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 101
-Warning (10230): Verilog HDL assignment warning at UART.v(110): truncated value with size 32 to match size of target (16) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 110
-Warning (10034): Output port "rx_data" at UART.v(6) has no driver File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 6
+Warning (10230): Verilog HDL assignment warning at UART.v(41): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 41
+Warning (10230): Verilog HDL assignment warning at UART.v(50): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 50
+Warning (10230): Verilog HDL assignment warning at UART.v(53): truncated value with size 32 to match size of target (1) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 53
+Warning (10230): Verilog HDL assignment warning at UART.v(58): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 58
+Warning (10199): Verilog HDL Case Statement warning at UART.v(61): case item expression never matches the case expression File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 61
+Warning (10230): Verilog HDL assignment warning at UART.v(101): truncated value with size 32 to match size of target (4) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 101
+Warning (10230): Verilog HDL assignment warning at UART.v(110): truncated value with size 32 to match size of target (16) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 110
+Warning (10034): Output port "rx_data" at UART.v(6) has no driver File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 6
 Info (12128): Elaborating entity "ControladorUART" for hierarchy "ControladorUART:inst3"
-Warning (10270): Verilog HDL Case Statement warning at ControladorPrincipal.v(91): incomplete case statement has no default case item File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/ControladorPrincipal.v Line: 91
+Warning (10270): Verilog HDL Case Statement warning at ControladorPrincipal.v(91): incomplete case statement has no default case item File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/ControladorPrincipal.v Line: 91
 Info (12128): Elaborating entity "communicator" for hierarchy "communicator:inst1"
-Info (12128): Elaborating entity "SendStartGame" for hierarchy "communicator:inst1|SendStartGame:send_start_game" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/MainController.v Line: 136
-Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendStart.v Line: 27
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 74
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 114
-Info (12128): Elaborating entity "SendGameDificulty" for hierarchy "communicator:inst1|SendGameDificulty:send_game_dificulty" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/MainController.v Line: 148
-Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendDificulty.v Line: 28
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 74
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 114
-Info (12128): Elaborating entity "SendFullMap" for hierarchy "communicator:inst1|SendFullMap:map_sender" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/MainController.v Line: 160
-Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendFullMap.v Line: 32
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 74
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(88): truncated value with size 328 to match size of target (8) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 88
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 114
-Info (12128): Elaborating entity "SendGameStatus" for hierarchy "communicator:inst1|SendGameStatus:status_sender" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/MainController.v Line: 177
-Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendGameStatus.v Line: 40
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 74
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(88): truncated value with size 192 to match size of target (8) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 88
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 114
-Info (12128): Elaborating entity "SendEndGame" for hierarchy "communicator:inst1|SendEndGame:send_eng_game" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/MainController.v Line: 191
-Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller" File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/SendEndGame.v Line: 30
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 74
-Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/PayloadController.v Line: 114
+Info (12128): Elaborating entity "SendStartGame" for hierarchy "communicator:inst1|SendStartGame:send_start_game" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/MainController.v Line: 136
+Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendStartGame:send_start_game|PayloadController:payload_controller" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendStart.v Line: 27
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 74
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 114
+Info (12128): Elaborating entity "SendGameDificulty" for hierarchy "communicator:inst1|SendGameDificulty:send_game_dificulty" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/MainController.v Line: 148
+Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendGameDificulty:send_game_dificulty|PayloadController:payload_controller" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendDificulty.v Line: 28
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 74
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 114
+Info (12128): Elaborating entity "SendFullMap" for hierarchy "communicator:inst1|SendFullMap:map_sender" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/MainController.v Line: 160
+Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendFullMap:map_sender|PayloadController:payload_controller" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendFullMap.v Line: 32
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 74
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(88): truncated value with size 328 to match size of target (8) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 88
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 114
+Info (12128): Elaborating entity "SendGameStatus" for hierarchy "communicator:inst1|SendGameStatus:status_sender" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/MainController.v Line: 177
+Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendGameStatus:status_sender|PayloadController:payload_controller" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendGameStatus.v Line: 40
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 74
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(88): truncated value with size 192 to match size of target (8) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 88
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 114
+Info (12128): Elaborating entity "SendEndGame" for hierarchy "communicator:inst1|SendEndGame:send_eng_game" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/MainController.v Line: 191
+Info (12128): Elaborating entity "PayloadController" for hierarchy "communicator:inst1|SendEndGame:send_eng_game|PayloadController:payload_controller" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/SendEndGame.v Line: 30
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(74): truncated value with size 32 to match size of target (26) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 74
+Warning (10230): Verilog HDL assignment warning at PayloadController.v(114): truncated value with size 32 to match size of target (6) File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/PayloadController.v Line: 114
 Info (278001): Inferred 11 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Mod0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 60
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Mod1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 60
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Div0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 61
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Div1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 61
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Mod2" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 61
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Mod3" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 62
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Div2" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 62
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|score:sc|Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|score:sc|Div0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|map_selector:ms|Mult1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 41
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|map_selector:ms|Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 40
-Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Mod0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 60
-Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Mod0" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Mod0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Mod1" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 60
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Div0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 61
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Div1" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 61
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Mod2" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 61
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Mod3" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 62
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|state_machine:sm|Div2" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 62
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|score:sc|Mult0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 18
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "game:inst|score:sc|Div0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 18
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|map_selector:ms|Mult1" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 41
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "game:inst|map_selector:ms|Mult0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 40
+Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Mod0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 60
+Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Mod0" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 60
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_k9m.tdf
-    Info (12023): Found entity 1: lpm_divide_k9m File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_k9m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_k9m File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_k9m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_9kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_9kh File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_9kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_9kh File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_9kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_64f.tdf
-    Info (12023): Found entity 1: alt_u_div_64f File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_64f.tdf Line: 27
+    Info (12023): Found entity 1: alt_u_div_64f File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_64f.tdf Line: 27
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
-    Info (12023): Found entity 1: add_sub_7pc File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/add_sub_7pc.tdf Line: 23
+    Info (12023): Found entity 1: add_sub_7pc File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/add_sub_7pc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
-    Info (12023): Found entity 1: add_sub_8pc File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/add_sub_8pc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Mod1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 60
-Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Mod1" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 60
+    Info (12023): Found entity 1: add_sub_8pc File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/add_sub_8pc.tdf Line: 23
+Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Mod1" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 60
+Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Mod1" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 60
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_l9m.tdf
-    Info (12023): Found entity 1: lpm_divide_l9m File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_l9m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_l9m File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_l9m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_akh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_akh File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_akh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_akh File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_akh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_84f.tdf
-    Info (12023): Found entity 1: alt_u_div_84f File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_84f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Div0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 61
-Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Div0" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 61
+    Info (12023): Found entity 1: alt_u_div_84f File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_84f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Div0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 61
+Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Div0" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 61
     Info (12134): Parameter "LPM_WIDTHN" = "6"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_hhm.tdf
-    Info (12023): Found entity 1: lpm_divide_hhm File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_hhm.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Div1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 61
-Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Div1" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 61
+    Info (12023): Found entity 1: lpm_divide_hhm File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_hhm.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Div1" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 61
+Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Div1" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 61
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_ihm.tdf
-    Info (12023): Found entity 1: lpm_divide_ihm File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_ihm.tdf Line: 25
-Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Mod3" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 62
-Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Mod3" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 62
+    Info (12023): Found entity 1: lpm_divide_ihm File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_ihm.tdf Line: 25
+Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Mod3" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 62
+Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Mod3" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 62
     Info (12134): Parameter "LPM_WIDTHN" = "5"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_j9m.tdf
-    Info (12023): Found entity 1: lpm_divide_j9m File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_j9m.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_j9m File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_j9m.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_8kh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_8kh File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_8kh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_8kh File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_8kh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_44f.tdf
-    Info (12023): Found entity 1: alt_u_div_44f File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_44f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Div2" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 62
-Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Div2" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/state_machine.v Line: 62
+    Info (12023): Found entity 1: alt_u_div_44f File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_44f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "game:inst|state_machine:sm|lpm_divide:Div2" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 62
+Info (12133): Instantiated megafunction "game:inst|state_machine:sm|lpm_divide:Div2" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/state_machine.v Line: 62
     Info (12134): Parameter "LPM_WIDTHN" = "7"
     Info (12134): Parameter "LPM_WIDTHD" = "7"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_lhm.tdf
-    Info (12023): Found entity 1: lpm_divide_lhm File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_lhm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_lhm File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_lhm.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_dkh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_dkh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_dkh File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_dkh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_e4f.tdf
-    Info (12023): Found entity 1: alt_u_div_e4f File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_e4f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "game:inst|score:sc|lpm_mult:Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
-Info (12133): Instantiated megafunction "game:inst|score:sc|lpm_mult:Mult0" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
+    Info (12023): Found entity 1: alt_u_div_e4f File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_e4f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "game:inst|score:sc|lpm_mult:Mult0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 18
+Info (12133): Instantiated megafunction "game:inst|score:sc|lpm_mult:Mult0" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 18
     Info (12134): Parameter "LPM_WIDTHA" = "32"
     Info (12134): Parameter "LPM_WIDTHB" = "7"
     Info (12134): Parameter "LPM_WIDTHP" = "39"
@@ -2055,21 +2056,21 @@ Info (12133): Instantiated megafunction "game:inst|score:sc|lpm_mult:Mult0" with
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/mult_fft.tdf
-    Info (12023): Found entity 1: mult_fft File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/mult_fft.tdf Line: 31
-Info (12130): Elaborated megafunction instantiation "game:inst|score:sc|lpm_divide:Div0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
-Info (12133): Instantiated megafunction "game:inst|score:sc|lpm_divide:Div0" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/score.v Line: 18
+    Info (12023): Found entity 1: mult_fft File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/mult_fft.tdf Line: 31
+Info (12130): Elaborated megafunction instantiation "game:inst|score:sc|lpm_divide:Div0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 18
+Info (12133): Instantiated megafunction "game:inst|score:sc|lpm_divide:Div0" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/score.v Line: 18
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "10"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_dkm.tdf
-    Info (12023): Found entity 1: lpm_divide_dkm File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/lpm_divide_dkm.tdf Line: 25
+    Info (12023): Found entity 1: lpm_divide_dkm File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/lpm_divide_dkm.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_5nh.tdf
-    Info (12023): Found entity 1: sign_div_unsign_5nh File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/sign_div_unsign_5nh.tdf Line: 25
+    Info (12023): Found entity 1: sign_div_unsign_5nh File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/sign_div_unsign_5nh.tdf Line: 25
 Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_u9f.tdf
-    Info (12023): Found entity 1: alt_u_div_u9f File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_u9f.tdf Line: 27
-Info (12130): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 41
-Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult1" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 41
+    Info (12023): Found entity 1: alt_u_div_u9f File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_u9f.tdf Line: 27
+Info (12130): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 41
+Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult1" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 41
     Info (12134): Parameter "LPM_WIDTHA" = "3"
     Info (12134): Parameter "LPM_WIDTHB" = "9"
     Info (12134): Parameter "LPM_WIDTHP" = "12"
@@ -2079,11 +2080,11 @@ Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
-Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
-Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
-Info (12130): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 40
-Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult0" with the following parameter: File: /home/andreojr/dev/edu/engg52/sudoku/modules/game/map_selector.v Line: 40
+Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|multcore:mult_core", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /opt/intelFPGA/24.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /opt/intelFPGA/24.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1|altshift:external_latency_ffs", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult1" File: /opt/intelFPGA/24.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (12130): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 40
+Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult0" with the following parameter: File: /home/fontana/dev/ufba/lab-1/sudoku/modules/game/map_selector.v Line: 40
     Info (12134): Parameter "LPM_WIDTHA" = "3"
     Info (12134): Parameter "LPM_WIDTHB" = "8"
     Info (12134): Parameter "LPM_WIDTHP" = "11"
@@ -2093,13 +2094,13 @@ Info (12133): Instantiated megafunction "game:inst|map_selector:ms|lpm_mult:Mult
     Info (12134): Parameter "INPUT_A_IS_CONSTANT" = "NO"
     Info (12134): Parameter "INPUT_B_IS_CONSTANT" = "YES"
     Info (12134): Parameter "MAXIMIZE_SPEED" = "5"
-Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
-Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/multcore.tdf Line: 229
-Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /home/andreojr/intelFPGA/24.1std/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
+Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|multcore:mult_core", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /opt/intelFPGA/24.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 309
+Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|multcore:mult_core|mpar_add:padder", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /opt/intelFPGA/24.1/quartus/libraries/megafunctions/multcore.tdf Line: 229
+Info (12131): Elaborated megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0|altshift:external_latency_ffs", which is child of megafunction instantiation "game:inst|map_selector:ms|lpm_mult:Mult0" File: /opt/intelFPGA/24.1/quartus/libraries/megafunctions/lpm_mult.tdf Line: 352
 Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 35 buffer(s)
     Info (13019): Ignored 35 SOFT buffer(s)
-Info (13000): Registers with preset signals will power-up high File: /home/andreojr/dev/edu/engg52/sudoku/modules/communicator/UART.v Line: 5
+Info (13000): Registers with preset signals will power-up high File: /home/fontana/dev/ufba/lab-1/sudoku/modules/communicator/UART.v Line: 5
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "rx_ready" is stuck at GND
@@ -2115,8 +2116,8 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 40 registers lost all their fanouts during netlist optimizations.
 Info (17016): Found the following redundant logic cells in design
-    Info (17048): Logic cell "game:inst|state_machine:sm|lpm_divide:Mod2|lpm_divide_l9m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|add_sub_6_result_int[0]~0" File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_84f.tdf Line: 57
-    Info (17048): Logic cell "game:inst|score:sc|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider|add_sub_27_result_int[0]~20" File: /home/andreojr/dev/edu/engg52/sudoku/quartus/db/alt_u_div_u9f.tdf Line: 127
+    Info (17048): Logic cell "game:inst|state_machine:sm|lpm_divide:Mod2|lpm_divide_l9m:auto_generated|sign_div_unsign_akh:divider|alt_u_div_84f:divider|add_sub_6_result_int[0]~0" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_84f.tdf Line: 57
+    Info (17048): Logic cell "game:inst|score:sc|lpm_divide:Div0|lpm_divide_dkm:auto_generated|sign_div_unsign_5nh:divider|alt_u_div_u9f:divider|add_sub_27_result_int[0]~20" File: /home/fontana/dev/ufba/lab-1/sudoku/quartus/db/alt_u_div_u9f.tdf Line: 127
 Warning (20013): Ignored 24 assignments for entity "UART_Memoria" -- entity does not exist in design
     Warning (20014): Assignment for entity set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -entity UART_Memoria -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -entity UART_Memoria -section_id Top was ignored
@@ -2142,7 +2143,7 @@ Warning (20013): Ignored 24 assignments for entity "UART_Memoria" -- entity does
     Warning (20014): Assignment for entity set_global_assignment -name ABSORB_PATHS_FROM_OUTPUTS_TO_INPUTS ON -entity UART_Memoria -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_EXTRACT_HARD_BLOCK_NODES ON -entity UART_Memoria -section_id Top was ignored
     Warning (20014): Assignment for entity set_global_assignment -name PARTITION_ENABLE_STRICT_PRESERVATION OFF -entity UART_Memoria -section_id Top was ignored
-Info (144001): Generated suppressed messages file /home/andreojr/dev/edu/engg52/sudoku/quartus/output_files/top.map.smsg
+Info (144001): Generated suppressed messages file /home/fontana/dev/ufba/lab-1/sudoku/quartus/output_files/top.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 4 input pin(s) that do not drive logic
@@ -2150,21 +2151,21 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "game_state[1]"
     Warning (15610): No output dependent on input pin "game_state[0]"
     Warning (15610): No output dependent on input pin "rx"
-Info (21057): Implemented 4988 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 4997 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 100 output pins
-    Info (21061): Implemented 4872 logic cells
+    Info (21061): Implemented 4881 logic cells
     Info (21062): Implemented 4 DSP elements
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 94 warnings
-    Info: Peak virtual memory: 790 megabytes
-    Info: Processing ended: Fri Jul 18 21:19:19 2025
-    Info: Elapsed time: 00:00:43
-    Info: Total CPU time (on all processors): 00:00:53
+    Info: Peak virtual memory: 911 megabytes
+    Info: Processing ended: Fri Jul 18 21:31:20 2025
+    Info: Elapsed time: 00:00:41
+    Info: Total CPU time (on all processors): 00:00:50
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in /home/andreojr/dev/edu/engg52/sudoku/quartus/output_files/top.map.smsg.
+The suppressed messages can be found in /home/fontana/dev/ufba/lab-1/sudoku/quartus/output_files/top.map.smsg.
 
 
